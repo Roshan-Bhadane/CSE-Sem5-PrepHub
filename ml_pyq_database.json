@@ -1,0 +1,5210 @@
+{
+  "meta": {
+    "subject_name": "Machine Learning",
+    "subject_code": "BTAIC502 (Semester V papers); BTCOC603 and BTCOC603_Y23 (Semester VI papers)",
+    "semester": "V (BTAIC502 papers); VI (BTCOC603 papers)",
+    "branch": "AI&DS and allied / CSE(AI&ML)/AI&DS/AI (BTAIC502); Computer Science and Engineering / Computer Engineering (BTCOC603)",
+    "university": "DBATU",
+    "nav_link_name": "ML",
+    "exams_covered": [
+      {
+        "exam_session": "Supplementary Summer 2024",
+        "exam_type": "supplementary",
+        "subject_code": "BTAIC502",
+        "semester": "V",
+        "branch": "AI&DS and Allied branches",
+        "exam_date": "03/07/2024",
+        "max_marks": 60
+      },
+      {
+        "exam_session": "Summer 2025 Regular",
+        "exam_type": "regular",
+        "subject_code": "BTCOC603",
+        "semester": "VI",
+        "branch": "Computer Science and Engineering (Engineering and Technology)",
+        "exam_date": null,
+        "max_marks": 60
+      },
+      {
+        "exam_session": "Supplementary Winter 2025",
+        "exam_type": "supplementary",
+        "subject_code": "BTCOC603_Y23",
+        "semester": "VI",
+        "branch": "Computer Engineering/Computer Science & Engineering",
+        "exam_date": "16/01/2026",
+        "max_marks": 60
+      },
+      {
+        "exam_session": "Supplementary Winter 2024",
+        "exam_type": "supplementary",
+        "subject_code": "BTCOC603_Y23",
+        "semester": "VI",
+        "branch": "Computer Engineering/Computer Science and Engineering",
+        "exam_date": "23/12/2024",
+        "max_marks": 60
+      },
+      {
+        "exam_session": "Winter 2023",
+        "exam_type": "unknown",
+        "subject_code": "BTAIC502",
+        "semester": "V",
+        "branch": "CSE(AI&ML)/AI&DS/AI",
+        "exam_date": "03-01-2024",
+        "max_marks": 60
+      },
+      {
+        "exam_session": "Summer 2023 Regular",
+        "exam_type": "regular",
+        "subject_code": "BTCOC603",
+        "semester": "VI",
+        "branch": "CSE/Computer Engineering",
+        "exam_date": "17/07/2023",
+        "max_marks": 60
+      }
+    ],
+    "total_papers_analysed": 6,
+    "total_unique_questions": 97,
+    "total_question_appearances": 120,
+    "analysis_status": "complete"
+  },
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_title": "Foundations of Machine Learning",
+      "unit_subtitle": "Fundamentals, evaluation, regression and instance-based learning",
+      "unit_hours": "6",
+      "syllabus_topics": [
+        "Basic definitions",
+        "Types of learning",
+        "Hypothesis space and inductive bias",
+        "Evaluation",
+        "Cross-validation",
+        "Linear regression",
+        "Decision trees",
+        "Overfitting",
+        "Instance-based learning",
+        "Feature reduction",
+        "Collaborative filtering-based recommendation"
+      ],
+      "topics_appeared": [
+        "Basic definitions",
+        "Types of learning",
+        "Hypothesis space and inductive bias",
+        "Evaluation",
+        "Cross-validation",
+        "Linear regression",
+        "Decision trees",
+        "Overfitting",
+        "Instance-based learning",
+        "Feature reduction",
+        "Collaborative filtering-based recommendation"
+      ],
+      "topics_not_found_in_pyqs": [],
+      "topics_status_note": "All syllabus topics have at least one verified appearance.",
+      "total_unique_questions": 37,
+      "total_question_appearances": 44,
+      "coverage_percentage": 100.0
+    },
+    {
+      "unit_number": 2,
+      "unit_title": "Supervised Learning Algorithms",
+      "unit_subtitle": "Bayes learning, logistic regression, SVM and kernels",
+      "unit_hours": "6",
+      "syllabus_topics": [
+        "Probability and Bayes learning",
+        "Logistic Regression",
+        "Support Vector Machine (SVM)",
+        "Kernel function",
+        "Kernel SVM"
+      ],
+      "topics_appeared": [
+        "Probability and Bayes learning",
+        "Logistic Regression",
+        "Support Vector Machine (SVM)",
+        "Kernel function",
+        "Kernel SVM"
+      ],
+      "topics_not_found_in_pyqs": [],
+      "topics_status_note": "All syllabus topics have at least one verified appearance.",
+      "total_unique_questions": 16,
+      "total_question_appearances": 16,
+      "coverage_percentage": 100.0
+    },
+    {
+      "unit_number": 3,
+      "unit_title": "Neural Networks & Deep Learning",
+      "unit_subtitle": "Perceptron, multilayer networks, backpropagation and deep networks",
+      "unit_hours": "6",
+      "syllabus_topics": [
+        "Perceptron",
+        "Multilayer network",
+        "Backpropagation",
+        "Introduction to Deep Neural Networks"
+      ],
+      "topics_appeared": [
+        "Perceptron",
+        "Multilayer network",
+        "Backpropagation",
+        "Introduction to Deep Neural Networks"
+      ],
+      "topics_not_found_in_pyqs": [],
+      "topics_status_note": "All syllabus topics have at least one verified appearance.",
+      "total_unique_questions": 9,
+      "total_question_appearances": 12,
+      "coverage_percentage": 100.0
+    },
+    {
+      "unit_number": 4,
+      "unit_title": "Learning Theory",
+      "unit_subtitle": "Computational learning theory, PAC, VC dimension and ensembles",
+      "unit_hours": "6",
+      "syllabus_topics": [
+        "Computational learning theory",
+        "PAC (Probably Approximately Correct) learning model",
+        "Sample complexity",
+        "VC Dimension",
+        "Ensemble learning"
+      ],
+      "topics_appeared": [
+        "PAC (Probably Approximately Correct) learning model",
+        "VC Dimension",
+        "Ensemble learning"
+      ],
+      "topics_not_found_in_pyqs": [
+        "Computational learning theory",
+        "Sample complexity"
+      ],
+      "topics_status_note": "Topics listed in topics_not_found_in_pyqs are 'not_found_in_available_papers' (not unimportant).",
+      "total_unique_questions": 9,
+      "total_question_appearances": 18,
+      "coverage_percentage": 60.0
+    },
+    {
+      "unit_number": 5,
+      "unit_title": "Clustering",
+      "unit_subtitle": "K-Means, hierarchical clustering and GMM",
+      "unit_hours": "6",
+      "syllabus_topics": [
+        "K-Means clustering",
+        "Adaptive hierarchical clustering",
+        "Gaussian Mixture Model (GMM)"
+      ],
+      "topics_appeared": [
+        "K-Means clustering",
+        "Adaptive hierarchical clustering",
+        "Gaussian Mixture Model (GMM)"
+      ],
+      "topics_not_found_in_pyqs": [],
+      "topics_status_note": "All syllabus topics have at least one verified appearance.",
+      "total_unique_questions": 10,
+      "total_question_appearances": 12,
+      "coverage_percentage": 100.0
+    }
+  ],
+  "frequency_table": [
+    {
+      "topic_name": "Performance Metrics",
+      "unit": 1,
+      "times_asked": 11,
+      "priority": "hot",
+      "exact_question_count": 8,
+      "distinct_exam_sessions": 5,
+      "long_answer_appearances": 9,
+      "objective_appearances": 2,
+      "exam_appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "count": 1
+        },
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "count": 4
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "count": 1
+        },
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "count": 2
+        },
+        {
+          "exam_session": "Winter 2023",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "topic_name": "Ensemble Learning",
+      "unit": 4,
+      "times_asked": 9,
+      "priority": "hot",
+      "exact_question_count": 4,
+      "distinct_exam_sessions": 4,
+      "long_answer_appearances": 6,
+      "objective_appearances": 3,
+      "exam_appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "count": 2
+        },
+        {
+          "exam_session": "Summer 2025 Regular",
+          "count": 2
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "count": 4
+        },
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "topic_name": "Decision Tree",
+      "unit": 1,
+      "times_asked": 6,
+      "priority": "hot",
+      "exact_question_count": 6,
+      "distinct_exam_sessions": 5,
+      "long_answer_appearances": 4,
+      "objective_appearances": 2,
+      "exam_appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "count": 1
+        },
+        {
+          "exam_session": "Summer 2025 Regular",
+          "count": 1
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "count": 2
+        },
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "count": 1
+        },
+        {
+          "exam_session": "Winter 2023",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "topic_name": "K-Means",
+      "unit": 5,
+      "times_asked": 6,
+      "priority": "hot",
+      "exact_question_count": 4,
+      "distinct_exam_sessions": 4,
+      "long_answer_appearances": 4,
+      "objective_appearances": 2,
+      "exam_appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "count": 1
+        },
+        {
+          "exam_session": "Summer 2025 Regular",
+          "count": 1
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "count": 3
+        },
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "topic_name": "Linear Regression",
+      "unit": 1,
+      "times_asked": 6,
+      "priority": "hot",
+      "exact_question_count": 5,
+      "distinct_exam_sessions": 4,
+      "long_answer_appearances": 5,
+      "objective_appearances": 1,
+      "exam_appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "count": 1
+        },
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "count": 2
+        },
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "count": 2
+        },
+        {
+          "exam_session": "Winter 2023",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "topic_name": "Types of Learning",
+      "unit": 1,
+      "times_asked": 6,
+      "priority": "hot",
+      "exact_question_count": 4,
+      "distinct_exam_sessions": 3,
+      "long_answer_appearances": 4,
+      "objective_appearances": 2,
+      "exam_appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "count": 2
+        },
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "count": 2
+        },
+        {
+          "exam_session": "Winter 2023",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "topic_name": "Hierarchical Clustering",
+      "unit": 5,
+      "times_asked": 5,
+      "priority": "hot",
+      "exact_question_count": 5,
+      "distinct_exam_sessions": 3,
+      "long_answer_appearances": 3,
+      "objective_appearances": 2,
+      "exam_appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "count": 1
+        },
+        {
+          "exam_session": "Summer 2025 Regular",
+          "count": 2
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "topic_name": "Logistic Regression",
+      "unit": 2,
+      "times_asked": 4,
+      "priority": "hot",
+      "exact_question_count": 4,
+      "distinct_exam_sessions": 4,
+      "long_answer_appearances": 3,
+      "objective_appearances": 1,
+      "exam_appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "count": 1
+        },
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "count": 1
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "count": 1
+        },
+        {
+          "exam_session": "Winter 2023",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "topic_name": "Naive Bayes",
+      "unit": 2,
+      "times_asked": 4,
+      "priority": "hot",
+      "exact_question_count": 4,
+      "distinct_exam_sessions": 4,
+      "long_answer_appearances": 4,
+      "objective_appearances": 0,
+      "exam_appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "count": 1
+        },
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "count": 1
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "count": 1
+        },
+        {
+          "exam_session": "Winter 2023",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "topic_name": "Random Forest",
+      "unit": 4,
+      "times_asked": 4,
+      "priority": "hot",
+      "exact_question_count": 1,
+      "distinct_exam_sessions": 4,
+      "long_answer_appearances": 4,
+      "objective_appearances": 0,
+      "exam_appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "count": 1
+        },
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "count": 1
+        },
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "count": 1
+        },
+        {
+          "exam_session": "Winter 2023",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "topic_name": "Backpropagation",
+      "unit": 3,
+      "times_asked": 4,
+      "priority": "hot",
+      "exact_question_count": 3,
+      "distinct_exam_sessions": 3,
+      "long_answer_appearances": 2,
+      "objective_appearances": 2,
+      "exam_appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "count": 2
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "count": 1
+        },
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "topic_name": "SVM",
+      "unit": 2,
+      "times_asked": 4,
+      "priority": "hot",
+      "exact_question_count": 4,
+      "distinct_exam_sessions": 3,
+      "long_answer_appearances": 4,
+      "objective_appearances": 0,
+      "exam_appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "count": 2
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "count": 1
+        },
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "count": 1
+        }
+      ]
+    }
+  ],
+  "long_answer_questions": [
+    {
+      "question_id": "ML-LA-001",
+      "unit": 1,
+      "syllabus_topic": "Basic definitions",
+      "question_subtopic": "Definition and applications of Machine Learning",
+      "topic_group": "Machine Learning Basics",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Define Machine Learning. Describe the application of Machine Learning",
+      "frequency": 2,
+      "distinct_exam_sessions": 2,
+      "priority": "warm",
+      "repetition_type": "exact",
+      "importance": "high",
+      "appearances": [
+        {
+          "exam_session": "Winter 2023",
+          "exam_year": 2023,
+          "exam_season": "Winter",
+          "exam_type": "unknown",
+          "question_number": "Q1",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Define Machine Learning. Describe the application of Machine Learning",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Regular & Supplementary Winter Examination 2023 (BTAIC502, 03-01-24)"
+          }
+        },
+        {
+          "exam_session": "Summer 2023 Regular",
+          "exam_year": 2023,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q1",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Define machine learning. Explain its common areas of applications.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer Regular Examination 2023 (BTCOC603, 17/07/2023)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-002",
+      "unit": 1,
+      "syllabus_topic": "Types of learning",
+      "question_subtopic": "Types of Machine Learning with diagram",
+      "topic_group": "Types of Learning 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Define Machine Learning. Explain the any two types of machine Learning with suitable diagram.",
+      "frequency": 2,
+      "distinct_exam_sessions": 2,
+      "priority": "warm",
+      "repetition_type": "conceptual",
+      "importance": "high",
+      "note": "P1 Q1(a) also asks for the definition of ML.",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "exam_year": 2024,
+          "exam_season": "Summer",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Define Machine Learning. Explain the any two types of machine Learning with suitable diagram.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Examination Summer 2024 (BTAIC502, 03/07/2024)"
+          }
+        },
+        {
+          "exam_session": "Winter 2023",
+          "exam_year": 2023,
+          "exam_season": "Winter",
+          "exam_type": "unknown",
+          "question_number": "Q1",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Explain the types of Machine Learning with suitable Diagram and Example",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Regular & Supplementary Winter Examination 2023 (BTAIC502, 03-01-24)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-003",
+      "unit": 1,
+      "syllabus_topic": "Types of learning",
+      "question_subtopic": "Classification vs Regression vs Clustering",
+      "topic_group": "Types of Learning 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Explain the categories of Machine Learning based on required output, including classification, Regression and Clustering.",
+      "frequency": 2,
+      "distinct_exam_sessions": 2,
+      "priority": "warm",
+      "repetition_type": "conceptual",
+      "importance": "high",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "exam_year": 2024,
+          "exam_season": "Summer",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Explain the categories of Machine Learning based on required output, including classification, Regression and Clustering.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Examination Summer 2024 (BTAIC502, 03/07/2024)"
+          }
+        },
+        {
+          "exam_session": "Winter 2023",
+          "exam_year": 2023,
+          "exam_season": "Winter",
+          "exam_type": "unknown",
+          "question_number": "Q1",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Compare and contrast the Classification, Regression and Clustering on the basis of following Parameter: Type, Basic, Includes anticipation of, Characteristics of anticipated data, Procedure for calculating, Algorithms",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Regular & Supplementary Winter Examination 2023 (BTAIC502, 03-01-24)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-004",
+      "unit": 1,
+      "syllabus_topic": "Evaluation",
+      "question_subtopic": "Performance metrics for regression",
+      "topic_group": "Performance Metrics 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "List and explain Performance Metrics for Regression in detail.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "high",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "exam_year": 2024,
+          "exam_season": "Summer",
+          "exam_type": "supplementary",
+          "question_number": "Q2",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "List and explain Performance Metrics for Regression in detail.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Examination Summer 2024 (BTAIC502, 03/07/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-005",
+      "unit": 1,
+      "syllabus_topic": "Evaluation",
+      "question_subtopic": "Confusion matrix numerical (Accuracy, Error Rate, Precision, Recall, Specificity, F1)",
+      "topic_group": "Performance Metrics 🔥",
+      "question_type": "numerical",
+      "syllabus_status": "aligned",
+      "question_text": "Confusion matrix (N=200): Actual=NO row: 60, 10; second row: 5, 125. Using above confusion matrix, calculate the following 1.Accuracy 2.Error Rate 3.Precision 4.Recall 5. Specificity 6.F1 Score",
+      "frequency": 2,
+      "distinct_exam_sessions": 2,
+      "priority": "warm",
+      "repetition_type": "exact",
+      "importance": "high",
+      "note": "Identical matrix values (N=200: 60, 10, 5, 125) and identical metric list in both papers.",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "exam_year": 2024,
+          "exam_season": "Summer",
+          "exam_type": "supplementary",
+          "question_number": "Q2",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Confusion matrix (N=200): Actual=NO row: 60, 10; second row: 5, 125. Using above confusion matrix, calculate the following 1.Accuracy 2.Error Rate 3.Precision 4.Recall 5. Specificity 6.F1 Score",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Examination Summer 2024 (BTAIC502, 03/07/2024)"
+          }
+        },
+        {
+          "exam_session": "Winter 2023",
+          "exam_year": 2023,
+          "exam_season": "Winter",
+          "exam_type": "unknown",
+          "question_number": "Q2",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "For the given confusion matrix Calculate: Confusion matrix (N=200): Actual=NO row: 60, 10; second row: 5, 125. 1. Accuracy 2. Error Rate 3. Precision 4. Recall 5. Specificity 6. F1 Score",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Regular & Supplementary Winter Examination 2023 (BTAIC502, 03-01-24)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-006",
+      "unit": 1,
+      "syllabus_topic": "Evaluation",
+      "question_subtopic": "Confusion matrix: purpose and terms",
+      "topic_group": "Performance Metrics 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Explain confusion matrix for classification problem.",
+      "frequency": 3,
+      "distinct_exam_sessions": 3,
+      "priority": "hot",
+      "repetition_type": "conceptual",
+      "importance": "very_high",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q2",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Explain confusion matrix for classification problem.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          }
+        },
+        {
+          "exam_session": "Winter 2023",
+          "exam_year": 2023,
+          "exam_season": "Winter",
+          "exam_type": "unknown",
+          "question_number": "Q2",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Explain the Confusion Matrix with example and state the nedd of confusion matrix",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Regular & Supplementary Winter Examination 2023 (BTAIC502, 03-01-24)"
+          }
+        },
+        {
+          "exam_session": "Summer 2023 Regular",
+          "exam_year": 2023,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q1",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "State the purpose of confusion metrics. Elaborate various terms associated with it.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer Regular Examination 2023 (BTCOC603, 17/07/2023)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-007",
+      "unit": 1,
+      "syllabus_topic": "Evaluation",
+      "question_subtopic": "Classification report vs AUC-ROC",
+      "topic_group": "Performance Metrics 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Compare Classification Report and AUC (Area Under ROC Curve) with one example. Assume suitable data for example.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "high",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "exam_year": 2024,
+          "exam_season": "Summer",
+          "exam_type": "supplementary",
+          "question_number": "Q2",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Compare Classification Report and AUC (Area Under ROC Curve) with one example. Assume suitable data for example.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Examination Summer 2024 (BTAIC502, 03/07/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-008",
+      "unit": 1,
+      "syllabus_topic": "Evaluation",
+      "question_subtopic": "Regression metrics (MAE, MSE, R2) with MAE/MSE/RMSE calculation",
+      "topic_group": "Performance Metrics 🔥",
+      "question_type": "numerical",
+      "syllabus_status": "aligned",
+      "question_text": "Explain the Performance Metrics for Regression Problems- Mean Absolute Error (MAE), Mean Square Error (MSE), R Squared (R2). And for the following Table Calculate 1. MAE 2. MSE 3. RMSE [Ticket # / Actual Price / Predicted Price table not captured in source text]",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "high",
+      "note": "Data table missing from source text.",
+      "appearances": [
+        {
+          "exam_session": "Winter 2023",
+          "exam_year": 2023,
+          "exam_season": "Winter",
+          "exam_type": "unknown",
+          "question_number": "Q2",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Explain the Performance Metrics for Regression Problems- Mean Absolute Error (MAE), Mean Square Error (MSE), R Squared (R2). And for the following Table Calculate 1. MAE 2. MSE 3. RMSE [Ticket # / Actual Price / Predicted Price table not captured in source text]",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Regular & Supplementary Winter Examination 2023 (BTAIC502, 03-01-24)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-009",
+      "unit": 1,
+      "syllabus_topic": "Evaluation",
+      "question_subtopic": "Coefficient of determination (R-squared)",
+      "topic_group": "Performance Metrics 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "What is the purpose of the coefficient of determination (R-Squared) in linear regression and how is it calculated?",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "high",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "exam_year": 2024,
+          "exam_season": "Summer",
+          "exam_type": "supplementary",
+          "question_number": "Q4",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "What is the purpose of the coefficient of determination (R-Squared) in linear regression and how is it calculated?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Examination Summer 2024 (BTAIC502, 03/07/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-010",
+      "unit": 1,
+      "syllabus_topic": "Linear regression",
+      "question_subtopic": "How linear regression works (steps, cost function, optimisation)",
+      "topic_group": "Linear Regression 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "What is Linear Regression? Explain the steps in linear Regression.",
+      "frequency": 2,
+      "distinct_exam_sessions": 2,
+      "priority": "warm",
+      "repetition_type": "conceptual",
+      "importance": "high",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "exam_year": 2024,
+          "exam_season": "Summer",
+          "exam_type": "supplementary",
+          "question_number": "Q3",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "What is Linear Regression? Explain the steps in linear Regression.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Examination Summer 2024 (BTAIC502, 03/07/2024)"
+          }
+        },
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q6",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Explain how linear regression works, including the cost function and optimisation method.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-011",
+      "unit": 1,
+      "syllabus_topic": "Linear regression",
+      "question_subtopic": "Least squares line, 10 points (x = 0..9)",
+      "topic_group": "Linear Regression 🔥",
+      "question_type": "numerical",
+      "syllabus_status": "aligned",
+      "question_text": "For data given below: x = 0,1,2,3,4,5,6,7,8,9; y = 2,2,3,5,6,8,9,10,11,13. a) Find the least square regression line y=B1x + B0 b) Estimate the value of y when x=10",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "high",
+      "note": "Different dataset from P5 Q3(c); kept separate.",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "exam_year": 2024,
+          "exam_season": "Summer",
+          "exam_type": "supplementary",
+          "question_number": "Q3",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "For data given below: x = 0,1,2,3,4,5,6,7,8,9; y = 2,2,3,5,6,8,9,10,11,13. a) Find the least square regression line y=B1x + B0 b) Estimate the value of y when x=10",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Examination Summer 2024 (BTAIC502, 03/07/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-012",
+      "unit": 1,
+      "syllabus_topic": "Linear regression",
+      "question_subtopic": "Least squares line, 5 points (x = 0..4)",
+      "topic_group": "Linear Regression 🔥",
+      "question_type": "numerical",
+      "syllabus_status": "aligned",
+      "question_text": "The values of y and their corresponding values of y are shown in the table below: x = 0,1,2,3,4; y = 2,3,5,4,6. a) Find the least square regression line y = B1 x + B0 b) Estimate the value of y when x = 10.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "high",
+      "note": "Different dataset from P1 Q3(c); kept separate.",
+      "appearances": [
+        {
+          "exam_session": "Winter 2023",
+          "exam_year": 2023,
+          "exam_season": "Winter",
+          "exam_type": "unknown",
+          "question_number": "Q3",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "The values of y and their corresponding values of y are shown in the table below: x = 0,1,2,3,4; y = 2,3,5,4,6. a) Find the least square regression line y = B1 x + B0 b) Estimate the value of y when x = 10.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Regular & Supplementary Winter Examination 2023 (BTAIC502, 03-01-24)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-013",
+      "unit": 1,
+      "syllabus_topic": "Linear regression",
+      "question_subtopic": "Single step of linear regression on x = 1,2 ; y = 2,4",
+      "topic_group": "Linear Regression 🔥",
+      "question_type": "numerical",
+      "syllabus_status": "aligned",
+      "question_text": "You have given the data: x = 1, 2 and y = 2, 4. Apply a single step of linear regression on the data.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "high",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q2",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "You have given the data: x = 1, 2 and y = 2, 4. Apply a single step of linear regression on the data.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-014",
+      "unit": 1,
+      "syllabus_topic": "Hypothesis space and inductive bias",
+      "question_subtopic": "Inductive bias: need and example",
+      "topic_group": "Inductive Bias",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Explain the concept of inductive bias in machine learning. Why is it necessary? Illustrate with an example.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q2",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Explain the concept of inductive bias in machine learning. Why is it necessary? Illustrate with an example.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-015",
+      "unit": 1,
+      "syllabus_topic": "Hypothesis space and inductive bias",
+      "question_subtopic": "Find-S algorithm (most specific hypothesis)",
+      "topic_group": "Hypothesis Space (Find-S)",
+      "question_type": "algorithm",
+      "syllabus_status": "aligned",
+      "question_text": "Apply Find-S algorithm to following dataset and find the most specific hypothesis. [dataset not captured in source text]",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "low",
+      "note": "Mapped via hypothesis space; Find-S is not named in the syllabus.",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q5",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Apply Find-S algorithm to following dataset and find the most specific hypothesis. [dataset not captured in source text]",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-016",
+      "unit": 1,
+      "syllabus_topic": "Decision trees",
+      "question_subtopic": "Working of a decision tree with example",
+      "topic_group": "Decision Tree 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Describe working of decision tree with suitable example.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "high",
+      "appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "exam_year": 2023,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q1",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Describe working of decision tree with suitable example.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer Regular Examination 2023 (BTCOC603, 17/07/2023)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-017",
+      "unit": 1,
+      "syllabus_topic": "Decision trees",
+      "question_subtopic": "ID3 top-down induction algorithm",
+      "topic_group": "Decision Tree 🔥",
+      "question_type": "algorithm",
+      "syllabus_status": "aligned",
+      "question_text": "Write algorithm for top down induction of decision tree (ID3).",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "high",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q2",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Write algorithm for top down induction of decision tree (ID3).",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-018",
+      "unit": 1,
+      "syllabus_topic": "Decision trees",
+      "question_subtopic": "Information gain calculation (Play Cricket dataset)",
+      "topic_group": "Decision Tree 🔥",
+      "question_type": "numerical",
+      "syllabus_status": "aligned",
+      "question_text": "Calculate the information gain for the following dataset: [14-day Play Cricket table with Weather, Temperature, Humidity, Wind columns]",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "high",
+      "note": "Different dataset from P5 Q4(a).",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q5",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Calculate the information gain for the following dataset: [14-day Play Cricket table with Weather, Temperature, Humidity, Wind columns]",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-019",
+      "unit": 1,
+      "syllabus_topic": "Decision trees",
+      "question_subtopic": "Information gain of income, credit score, student (buyer dataset)",
+      "topic_group": "Decision Tree 🔥",
+      "question_type": "numerical",
+      "syllabus_status": "aligned",
+      "question_text": "Consider the following dataset S in table for question where each record represents the age, income and is a student or not. And we need to classify it as buyers/non-buyers of computer. 1. Calculate the information Gain(S,income)? 2. Calculate the information Gain(S,Credit_score)? 3. Calculate the information Gain(S,student)? [dataset not captured in source text]",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "high",
+      "note": "Dataset missing from source text.",
+      "appearances": [
+        {
+          "exam_session": "Winter 2023",
+          "exam_year": 2023,
+          "exam_season": "Winter",
+          "exam_type": "unknown",
+          "question_number": "Q4",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Consider the following dataset S in table for question where each record represents the age, income and is a student or not. And we need to classify it as buyers/non-buyers of computer. 1. Calculate the information Gain(S,income)? 2. Calculate the information Gain(S,Credit_score)? 3. Calculate the information Gain(S,student)? [dataset not captured in source text]",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Regular & Supplementary Winter Examination 2023 (BTAIC502, 03-01-24)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-020",
+      "unit": 1,
+      "syllabus_topic": "Overfitting",
+      "question_subtopic": "Overfitting and pruning in decision trees",
+      "topic_group": "Overfitting",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Explain Overfitting and Pruning with respect to Decision Tree",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Winter 2023",
+          "exam_year": 2023,
+          "exam_season": "Winter",
+          "exam_type": "unknown",
+          "question_number": "Q4",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Explain Overfitting and Pruning with respect to Decision Tree",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Regular & Supplementary Winter Examination 2023 (BTAIC502, 03-01-24)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-021",
+      "unit": 1,
+      "syllabus_topic": "Instance-based learning",
+      "question_subtopic": "KNN working with example",
+      "topic_group": "k-NN",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Explain the working of KNN algorithm with example?",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "exam_year": 2024,
+          "exam_season": "Summer",
+          "exam_type": "supplementary",
+          "question_number": "Q5",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Explain the working of KNN algorithm with example?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Examination Summer 2024 (BTAIC502, 03/07/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-022",
+      "unit": 1,
+      "syllabus_topic": "Instance-based learning",
+      "question_subtopic": "3-NN and 5-NN classification numerical (Euclidean distance)",
+      "topic_group": "k-NN",
+      "question_type": "numerical",
+      "syllabus_status": "aligned",
+      "question_text": "Explain the working of KNN Algorithm. For the Given Dataset use to Classify Dog, Pig and Cat with given features. [13 records of Height/Width/Class] Use 3-NN and 5 NN to find the Class for following unknown data. Use Euclidian Distance as Distance metric: Height 0.6, Width 0.6, Class ???",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Winter 2023",
+          "exam_year": 2023,
+          "exam_season": "Winter",
+          "exam_type": "unknown",
+          "question_number": "Q5",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Explain the working of KNN Algorithm. For the Given Dataset use to Classify Dog, Pig and Cat with given features. [13 records of Height/Width/Class] Use 3-NN and 5 NN to find the Class for following unknown data. Use Euclidian Distance as Distance metric: Height 0.6, Width 0.6, Class ???",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Regular & Supplementary Winter Examination 2023 (BTAIC502, 03-01-24)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-023",
+      "unit": 1,
+      "syllabus_topic": "Feature reduction",
+      "question_subtopic": "PCA and its applications",
+      "topic_group": "PCA",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Explain principal component analysis (PCA) and its applications.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q4",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Explain principal component analysis (PCA) and its applications.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-024",
+      "unit": 1,
+      "syllabus_topic": "Cross-validation",
+      "question_subtopic": "Purpose of training, validation and test datasets",
+      "topic_group": "Cross-Validation 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "What is the purpose of training, validation, and test datasets?",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "note": "Mapped to cross-validation via the validation-set concept.",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q5",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "What is the purpose of training, validation, and test datasets?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-025",
+      "unit": 2,
+      "syllabus_topic": "Probability and Bayes learning",
+      "question_subtopic": "Bayes theorem with example",
+      "topic_group": "Bayes Theorem",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "State Bayestheorem. Demonstrateit with suitable example.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "exam_year": 2023,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q2",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "State Bayestheorem. Demonstrateit with suitable example.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer Regular Examination 2023 (BTCOC603, 17/07/2023)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-026",
+      "unit": 2,
+      "syllabus_topic": "Probability and Bayes learning",
+      "question_subtopic": "Naive Bayes classifier with example",
+      "topic_group": "Naive Bayes 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Explain Naïve Bayes classifier with an example?",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "exam_year": 2024,
+          "exam_season": "Summer",
+          "exam_type": "supplementary",
+          "question_number": "Q5",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Explain Naïve Bayes classifier with an example?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Examination Summer 2024 (BTAIC502, 03/07/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-027",
+      "unit": 2,
+      "syllabus_topic": "Probability and Bayes learning",
+      "question_subtopic": "Naive Bayes numerical, weather dataset (Rainy)",
+      "topic_group": "Naive Bayes 🔥",
+      "question_type": "numerical",
+      "syllabus_status": "aligned",
+      "question_text": "Using the following weather dataset, estimate the probability of playing the game if the weather is \"Rainy\" using the Naive Bayes algorithm. Clearly state all assumptions and steps involved. [14-row Weather/Play table: Sunny-No, Overcast-Yes, Rainy-Yes, Sunny-Yes, Sunny-Yes, Overcast-Yes, Rainy-No, Rainy-Yes, Sunny-No, Rainy-Yes, Sunny-Yes, Overcast-Yes, Overcast-Yes, Rainy-No]",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q3",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Using the following weather dataset, estimate the probability of playing the game if the weather is \"Rainy\" using the Naive Bayes algorithm. Clearly state all assumptions and steps involved. [14-row Weather/Play table: Sunny-No, Overcast-Yes, Rainy-Yes, Sunny-Yes, Sunny-Yes, Overcast-Yes, Rainy-No, Rainy-Yes, Sunny-No, Rainy-Yes, Sunny-Yes, Overcast-Yes, Overcast-Yes, Rainy-No]",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-028",
+      "unit": 2,
+      "syllabus_topic": "Probability and Bayes learning",
+      "question_subtopic": "Naive Bayes numerical, Weather/Car dataset ('sunny working')",
+      "topic_group": "Naive Bayes 🔥",
+      "question_type": "numerical",
+      "syllabus_status": "aligned",
+      "question_text": "A dataset is given below (Weather/Car/Class, 10 records). Apply Naïve Bays Classification algorithm and calculate the probabilities for the instance \"sunny working\" and classify the given instance.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q3",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "A dataset is given below (Weather/Car/Class, 10 records). Apply Naïve Bays Classification algorithm and calculate the probabilities for the instance \"sunny working\" and classify the given instance.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-029",
+      "unit": 2,
+      "syllabus_topic": "Probability and Bayes learning",
+      "question_subtopic": "Naive Bayes numerical (dataset missing from source)",
+      "topic_group": "Naive Bayes 🔥",
+      "question_type": "numerical",
+      "syllabus_status": "aligned",
+      "question_text": "For the following Dataset use Naïve Bayes Classifier to classify following problem [dataset not captured in source text]",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "note": "Dataset missing from source text.",
+      "appearances": [
+        {
+          "exam_session": "Winter 2023",
+          "exam_year": 2023,
+          "exam_season": "Winter",
+          "exam_type": "unknown",
+          "question_number": "Q5",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "For the following Dataset use Naïve Bayes Classifier to classify following problem [dataset not captured in source text]",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Regular & Supplementary Winter Examination 2023 (BTAIC502, 03-01-24)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-030",
+      "unit": 2,
+      "syllabus_topic": "Logistic Regression",
+      "question_subtopic": "Logistic regression steps and cost function",
+      "topic_group": "Logistic Regression 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "What is logistic regression? Explain the steps in Logistic Regression Learning. Also give the cost function of Logistic Regression",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Winter 2023",
+          "exam_year": 2023,
+          "exam_season": "Winter",
+          "exam_type": "unknown",
+          "question_number": "Q3",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "What is logistic regression? Explain the steps in Logistic Regression Learning. Also give the cost function of Logistic Regression",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Regular & Supplementary Winter Examination 2023 (BTAIC502, 03-01-24)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-031",
+      "unit": 2,
+      "syllabus_topic": "Logistic Regression",
+      "question_subtopic": "Logistic regression numerical (loan approval, credit score 720)",
+      "topic_group": "Logistic Regression 🔥",
+      "question_type": "numerical",
+      "syllabus_status": "aligned",
+      "question_text": "A bank wants to predict the likelihood of a loan being approved based on the credit score of the applicant. The data is as follows: Credit Score / Loan Approved: 700-1, 650-0, 750-1, 600-0. Using logistic regression, find the optimal coefficients and predict the likelihood of a loan being approved for an applicant with a credit score of 720.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "exam_year": 2024,
+          "exam_season": "Summer",
+          "exam_type": "supplementary",
+          "question_number": "Q4",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "A bank wants to predict the likelihood of a loan being approved based on the credit score of the applicant. The data is as follows: Credit Score / Loan Approved: 700-1, 650-0, 750-1, 600-0. Using logistic regression, find the optimal coefficients and predict the likelihood of a loan being approved for an applicant with a credit score of 720.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Examination Summer 2024 (BTAIC502, 03/07/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-032",
+      "unit": 2,
+      "syllabus_topic": "Logistic Regression",
+      "question_subtopic": "Logistic Regression vs SVM comparison",
+      "topic_group": "Logistic Regression 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Compare Logistic Regression and Support Vector Machines (SVM) in terms of their practical applicability across various machine learning tasks, considering the following aspects: a) Assumptions about the data b) Interpretability of the model c) handling outliers d) Computational complexity e) Suitability for high-dimensional data f) Performance on linearly and non-linearly separable problems",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "note": "Also touches SVM.",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q3",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Compare Logistic Regression and Support Vector Machines (SVM) in terms of their practical applicability across various machine learning tasks, considering the following aspects: a) Assumptions about the data b) Interpretability of the model c) handling outliers d) Computational complexity e) Suitability for high-dimensional data f) Performance on linearly and non-linearly separable problems",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-033",
+      "unit": 2,
+      "syllabus_topic": "Support Vector Machine (SVM)",
+      "question_subtopic": "How linear SVM works",
+      "topic_group": "SVM 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "How linear SVM works? Explain with example",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q3",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "How linear SVM works? Explain with example",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-034",
+      "unit": 2,
+      "syllabus_topic": "Support Vector Machine (SVM)",
+      "question_subtopic": "Hyperplane, maximum margin hyperplane, support vector",
+      "topic_group": "SVM 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "With respect to SVM explain the terms: 1. Hyperplane 2. Maximum Margin Hyperplane (MMH) 3. Support Vector.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "exam_year": 2023,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q2",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "With respect to SVM explain the terms: 1. Hyperplane 2. Maximum Margin Hyperplane (MMH) 3. Support Vector.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer Regular Examination 2023 (BTCOC603, 17/07/2023)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-035",
+      "unit": 2,
+      "syllabus_topic": "Support Vector Machine (SVM)",
+      "question_subtopic": "Linear vs non-linear SVM",
+      "topic_group": "SVM 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Differentiate between linear and non-linear SVM.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "exam_year": 2023,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q2",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Differentiate between linear and non-linear SVM.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer Regular Examination 2023 (BTCOC603, 17/07/2023)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-036",
+      "unit": 2,
+      "syllabus_topic": "Support Vector Machine (SVM)",
+      "question_subtopic": "Support vectors and the kernel trick",
+      "topic_group": "SVM 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "What are support vectors in SVM? How does kernel trick work?",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "note": "Second half (kernel trick) overlaps with P5 Q5(b).",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q4",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "What are support vectors in SVM? How does kernel trick work?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-037",
+      "unit": 2,
+      "syllabus_topic": "Kernel SVM",
+      "question_subtopic": "Kernel trick in SVM for non-linearly separable data",
+      "topic_group": "Kernel Functions",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Explain Kernel Trick in SVM? Kernel Trick is helpful to solve non-linearly separable problem in SVM. Justify",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Winter 2023",
+          "exam_year": 2023,
+          "exam_season": "Winter",
+          "exam_type": "unknown",
+          "question_number": "Q5",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Explain Kernel Trick in SVM? Kernel Trick is helpful to solve non-linearly separable problem in SVM. Justify",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Regular & Supplementary Winter Examination 2023 (BTAIC502, 03-01-24)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-038",
+      "unit": 3,
+      "syllabus_topic": "Perceptron",
+      "question_subtopic": "Single neuron output with sigmoid activation (x=11, w=0.5, b=0.1)",
+      "topic_group": "Perceptron 🔥",
+      "question_type": "numerical",
+      "syllabus_status": "aligned",
+      "question_text": "Given the following network: 1 input node with value x = 11 weight w = 0.5, Bias b = 0.1, and activation function sigmoid. Compute the output of the neuron.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q4",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Given the following network: 1 input node with value x = 11 weight w = 0.5, Bias b = 0.1, and activation function sigmoid. Compute the output of the neuron.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-039",
+      "unit": 3,
+      "syllabus_topic": "Perceptron",
+      "question_subtopic": "How a perceptron works, with diagram",
+      "topic_group": "Perceptron 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "How perceptron works? Explain with diagram.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q4",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "How perceptron works? Explain with diagram.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-040",
+      "unit": 3,
+      "syllabus_topic": "Backpropagation",
+      "question_subtopic": "Backpropagation algorithm, working and role (chain rule)",
+      "topic_group": "Backpropagation 🔥",
+      "question_type": "derivation",
+      "syllabus_status": "aligned",
+      "question_text": "Explain the working of the Backpropagation algorithm in multilayer neural networks and discuss its practical role in training deep neural networks (DNNs). How does Backpropagation help in minimizing prediction errors during model training?",
+      "frequency": 2,
+      "distinct_exam_sessions": 2,
+      "priority": "warm",
+      "repetition_type": "conceptual",
+      "importance": "very_high",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q4",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Explain the working of the Backpropagation algorithm in multilayer neural networks and discuss its practical role in training deep neural networks (DNNs). How does Backpropagation help in minimizing prediction errors during model training?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          }
+        },
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q4",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Explain backpropagation in neural networks with the chain rule.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-041",
+      "unit": 3,
+      "syllabus_topic": "Multilayer network",
+      "question_subtopic": "Multilayer neural network architecture and working",
+      "topic_group": "Multilayer Network",
+      "question_type": "diagram",
+      "syllabus_status": "aligned",
+      "question_text": "Explain in detail the architecture and working mechanism of a Multilayer Neural Network.",
+      "frequency": 2,
+      "distinct_exam_sessions": 2,
+      "priority": "warm",
+      "repetition_type": "conceptual",
+      "importance": "high",
+      "note": "P4 Q4(a) additionally asks for a diagram and mentions backpropagation.",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q5",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Explain in detail the architecture and working mechanism of a Multilayer Neural Network.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          }
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q4",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Draw multilayer feed forward back propagation neural network and explain.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-042",
+      "unit": 4,
+      "syllabus_topic": "PAC (Probably Approximately Correct) learning model",
+      "question_subtopic": "PAC learning: hypothesis class, epsilon, delta",
+      "topic_group": "PAC Learning",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Explain the concept of Probably Approximately Correct (PAC) learning and discuss how it applies to evaluating machine learning models. Clearly define the terms: hypothesis class, ε (error), and δ (confidence) in this context.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q4",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Explain the concept of Probably Approximately Correct (PAC) learning and discuss how it applies to evaluating machine learning models. Clearly define the terms: hypothesis class, ε (error), and δ (confidence) in this context.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-043",
+      "unit": 4,
+      "syllabus_topic": "VC Dimension",
+      "question_subtopic": "VC dimension with example",
+      "topic_group": "VC Dimension 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Explain concept of VC dimensions with example.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "exam_year": 2023,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q4",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Explain concept of VC dimensions with example.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer Regular Examination 2023 (BTCOC603, 17/07/2023)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-044",
+      "unit": 4,
+      "syllabus_topic": "Ensemble learning",
+      "question_subtopic": "Ensemble learning: explanation, examples, applications",
+      "topic_group": "Ensemble Learning 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Explain ensemble learning with examples.",
+      "frequency": 3,
+      "distinct_exam_sessions": 3,
+      "priority": "hot",
+      "repetition_type": "conceptual",
+      "importance": "very_high",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q5",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Explain ensemble learning with examples.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q5",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Explain Ensemble Learning in detail.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          }
+        },
+        {
+          "exam_session": "Summer 2023 Regular",
+          "exam_year": 2023,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q4",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Discuss Ensembled Learning. State applications of ensembled learning.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer Regular Examination 2023 (BTCOC603, 17/07/2023)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-045",
+      "unit": 4,
+      "syllabus_topic": "Ensemble learning",
+      "question_subtopic": "Bagging and boosting (stacking in one appearance)",
+      "topic_group": "Ensemble Learning 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Explain in detail the bagging and boosting techniques in ensemble learning.",
+      "frequency": 3,
+      "distinct_exam_sessions": 3,
+      "priority": "hot",
+      "repetition_type": "conceptual",
+      "importance": "very_high",
+      "note": "P6 Q4(c) also asks for stacking.",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q5",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Explain in detail the bagging and boosting techniques in ensemble learning.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          }
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q5",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Explain the concept of Bagging and Boosting",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          }
+        },
+        {
+          "exam_session": "Summer 2023 Regular",
+          "exam_year": 2023,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q4",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Describe terms: Bagging, Boosting and Stacking.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer Regular Examination 2023 (BTCOC603, 17/07/2023)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-046",
+      "unit": 4,
+      "syllabus_topic": "Ensemble learning",
+      "question_subtopic": "Random Forest algorithm",
+      "topic_group": "Random Forest 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Explain the Random Forest Algorithm with examples.",
+      "frequency": 4,
+      "distinct_exam_sessions": 4,
+      "priority": "hot",
+      "repetition_type": "conceptual",
+      "importance": "very_high",
+      "note": "P1 Q4(a) and P5 Q4(c) are exact wording matches; P3 Q3(a) and P2 Q6(a) are conceptual (P2 also asks what ensemble learning is).",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "exam_year": 2024,
+          "exam_season": "Summer",
+          "exam_type": "supplementary",
+          "question_number": "Q4",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Explain the Random Forest Algorithm with examples.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Examination Summer 2024 (BTAIC502, 03/07/2024)"
+          }
+        },
+        {
+          "exam_session": "Winter 2023",
+          "exam_year": 2023,
+          "exam_season": "Winter",
+          "exam_type": "unknown",
+          "question_number": "Q4",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Explain the Random forest Algorithm with examples",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Regular & Supplementary Winter Examination 2023 (BTAIC502, 03-01-24)"
+          }
+        },
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q3",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Describe the working of Random Forest. Why is it called \"forest\"?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        },
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q6",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "What is ensemble learning? Explain in detail the working of the Random Forest Algorithm.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-047",
+      "unit": 5,
+      "syllabus_topic": "K-Means clustering",
+      "question_subtopic": "K-Means algorithm working",
+      "topic_group": "K-Means 🔥",
+      "question_type": "algorithm",
+      "syllabus_status": "aligned",
+      "question_text": "How does K-Means clustering work?",
+      "frequency": 3,
+      "distinct_exam_sessions": 3,
+      "priority": "hot",
+      "repetition_type": "conceptual",
+      "importance": "very_high",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q5",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "How does K-Means clustering work?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q6",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Explain Kmeans clustering algorithm with example.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          }
+        },
+        {
+          "exam_session": "Summer 2023 Regular",
+          "exam_year": 2023,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q5",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "State the working of K-means clustering algorithm.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer Regular Examination 2023 (BTCOC603, 17/07/2023)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-048",
+      "unit": 5,
+      "syllabus_topic": "K-Means clustering",
+      "question_subtopic": "K-Means numerical (4 points, k=2, two iterations)",
+      "topic_group": "K-Means 🔥",
+      "question_type": "numerical",
+      "syllabus_status": "aligned",
+      "question_text": "Given the points: (1, 1), (2, 1), (4, 3), and (5, 4). Run two iterations of k-means clustering with k = 2 and initial centroids at (1, 1) and (5, 4). Show cluster assignment and new centroids.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "high",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q6",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Given the points: (1, 1), (2, 1), (4, 3), and (5, 4). Run two iterations of k-means clustering with k = 2 and initial centroids at (1, 1) and (5, 4). Show cluster assignment and new centroids.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-049",
+      "unit": 5,
+      "syllabus_topic": "Adaptive hierarchical clustering",
+      "question_subtopic": "Hierarchical clustering and how it differs from regular hierarchical clustering",
+      "topic_group": "Hierarchical Clustering 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Explain hierarchical clustering. How does it differ from regular hierarchical clustering in terms of structure and computational efficiency?",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "note": "Question wording appears garbled in the source.",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q6",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Explain hierarchical clustering. How does it differ from regular hierarchical clustering in terms of structure and computational efficiency?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-050",
+      "unit": 5,
+      "syllabus_topic": "Adaptive hierarchical clustering",
+      "question_subtopic": "Dendrogram",
+      "topic_group": "Hierarchical Clustering 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "What do you mean by dendrogram? Explain.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q6",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "What do you mean by dendrogram? Explain.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-LA-051",
+      "unit": 5,
+      "syllabus_topic": "Adaptive hierarchical clustering",
+      "question_subtopic": "Agglomerative vs divisive hierarchical clustering",
+      "topic_group": "Hierarchical Clustering 🔥",
+      "question_type": "descriptive",
+      "syllabus_status": "aligned",
+      "question_text": "Differentiate between Agglomerative and Divisive hierarchical clustering.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "priority": "once",
+      "repetition_type": "single",
+      "importance": "moderate",
+      "appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "exam_year": 2023,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q5",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Differentiate between Agglomerative and Divisive hierarchical clustering.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer Regular Examination 2023 (BTCOC603, 17/07/2023)"
+          }
+        }
+      ]
+    }
+  ],
+  "objective_questions": [
+    {
+      "question_id": "ML-OBJ-001",
+      "unit": 1,
+      "syllabus_topic": "Hypothesis space and inductive bias",
+      "question_subtopic": "Inductive bias",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "What is inductive bias in machine learning?",
+      "options": [
+        {
+          "label": "a",
+          "text": "An assumption that helps generalize beyond training data"
+        },
+        {
+          "label": "b",
+          "text": "The amount of data needed for training"
+        },
+        {
+          "label": "c",
+          "text": "A technique for model evaluation"
+        },
+        {
+          "label": "d",
+          "text": "A type of feature scaling"
+        }
+      ],
+      "correct_option": "a",
+      "correct_text": "An assumption that helps generalize beyond training data",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q1",
+          "subquestion_number": "1",
+          "marks": null,
+          "original_question_text": "What is inductive bias in machine learning?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "An assumption that helps generalize beyond training data"
+            },
+            {
+              "label": "b",
+              "text": "The amount of data needed for training"
+            },
+            {
+              "label": "c",
+              "text": "A technique for model evaluation"
+            },
+            {
+              "label": "d",
+              "text": "A type of feature scaling"
+            }
+          ]
+        }
+      ],
+      "importance": "moderate"
+    },
+    {
+      "question_id": "ML-OBJ-002",
+      "unit": 1,
+      "syllabus_topic": "Feature reduction",
+      "question_subtopic": "PCA",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "Which of the following is a feature reduction technique?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Decision Trees"
+        },
+        {
+          "label": "b",
+          "text": "Linear Regression"
+        },
+        {
+          "label": "c",
+          "text": "Principal Component Analysis (PCA)"
+        },
+        {
+          "label": "d",
+          "text": "k-Means"
+        }
+      ],
+      "correct_option": "c",
+      "correct_text": "Principal Component Analysis (PCA)",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q1",
+          "subquestion_number": "2",
+          "marks": null,
+          "original_question_text": "Which of the following is a feature reduction technique?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Decision Trees"
+            },
+            {
+              "label": "b",
+              "text": "Linear Regression"
+            },
+            {
+              "label": "c",
+              "text": "Principal Component Analysis (PCA)"
+            },
+            {
+              "label": "d",
+              "text": "k-Means"
+            }
+          ]
+        }
+      ],
+      "importance": "moderate"
+    },
+    {
+      "question_id": "ML-OBJ-003",
+      "unit": 2,
+      "syllabus_topic": "Probability and Bayes learning",
+      "question_subtopic": "Posterior probability",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "In Bayes learning, what does the posterior probability represent?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Prior knowledge of the data"
+        },
+        {
+          "label": "b",
+          "text": "The likelihood of the data given the model"
+        },
+        {
+          "label": "c",
+          "text": "The updated belief after seeing the data"
+        },
+        {
+          "label": "d",
+          "text": "The variance in the hypothesis"
+        }
+      ],
+      "correct_option": "c",
+      "correct_text": "The updated belief after seeing the data",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q1",
+          "subquestion_number": "3",
+          "marks": null,
+          "original_question_text": "In Bayes learning, what does the posterior probability represent?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Prior knowledge of the data"
+            },
+            {
+              "label": "b",
+              "text": "The likelihood of the data given the model"
+            },
+            {
+              "label": "c",
+              "text": "The updated belief after seeing the data"
+            },
+            {
+              "label": "d",
+              "text": "The variance in the hypothesis"
+            }
+          ]
+        }
+      ],
+      "importance": "moderate"
+    },
+    {
+      "question_id": "ML-OBJ-004",
+      "unit": 2,
+      "syllabus_topic": "Kernel function",
+      "question_subtopic": "Purpose of kernel",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "What is the purpose of a kernel in SVM?",
+      "options": [
+        {
+          "label": "a",
+          "text": "To reduce dimensionality"
+        },
+        {
+          "label": "b",
+          "text": "To convert linear problems to non-linear"
+        },
+        {
+          "label": "c",
+          "text": "To calculate accuracy"
+        },
+        {
+          "label": "d",
+          "text": "To regularize the model"
+        }
+      ],
+      "correct_option": "b",
+      "correct_text": "To convert linear problems to non-linear",
+      "answer_source": "ai_solved",
+      "answer_confidence": "medium",
+      "frequency": 1,
+      "answer_note": "Option b is the closest match; a kernel implicitly maps data to a higher-dimensional space.",
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q1",
+          "subquestion_number": "4",
+          "marks": null,
+          "original_question_text": "What is the purpose of a kernel in SVM?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "To reduce dimensionality"
+            },
+            {
+              "label": "b",
+              "text": "To convert linear problems to non-linear"
+            },
+            {
+              "label": "c",
+              "text": "To calculate accuracy"
+            },
+            {
+              "label": "d",
+              "text": "To regularize the model"
+            }
+          ]
+        }
+      ],
+      "importance": "moderate"
+    },
+    {
+      "question_id": "ML-OBJ-005",
+      "unit": 3,
+      "syllabus_topic": "Introduction to Deep Neural Networks",
+      "question_subtopic": "Activation functions",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "Which activation function is most commonly used in hidden layers of deep neural networks?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Sigmoid"
+        },
+        {
+          "label": "b",
+          "text": "ReLU"
+        },
+        {
+          "label": "c",
+          "text": "Linear"
+        },
+        {
+          "label": "d",
+          "text": "Softmax"
+        }
+      ],
+      "correct_option": "b",
+      "correct_text": "ReLU",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "answer_note": "Mapped to Introduction to Deep Neural Networks because activation functions are part of multilayer/deep networks; not named in the syllabus.",
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q1",
+          "subquestion_number": "5",
+          "marks": null,
+          "original_question_text": "Which activation function is most commonly used in hidden layers of deep neural networks?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Sigmoid"
+            },
+            {
+              "label": "b",
+              "text": "ReLU"
+            },
+            {
+              "label": "c",
+              "text": "Linear"
+            },
+            {
+              "label": "d",
+              "text": "Softmax"
+            }
+          ]
+        }
+      ],
+      "importance": "moderate"
+    },
+    {
+      "question_id": "ML-OBJ-006",
+      "unit": 3,
+      "syllabus_topic": "Backpropagation",
+      "question_subtopic": "Weight update",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "What does backpropagation primarily update?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Data inputs"
+        },
+        {
+          "label": "b",
+          "text": "Output layer nodes"
+        },
+        {
+          "label": "c",
+          "text": "Weights in the neural network"
+        },
+        {
+          "label": "d",
+          "text": "Learning rate"
+        }
+      ],
+      "correct_option": "c",
+      "correct_text": "Weights in the neural network",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q1",
+          "subquestion_number": "6",
+          "marks": null,
+          "original_question_text": "What does backpropagation primarily update?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Data inputs"
+            },
+            {
+              "label": "b",
+              "text": "Output layer nodes"
+            },
+            {
+              "label": "c",
+              "text": "Weights in the neural network"
+            },
+            {
+              "label": "d",
+              "text": "Learning rate"
+            }
+          ]
+        }
+      ],
+      "importance": "moderate"
+    },
+    {
+      "question_id": "ML-OBJ-007",
+      "unit": 4,
+      "syllabus_topic": "VC Dimension",
+      "question_subtopic": "VC dimension definition",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "What is VC Dimension?",
+      "options": [
+        {
+          "label": "a",
+          "text": "The number of training examples"
+        },
+        {
+          "label": "b",
+          "text": "capacity of model to shatter data points"
+        },
+        {
+          "label": "c",
+          "text": "The error in a model"
+        },
+        {
+          "label": "d",
+          "text": "The number of clusters in the dataset"
+        }
+      ],
+      "correct_option": "b",
+      "correct_text": "capacity of model to shatter data points",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 2,
+      "repetition_type": "conceptual",
+      "repetition_note": "Same concept tested with different wording/options; each appearance lists its own options.",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q1",
+          "subquestion_number": "7",
+          "marks": null,
+          "original_question_text": "What is VC Dimension?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "The number of training examples"
+            },
+            {
+              "label": "b",
+              "text": "capacity of model to shatter data points"
+            },
+            {
+              "label": "c",
+              "text": "The error in a model"
+            },
+            {
+              "label": "d",
+              "text": "The number of clusters in the dataset"
+            }
+          ]
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "6",
+          "marks": 1,
+          "original_question_text": "The VC dimension of a model signifies:",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "The number of dimensions in the data"
+            },
+            {
+              "label": "b",
+              "text": "The size of the training data required"
+            },
+            {
+              "label": "c",
+              "text": "The capacity of the model to classify different datasets"
+            },
+            {
+              "label": "d",
+              "text": "The number of iterations in training"
+            }
+          ]
+        }
+      ],
+      "importance": "high"
+    },
+    {
+      "question_id": "ML-OBJ-008",
+      "unit": 5,
+      "syllabus_topic": "Gaussian Mixture Model (GMM)",
+      "question_subtopic": "GMM components",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "In Gaussian Mixture Models (GMM), what does each component represent?",
+      "options": [
+        {
+          "label": "a",
+          "text": "A cluster with hard boundaries"
+        },
+        {
+          "label": "b",
+          "text": "A fixed decision tree"
+        },
+        {
+          "label": "c",
+          "text": "A probability distribution"
+        },
+        {
+          "label": "d",
+          "text": "A binary classifier"
+        }
+      ],
+      "correct_option": "c",
+      "correct_text": "A probability distribution",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q1",
+          "subquestion_number": "8",
+          "marks": null,
+          "original_question_text": "In Gaussian Mixture Models (GMM), what does each component represent?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "A cluster with hard boundaries"
+            },
+            {
+              "label": "b",
+              "text": "A fixed decision tree"
+            },
+            {
+              "label": "c",
+              "text": "A probability distribution"
+            },
+            {
+              "label": "d",
+              "text": "A binary classifier"
+            }
+          ]
+        }
+      ],
+      "importance": "low"
+    },
+    {
+      "question_id": "ML-OBJ-009",
+      "unit": 4,
+      "syllabus_topic": "Ensemble learning",
+      "question_subtopic": "Ensemble definition",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "Ensemble learning combines",
+      "options": [
+        {
+          "label": "a",
+          "text": "Clusters of the same model"
+        },
+        {
+          "label": "b",
+          "text": "Several models to improve performance"
+        },
+        {
+          "label": "c",
+          "text": "Feature selection methods"
+        },
+        {
+          "label": "d",
+          "text": "Hyperparameters"
+        }
+      ],
+      "correct_option": "b",
+      "correct_text": "Several models to improve performance",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 2,
+      "repetition_type": "conceptual",
+      "repetition_note": "Same concept tested with different wording/options; each appearance lists its own options.",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q1",
+          "subquestion_number": "9",
+          "marks": null,
+          "original_question_text": "Ensemble learning combines",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Clusters of the same model"
+            },
+            {
+              "label": "b",
+              "text": "Several models to improve performance"
+            },
+            {
+              "label": "c",
+              "text": "Feature selection methods"
+            },
+            {
+              "label": "d",
+              "text": "Hyperparameters"
+            }
+          ]
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "10",
+          "marks": 1,
+          "original_question_text": "What is Ensemble Learning?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "A technique to increase the dataset size"
+            },
+            {
+              "label": "b",
+              "text": "A method of combining multiple models to improve performance"
+            },
+            {
+              "label": "c",
+              "text": "A process to select the best-performing single model"
+            },
+            {
+              "label": "d",
+              "text": "A clustering technique to group similar data points"
+            }
+          ]
+        }
+      ],
+      "importance": "high"
+    },
+    {
+      "question_id": "ML-OBJ-010",
+      "unit": 1,
+      "syllabus_topic": "Collaborative filtering-based recommendation",
+      "question_subtopic": "User-item matrix",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "Which of the following methods is commonly used in collaborative filtering?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Supervised learning"
+        },
+        {
+          "label": "b",
+          "text": "Content-based filtering"
+        },
+        {
+          "label": "c",
+          "text": "User-item matrix"
+        },
+        {
+          "label": "d",
+          "text": "Logistic regression"
+        }
+      ],
+      "correct_option": "c",
+      "correct_text": "User-item matrix",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q1",
+          "subquestion_number": "10",
+          "marks": null,
+          "original_question_text": "Which of the following methods is commonly used in collaborative filtering?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Supervised learning"
+            },
+            {
+              "label": "b",
+              "text": "Content-based filtering"
+            },
+            {
+              "label": "c",
+              "text": "User-item matrix"
+            },
+            {
+              "label": "d",
+              "text": "Logistic regression"
+            }
+          ]
+        }
+      ],
+      "importance": "low"
+    },
+    {
+      "question_id": "ML-OBJ-011",
+      "unit": 3,
+      "syllabus_topic": "Perceptron",
+      "question_subtopic": "Perceptron capability",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "Perceptron can solve which type of problems?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Non-linearly separable"
+        },
+        {
+          "label": "b",
+          "text": "Multi-class"
+        },
+        {
+          "label": "c",
+          "text": "Linearly separable"
+        },
+        {
+          "label": "d",
+          "text": "Regression"
+        }
+      ],
+      "correct_option": "c",
+      "correct_text": "Linearly separable",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 2,
+      "repetition_type": "conceptual",
+      "repetition_note": "Same concept tested with different wording/options; each appearance lists its own options.",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q1",
+          "subquestion_number": "11",
+          "marks": null,
+          "original_question_text": "Perceptron can solve which type of problems?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Non-linearly separable"
+            },
+            {
+              "label": "b",
+              "text": "Multi-class"
+            },
+            {
+              "label": "c",
+              "text": "Linearly separable"
+            },
+            {
+              "label": "d",
+              "text": "Regression"
+            }
+          ]
+        },
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "3",
+          "marks": 1,
+          "original_question_text": "What is the main limitation of a perceptron?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "It cannot classify non-linearly separable data"
+            },
+            {
+              "label": "b",
+              "text": "It requires a large amount of data"
+            },
+            {
+              "label": "c",
+              "text": "It is prone to overfitting"
+            },
+            {
+              "label": "d",
+              "text": "It uses too many resources"
+            }
+          ]
+        }
+      ],
+      "importance": "high"
+    },
+    {
+      "question_id": "ML-OBJ-012",
+      "unit": 5,
+      "syllabus_topic": "Adaptive hierarchical clustering",
+      "question_subtopic": "Adaptive vs standard hierarchical",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "Adaptive hierarchical clustering is different from standard hierarchical clustering because it:",
+      "options": [
+        {
+          "label": "a",
+          "text": "Uses a fixed number of clusters"
+        },
+        {
+          "label": "b",
+          "text": "Requires more data"
+        },
+        {
+          "label": "c",
+          "text": "Adjusts its structure based on data characteristics"
+        },
+        {
+          "label": "d",
+          "text": "Cannot be visualized"
+        }
+      ],
+      "correct_option": "c",
+      "correct_text": "Adjusts its structure based on data characteristics",
+      "answer_source": "ai_solved",
+      "answer_confidence": "medium",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Summer 2025 Regular",
+          "exam_year": 2025,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q1",
+          "subquestion_number": "12",
+          "marks": null,
+          "original_question_text": "Adaptive hierarchical clustering is different from standard hierarchical clustering because it:",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer 2025 Regular (BTCOC603, Semester 6)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Uses a fixed number of clusters"
+            },
+            {
+              "label": "b",
+              "text": "Requires more data"
+            },
+            {
+              "label": "c",
+              "text": "Adjusts its structure based on data characteristics"
+            },
+            {
+              "label": "d",
+              "text": "Cannot be visualized"
+            }
+          ]
+        }
+      ],
+      "importance": "moderate"
+    },
+    {
+      "question_id": "ML-OBJ-013",
+      "unit": 1,
+      "syllabus_topic": "Types of learning",
+      "question_subtopic": "Supervised learning",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "A model is trained to predict house prices from features like size, number of rooms, and location. The training data includes both the features and the actual sale prices. Which type of machine learning problem is this?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Regression"
+        },
+        {
+          "label": "b",
+          "text": "Classification"
+        },
+        {
+          "label": "c",
+          "text": "Supervised Learning"
+        },
+        {
+          "label": "d",
+          "text": "Reinforcement Learning"
+        }
+      ],
+      "correct_option": "c",
+      "correct_text": "Supervised Learning",
+      "answer_source": "ai_solved",
+      "answer_confidence": "medium",
+      "frequency": 1,
+      "answer_note": "Options a (Regression) and c (Supervised Learning) are both defensible; c follows the third-party solution in the source file.",
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "1",
+          "marks": 1,
+          "original_question_text": "A model is trained to predict house prices from features like size, number of rooms, and location. The training data includes both the features and the actual sale prices. Which type of machine learning problem is this?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Regression"
+            },
+            {
+              "label": "b",
+              "text": "Classification"
+            },
+            {
+              "label": "c",
+              "text": "Supervised Learning"
+            },
+            {
+              "label": "d",
+              "text": "Reinforcement Learning"
+            }
+          ]
+        }
+      ],
+      "importance": "high"
+    },
+    {
+      "question_id": "ML-OBJ-014",
+      "unit": 1,
+      "syllabus_topic": "Overfitting",
+      "question_subtopic": "Overfitting identification",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "You train a classifier and observe that it performs very well on the training data but poorly on unseen test data. Which situation does this most likely indicate?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Underfitting"
+        },
+        {
+          "label": "b",
+          "text": "High Bias & Low Variance"
+        },
+        {
+          "label": "c",
+          "text": "Good Generalisation"
+        },
+        {
+          "label": "d",
+          "text": "Overfitting"
+        }
+      ],
+      "correct_option": "d",
+      "correct_text": "Overfitting",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "2",
+          "marks": 1,
+          "original_question_text": "You train a classifier and observe that it performs very well on the training data but poorly on unseen test data. Which situation does this most likely indicate?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Underfitting"
+            },
+            {
+              "label": "b",
+              "text": "High Bias & Low Variance"
+            },
+            {
+              "label": "c",
+              "text": "Good Generalisation"
+            },
+            {
+              "label": "d",
+              "text": "Overfitting"
+            }
+          ]
+        }
+      ],
+      "importance": "moderate"
+    },
+    {
+      "question_id": "ML-OBJ-015",
+      "unit": 1,
+      "syllabus_topic": "Cross-validation",
+      "question_subtopic": "Validation set",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "Which of the following is the main goal of using a validation set during model development?",
+      "options": [
+        {
+          "label": "a",
+          "text": "To Provide Completely Unseen data for Final Reporting"
+        },
+        {
+          "label": "b",
+          "text": "To Train the Model Parameters"
+        },
+        {
+          "label": "c",
+          "text": "To Tune Hyperparameters & Select the Best Models"
+        },
+        {
+          "label": "d",
+          "text": "To Increase the Size of The Training Set"
+        }
+      ],
+      "correct_option": "c",
+      "correct_text": "To Tune Hyperparameters & Select the Best Models",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "3",
+          "marks": 1,
+          "original_question_text": "Which of the following is the main goal of using a validation set during model development?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "To Provide Completely Unseen data for Final Reporting"
+            },
+            {
+              "label": "b",
+              "text": "To Train the Model Parameters"
+            },
+            {
+              "label": "c",
+              "text": "To Tune Hyperparameters & Select the Best Models"
+            },
+            {
+              "label": "d",
+              "text": "To Increase the Size of The Training Set"
+            }
+          ]
+        }
+      ],
+      "importance": "moderate"
+    },
+    {
+      "question_id": "ML-OBJ-016",
+      "unit": 1,
+      "syllabus_topic": "Evaluation",
+      "question_subtopic": "Recall",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "In a binary classification problem, which metric is most appropriate when the positive class is rare, and the cost of missing a positive case is very high?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Precision"
+        },
+        {
+          "label": "b",
+          "text": "Accuracy"
+        },
+        {
+          "label": "c",
+          "text": "Recall"
+        },
+        {
+          "label": "d",
+          "text": "AUC ROC"
+        }
+      ],
+      "correct_option": "c",
+      "correct_text": "Recall",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "4",
+          "marks": 1,
+          "original_question_text": "In a binary classification problem, which metric is most appropriate when the positive class is rare, and the cost of missing a positive case is very high?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Precision"
+            },
+            {
+              "label": "b",
+              "text": "Accuracy"
+            },
+            {
+              "label": "c",
+              "text": "Recall"
+            },
+            {
+              "label": "d",
+              "text": "AUC ROC"
+            }
+          ]
+        }
+      ],
+      "importance": "high"
+    },
+    {
+      "question_id": "ML-OBJ-017",
+      "unit": 1,
+      "syllabus_topic": "Decision trees",
+      "question_subtopic": "Decision tree usage",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "Which algorithm is commonly used for both classification and regression problems",
+      "options": [
+        {
+          "label": "a",
+          "text": "k-Means"
+        },
+        {
+          "label": "b",
+          "text": "Decision Tree"
+        },
+        {
+          "label": "c",
+          "text": "PCA"
+        },
+        {
+          "label": "d",
+          "text": "Apriori"
+        }
+      ],
+      "correct_option": "b",
+      "correct_text": "Decision Tree",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "7",
+          "marks": 1,
+          "original_question_text": "Which algorithm is commonly used for both classification and regression problems",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "k-Means"
+            },
+            {
+              "label": "b",
+              "text": "Decision Tree"
+            },
+            {
+              "label": "c",
+              "text": "PCA"
+            },
+            {
+              "label": "d",
+              "text": "Apriori"
+            }
+          ]
+        }
+      ],
+      "importance": "high"
+    },
+    {
+      "question_id": "ML-OBJ-018",
+      "unit": 3,
+      "syllabus_topic": "Introduction to Deep Neural Networks",
+      "question_subtopic": "Activation functions",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "What is the role of an activation function in a neural network?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Reduce computational cost"
+        },
+        {
+          "label": "b",
+          "text": "Introduce non-linearity"
+        },
+        {
+          "label": "c",
+          "text": "Initialize weights"
+        },
+        {
+          "label": "d",
+          "text": "Normalize input data"
+        }
+      ],
+      "correct_option": "b",
+      "correct_text": "Introduce non-linearity",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "answer_note": "Mapped to Introduction to Deep Neural Networks because activation functions are part of multilayer/deep networks; not named in the syllabus.",
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "8",
+          "marks": 1,
+          "original_question_text": "What is the role of an activation function in a neural network?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Reduce computational cost"
+            },
+            {
+              "label": "b",
+              "text": "Introduce non-linearity"
+            },
+            {
+              "label": "c",
+              "text": "Initialize weights"
+            },
+            {
+              "label": "d",
+              "text": "Normalize input data"
+            }
+          ]
+        }
+      ],
+      "importance": "moderate"
+    },
+    {
+      "question_id": "ML-OBJ-019",
+      "unit": 1,
+      "syllabus_topic": "Linear regression",
+      "question_subtopic": "Gradient descent in linear regression",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "Which algorithm uses \"Gradient Descent\" for optimisation?",
+      "options": [
+        {
+          "label": "a",
+          "text": "K-Nearest Neighbours"
+        },
+        {
+          "label": "b",
+          "text": "Linear Regression"
+        },
+        {
+          "label": "c",
+          "text": "Naive Bayes"
+        },
+        {
+          "label": "d",
+          "text": "Random Forest"
+        }
+      ],
+      "correct_option": "b",
+      "correct_text": "Linear Regression",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "9",
+          "marks": 1,
+          "original_question_text": "Which algorithm uses \"Gradient Descent\" for optimisation?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "K-Nearest Neighbours"
+            },
+            {
+              "label": "b",
+              "text": "Linear Regression"
+            },
+            {
+              "label": "c",
+              "text": "Naive Bayes"
+            },
+            {
+              "label": "d",
+              "text": "Random Forest"
+            }
+          ]
+        }
+      ],
+      "importance": "high"
+    },
+    {
+      "question_id": "ML-OBJ-020",
+      "unit": 1,
+      "syllabus_topic": "Types of learning",
+      "question_subtopic": "Reinforcement learning",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "In reinforcement learning, what does the agent learn from?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Labelled data"
+        },
+        {
+          "label": "b",
+          "text": "Unlabelled data"
+        },
+        {
+          "label": "c",
+          "text": "Rewards and penalties"
+        },
+        {
+          "label": "d",
+          "text": "Feature correlations"
+        }
+      ],
+      "correct_option": "c",
+      "correct_text": "Rewards and penalties",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "10",
+          "marks": 1,
+          "original_question_text": "In reinforcement learning, what does the agent learn from?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Labelled data"
+            },
+            {
+              "label": "b",
+              "text": "Unlabelled data"
+            },
+            {
+              "label": "c",
+              "text": "Rewards and penalties"
+            },
+            {
+              "label": "d",
+              "text": "Feature correlations"
+            }
+          ]
+        }
+      ],
+      "importance": "high"
+    },
+    {
+      "question_id": "ML-OBJ-021",
+      "unit": 1,
+      "syllabus_topic": "Evaluation",
+      "question_subtopic": "AUC-ROC",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "Which evaluation metric is suitable for imbalanced classification?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Accuracy"
+        },
+        {
+          "label": "b",
+          "text": "AUC-ROC"
+        },
+        {
+          "label": "c",
+          "text": "Mean Squared Error"
+        },
+        {
+          "label": "d",
+          "text": "R-squared"
+        }
+      ],
+      "correct_option": "b",
+      "correct_text": "AUC-ROC",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "12",
+          "marks": 1,
+          "original_question_text": "Which evaluation metric is suitable for imbalanced classification?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Accuracy"
+            },
+            {
+              "label": "b",
+              "text": "AUC-ROC"
+            },
+            {
+              "label": "c",
+              "text": "Mean Squared Error"
+            },
+            {
+              "label": "d",
+              "text": "R-squared"
+            }
+          ]
+        }
+      ],
+      "importance": "high"
+    },
+    {
+      "question_id": "ML-OBJ-022",
+      "unit": 1,
+      "syllabus_topic": "Cross-validation",
+      "question_subtopic": "Purpose of cross-validation",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "What is the main purpose of cross-validation in machine learning?",
+      "options": [
+        {
+          "label": "a",
+          "text": "To measure training accuracy"
+        },
+        {
+          "label": "b",
+          "text": "To tune hyperparameters"
+        },
+        {
+          "label": "c",
+          "text": "To evaluate the model's performance on unseen data"
+        },
+        {
+          "label": "d",
+          "text": "To reduce dimensionality"
+        }
+      ],
+      "correct_option": "c",
+      "correct_text": "To evaluate the model's performance on unseen data",
+      "answer_source": "ai_solved",
+      "answer_confidence": "medium",
+      "frequency": 1,
+      "answer_note": "Cross-validation is also used for hyperparameter tuning (option b); c is the primary purpose.",
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "1",
+          "marks": 1,
+          "original_question_text": "What is the main purpose of cross-validation in machine learning?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "To measure training accuracy"
+            },
+            {
+              "label": "b",
+              "text": "To tune hyperparameters"
+            },
+            {
+              "label": "c",
+              "text": "To evaluate the model's performance on unseen data"
+            },
+            {
+              "label": "d",
+              "text": "To reduce dimensionality"
+            }
+          ]
+        }
+      ],
+      "importance": "moderate"
+    },
+    {
+      "question_id": "ML-OBJ-023",
+      "unit": 2,
+      "syllabus_topic": "Logistic Regression",
+      "question_subtopic": "Logistic regression use",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "Logistic Regression is primarily used for:",
+      "options": [
+        {
+          "label": "a",
+          "text": "Regression problems"
+        },
+        {
+          "label": "b",
+          "text": "Classification problems"
+        },
+        {
+          "label": "c",
+          "text": "Clustering problems"
+        },
+        {
+          "label": "d",
+          "text": "Dimensionality reduction"
+        }
+      ],
+      "correct_option": "b",
+      "correct_text": "Classification problems",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "2",
+          "marks": 1,
+          "original_question_text": "Logistic Regression is primarily used for:",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Regression problems"
+            },
+            {
+              "label": "b",
+              "text": "Classification problems"
+            },
+            {
+              "label": "c",
+              "text": "Clustering problems"
+            },
+            {
+              "label": "d",
+              "text": "Dimensionality reduction"
+            }
+          ]
+        }
+      ],
+      "importance": "moderate"
+    },
+    {
+      "question_id": "ML-OBJ-024",
+      "unit": 3,
+      "syllabus_topic": "Backpropagation",
+      "question_subtopic": "Gradient descent in backpropagation",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "Which of the following optimizes weights during backpropagation?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Support Vector Machine"
+        },
+        {
+          "label": "b",
+          "text": "Gradient Descent"
+        },
+        {
+          "label": "c",
+          "text": "Random Forest"
+        },
+        {
+          "label": "d",
+          "text": "k-Means Clustering"
+        }
+      ],
+      "correct_option": "b",
+      "correct_text": "Gradient Descent",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "4",
+          "marks": 1,
+          "original_question_text": "Which of the following optimizes weights during backpropagation?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Support Vector Machine"
+            },
+            {
+              "label": "b",
+              "text": "Gradient Descent"
+            },
+            {
+              "label": "c",
+              "text": "Random Forest"
+            },
+            {
+              "label": "d",
+              "text": "k-Means Clustering"
+            }
+          ]
+        }
+      ],
+      "importance": "moderate"
+    },
+    {
+      "question_id": "ML-OBJ-025",
+      "unit": 4,
+      "syllabus_topic": "PAC (Probably Approximately Correct) learning model",
+      "question_subtopic": "PAC goal",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "In PAC learning, the goal is to:",
+      "options": [
+        {
+          "label": "a",
+          "text": "Learn a model with zero error predictions"
+        },
+        {
+          "label": "b",
+          "text": "Learn a model with probable approximately correct hypothesis"
+        },
+        {
+          "label": "c",
+          "text": "Learn a model with infinite hypothesis space"
+        },
+        {
+          "label": "d",
+          "text": "Learn a deterministic model"
+        }
+      ],
+      "correct_option": "b",
+      "correct_text": "Learn a model with probable approximately correct hypothesis",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "5",
+          "marks": 1,
+          "original_question_text": "In PAC learning, the goal is to:",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Learn a model with zero error predictions"
+            },
+            {
+              "label": "b",
+              "text": "Learn a model with probable approximately correct hypothesis"
+            },
+            {
+              "label": "c",
+              "text": "Learn a model with infinite hypothesis space"
+            },
+            {
+              "label": "d",
+              "text": "Learn a deterministic model"
+            }
+          ]
+        }
+      ],
+      "importance": "moderate"
+    },
+    {
+      "question_id": "ML-OBJ-026",
+      "unit": 5,
+      "syllabus_topic": "K-Means clustering",
+      "question_subtopic": "K-Means objective",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "What is the primary objective of k-means clustering?",
+      "options": [
+        {
+          "label": "a",
+          "text": "To classify data into predefined categories"
+        },
+        {
+          "label": "b",
+          "text": "To minimize the distance between cluster centroids and points in the cluster"
+        },
+        {
+          "label": "c",
+          "text": "To maximize the separation between clusters"
+        },
+        {
+          "label": "d",
+          "text": "To assign each data point to the nearest decision boundary"
+        }
+      ],
+      "correct_option": "b",
+      "correct_text": "To minimize the distance between cluster centroids and points in the cluster",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "7",
+          "marks": 1,
+          "original_question_text": "What is the primary objective of k-means clustering?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "To classify data into predefined categories"
+            },
+            {
+              "label": "b",
+              "text": "To minimize the distance between cluster centroids and points in the cluster"
+            },
+            {
+              "label": "c",
+              "text": "To maximize the separation between clusters"
+            },
+            {
+              "label": "d",
+              "text": "To assign each data point to the nearest decision boundary"
+            }
+          ]
+        }
+      ],
+      "importance": "high"
+    },
+    {
+      "question_id": "ML-OBJ-027",
+      "unit": 5,
+      "syllabus_topic": "K-Means clustering",
+      "question_subtopic": "K-Means distance metric",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "What metric is commonly used to measure the distance in k-means clustering?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Manhattan distance"
+        },
+        {
+          "label": "b",
+          "text": "Cosine similarity"
+        },
+        {
+          "label": "c",
+          "text": "Euclidean distance"
+        },
+        {
+          "label": "d",
+          "text": "Jaccard index"
+        }
+      ],
+      "correct_option": "c",
+      "correct_text": "Euclidean distance",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "8",
+          "marks": 1,
+          "original_question_text": "What metric is commonly used to measure the distance in k-means clustering?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Manhattan distance"
+            },
+            {
+              "label": "b",
+              "text": "Cosine similarity"
+            },
+            {
+              "label": "c",
+              "text": "Euclidean distance"
+            },
+            {
+              "label": "d",
+              "text": "Jaccard index"
+            }
+          ]
+        }
+      ],
+      "importance": "high"
+    },
+    {
+      "question_id": "ML-OBJ-028",
+      "unit": 5,
+      "syllabus_topic": "Adaptive hierarchical clustering",
+      "question_subtopic": "Dendrogram",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "What type of clustering does a Dendrogram represent?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Partitional clustering"
+        },
+        {
+          "label": "b",
+          "text": "Hierarchical clustering"
+        },
+        {
+          "label": "c",
+          "text": "Spectral clustering"
+        },
+        {
+          "label": "d",
+          "text": "Density-based clustering"
+        }
+      ],
+      "correct_option": "b",
+      "correct_text": "Hierarchical clustering",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "9",
+          "marks": 1,
+          "original_question_text": "What type of clustering does a Dendrogram represent?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Partitional clustering"
+            },
+            {
+              "label": "b",
+              "text": "Hierarchical clustering"
+            },
+            {
+              "label": "c",
+              "text": "Spectral clustering"
+            },
+            {
+              "label": "d",
+              "text": "Density-based clustering"
+            }
+          ]
+        }
+      ],
+      "importance": "moderate"
+    },
+    {
+      "question_id": "ML-OBJ-029",
+      "unit": 4,
+      "syllabus_topic": "Ensemble learning",
+      "question_subtopic": "AdaBoost (boosting)",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "Which algorithm is an example of the boosting method?",
+      "options": [
+        {
+          "label": "a",
+          "text": "Random Forest"
+        },
+        {
+          "label": "b",
+          "text": "AdaBoost"
+        },
+        {
+          "label": "c",
+          "text": "k-Nearest Neighbors"
+        },
+        {
+          "label": "d",
+          "text": "Support Vector Machine"
+        }
+      ],
+      "correct_option": "b",
+      "correct_text": "AdaBoost",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "11",
+          "marks": 1,
+          "original_question_text": "Which algorithm is an example of the boosting method?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Random Forest"
+            },
+            {
+              "label": "b",
+              "text": "AdaBoost"
+            },
+            {
+              "label": "c",
+              "text": "k-Nearest Neighbors"
+            },
+            {
+              "label": "d",
+              "text": "Support Vector Machine"
+            }
+          ]
+        }
+      ],
+      "importance": "high"
+    },
+    {
+      "question_id": "ML-OBJ-030",
+      "unit": 1,
+      "syllabus_topic": "Decision trees",
+      "question_subtopic": "Leaf nodes",
+      "syllabus_status": "aligned",
+      "question_type": "mcq",
+      "question_text": "In a Decision Tree, leaf nodes represent:",
+      "options": [
+        {
+          "label": "a",
+          "text": "Decision points for further splits"
+        },
+        {
+          "label": "b",
+          "text": "Final outcomes or predictions"
+        },
+        {
+          "label": "c",
+          "text": "Intermediate computations"
+        },
+        {
+          "label": "d",
+          "text": "Root of the tree"
+        }
+      ],
+      "correct_option": "b",
+      "correct_text": "Final outcomes or predictions",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "frequency": 1,
+      "repetition_type": "single",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "12",
+          "marks": 1,
+          "original_question_text": "In a Decision Tree, leaf nodes represent:",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          },
+          "options": [
+            {
+              "label": "a",
+              "text": "Decision points for further splits"
+            },
+            {
+              "label": "b",
+              "text": "Final outcomes or predictions"
+            },
+            {
+              "label": "c",
+              "text": "Intermediate computations"
+            },
+            {
+              "label": "d",
+              "text": "Root of the tree"
+            }
+          ]
+        }
+      ],
+      "importance": "high"
+    }
+  ],
+  "partially_aligned_questions": [
+    {
+      "question_id": "ML-PA-001",
+      "question_text": "Define Gradient Descent. Explain different variations of Gradient Descent.",
+      "question_type": "descriptive",
+      "syllabus_status": "partially_aligned",
+      "mapped_unit": 1,
+      "related_syllabus_topic": "Linear regression",
+      "question_subtopic": "Gradient descent variants (batch, stochastic, mini-batch)",
+      "reason": "Gradient descent is not a listed syllabus topic. It is the optimisation method for linear regression (and backpropagation), but the variants are not themselves prescribed.",
+      "relevant_portion": "Use of gradient descent to optimise the linear regression cost function.",
+      "frequency": 2,
+      "distinct_exam_sessions": 2,
+      "appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "exam_year": 2024,
+          "exam_season": "Summer",
+          "exam_type": "supplementary",
+          "question_number": "Q3",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Define Gradient Descent. Explain different variations of Gradient Descent.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Examination Summer 2024 (BTAIC502, 03/07/2024)"
+          }
+        },
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q6",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "What is gradient descent? Differentiate batch, stochastic, and mini-batch variants.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-PA-002",
+      "question_text": "Explain the Gradient Descent and how it helpful to maximize the learning rate in regression",
+      "question_type": "descriptive",
+      "syllabus_status": "partially_aligned",
+      "mapped_unit": 1,
+      "related_syllabus_topic": "Linear regression",
+      "question_subtopic": "Gradient descent optimisation",
+      "reason": "Gradient descent is not a listed syllabus topic; it relates to linear regression and backpropagation.",
+      "relevant_portion": "Gradient descent as the optimiser for linear regression.",
+      "frequency": 2,
+      "distinct_exam_sessions": 2,
+      "appearances": [
+        {
+          "exam_session": "Winter 2023",
+          "exam_year": 2023,
+          "exam_season": "Winter",
+          "exam_type": "unknown",
+          "question_number": "Q3",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Explain the Gradient Descent and how it helpful to maximize the learning rate in regression",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Regular & Supplementary Winter Examination 2023 (BTAIC502, 03-01-24)"
+          }
+        },
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q2",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Explain how gradient descent optimises a model.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-PA-003",
+      "question_text": "Compare the bias-variance trade-off. How do they affect model performance?",
+      "question_type": "descriptive",
+      "syllabus_status": "partially_aligned",
+      "mapped_unit": 1,
+      "related_syllabus_topic": "Overfitting",
+      "question_subtopic": "Bias-variance trade-off",
+      "reason": "Bias-variance trade-off is not a listed syllabus topic; it is closely related to overfitting.",
+      "relevant_portion": "Overfitting/underfitting aspect only.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q2",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Compare the bias-variance trade-off. How do they affect model performance?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-PA-004",
+      "question_text": "What is regularisation? Explain L1 (Lasso) vs. L2 (Ridge).",
+      "question_type": "descriptive",
+      "syllabus_status": "partially_aligned",
+      "mapped_unit": 1,
+      "related_syllabus_topic": "Overfitting",
+      "question_subtopic": "L1/L2 regularisation",
+      "reason": "Regularisation is not a listed syllabus topic; it is a technique to control overfitting.",
+      "relevant_portion": "Regularisation as a method to prevent overfitting.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q3",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "What is regularisation? Explain L1 (Lasso) vs. L2 (Ridge).",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-PA-005",
+      "question_text": "Explain the following: 1. Support Vector Classifier 2. Support Vector Regression",
+      "question_type": "descriptive",
+      "syllabus_status": "partially_aligned",
+      "mapped_unit": 2,
+      "related_syllabus_topic": "Support Vector Machine (SVM)",
+      "question_subtopic": "Support Vector Classifier and Support Vector Regression",
+      "reason": "Support Vector Regression is not covered by the syllabus; the classifier part is SVM.",
+      "relevant_portion": "Support Vector Classifier (part 1).",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "exam_year": 2024,
+          "exam_season": "Summer",
+          "exam_type": "supplementary",
+          "question_number": "Q5",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Explain the following: 1. Support Vector Classifier 2. Support Vector Regression",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Examination Summer 2024 (BTAIC502, 03/07/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-PA-006",
+      "question_text": "Explain Convolutional Neural Network for image classification.",
+      "question_type": "descriptive",
+      "syllabus_status": "partially_aligned",
+      "mapped_unit": 3,
+      "related_syllabus_topic": "Introduction to Deep Neural Networks",
+      "question_subtopic": "Convolutional Neural Network for image classification",
+      "reason": "CNN is not a named syllabus topic; it is a deep neural network architecture.",
+      "relevant_portion": "General deep-network architecture aspects only.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q4",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Explain Convolutional Neural Network for image classification.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-PA-007",
+      "question_text": "Compare between Biological Neural Network (BNN) and Artificial Neural Network (ANN).",
+      "question_type": "descriptive",
+      "syllabus_status": "partially_aligned",
+      "mapped_unit": 3,
+      "related_syllabus_topic": "Perceptron",
+      "question_subtopic": "Biological vs artificial neural network",
+      "reason": "Comparison with biological networks is not listed; ANN basics relate to the perceptron/multilayer network.",
+      "relevant_portion": "ANN structure aspect only.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "exam_year": 2023,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q3",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Compare between Biological Neural Network (BNN) and Artificial Neural Network (ANN).",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer Regular Examination 2023 (BTCOC603, 17/07/2023)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-PA-008",
+      "question_text": "Explain reinforcement learning in Artificial Neural Network (ANN).",
+      "question_type": "descriptive",
+      "syllabus_status": "partially_aligned",
+      "mapped_unit": 1,
+      "related_syllabus_topic": "Types of learning",
+      "question_subtopic": "Reinforcement learning in ANN",
+      "reason": "Reinforcement learning is a type of learning (covered), but its use inside ANNs is not a listed topic.",
+      "relevant_portion": "Reinforcement learning as a type of learning.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "exam_year": 2023,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q3",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Explain reinforcement learning in Artificial Neural Network (ANN).",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer Regular Examination 2023 (BTCOC603, 17/07/2023)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-PA-009",
+      "question_text": "Describe feedforward and feedback neural network with proper diagram.",
+      "question_type": "diagram",
+      "syllabus_status": "partially_aligned",
+      "mapped_unit": 3,
+      "related_syllabus_topic": "Multilayer network",
+      "question_subtopic": "Feedforward and feedback neural networks",
+      "reason": "Feedforward networks fall under multilayer networks; feedback (recurrent) networks are not listed.",
+      "relevant_portion": "Feedforward network part only.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "exam_year": 2023,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q3",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Describe feedforward and feedback neural network with proper diagram.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer Regular Examination 2023 (BTCOC603, 17/07/2023)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-PA-010",
+      "question_text": "Which of the following best describes the bias–variance trade-off in machine learning models?",
+      "question_type": "mcq",
+      "syllabus_status": "partially_aligned",
+      "mapped_unit": 1,
+      "related_syllabus_topic": "Overfitting",
+      "question_subtopic": "Bias-variance trade-off",
+      "reason": "Bias-variance trade-off is not a listed syllabus topic; it is closely related to overfitting.",
+      "relevant_portion": "Overfitting/underfitting aspect only.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "options": [
+        {
+          "label": "a",
+          "text": "Bias is Always Harmful, Variance is Always Beneficial"
+        },
+        {
+          "label": "b",
+          "text": "Bias & Variance are Unrelated Concepts"
+        },
+        {
+          "label": "c",
+          "text": "Reducing Bias often increases variance and vice versa"
+        },
+        {
+          "label": "d",
+          "text": "Increasing Model Complexity always reduces both Bias & Variance"
+        }
+      ],
+      "correct_option": "c",
+      "correct_text": "Reducing Bias often increases variance and vice versa",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "5",
+          "marks": 1,
+          "original_question_text": "Which of the following best describes the bias–variance trade-off in machine learning models?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-PA-011",
+      "question_text": "What is the primary purpose of regularisation techniques such as L1 or L2 regularization in machine learning models?",
+      "question_type": "mcq",
+      "syllabus_status": "partially_aligned",
+      "mapped_unit": 1,
+      "related_syllabus_topic": "Overfitting",
+      "question_subtopic": "L1/L2 regularisation purpose",
+      "reason": "Regularisation is not a listed syllabus topic; it is a technique to control overfitting.",
+      "relevant_portion": "Regularisation as a method to prevent overfitting.",
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "options": [
+        {
+          "label": "a",
+          "text": "To Prevent Overfitting by Controlling Model Complexity"
+        },
+        {
+          "label": "b",
+          "text": "To Guarantee Perfect Accuracy on the Training Dataset"
+        },
+        {
+          "label": "c",
+          "text": "To Reduce Model Training Time to Zero"
+        },
+        {
+          "label": "d",
+          "text": "To Increase The Size of the Dataset"
+        }
+      ],
+      "correct_option": "a",
+      "correct_text": "To Prevent Overfitting by Controlling Model Complexity",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "6",
+          "marks": 1,
+          "original_question_text": "What is the primary purpose of regularisation techniques such as L1 or L2 regularization in machine learning models?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        }
+      ]
+    }
+  ],
+  "out_of_syllabus_questions": [
+    {
+      "question_id": "ML-OOS-001",
+      "question_text": "Explain the steps of data preparation in machine learning, such as reading data file, pre-processing, and splitting data.",
+      "question_type": "descriptive",
+      "syllabus_status": "out_of_syllabus",
+      "mapped_unit": null,
+      "related_syllabus_topic": null,
+      "question_subtopic": "Data preparation (reading data, pre-processing, splitting)",
+      "reason": "Data pre-processing and data-file handling are not part of the five-unit syllabus.",
+      "relevant_portion": null,
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "appearances": [
+        {
+          "exam_session": "Supplementary Summer 2024",
+          "exam_year": 2024,
+          "exam_season": "Summer",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "c",
+          "marks": 6,
+          "original_question_text": "Explain the steps of data preparation in machine learning, such as reading data file, pre-processing, and splitting data.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Examination Summer 2024 (BTAIC502, 03/07/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-OOS-002",
+      "question_text": "Explain SMOTE for handling imbalanced datasets.",
+      "question_type": "descriptive",
+      "syllabus_status": "out_of_syllabus",
+      "mapped_unit": null,
+      "related_syllabus_topic": null,
+      "question_subtopic": "SMOTE for imbalanced datasets",
+      "reason": "Handling imbalanced data with SMOTE is not part of the syllabus.",
+      "relevant_portion": null,
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q6",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Explain SMOTE for handling imbalanced datasets.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-OOS-003",
+      "question_text": "Which method is used for handling missing data?",
+      "question_type": "mcq",
+      "syllabus_status": "out_of_syllabus",
+      "mapped_unit": null,
+      "related_syllabus_topic": null,
+      "question_subtopic": "Handling missing data (imputation)",
+      "reason": "Missing-data handling is not part of the syllabus.",
+      "relevant_portion": null,
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "options": [
+        {
+          "label": "a",
+          "text": "Deleting all incomplete rows"
+        },
+        {
+          "label": "b",
+          "text": "Replacing with random values"
+        },
+        {
+          "label": "c",
+          "text": "Imputation (e.g., mean, median)"
+        },
+        {
+          "label": "d",
+          "text": "Ignoring the issue"
+        }
+      ],
+      "correct_option": "c",
+      "correct_text": "Imputation (e.g., mean, median)",
+      "answer_source": "ai_solved",
+      "answer_confidence": "high",
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2025",
+          "exam_year": 2025,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q1",
+          "subquestion_number": "11",
+          "marks": 1,
+          "original_question_text": "Which method is used for handling missing data?",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2025 (BTCOC603_Y23, 16/01/2026)"
+          }
+        }
+      ]
+    }
+  ],
+  "needs_verification_questions": [
+    {
+      "question_id": "ML-NV-001",
+      "question_text": "Write Nearest Neighbor Clustering Algorithm.",
+      "question_type": "algorithm",
+      "syllabus_status": "needs_verification",
+      "mapped_unit": null,
+      "related_syllabus_topic": null,
+      "question_subtopic": "Nearest Neighbor Clustering algorithm",
+      "reason": "Not a named syllabus topic. It resembles hierarchical/single-linkage clustering but this cannot be confirmed from the question text; the source gives no further detail.",
+      "relevant_portion": null,
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "appearances": [
+        {
+          "exam_session": "Supplementary Winter 2024",
+          "exam_year": 2024,
+          "exam_season": "Winter",
+          "exam_type": "supplementary",
+          "question_number": "Q6",
+          "subquestion_number": "b",
+          "marks": 6,
+          "original_question_text": "Write Nearest Neighbor Clustering Algorithm.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Supplementary Winter Examination 2024 (BTCOC603_Y23, 23/12/2024)"
+          }
+        }
+      ]
+    },
+    {
+      "question_id": "ML-NV-002",
+      "question_text": "Explain clustering with example. State need of clustering.",
+      "question_type": "descriptive",
+      "syllabus_status": "needs_verification",
+      "mapped_unit": 5,
+      "related_syllabus_topic": null,
+      "question_subtopic": "Clustering: concept, example and need",
+      "reason": "Falls under the Unit 5 title (Clustering) but no listed Unit 5 topic matches a general clustering question.",
+      "relevant_portion": null,
+      "frequency": 1,
+      "distinct_exam_sessions": 1,
+      "appearances": [
+        {
+          "exam_session": "Summer 2023 Regular",
+          "exam_year": 2023,
+          "exam_season": "Summer",
+          "exam_type": "regular",
+          "question_number": "Q5",
+          "subquestion_number": "a",
+          "marks": 6,
+          "original_question_text": "Explain clustering with example. State need of clustering.",
+          "source_reference": {
+            "page_number": null,
+            "paper_identifier": "Summer Regular Examination 2023 (BTCOC603, 17/07/2023)"
+          }
+        }
+      ]
+    }
+  ],
+  "optional_unit_analysis": {
+    "unit_comparison": [
+      {
+        "unit": 1,
+        "unit_title": "Foundations of Machine Learning",
+        "historical_question_count": 37,
+        "total_appearances": 44,
+        "long_answer_appearances": 31,
+        "papers_with_long_answer_questions": 6,
+        "topic_coverage_percentage": 100.0,
+        "repetition_strength": "weak (1.19 appearances per unique question)",
+        "optional_candidate_score": 0.0,
+        "recommendation": "Keep",
+        "reasoning": "Highest question volume and present in all six papers; skipping it is not supported by the data.",
+        "risk_level": "high"
+      },
+      {
+        "unit": 2,
+        "unit_title": "Supervised Learning Algorithms",
+        "historical_question_count": 16,
+        "total_appearances": 16,
+        "long_answer_appearances": 13,
+        "papers_with_long_answer_questions": 6,
+        "topic_coverage_percentage": 100.0,
+        "repetition_strength": "weak (1.00 appearances per unique question)",
+        "optional_candidate_score": 41.8,
+        "recommendation": "Keep",
+        "reasoning": "Present in all six papers with repeated Naive Bayes, Logistic Regression and SVM questions.",
+        "risk_level": "high"
+      },
+      {
+        "unit": 3,
+        "unit_title": "Neural Networks & Deep Learning",
+        "historical_question_count": 9,
+        "total_appearances": 12,
+        "long_answer_appearances": 6,
+        "papers_with_long_answer_questions": 3,
+        "topic_coverage_percentage": 100.0,
+        "repetition_strength": "moderate (1.33 appearances per unique question)",
+        "optional_candidate_score": 69.9,
+        "recommendation": "Potential optional unit",
+        "reasoning": "Fewest long-answer questions (4 unique, 6 appearances) and absent from long-answer questions in 3 of 6 papers (both BTAIC502 papers and Summer 2023). However it appears in every one of the three most recent papers, so Q1 objective items on perceptron, backpropagation and activation functions still need basic revision.",
+        "risk_level": "medium"
+      },
+      {
+        "unit": 4,
+        "unit_title": "Learning Theory",
+        "historical_question_count": 9,
+        "total_appearances": 18,
+        "long_answer_appearances": 12,
+        "papers_with_long_answer_questions": 6,
+        "topic_coverage_percentage": 60.0,
+        "repetition_strength": "strong (2.00 appearances per unique question)",
+        "optional_candidate_score": 42.5,
+        "recommendation": "Keep",
+        "reasoning": "Present in all six papers; Random Forest, ensemble learning and bagging/boosting are repeated heavily. Only 60% of its listed topics have appeared, so coverage is uneven.",
+        "risk_level": "high"
+      },
+      {
+        "unit": 5,
+        "unit_title": "Clustering",
+        "historical_question_count": 10,
+        "total_appearances": 12,
+        "long_answer_appearances": 7,
+        "papers_with_long_answer_questions": 4,
+        "topic_coverage_percentage": 100.0,
+        "repetition_strength": "weak (1.20 appearances per unique question)",
+        "optional_candidate_score": 63.3,
+        "recommendation": "Keep",
+        "reasoning": "K-Means is repeated across four papers and is quick to prepare; unit has only three listed topics.",
+        "risk_level": "high"
+      }
+    ],
+    "recommended_optional_unit": 3,
+    "reasoning": "Unit 3 has the lowest historical weight: 4 unique long-answer questions (6 appearances) against 7 to 31 for the other units, and no long-answer questions in 3 of 6 papers. Unit 5 is next. Score = 50% low long-answer volume + 30% low paper presence + 20% low total appearances. Unit 3 appears in all three most recent papers (Summer 2025, Supplementary Winter 2024 and 2025), so this is a moderate-risk choice and its basics should still be revised.",
+    "warning": "Historical patterns do not guarantee future examination questions."
+  },
+  "analysis_summary": {
+    "total_papers_analysed": 6,
+    "total_questions_extracted": 120,
+    "total_unique_questions": 97,
+    "total_question_appearances": 120,
+    "aligned_questions": 102,
+    "partially_aligned_questions": 13,
+    "out_of_syllabus_questions": 3,
+    "needs_verification_questions": 2,
+    "unique_aligned_long_answer": 51,
+    "unique_aligned_objective": 30,
+    "unique_partially_aligned": 11,
+    "unique_out_of_syllabus": 3,
+    "unique_needs_verification": 2,
+    "total_objective_questions": 36,
+    "most_repeated_topics": [
+      "Performance Metrics",
+      "Ensemble Learning",
+      "Decision Tree",
+      "K-Means",
+      "Linear Regression"
+    ],
+    "data_quality_notes": [
+      "ML_ALLpyq_1.md contains 6 distinct examination papers plus a third-party solved study guide ('Created by @prantehare') that reproduces the Supplementary Winter 2025 paper with answers. The guide was counted once as the paper itself and was not treated as an official answer key.",
+      "All objective answers are ai_solved. For Supplementary Winter 2025 they agree with the third-party guide. P3 Q1 (house-price problem) has two defensible options (Regression, Supervised Learning); option c follows the guide and confidence is medium.",
+      "Subject codes differ: BTAIC502 (Semester V, AI&DS and allied) appears in 2 papers; BTCOC603 / BTCOC603_Y23 (Semester VI, CSE/Computer Engineering) in 4 papers. All were analysed together because the subject is Machine Learning; confirm this suits your Semester 5 branch.",
+      "Supplementary Winter 2025 was held on 16/01/2026; exam_year is recorded as 2025 as printed on the paper. Winter 2023 is headed 'Regular & Supplementary', so exam_type is 'unknown'.",
+      "Marks for Summer 2025 MCQs are null because the paper does not print per-question marks; the other papers print 1 mark per MCQ.",
+      "Data missing from the source text (tables not captured): Winter 2023 Q2(c) price table, Q4(a) buyer dataset and Q5(a) Naive Bayes dataset; Supplementary Winter 2024 Q5(a) Find-S dataset. Summer 2025 Q6(c) wording appears garbled ('differ from regular hierarchical clustering'). Supplementary Summer 2024 Q2(b) table labels are inconsistent in the source; values were copied as printed.",
+      "page_number is null throughout because pages are not reliably identifiable in the merged file.",
+      "Mapping judgement calls (strict five-unit syllabus): activation-function MCQs -> Introduction to Deep Neural Networks; Find-S -> Hypothesis space and inductive bias; train/validation/test and validation-set items -> Cross-validation; dendrogram, agglomerative/divisive and hierarchical clustering -> Adaptive hierarchical clustering; kernel trick in SVM -> Kernel SVM. Review these if the official detailed syllabus says otherwise.",
+      "Gradient descent (4 appearances), bias-variance (2), regularisation (2), CNN, SVR and BNN/feedback-network questions are not named in the strict syllabus and are kept in partially_aligned_questions, not the main bank. Gradient descent is asked often, so consider revising it with Linear regression and Backpropagation.",
+      "Out of syllabus: data preparation, SMOTE and missing-data imputation. Needs verification: 'Nearest Neighbor Clustering' and the generic 'Explain clustering' question.",
+      "Computational learning theory and Sample complexity are 'not_found_in_available_papers' (no question maps to them).",
+      "frequency_table counts aligned long-answer plus objective appearances per topic_group. exact_question_count = number of unique question records in the topic. Eight topics tie at 4 appearances; only the top 12 by (times_asked, distinct sessions, name) are listed. The 🔥 suffix on topic_group uses the same topic-level count (>=3).",
+      "Two papers (Supplementary Summer 2024 and Winter 2023) contain no neural network or clustering long-answer questions; this reflects the BTAIC502 scheme and affects the optional-unit analysis. Six papers is a small sample, so no unit is rated low risk."
+    ]
+  }
+}

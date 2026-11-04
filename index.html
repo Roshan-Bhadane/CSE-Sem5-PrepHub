@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="DBATU 5th Semester CSE Study Portal — Interactive PYQ banks for ML, TOC, OS, WC, CG and DBMS with frequency analysis and progress tracking.">
+<title>DBATU – 5th Sem CSE Study Portal</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0f11;
+    --surface: #16181c;
+    --surface2: #1e2026;
+    --border: #2a2d35;
+    --border2: #363a44;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --faint: #3a3d47;
+
+    --ml-color: #a78bfa;
+    --ml-glow: rgba(167, 139, 250, 0.15);
+    --toc-color: #34d399;
+    --toc-glow: rgba(52, 211, 153, 0.15);
+    --os-color: #f472b6;
+    --os-glow: rgba(244, 114, 182, 0.15);
+    --wc-color: #38bdf8;
+    --wc-glow: rgba(56, 189, 248, 0.15);
+    --cg-color: #fb923c;
+    --cg-glow: rgba(251, 146, 60, 0.15);
+    --dbms-color: #facc15;
+    --dbms-glow: rgba(250, 204, 21, 0.15);
+    --primary: #60a5fa;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* ─── GRID BACKGROUND ─── */
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-image: 
+      linear-gradient(rgba(42, 45, 53, 0.25) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(42, 45, 53, 0.25) 1px, transparent 1px);
+    background-size: 40px 40px;
+    background-position: center;
+    mask-image: radial-gradient(ellipse at 50% 30%, black, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 30%, black, transparent 80%);
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  /* ─── DECORATIVE GLOWS ─── */
+  .glow-orb {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    filter: blur(120px);
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.3;
+  }
+  #ml-orb {
+    background: var(--ml-color);
+    top: 8%;
+    left: 12%;
+  }
+  #toc-orb {
+    background: var(--toc-color);
+    top: 15%;
+    right: 10%;
+    opacity: 0.2;
+  }
+  #os-orb {
+    background: var(--os-color);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.15;
+  }
+  #wc-orb {
+    background: var(--wc-color);
+    bottom: 30%;
+    left: 8%;
+    opacity: 0.2;
+  }
+  #cg-orb {
+    background: var(--cg-color);
+    bottom: 15%;
+    right: 15%;
+    opacity: 0.2;
+  }
+  #dbms-orb {
+    background: var(--dbms-color);
+    bottom: 5%;
+    left: 40%;
+    opacity: 0.15;
+  }
+
+  /* ─── CONTAINER ─── */
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+
+  /* ─── HEADER ─── */
+  header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .uni-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--muted);
+    padding: 5px 12px;
+    border-radius: 20px;
+    letter-spacing: .08em;
+    display: inline-block;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    animation: fadeIn 0.8s ease;
+  }
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(28px, 6vw, 48px);
+    font-weight: 800;
+    letter-spacing: -.03em;
+    color: var(--text);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    animation: slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  h1 span {
+    background: linear-gradient(135deg, var(--ml-color), var(--cg-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+  header p {
+    font-size: clamp(14px, 2vw, 17px);
+    color: var(--muted);
+    max-width: 620px;
+    margin: 0 auto;
+    animation: slideUp 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  /* ─── STATS DASHBOARD ─── */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 3.5rem;
+    animation: slideUp 1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    text-align: center;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .stat-card:hover {
+    border-color: var(--border2);
+    transform: translateY(-2px);
+  }
+  .stat-val {
+    font-family: 'Syne', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .stat-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* ─── PORTAL CARDS ─── */
+  .portal-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 4rem;
+    animation: slideUp 1.1s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  
+  .portal-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.25rem;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .portal-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(800px circle at var(--x, 50%) var(--y, 50%), var(--card-glow), transparent 40%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .portal-card:hover::before {
+    opacity: 1;
+  }
+
+  .portal-card:hover {
+    border-color: var(--card-theme);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px var(--card-glow-shadow);
+  }
+
+  .portal-card.ml {
+    --card-theme: var(--ml-color);
+    --card-glow: var(--ml-glow);
+    --card-glow-shadow: rgba(167, 139, 250, 0.08);
+  }
+  .portal-card.toc {
+    --card-theme: var(--toc-color);
+    --card-glow: var(--toc-glow);
+    --card-glow-shadow: rgba(52, 211, 153, 0.08);
+  }
+  .portal-card.os {
+    --card-theme: var(--os-color);
+    --card-glow: var(--os-glow);
+    --card-glow-shadow: rgba(244, 114, 182, 0.08);
+  }
+  .portal-card.wc {
+    --card-theme: var(--wc-color);
+    --card-glow: var(--wc-glow);
+    --card-glow-shadow: rgba(56, 189, 248, 0.08);
+  }
+  .portal-card.cg {
+    --card-theme: var(--cg-color);
+    --card-glow: var(--cg-glow);
+    --card-glow-shadow: rgba(251, 146, 60, 0.08);
+  }
+  .portal-card.dbms {
+    --card-theme: var(--dbms-color);
+    --card-glow: var(--dbms-glow);
+    --card-glow-shadow: rgba(250, 204, 21, 0.08);
+  }
+
+  .card-badge {
+    align-self: flex-start;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    font-weight: 500;
+    color: var(--card-theme);
+    background: color-mix(in srgb, var(--card-theme) 12%, transparent);
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 1.25rem;
+    z-index: 2;
+  }
+
+  .card-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    z-index: 2;
+  }
+
+  .card-desc {
+    font-size: 14px;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    z-index: 2;
+  }
+
+  .card-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 1.5rem 0;
+    z-index: 2;
+  }
+
+  .card-features {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 2rem;
+    z-index: 2;
+  }
+
+  .card-feature {
+    font-size: 13.5px;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card-feature::before {
+    content: '✦';
+    color: var(--card-theme);
+    font-size: 12px;
+  }
+
+  .card-action {
+    margin-top: auto;
+    background: var(--surface2);
+    border: 1px solid var(--border2);
+    color: var(--text);
+    text-align: center;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    z-index: 2;
+  }
+
+  .portal-card:hover .card-action {
+    background: var(--card-theme);
+    border-color: var(--card-theme);
+    color: #000000;
+  }
+
+  /* ─── GUIDE SECTION ─── */
+  .guide-section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.25rem;
+    animation: slideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .guide-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .guide-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+  .guide-step {
+    font-size: 13.5px;
+  }
+  .step-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--primary);
+    margin-bottom: 6px;
+    display: block;
+    font-weight: 600;
+  }
+  .guide-step h4 {
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .guide-step p {
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
+  /* ─── BACK LINK ─── */
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--surface);
+    margin-bottom: 2rem;
+    transition: all 0.2s ease;
+    animation: fadeIn 0.6s ease;
+  }
+  .back-link:hover {
+    color: var(--text);
+    border-color: var(--border2);
+    background: var(--surface2);
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    text-align: center;
+    margin-top: 5rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    .portal-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+  @media (max-width: 768px) {
+    .stats-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .guide-grid {
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+    }
+    .container {
+      padding: 2rem 1rem;
+    }
+  }
+
+  /* ─── LIGHT MODE ─── */
+  html.light {
+    --bg: #eceff6;
+    --surface: #ffffff;
+    --surface2: #f4f6fb;
+    --border: rgba(0,0,0,0.07);
+    --border2: rgba(0,0,0,0.13);
+    --text: #0c0e15;
+    --muted: #5c6880;
+    --faint: #e0e4ef;
+    --ml-glow: rgba(167,139,250,0.12);
+    --toc-glow: rgba(52,211,153,0.12);
+    --os-glow: rgba(244,114,182,0.12);
+    --wc-glow: rgba(56,189,248,0.12);
+    --cg-glow: rgba(251,146,60,0.12);
+    --dbms-glow: rgba(250,204,21,0.12);
+  }
+  html.light body::before { opacity: 0.4; }
+  html.light .glow-orb { opacity: 0.10; }
+  html.light .stat-card {
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.07);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 2px 10px rgba(0,0,0,0.04);
+  }
+  html.light .stat-card:hover {
+    border-color: rgba(0,0,0,0.12);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.09);
+  }
+  html.light .portal-card {
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.07);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.06), 0 6px 22px rgba(0,0,0,0.05);
+  }
+  html.light .portal-card:hover {
+    box-shadow: 0 8px 28px rgba(0,0,0,0.11), 0 2px 8px rgba(0,0,0,0.07);
+  }
+  html.light .card-divider { background: rgba(0,0,0,0.06); }
+  html.light .card-action {
+    background: #f0f3f9;
+    border-color: rgba(0,0,0,0.10);
+    color: #0c0e15;
+  }
+  html.light .guide-section {
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.07);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.06), 0 4px 18px rgba(0,0,0,0.05);
+  }
+  html.light footer { border-top-color: rgba(0,0,0,0.08); }
+  html.light .back-link {
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.10);
+  }
+
+  /* ─── FLOATING THEME TOGGLE ─── */
+  .theme-toggle-float {
+    position: fixed;
+    top: 16px;
+    right: 20px;
+    z-index: 999;
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    color: var(--muted);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all .15s ease;
+    font-family: 'IBM Plex Sans', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    box-shadow: 0 2px 12px rgba(0,0,0,.2);
+    white-space: nowrap;
+  }
+  .theme-toggle-float:hover { background: var(--faint); color: var(--text); border-color: var(--border2); }
+</style>
+</head>
+<body>
+
+<div class="glow-orb" id="ml-orb"></div>
+<div class="glow-orb" id="toc-orb"></div>
+<div class="glow-orb" id="os-orb"></div>
+<div class="glow-orb" id="wc-orb"></div>
+<div class="glow-orb" id="cg-orb"></div>
+<div class="glow-orb" id="dbms-orb"></div>
+
+<button class="theme-toggle-float" id="theme-toggle-btn" onclick="toggleTheme()">☀️ Light</button>
+
+<div class="container">
+  <a href="sem4index.html" class="back-link">← Back to Sem 4</a>
+
+  <!-- ─── HEADER ─── -->
+  <header>
+    <div class="uni-badge">📚 DBATU · B.Tech CSE · Semester 5</div>
+    <h1>5th Semester <span>Study Portal</span></h1>
+    <p>Interactive study portals for all DBATU 5th Semester CSE subjects. Track your preparation progress, analyze repeat frequency, and focus on what matters most.</p>
+  </header>
+
+  <!-- ─── STATS DASHBOARD ─── -->
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-val">6</div>
+      <div class="stat-label">Core Courses</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">5th</div>
+      <div class="stat-label">Semester</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">30</div>
+      <div class="stat-label">Study Units</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-val">Local</div>
+      <div class="stat-label">Progress Save</div>
+    </div>
+  </div>
+
+  <!-- ─── PORTAL CARDS ─── -->
+  <div class="portal-grid">
+    <!-- Machine Learning Card -->
+    <a href="ml.html" class="portal-card ml" id="card-ml">
+      <span class="card-badge">BTCOC501</span>
+      <h3 class="card-title">Machine Learning</h3>
+      <p class="card-desc">Regression, classification, neural networks, SVMs, decision trees, clustering, and ensemble methods.</p>
+      
+      <div class="card-divider"></div>
+      
+      <ul class="card-features">
+        <li class="card-feature">Supervised & Unsupervised Learning Paradigms</li>
+        <li class="card-feature">Neural Networks, SVM & Decision Trees</li>
+        <li class="card-feature">Bias-Variance Tradeoff & Model Evaluation</li>
+      </ul>
+      
+      <div class="card-action">
+        Open ML Bank
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- Theory of Computation Card -->
+    <a href="toc.html" class="portal-card toc" id="card-toc">
+      <span class="card-badge">BTCOC502</span>
+      <h3 class="card-title">Theory of Computation</h3>
+      <p class="card-desc">Automata theory, regular languages, context-free grammars, Turing machines, and decidability.</p>
+      
+      <div class="card-divider"></div>
+      
+      <ul class="card-features">
+        <li class="card-feature">DFA, NFA & Regular Expressions</li>
+        <li class="card-feature">PDA & Context-Free Grammars</li>
+        <li class="card-feature">Turing Machines & Undecidability</li>
+      </ul>
+      
+      <div class="card-action">
+        Open TOC Bank
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- Operating System Card -->
+    <a href="os.html" class="portal-card os" id="card-os">
+      <span class="card-badge">BTCOC503</span>
+      <h3 class="card-title">Operating Systems</h3>
+      <p class="card-desc">Process management, CPU scheduling, memory management, file systems, and synchronization.</p>
+      
+      <div class="card-divider"></div>
+      
+      <ul class="card-features">
+        <li class="card-feature">Process Scheduling & Deadlock Handling</li>
+        <li class="card-feature">Memory Management & Virtual Memory</li>
+        <li class="card-feature">File Systems & Disk Scheduling</li>
+      </ul>
+      
+      <div class="card-action">
+        Open OS Bank
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- Wireless Communication Card -->
+    <a href="wc.html" class="portal-card wc" id="card-wc">
+      <span class="card-badge">BTCOC504</span>
+      <h3 class="card-title">Wireless Communication</h3>
+      <p class="card-desc">Propagation models, cellular concepts, multiple access techniques, GSM, CDMA, and 4G/5G systems.</p>
+      
+      <div class="card-divider"></div>
+      
+      <ul class="card-features">
+        <li class="card-feature">Channel Modeling & Fading Techniques</li>
+        <li class="card-feature">FDMA, TDMA, CDMA & OFDM</li>
+        <li class="card-feature">GSM, LTE & 5G Network Architecture</li>
+      </ul>
+      
+      <div class="card-action">
+        Open WC Bank
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- Computer Graphics Card -->
+    <a href="cg.html" class="portal-card cg" id="card-cg">
+      <span class="card-badge">BTCOC505</span>
+      <h3 class="card-title">Computer Graphics</h3>
+      <p class="card-desc">Rasterization, 2D/3D transformations, clipping, curves, visible surface detection, and rendering.</p>
+      
+      <div class="card-divider"></div>
+      
+      <ul class="card-features">
+        <li class="card-feature">Bresenham's & DDA Line/Circle Algorithms</li>
+        <li class="card-feature">2D/3D Transformations & Projections</li>
+        <li class="card-feature">Clipping, Filling & Visible Surface Detection</li>
+      </ul>
+      
+      <div class="card-action">
+        Open CG Bank
+        <span class="arrow">→</span>
+      </div>
+    </a>
+
+    <!-- Database Management System Card -->
+    <a href="dbms.html" class="portal-card dbms" id="card-dbms">
+      <span class="card-badge">BTCOC506</span>
+      <h3 class="card-title">Database Management Systems</h3>
+      <p class="card-desc">ER models, relational algebra, SQL, normalization, transactions, concurrency control, and indexing.</p>
+      
+      <div class="card-divider"></div>
+      
+      <ul class="card-features">
+        <li class="card-feature">ER Diagrams & Relational Algebra</li>
+        <li class="card-feature">SQL Queries & Normalization (1NF–BCNF)</li>
+        <li class="card-feature">ACID Transactions & Concurrency Control</li>
+      </ul>
+      
+      <div class="card-action">
+        Open DBMS Bank
+        <span class="arrow">→</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- ─── GUIDE SECTION ─── -->
+  <div class="guide-section">
+    <h3 class="guide-title">💡 How to Use the Portal</h3>
+    <div class="guide-grid">
+      <div class="guide-step">
+        <span class="step-num">Step 01</span>
+        <h4>Choose a Subject</h4>
+        <p>Select any of the 6 subjects from the cards above to enter that course's interactive question bank.</p>
+      </div>
+      <div class="guide-step">
+        <span class="step-num">Step 02</span>
+        <h4>Track Your Progress</h4>
+        <p>Click on any question card as you study it. Ticking it off will update the live progress bar.</p>
+      </div>
+      <div class="guide-step">
+        <span class="step-num">Step 03</span>
+        <h4>Focus on Priorities</h4>
+        <p>Use the Unit tabs or the "High Freq Only" filter to prioritize questions asked multiple times in exams.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <p>Built with precision for DBATU B.Tech CSE Students · Semester 5 · Progress is automatically saved locally in your browser</p>
+  </footer>
+</div>
+
+<script>
+// ─── THEME ───
+(function() {
+  if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.classList.add('light');
+  }
+})();
+function toggleTheme() {
+  const isLight = document.documentElement.classList.toggle('light');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  const btn = document.getElementById('theme-toggle-btn');
+  if (btn) btn.innerHTML = isLight ? '🌙 Dark' : '☀️ Light';
+}
+function initToggleIcon() {
+  const btn = document.getElementById('theme-toggle-btn');
+  if (btn && document.documentElement.classList.contains('light')) btn.innerHTML = '🌙 Dark';
+}
+initToggleIcon();
+
+  // Add hover interactive spotlight effect to cards
+  const cards = document.querySelectorAll('.portal-card');
+  cards.forEach(card => {
+    card.addEventListener('mousemove', e => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      card.style.setProperty('--x', `${x}px`);
+      card.style.setProperty('--y', `${y}px`);
+    });
+  });
+</script>
+
+</body>
+</html>
