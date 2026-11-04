@@ -1,0 +1,1952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DBMS Question Bank – DBATU</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0f11;
+    --surface: #16181c;
+    --surface2: #1e2026;
+    --border: #2a2d35;
+    --border2: #363a44;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --faint: #3a3d47;
+
+    --primary: #38bdf8;
+    --primary-glow: rgba(56, 189, 248, 0.15);
+
+    --u1: #38bdf8; --u1d: #082f49;
+    --u2: #a78bfa; --u2d: #1e1530;
+    --u3: #34d399; --u3d: #0d2520;
+    --u4: #fbbf24; --u4d: #231d0a;
+    --u5: #f472b6; --u5d: #280f1e;
+
+    --hot: #ef4444;
+    --warm: #f97316;
+    --cool: #6b7280;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    min-height: 100vh;
+  }
+
+  /* ─── NAV BAR ─── */
+  .nav-bar {
+    background: var(--surface2);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: sticky; top: 0; z-index: 101;
+    backdrop-filter: blur(12px);
+  }
+  .nav-bar-inner { max-width: 900px; margin: 0 auto; width: 100%; display: flex; align-items: center; gap: 8px; }
+  .nav-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    margin-right: 4px;
+  }
+  .nav-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'IBM Plex Sans', sans-serif;
+    cursor: pointer;
+    border: 1px solid var(--border2);
+    background: transparent;
+    color: var(--muted);
+    transition: all .15s ease;
+    text-decoration: none;
+  }
+  .nav-btn:hover { background: var(--faint); color: var(--text); border-color: var(--primary); }
+  .nav-btn.active {
+    background: var(--u1d);
+    color: var(--primary);
+    border-color: var(--primary);
+  }
+  .nav-btn.go-home {
+    background: color-mix(in srgb, #fbbf24 10%, transparent);
+    color: #fbbf24;
+    border-color: color-mix(in srgb, #fbbf24 40%, transparent);
+  }
+  .nav-btn.go-home:hover {
+    background: color-mix(in srgb, #fbbf24 20%, transparent);
+    color: var(--text);
+    border-color: #fbbf24;
+  }
+  .nav-btn.go-daa {
+    background: color-mix(in srgb, #a78bfa 10%, transparent);
+    color: #a78bfa;
+    border-color: color-mix(in srgb, #a78bfa 40%, transparent);
+  }
+  .nav-btn.go-daa:hover {
+    background: color-mix(in srgb, #a78bfa 20%, transparent);
+    color: var(--text);
+    border-color: #a78bfa;
+  }
+  .nav-btn.go-adc {
+    background: color-mix(in srgb, #34d399 10%, transparent);
+    color: #34d399;
+    border-color: color-mix(in srgb, #34d399 40%, transparent);
+  }
+  .nav-btn.go-adc:hover {
+    background: color-mix(in srgb, #34d399 20%, transparent);
+    color: var(--text);
+    border-color: #34d399;
+  }
+  .nav-btn.go-cao {
+    background: color-mix(in srgb, #f472b6 10%, transparent);
+    color: #f472b6;
+    border-color: color-mix(in srgb, #f472b6 40%, transparent);
+  }
+  .nav-btn.go-cao:hover {
+    background: color-mix(in srgb, #f472b6 20%, transparent);
+    color: var(--text);
+    border-color: #f472b6;
+  }
+
+  /* ─── HEADER ─── */
+  header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 2rem 1.5rem 1.5rem;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+  .header-inner { max-width: 900px; margin: 0 auto; }
+  .header-top { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .course-badge {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    background: var(--faint);
+    color: var(--muted);
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: .05em;
+    display: inline-block;
+    margin-bottom: 8px;
+  }
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(20px, 4vw, 28px);
+    font-weight: 800;
+    letter-spacing: -.02em;
+    color: var(--text);
+    line-height: 1.1;
+  }
+  h1 span { color: var(--primary); }
+  .header-meta {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* ─── STATS ROW ─── */
+  .stats {
+    display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px;
+  }
+  .stat {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-size: 12px;
+    color: var(--muted);
+    display: flex; align-items: center; gap: 6px;
+  }
+  .stat strong { color: var(--text); font-size: 15px; font-family: 'Syne', sans-serif; }
+
+  /* ─── FILTER TABS & SEARCH ─── */
+  .controls-bar {
+    max-width: 900px; margin: 0 auto;
+    display: flex; flex-direction: column; gap: 10px;
+    padding: 1rem 1.5rem 0;
+  }
+  .filter-bar {
+    display: flex; gap: 6px; flex-wrap: wrap; align-items: center;
+  }
+  .tab {
+    padding: 6px 14px; border-radius: 20px;
+    font-size: 12px; font-weight: 500;
+    cursor: pointer; border: 1px solid var(--border);
+    background: transparent; color: var(--muted);
+    transition: all .15s ease;
+    font-family: 'IBM Plex Sans', sans-serif;
+  }
+  .tab:hover { border-color: var(--border2); color: var(--text); }
+  .tab.active { background: var(--faint); color: var(--text); border-color: var(--border2); }
+
+  .search-box {
+    position: relative;
+    width: 100%;
+  }
+  .search-input {
+    width: 100%;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 8px 14px 8px 36px;
+    color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 13px;
+    outline: none;
+    transition: border-color .2s;
+  }
+  .search-input:focus {
+    border-color: var(--primary);
+  }
+  .search-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    font-size: 13px;
+    pointer-events: none;
+  }
+
+  /* ─── MAIN ─── */
+  main { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+
+  /* ─── UNIT SECTION ─── */
+  .unit { margin-bottom: 2.5rem; }
+  .unit[data-unit="1"] { --uc: var(--u1); --ucd: var(--u1d); }
+  .unit[data-unit="2"] { --uc: var(--u2); --ucd: var(--u2d); }
+  .unit[data-unit="3"] { --uc: var(--u3); --ucd: var(--u3d); }
+  .unit[data-unit="4"] { --uc: var(--u4); --ucd: var(--u4d); }
+  .unit[data-unit="5"] { --uc: var(--u5); --ucd: var(--u5d); }
+
+  .unit-header {
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 1rem; padding: 16px 20px;
+    background: var(--ucd);
+    border: 1px solid color-mix(in srgb, var(--uc) 25%, transparent);
+    border-radius: 12px;
+  }
+  .unit-num {
+    width: 38px; height: 38px; border-radius: 10px;
+    background: var(--uc); color: #000;
+    font-family: 'Syne', sans-serif; font-weight: 800;
+    font-size: 16px; display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .unit-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; color: var(--uc); }
+  .unit-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .unit-hrs {
+    margin-left: auto;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px; color: var(--uc);
+    background: color-mix(in srgb, var(--uc) 12%, transparent);
+    padding: 3px 10px; border-radius: 4px;
+    white-space: nowrap;
+  }
+
+  /* ─── TOPIC GROUP ─── */
+  .topic-group { margin-bottom: 1.2rem; }
+  .topic-label {
+    font-size: 11px; font-weight: 500; letter-spacing: .08em;
+    text-transform: uppercase; color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+    margin-bottom: 6px;
+    padding-left: 8px;
+    border-left: 2px solid var(--uc);
+  }
+
+  /* ─── QUESTION CARD ─── */
+  .q-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 6px;
+    display: flex; gap: 14px; align-items: flex-start;
+    transition: border-color .15s, background .15s;
+    cursor: pointer;
+  }
+  .q-card:hover { border-color: var(--border2); background: var(--surface2); }
+  .q-card.done {
+    opacity: .45;
+    background: var(--surface);
+  }
+  .q-card.done .q-text { text-decoration: line-through; text-decoration-color: var(--muted); }
+
+  .q-num {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px; color: var(--muted);
+    min-width: 28px; margin-top: 2px;
+    flex-shrink: 0;
+  }
+  .q-body { flex: 1; }
+  .q-text { font-size: 14px; color: var(--text); line-height: 1.55; }
+  .q-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; align-items: center; }
+
+  .badge {
+    font-size: 10px; font-family: 'IBM Plex Mono', monospace;
+    padding: 2px 8px; border-radius: 4px;
+    border: 1px solid transparent;
+  }
+  .badge-year {
+    background: var(--surface2); border-color: var(--border);
+    color: var(--muted);
+  }
+  .badge-hot {
+    background: color-mix(in srgb, var(--hot) 15%, transparent);
+    border-color: color-mix(in srgb, var(--hot) 30%, transparent);
+    color: var(--hot); font-weight: 500;
+  }
+  .badge-warm {
+    background: color-mix(in srgb, var(--warm) 15%, transparent);
+    border-color: color-mix(in srgb, var(--warm) 30%, transparent);
+    color: var(--warm); font-weight: 500;
+  }
+  .badge-once {
+    background: var(--surface2); border-color: var(--border);
+    color: var(--muted);
+  }
+
+  .freq-dot {
+    display: inline-flex; gap: 3px; align-items: center;
+  }
+  .freq-dot span {
+    width: 6px; height: 6px; border-radius: 50%;
+    display: inline-block;
+  }
+
+  /* ─── PROGRESS BAR ─── */
+  .progress-wrap {
+    position: fixed; bottom: 20px; right: 20px;
+    background: var(--surface);
+    border: 1px solid var(--border2);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 12px; color: var(--muted);
+    box-shadow: 0 8px 32px rgba(0,0,0,.4);
+    min-width: 160px;
+    z-index: 200;
+  }
+  .progress-label { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--text); font-size: 14px; }
+  .progress-bar-track {
+    height: 4px; background: var(--faint);
+    border-radius: 2px; margin-top: 8px; overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%; background: var(--primary);
+    border-radius: 2px; transition: width .3s ease;
+    width: 0%;
+  }
+  .progress-sub { font-size: 11px; margin-top: 4px; font-family: 'IBM Plex Mono', monospace; }
+
+  /* ─── QUICK REF TABLE ─── */
+  .freq-table {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 2.5rem;
+  }
+  .freq-table-header {
+    padding: 14px 20px;
+    border-bottom: 1px solid var(--border);
+    font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .freq-table-header span { color: var(--primary); }
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--muted); padding: 8px 16px; text-align: left;
+    background: var(--surface2); border-bottom: 1px solid var(--border);
+  }
+  td { padding: 10px 16px; font-size: 13px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--surface2); }
+  .freq-bars { display: flex; gap: 3px; }
+  .freq-bar { width: 8px; height: 14px; border-radius: 2px; }
+  .freq-bar.filled { background: var(--uc, var(--primary)); }
+  .freq-bar.empty { background: var(--faint); }
+
+  /* ─── CHECKBOX ─── */
+  .check-box {
+    width: 18px; height: 18px; border-radius: 5px;
+    border: 1.5px solid var(--border2); background: transparent;
+    flex-shrink: 0; margin-top: 1px;
+    display: flex; align-items: center; justify-content: center;
+    transition: all .15s;
+    cursor: pointer;
+  }
+  .q-card:hover .check-box { border-color: var(--uc); }
+  .check-box.checked { background: var(--uc); border-color: var(--uc); }
+  .check-box.checked::after {
+    content: '';
+    width: 4px; height: 7px;
+    border: 1.5px solid #000;
+    border-top: none; border-left: none;
+    transform: rotate(45deg) translateY(-1px);
+    display: block;
+  }
+
+  /* ─── HIDDEN ─── */
+  .unit.hidden { display: none; }
+  .q-card.hidden { display: none; }
+  .topic-group.hidden { display: none; }
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--faint); border-radius: 3px; }
+
+  /* ─── LIGHT MODE ─── */
+  html.light {
+    --bg: #eceff6;
+    --surface: #ffffff;
+    --surface2: #f4f6fb;
+    --border: rgba(0,0,0,0.07);
+    --border2: rgba(0,0,0,0.13);
+    --text: #0c0e15;
+    --muted: #5c6880;
+    --faint: #e0e4ef;
+  }
+  html.light .nav-bar {
+    background: rgba(255,255,255,0.88);
+    border-bottom-color: rgba(0,0,0,0.07);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 2px 10px rgba(0,0,0,0.05);
+  }
+  html.light header {
+    background: #ffffff;
+    border-bottom-color: rgba(0,0,0,0.07);
+    box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 2px 14px rgba(0,0,0,0.05);
+  }
+  html.light .q-card {
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.07);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 1px 5px rgba(0,0,0,0.03);
+  }
+  html.light .q-card:hover {
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.12);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.09), 0 1px 4px rgba(0,0,0,0.06);
+    transform: translateY(-1px);
+  }
+  html.light .q-card.done { background: #f6f7fb; opacity: 0.6; }
+  html.light .freq-table {
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.07);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 18px rgba(0,0,0,0.05);
+  }
+  html.light .freq-table-header { border-bottom-color: rgba(0,0,0,0.07); }
+  html.light th { background: #f4f6fb; border-bottom-color: rgba(0,0,0,0.07); color: #5c6880; }
+  html.light td { border-bottom-color: rgba(0,0,0,0.05); }
+  html.light tr:hover td { background: #f8f9fc; }
+  html.light .freq-bar.empty { background: #d4d9e8; }
+  html.light .stat {
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.07);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  }
+  html.light .tab {
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.09);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    color: #5c6880;
+  }
+  html.light .tab:hover { background: #f0f3f9; border-color: rgba(0,0,0,0.15); color: #0c0e15; }
+  html.light .tab.active {
+    background: #0c0e15;
+    color: #f4f6fb;
+    border-color: #0c0e15;
+    box-shadow: 0 2px 8px rgba(12,14,21,0.20);
+  }
+  html.light .search-input {
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.10);
+    color: #0c0e15;
+  }
+  html.light .badge-year {
+    background: #eef0f8;
+    border-color: rgba(0,0,0,0.10);
+    color: #5c6880;
+  }
+  html.light .progress-wrap {
+    background: #ffffff;
+    border-color: rgba(0,0,0,0.10);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.13), 0 2px 6px rgba(0,0,0,0.06);
+  }
+  html.light .unit-header {
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+
+  /* ─── THEME TOGGLE BUTTON ─── */
+  .theme-toggle {
+    margin-left: auto;
+    background: transparent;
+    border: 1px solid var(--border2);
+    color: var(--muted);
+    padding: 5px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all .15s ease;
+    font-family: 'IBM Plex Sans', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    white-space: nowrap;
+  }
+  .theme-toggle:hover { background: var(--faint); color: var(--text); border-color: var(--border2); }
+</style>
+</head>
+<body>
+
+<!-- ─── NAV BAR ─── -->
+<nav class="nav-bar">
+  <div class="nav-bar-inner">
+    <span class="nav-label">📚 5th Sem PYQ Banks</span>
+    <a class="nav-btn go-home" href="index.html">🏠 Home</a>
+    <a class="nav-btn" href="ml.html">ML</a>
+    <a class="nav-btn" href="toc.html">TOC</a>
+    <a class="nav-btn" href="os.html">OS</a>
+    <a class="nav-btn" href="wc.html">WC</a>
+    <a class="nav-btn" href="cg.html">CG</a>
+    <a class="nav-btn active" href="dbms.html">DBMS</a>
+    <button class="theme-toggle" id="theme-toggle-btn" onclick="toggleTheme()">☀️ Light</button>
+  </div>
+</nav>
+
+<!-- ─── HEADER ─── -->
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <div class="course-badge">BTCOC501 · BTAIC402 · BTECPC402 · DBATU</div>
+        <h1>Database Management <span>Systems</span></h1>
+        <div class="header-meta">PYQ Bank · 11 Exam Papers Analyzed · Summer 2023, Winter 2023, Summer 2022, Winter 2022, Winter 2019 &amp; Prelims</div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong id="total-q">92</strong> long-answer Qs</div>
+      <div class="stat"><strong>5</strong> units</div>
+      <div class="stat"><strong>11</strong> exam papers</div>
+      <div class="stat"><strong id="done-count">0</strong> done</div>
+    </div>
+  </div>
+</header>
+
+<!-- ─── CONTROLS BAR ─── -->
+<div class="controls-bar">
+  <div class="filter-bar">
+    <button class="tab active" onclick="filterUnit('all', this)">All Units</button>
+    <button class="tab" onclick="filterUnit('1', this)" style="--uc:var(--u1)">Unit 1</button>
+    <button class="tab" onclick="filterUnit('2', this)" style="--uc:var(--u2)">Unit 2</button>
+    <button class="tab" onclick="filterUnit('3', this)" style="--uc:var(--u3)">Unit 3</button>
+    <button class="tab" onclick="filterUnit('4', this)" style="--uc:var(--u4)">Unit 4</button>
+    <button class="tab" onclick="filterUnit('5', this)" style="--uc:var(--u5)">Unit 5</button>
+    <button class="tab" onclick="filterUnit('hot', this)">🔥 High Freq Only</button>
+  </div>
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" class="search-input" id="search-input" placeholder="Search questions, topics, keywords (e.g. ACID, Normalization, SQL, ER Diagram)..." oninput="handleSearch(this.value)">
+  </div>
+</div>
+
+<main>
+
+<!-- ── FREQUENCY TABLE ── -->
+<div class="freq-table" data-unit="freq">
+  <div class="freq-table-header"><span>⚡</span> High-Priority Topics by Frequency (11 Exam Papers)</div>
+  <table>
+    <thead>
+      <tr><th>Topic</th><th>Unit</th><th>Times Asked</th><th>Priority</th></tr>
+    </thead>
+    <tbody>
+      <tr style="--uc:var(--u3)"><td>SQL Query Writing — Multi-table Schemas</td><td style="color:var(--u3);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 3</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span></span> <b>8×</b></td><td><span class="badge badge-hot">🔥 Must Do</span></td></tr>
+      <tr style="--uc:var(--u1)"><td>DBMS vs File Processing System</td><td style="color:var(--u1);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 1</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span></span> <b>6×</b></td><td><span class="badge badge-hot">🔥 Must Do</span></td></tr>
+      <tr style="--uc:var(--u4)"><td>Transactions — Concept, ACID Properties &amp; States</td><td style="color:var(--u4);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 4</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span></span> <b>6×</b></td><td><span class="badge badge-hot">🔥 Must Do</span></td></tr>
+      <tr style="--uc:var(--u5)"><td>Need for Normalization &amp; Anomalies</td><td style="color:var(--u5);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 5</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span></span> <b>6×</b></td><td><span class="badge badge-hot">🔥 Must Do</span></td></tr>
+      <tr style="--uc:var(--u5)"><td>1NF / 2NF / 3NF Normal Forms</td><td style="color:var(--u5);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 5</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span></span> <b>5×</b></td><td><span class="badge badge-hot">🔥 Must Do</span></td></tr>
+      <tr style="--uc:var(--u1)"><td>DBMS Architecture &amp; Components</td><td style="color:var(--u1);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 1</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span></span> <b>4×</b></td><td><span class="badge badge-hot">🔥 Must Do</span></td></tr>
+      <tr style="--uc:var(--u1)"><td>ER Diagram Construction (Case Studies)</td><td style="color:var(--u1);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 1</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span></span> <b>4×</b></td><td><span class="badge badge-hot">🔥 Must Do</span></td></tr>
+      <tr style="--uc:var(--u2)"><td>Unary &amp; Binary Relational Algebra Operations</td><td style="color:var(--u2);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 2</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span></span> <b>4×</b></td><td><span class="badge badge-hot">🔥 Must Do</span></td></tr>
+      <tr style="--uc:var(--u2)"><td>Joins in Relational Algebra (Natural, Equi, Outer)</td><td style="color:var(--u2);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 2</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span></span> <b>4×</b></td><td><span class="badge badge-hot">🔥 Must Do</span></td></tr>
+      <tr style="--uc:var(--u3)"><td>SQL DDL / DML Operations</td><td style="color:var(--u3);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 3</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span></span> <b>4×</b></td><td><span class="badge badge-hot">🔥 Must Do</span></td></tr>
+      <tr style="--uc:var(--u5)"><td>BCNF vs 3NF Analysis</td><td style="color:var(--u5);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 5</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span></span> <b>4×</b></td><td><span class="badge badge-hot">🔥 Must Do</span></td></tr>
+      <tr style="--uc:var(--u5)"><td>Functional Dependency Closure &amp; Candidate Keys</td><td style="color:var(--u5);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 5</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span></span> <b>4×</b></td><td><span class="badge badge-hot">🔥 Must Do</span></td></tr>
+      <tr style="--uc:var(--u1)"><td>Purpose / Need of DBMS &amp; Applications</td><td style="color:var(--u1);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 1</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></span> <b>3×</b></td><td><span class="badge badge-warm">⚡ Important</span></td></tr>
+      <tr style="--uc:var(--u1)"><td>Data Abstraction &amp; 3 Levels</td><td style="color:var(--u1);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 1</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></span> <b>3×</b></td><td><span class="badge badge-warm">⚡ Important</span></td></tr>
+      <tr style="--uc:var(--u1)"><td>Two-tier vs Three-tier Architecture</td><td style="color:var(--u1);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 1</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></span> <b>3×</b></td><td><span class="badge badge-warm">⚡ Important</span></td></tr>
+      <tr style="--uc:var(--u3)"><td>Nested Subqueries</td><td style="color:var(--u3);font-family:'IBM Plex Mono',monospace;font-size:12px">Unit 3</td><td><span class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></span> <b>3×</b></td><td><span class="badge badge-warm">⚡ Important</span></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ══════════ UNIT 1 ══════════ -->
+<div class="unit" data-unit="1">
+  <div class="unit-header">
+    <div class="unit-num">1</div>
+    <div>
+      <div class="unit-title">Introduction &amp; ER Model</div>
+      <div class="unit-sub">DBMS fundamentals, 3-tier architecture, data abstraction, and Entity-Relationship modeling</div>
+    </div>
+    <div class="unit-hrs">08 Hrs</div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">DBMS vs File Processing System 🔥</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q1</div>
+      <div class="q-body">
+        <div class="q-text">Explain the different advantages of DBMS over file processing systems.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary 2023-24 (SSWCOE)</span>
+          <span class="badge badge-year">Winter 2019 – IT (BTITC501)</span>
+          <span class="badge badge-warm">⚡ 2×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q2</div>
+      <div class="q-body">
+        <div class="q-text">Illustrate the database characteristics. How are they different from File systems?</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 (Supply)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q3</div>
+      <div class="q-body">
+        <div class="q-text">Why would you choose a database system instead of simply storing data in a file processing system? Compare file processing systems and DBMS.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q4</div>
+      <div class="q-body">
+        <div class="q-text">What are the disadvantages of a file processing system?</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – AI&amp;DS (BTAIC402)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q5</div>
+      <div class="q-body">
+        <div class="q-text">We develop database applications directly on top of file systems. But some problems arise because of this — discuss those problems.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Purpose / Need of DBMS &amp; Applications</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q6</div>
+      <div class="q-body">
+        <div class="q-text">What is DBMS? Explain the need of DBMS. Write any 3 applications of DBMS.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2022 – AI&amp;DS (BTAIC402)</span>
+          <span class="badge badge-year">Summer 2023 – AI&amp;DS (BTAIC402)</span>
+          <span class="badge badge-warm">⚡ 2×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q7</div>
+      <div class="q-body">
+        <div class="q-text">Explain the purpose of database systems.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2022 (Supply)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Data Abstraction &amp; Levels of Abstraction</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q8</div>
+      <div class="q-body">
+        <div class="q-text">Explain Data Abstraction.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2022 (Supply)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q9</div>
+      <div class="q-body">
+        <div class="q-text">Describe, with a diagram, the levels of abstraction available in database systems.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – E&amp;C (BTECPC402)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q10</div>
+      <div class="q-body">
+        <div class="q-text">Explain data abstraction and the different data models in DBMS.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2019 – IT (BTITC501)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Data Storage and Querying</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q11</div>
+      <div class="q-body">
+        <div class="q-text">Explain data storage and querying.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2022 (Supply)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Two-tier vs Three-tier Architecture</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q12</div>
+      <div class="q-body">
+        <div class="q-text">With the help of a diagram, explain the difference between 2-tier and 3-tier architecture. Justify which architecture is better suited for web applications.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – E&amp;C (BTECPC402)</span>
+          <span class="badge badge-year">Winter 2019 – CSE (BTCOCS501)</span>
+          <span class="badge badge-warm">⚡ 2×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q13</div>
+      <div class="q-body">
+        <div class="q-text">Explain two-tier and three-tier architectures of DBMS with a schematic diagram and mention at least 1 example of each.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">DBMS Architecture &amp; Components</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q14</div>
+      <div class="q-body">
+        <div class="q-text">Explain the Client/Server architecture of DBMS.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2022 – AI&amp;DS (BTAIC402)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q15</div>
+      <div class="q-body">
+        <div class="q-text">Describe the components of: a) Query Processor b) Storage Processor.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – E&amp;C (BTECPC402)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q16</div>
+      <div class="q-body">
+        <div class="q-text">Define DBMS. List the components of DBMS.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary 2023-24 (SSWCOE)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q17</div>
+      <div class="q-body">
+        <div class="q-text">With the help of a block diagram, describe the basic architecture of a database management system.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – AI&amp;DS (BTAIC402)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">ER Model — Concepts &amp; Notation</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q18</div>
+      <div class="q-body">
+        <div class="q-text">What is the ER model? Explain the various symbols/components used in an ER diagram.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – AI&amp;DS (BTAIC402)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q19</div>
+      <div class="q-body">
+        <div class="q-text">Explain the E-R Model with the help of an example.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary, SSWCOE (undated)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Entities, Attributes &amp; Attribute Types</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q20</div>
+      <div class="q-body">
+        <div class="q-text">Define an Entity and Attribute. Explain the different types of attributes that occur in an ER diagram model, with an example.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q21</div>
+      <div class="q-body">
+        <div class="q-text">Define attributes. Explain the types of attributes with diagrams.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary, SSWCOE (undated)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">ER Diagram Construction (Case Studies) 🔥</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q22</div>
+      <div class="q-body">
+        <div class="q-text">Draw an E-R diagram of a Banking system taking into account at least five entities; indicate all keys, constraints, and assumptions made.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-hot">🔥 Case Study</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q23</div>
+      <div class="q-body">
+        <div class="q-text">Draw the symbols of an ER Diagram. Draw an ER Diagram for a Library Management System.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-hot">🔥 Case Study</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q24</div>
+      <div class="q-body">
+        <div class="q-text">A company has the following entities and attributes, where EmpPhone is a multivalued attribute and Address is a composite attribute (Employee, Contact Details, Department, Project). Draw the ER-Diagram for the same.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – E&amp;C (BTECPC402)</span>
+          <span class="badge badge-hot">🔥 Case Study</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q25</div>
+      <div class="q-body">
+        <div class="q-text">Construct an E-R diagram for a car insurance company whose customers own one or more cars each, with recorded accidents, policies covering cars, and premium payments.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2019 – CSE (BTCOCS501)</span>
+          <span class="badge badge-hot">🔥 Case Study</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Codd's Rules</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q26</div>
+      <div class="q-body">
+        <div class="q-text">Explain Codd's Rules.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary, SSWCOE (undated)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ UNIT 2 ══════════ -->
+<div class="unit" data-unit="2">
+  <div class="unit-header">
+    <div class="unit-num">2</div>
+    <div>
+      <div class="unit-title">Relational Data Model &amp; Relational Algebra</div>
+      <div class="unit-sub">Relational model structure, integrity keys, and fundamental/join algebra operations</div>
+    </div>
+    <div class="unit-hrs">06 Hrs</div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Keys &amp; Integrity Constraints</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q27</div>
+      <div class="q-body">
+        <div class="q-text">Illustrate integrity and key constraints with suitable examples.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 (Supply)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">RDBMS, Data Model &amp; Schema/Instance</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q28</div>
+      <div class="q-body">
+        <div class="q-text">What is RDBMS? Explain the data model of RDBMS. Define Schema and instances with a suitable example.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2022 – AI&amp;DS (BTAIC402)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q29</div>
+      <div class="q-body">
+        <div class="q-text">Explain in detail the Data Model and its types.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – AI&amp;DS (BTAIC402)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Unary &amp; Binary Relational Algebra Operations 🔥</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q30</div>
+      <div class="q-body">
+        <div class="q-text">Explain unary and binary operations in relational algebra.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary 2023-24 (SSWCOE)</span>
+          <span class="badge badge-year">Winter 2019 – IT (BTITC501)</span>
+          <span class="badge badge-warm">⚡ 2×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q31</div>
+      <div class="q-body">
+        <div class="q-text">What is Relational algebra? Explain the basic operations along with symbols of Relational Algebra.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q32</div>
+      <div class="q-body">
+        <div class="q-text">List and explain, with the help of examples, the fundamental operations in relational algebra.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary 2023-24 (SSWCOE)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Joins in Relational Algebra (Natural, Equi, Inner, Outer) 🔥</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q33</div>
+      <div class="q-body">
+        <div class="q-text">Define and differentiate the following relational algebra operators with a suitable example: (i) Cartesian product (ii) Natural join.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q34</div>
+      <div class="q-body">
+        <div class="q-text">Explain the following with respect to relational algebra: Natural Join, Equi join, Left outer join, Full outer join.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary, SSWCOE (undated)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q35</div>
+      <div class="q-body">
+        <div class="q-text">Explain Inner Join &amp; Outer Join in detail.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary 2023-24 (SSWCOE)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q36</div>
+      <div class="q-body">
+        <div class="q-text">Explain Equijoin, left join and right join with a suitable example, and write a proper relational algebra query for each.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Relational Algebra — Query Writing</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q37</div>
+      <div class="q-body">
+        <div class="q-text">Given schema Suppliers(sid,sname,address), Parts(pid,pname,color), Catalog(sid,pid,cost) — write relational algebra queries to find suppliers who supply red parts, and suppliers who supply red or green parts.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-hot">🔥 Query Problem</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q38</div>
+      <div class="q-body">
+        <div class="q-text">Given a relational schema Account(Acno, AcName, Br_name, Amount), write relational algebra queries to display all tuples, project specific columns, and filter by amount and branch.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-hot">🔥 Query Problem</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ UNIT 3 ══════════ -->
+<div class="unit" data-unit="3">
+  <div class="unit-header">
+    <div class="unit-num">3</div>
+    <div>
+      <div class="unit-title">Relational Calculus &amp; SQL</div>
+      <div class="unit-sub">Tuple/domain relational calculus, SQL DDL/DML, aggregations, subqueries and multi-table querying</div>
+    </div>
+    <div class="unit-hrs">08 Hrs</div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Tuple Relational Calculus (TRC)</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q39</div>
+      <div class="q-body">
+        <div class="q-text">Given relation schemas R=(A,B,C), S=(D,E,F), give an expression in tuple relational calculus equivalent to the given queries.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary 2023-24 (SSWCOE)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q40</div>
+      <div class="q-body">
+        <div class="q-text">Given an employee/works/company/manages database, give expressions in tuple relational calculus for the given queries.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Domain Relational Calculus (DRC)</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q41</div>
+      <div class="q-body">
+        <div class="q-text">Explain domain relational calculus with the help of an example.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary 2023-24 (SSWCOE)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q42</div>
+      <div class="q-body">
+        <div class="q-text">Explain domain relational calculus.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2022 (Supply)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">SQL Equivalent of Algebra/Calculus Expressions</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q43</div>
+      <div class="q-body">
+        <div class="q-text">Given relation schemas R=(A,B,C), S=(A,D,E), give an SQL expression equivalent to given relational algebra queries (Π, σ, ×, ⋈, ∩).</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2019 – CSE (BTCOCS501)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Basic SQL Query Structure</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q44</div>
+      <div class="q-body">
+        <div class="q-text">Explain, in detail, the form of a basic SQL query with a suitable example.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 (Supply)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">SQL DDL/DML Commands &amp; Table Operations 🔥</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q45</div>
+      <div class="q-body">
+        <div class="q-text">Write SQL commands to: create a Student table for a given schema, add a new column, and drop a column.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – E&amp;C (BTECPC402)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q46</div>
+      <div class="q-body">
+        <div class="q-text">Write SQL statements to insert a new student record, change the credit_hours of a course, and delete a student record.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2019 – CSE (BTCOCS501)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q47</div>
+      <div class="q-body">
+        <div class="q-text">Write SQL commands to create/use/show/delete databases, create a BOOK table, insert rows, alter column length, and query rows by condition.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q48</div>
+      <div class="q-body">
+        <div class="q-text">Given Student/Teacher/Teaches schemas, write SQL queries to update a department name and rename a column, alongside filtering and aggregation queries.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2022 – AI&amp;DS (BTAIC402)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">DDL, DML, DCL Commands (Conceptual)</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q49</div>
+      <div class="q-body">
+        <div class="q-text">Explain DDL, DML and DCL commands with suitable examples.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2019 – IT (BTITC501)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q50</div>
+      <div class="q-body">
+        <div class="q-text">Mention the different SQL languages. Explain their purpose with suitable SQL commands.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">SET / Comparison Operators in SQL</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q51</div>
+      <div class="q-body">
+        <div class="q-text">List out various SET comparison operators in SQL and describe their use in writing SQL queries.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 (Supply)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Aggregate Functions &amp; GROUP BY / HAVING</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q52</div>
+      <div class="q-body">
+        <div class="q-text">Explain different aggregate functions in SQL with suitable examples.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2019 – IT (BTITC501)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q53</div>
+      <div class="q-body">
+        <div class="q-text">Explain the GROUP BY and HAVING clauses of SQL with an example.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary 2023-24 (SSWCOE)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Nested Subqueries 🔥</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q54</div>
+      <div class="q-body">
+        <div class="q-text">Given Salesman/Customer/Orders schemas, write a subquery to find the customer who placed the 2nd-highest amount order.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary 2023-24 (SSWCOE)</span>
+          <span class="badge badge-year">Winter 2019 – IT (BTITC501)</span>
+          <span class="badge badge-warm">⚡ 2×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q55</div>
+      <div class="q-body">
+        <div class="q-text">Given an EMPLOYEE table (Eid, Name, Age, Address, Salary), use subqueries to display high earners, delete young employees, and find the second-highest salary.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – E&amp;C (BTECPC402)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">SQL Query Writing — Multi-table Practice Schemas 🔥</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q56</div>
+      <div class="q-body">
+        <div class="q-text">Given Salesman/Customer/Orders schemas, write SQL queries for customer names per order, city-wise counts, and comparative order amounts.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary 2023-24 (SSWCOE)</span>
+          <span class="badge badge-year">Winter 2019 – IT (BTITC501)</span>
+          <span class="badge badge-warm">⚡ 2×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q57</div>
+      <div class="q-body">
+        <div class="q-text">Given bank schema (account, branch, customer, loan, depositor, borrower), write SQL queries for customer/loan lookups, string filtering, and ordered listings.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 (Supply)</span>
+          <span class="badge badge-hot">🔥 Multi-Table SQL</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q58</div>
+      <div class="q-body">
+        <div class="q-text">Given EMPLOYEE/DEPARTMENT/PROJECT/WORKS_ON/DEPENDENT schema, write SQL queries to retrieve employee/department details for a given department.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 (Supply)</span>
+          <span class="badge badge-hot">🔥 Multi-Table SQL</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q59</div>
+      <div class="q-body">
+        <div class="q-text">Given Suppliers/Parts/Catalog schema, write SQL queries to create the tables and find suppliers matching part-color/location conditions.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-hot">🔥 Multi-Table SQL</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q60</div>
+      <div class="q-body">
+        <div class="q-text">Given Weather(city, temperature, humidity, condition) and Location(city, country) schemas, write SQL queries with comparison and range conditions.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-hot">🔥 Multi-Table SQL</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q61</div>
+      <div class="q-body">
+        <div class="q-text">Given Instructor/Teaches/Course/Department schema, write SQL queries to find courses taught across semesters and instructors within a salary range.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2022 (Supply)</span>
+          <span class="badge badge-hot">🔥 Multi-Table SQL</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q62</div>
+      <div class="q-body">
+        <div class="q-text">Given branch/customer/account/loan/depositor/borrower schema, write relational-algebra-to-SQL queries for loan amounts and customers with loans/accounts.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2019 – IT (BTITC501)</span>
+          <span class="badge badge-hot">🔥 Multi-Table SQL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ UNIT 4 ══════════ -->
+<div class="unit" data-unit="4">
+  <div class="unit-header">
+    <div class="unit-num">4</div>
+    <div>
+      <div class="unit-title">Intermediate &amp; Advanced SQL &amp; Transactions</div>
+      <div class="unit-sub">Joins, views, stored procedures, functions, ACID properties and transaction state transitions</div>
+    </div>
+    <div class="unit-hrs">06 Hrs</div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Joins in SQL (Inner, Outer, Natural) 🔥</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q63</div>
+      <div class="q-body">
+        <div class="q-text">Explain Inner, Left Outer and Right Outer Joins with a suitable example.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – E&amp;C (BTECPC402)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q64</div>
+      <div class="q-body">
+        <div class="q-text">Explain the following types of joins in SQL with a suitable example: Inner Join, Left Outer Join, Natural Join.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2022 – AI&amp;DS (BTAIC402)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Views in SQL</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q65</div>
+      <div class="q-body">
+        <div class="q-text">What is a view? What are its advantages? Explain views in SQL with a suitable example.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q66</div>
+      <div class="q-body">
+        <div class="q-text">What is a view? How do you create and delete a view?</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary 2023-24 (SSWCOE)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Functions and Stored Procedures</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q67</div>
+      <div class="q-body">
+        <div class="q-text">Explain Functions and Procedures with an example.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2022 (Supply)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Transactions — Concept, ACID Properties &amp; States 🔥</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q68</div>
+      <div class="q-body">
+        <div class="q-text">Define Transaction and its properties with a suitable example.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-hot">🔥 ACID</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q69</div>
+      <div class="q-body">
+        <div class="q-text">Explain the ACID properties of a transaction using suitable examples.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2019 – IT (BTITC501)</span>
+          <span class="badge badge-hot">🔥 ACID</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q70</div>
+      <div class="q-body">
+        <div class="q-text">Explain the ACID properties in detail.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-hot">🔥 ACID</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q71</div>
+      <div class="q-body">
+        <div class="q-text">Explain the ACID properties of a transaction.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 (Supply)</span>
+          <span class="badge badge-hot">🔥 ACID</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q72</div>
+      <div class="q-body">
+        <div class="q-text">Draw a state diagram and discuss the typical states a transaction goes through during execution.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – E&amp;C (BTECPC402)</span>
+          <span class="badge badge-hot">🔥 State Diagram</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q73</div>
+      <div class="q-body">
+        <div class="q-text">Explain the transaction process state diagram.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary 2023-24 (SSWCOE)</span>
+          <span class="badge badge-hot">🔥 State Diagram</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════ UNIT 5 ══════════ -->
+<div class="unit" data-unit="5">
+  <div class="unit-header">
+    <div class="unit-num">5</div>
+    <div>
+      <div class="unit-title">Normalization &amp; Functional Dependencies</div>
+      <div class="unit-sub">Anomalies, functional dependency closure, candidate keys, and 1NF, 2NF, 3NF, BCNF</div>
+    </div>
+    <div class="unit-hrs">07 Hrs</div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Need for Normalization &amp; Anomalies 🔥</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q74</div>
+      <div class="q-body">
+        <div class="q-text">What is Normalization? Explain the importance of normalization. What is the criteria for good relation design?</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-hot">🔥 Normalization</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q75</div>
+      <div class="q-body">
+        <div class="q-text">What is normalization? Why does one need to normalize database tables?</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-hot">🔥 Normalization</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q76</div>
+      <div class="q-body">
+        <div class="q-text">What is Normalization? Explain various anomalies with a suitable example.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – E&amp;C (BTECPC402)</span>
+          <span class="badge badge-hot">🔥 Anomalies</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q77</div>
+      <div class="q-body">
+        <div class="q-text">What is the need of Normalization? Write the necessary conditions for 1NF, 2NF, 3NF and BCNF.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2022 – AI&amp;DS (BTAIC402)</span>
+          <span class="badge badge-hot">🔥 Conditions</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q78</div>
+      <div class="q-body">
+        <div class="q-text">Explain insertion, deletion and modification anomalies with suitable examples.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2022 (Supply)</span>
+          <span class="badge badge-hot">🔥 Anomalies</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q79</div>
+      <div class="q-body">
+        <div class="q-text">What is Redundancy? Explain the anomalies in a relational database.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary, SSWCOE (undated)</span>
+          <span class="badge badge-hot">🔥 Anomalies</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">1NF / 2NF / 3NF Normal Forms 🔥</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q80</div>
+      <div class="q-body">
+        <div class="q-text">Define Normalization. Explain 1NF, 2NF, 3NF with an example.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – AI&amp;DS (BTAIC402)</span>
+          <span class="badge badge-hot">🔥 1NF–3NF</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q81</div>
+      <div class="q-body">
+        <div class="q-text">Explain the 1st, 2nd and 3rd normal forms with the help of a suitable example.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-hot">🔥 1NF–3NF</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q82</div>
+      <div class="q-body">
+        <div class="q-text">Write a short note on: (i) 1NF (ii) BCNF (iii) 4NF.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary 2023-24 (SSWCOE)</span>
+          <span class="badge badge-warm">⚡ 1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q83</div>
+      <div class="q-body">
+        <div class="q-text">Illustrating the concept of full functional dependency, explain 2NF with an example.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2019 – CSE (BTCOCS501)</span>
+          <span class="badge badge-warm">⚡ Full FD</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q84</div>
+      <div class="q-body">
+        <div class="q-text">Identify whether a given relation R(A,B,C,D) with a given set of functional dependencies is in 2NF or not.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – E&amp;C (BTECPC402)</span>
+          <span class="badge badge-warm">⚡ Numerical Check</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">BCNF (Boyce-Codd Normal Form) 🔥</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q85</div>
+      <div class="q-body">
+        <div class="q-text">State BCNF. How does it differ from 3NF?</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 (Supply)</span>
+          <span class="badge badge-hot">🔥 BCNF vs 3NF</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q86</div>
+      <div class="q-body">
+        <div class="q-text">Explain BCNF with a suitable example and distinguish between BCNF and 3NF; check if a given relation R(student_no, course_no, instr_no) with a given FD set is in BCNF and 3NF.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-hot">🔥 BCNF Check</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q87</div>
+      <div class="q-body">
+        <div class="q-text">Explain BCNF.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2022 (Supply)</span>
+          <span class="badge badge-once">1×</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q88</div>
+      <div class="q-body">
+        <div class="q-text">Given a relation R(A,B,C,D) with primary key AB and various candidate functional dependencies (D→C, C→D, AC→D, etc.), determine which normal form R is in.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Preliminary, SSWCOE (undated)</span>
+          <span class="badge badge-hot">🔥 NF Test</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="topic-group">
+    <div class="topic-label">Functional Dependency Closure &amp; Candidate Keys 🔥</div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q89</div>
+      <div class="q-body">
+        <div class="q-text">Compute the closure of a given set of functional dependencies F for a relation schema.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2019 – CSE (BTCOCS501)</span>
+          <span class="badge badge-hot">🔥 FD Closure</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q90</div>
+      <div class="q-body">
+        <div class="q-text">Given R(A,B,C,G,H,I) with functional dependencies A→B, A→C, CG→H, CG→I, B→H, compute (AG)+ and determine if it is a candidate key.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-hot">🔥 Key Derivation</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q91</div>
+      <div class="q-body">
+        <div class="q-text">List the candidate keys for R(A,B,C,D,E) given FDs A→BC, CD→E, B→D, E→A.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Winter 2019 – CSE (BTCOCS501)</span>
+          <span class="badge badge-hot">🔥 Candidate Keys</span>
+        </div>
+      </div>
+    </div>
+    <div class="q-card" onclick="toggleDone(this)">
+      <div class="check-box"></div>
+      <div class="q-num">Q92</div>
+      <div class="q-body">
+        <div class="q-text">Find the primary and non-primary attributes of R(A,B,C,D,E) given a set of functional dependencies.</div>
+        <div class="q-meta">
+          <span class="badge badge-year">Summer 2023 – E&amp;C (BTECPC402)</span>
+          <span class="badge badge-warm">⚡ Prime Attributes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- Floating Progress Widget -->
+<div class="progress-wrap" id="progress-widget">
+  <div class="progress-label" id="pct">0% done</div>
+  <div class="progress-bar-track"><div class="progress-bar-fill" id="pfill"></div></div>
+  <div class="progress-sub" id="psub">0 / 92 questions</div>
+</div>
+
+<script>
+// ─── THEME ───
+(function() {
+  if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.classList.add('light');
+  }
+})();
+function toggleTheme() {
+  const isLight = document.documentElement.classList.toggle('light');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  const btn = document.getElementById('theme-toggle-btn');
+  if (btn) btn.innerHTML = isLight ? '🌙 Dark' : '☀️ Light';
+}
+function initToggleIcon() {
+  const btn = document.getElementById('theme-toggle-btn');
+  if (btn && document.documentElement.classList.contains('light')) btn.innerHTML = '🌙 Dark';
+}
+initToggleIcon();
+
+const TOTAL = 92;
+let doneSet = new Set(JSON.parse(localStorage.getItem('dbms_done') || '[]'));
+
+function save() { localStorage.setItem('dbms_done', JSON.stringify([...doneSet])); }
+
+function toggleDone(card) {
+  const allCards = [...document.querySelectorAll('.q-card')];
+  const idx = allCards.indexOf(card);
+  const box = card.querySelector('.check-box');
+  if (doneSet.has(idx)) {
+    doneSet.delete(idx);
+    card.classList.remove('done');
+    box.classList.remove('checked');
+  } else {
+    doneSet.add(idx);
+    card.classList.add('done');
+    box.classList.add('checked');
+  }
+  save(); updateProgress();
+}
+
+function updateProgress() {
+  const n = doneSet.size;
+  const pct = Math.round(n / TOTAL * 100);
+  document.getElementById('pct').textContent = pct + '% done';
+  document.getElementById('pfill').style.width = pct + '%';
+  document.getElementById('psub').textContent = n + ' / ' + TOTAL + ' questions';
+  document.getElementById('done-count').textContent = n;
+}
+
+function restoreState() {
+  const cards = [...document.querySelectorAll('.q-card')];
+  doneSet.forEach(idx => {
+    if (cards[idx]) {
+      cards[idx].classList.add('done');
+      const box = cards[idx].querySelector('.check-box');
+      if (box) box.classList.add('checked');
+    }
+  });
+  updateProgress();
+}
+
+function filterUnit(unit, btn) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) searchInput.value = '';
+
+  document.querySelectorAll('.unit').forEach(u => {
+    if (unit === 'all') { 
+      u.classList.remove('hidden'); 
+      u.querySelectorAll('.topic-group').forEach(tg => tg.classList.remove('hidden'));
+      u.querySelectorAll('.q-card').forEach(qc => qc.classList.remove('hidden'));
+      return; 
+    }
+    if (unit === 'hot') {
+      const hotCards = u.querySelectorAll('.badge-hot');
+      u.classList.toggle('hidden', hotCards.length === 0);
+      u.querySelectorAll('.topic-group').forEach(tg => {
+        const hasHot = tg.querySelectorAll('.badge-hot').length > 0;
+        tg.classList.toggle('hidden', !hasHot);
+        tg.querySelectorAll('.q-card').forEach(qc => {
+          qc.classList.toggle('hidden', qc.querySelectorAll('.badge-hot').length === 0);
+        });
+      });
+      return;
+    }
+    const match = u.dataset.unit === unit;
+    u.classList.toggle('hidden', !match);
+    if (match) {
+      u.querySelectorAll('.topic-group').forEach(tg => tg.classList.remove('hidden'));
+      u.querySelectorAll('.q-card').forEach(qc => qc.classList.remove('hidden'));
+    }
+  });
+  document.querySelector('.freq-table').style.display = (unit === 'all' || unit === 'hot') ? '' : 'none';
+}
+
+function handleSearch(query) {
+  const term = query.trim().toLowerCase();
+  const freqTable = document.querySelector('.freq-table');
+  
+  if (!term) {
+    // Reset to current active tab
+    const activeTab = document.querySelector('.tab.active');
+    if (activeTab) activeTab.click();
+    return;
+  }
+
+  freqTable.style.display = 'none';
+
+  document.querySelectorAll('.unit').forEach(u => {
+    let unitHasMatch = false;
+    u.querySelectorAll('.topic-group').forEach(tg => {
+      let groupHasMatch = false;
+      tg.querySelectorAll('.q-card').forEach(qc => {
+        const text = qc.textContent.toLowerCase();
+        const matches = text.includes(term);
+        qc.classList.toggle('hidden', !matches);
+        if (matches) groupHasMatch = true;
+      });
+      tg.classList.toggle('hidden', !groupHasMatch);
+      if (groupHasMatch) unitHasMatch = true;
+    });
+    u.classList.toggle('hidden', !unitHasMatch);
+  });
+}
+
+restoreState();
+</script>
+</body>
+</html>

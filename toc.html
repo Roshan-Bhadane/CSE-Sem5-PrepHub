@@ -1,0 +1,1697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TOC Question Bank – DBATU</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0f11;
+    --surface: #16181c;
+    --surface2: #1e2026;
+    --border: #2a2d35;
+    --border2: #363a44;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --faint: #3a3d47;
+    --primary: #34d399;
+    --primary-glow: rgba(52, 211, 153, 0.15);
+    --u1: #38bdf8; --u1d: #082f49;
+    --u2: #a78bfa; --u2d: #1e1530;
+    --u3: #34d399; --u3d: #0d2520;
+    --u4: #fbbf24; --u4d: #231d0a;
+    --u5: #f472b6; --u5d: #280f1e;
+    --hot: #ef4444;
+    --warm: #f97316;
+    --cool: #6b7280;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px; line-height: 1.65; min-height: 100vh;
+  }
+  .nav-bar {
+    background: var(--surface2); border-bottom: 1px solid var(--border);
+    padding: 8px 1.5rem; display: flex; align-items: center; gap: 8px;
+    position: sticky; top: 0; z-index: 101; backdrop-filter: blur(12px);
+  }
+  .nav-bar-inner { max-width: 900px; margin: 0 auto; width: 100%; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .nav-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted);
+    letter-spacing: .06em; text-transform: uppercase; margin-right: 4px;
+  }
+  .nav-btn {
+    display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px;
+    border-radius: 20px; font-size: 12px; font-weight: 500;
+    font-family: 'IBM Plex Sans', sans-serif; cursor: pointer;
+    border: 1px solid var(--border2); background: transparent;
+    color: var(--muted); transition: all .15s ease; text-decoration: none;
+  }
+  .nav-btn:hover { background: var(--faint); color: var(--text); border-color: var(--primary); }
+  .nav-btn.active { background: var(--u3d); color: var(--primary); border-color: var(--primary); }
+  .nav-btn.go-home {
+    background: color-mix(in srgb, #fbbf24 10%, transparent);
+    color: #fbbf24; border-color: color-mix(in srgb, #fbbf24 40%, transparent);
+  }
+  .nav-btn.go-home:hover {
+    background: color-mix(in srgb, #fbbf24 20%, transparent);
+    color: var(--text); border-color: #fbbf24;
+  }
+  .theme-toggle {
+    margin-left: auto; display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 500;
+    font-family: 'IBM Plex Sans', sans-serif; cursor: pointer;
+    border: 1px solid var(--border2); background: var(--surface); color: var(--text);
+    transition: all .15s ease;
+  }
+  .theme-toggle:hover { border-color: var(--primary); }
+  header {
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    padding: 2rem 1.5rem 1.5rem; z-index: 100; backdrop-filter: blur(12px);
+  }
+  .header-inner { max-width: 900px; margin: 0 auto; }
+  .header-top { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+  .course-badge {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    background: var(--faint); color: var(--muted); padding: 3px 10px;
+    border-radius: 4px; letter-spacing: .05em; display: inline-block; margin-bottom: 8px;
+  }
+  h1 { font-family: 'Syne', sans-serif; font-size: clamp(20px, 4vw, 28px); font-weight: 800; letter-spacing: -.02em; color: var(--text); line-height: 1.1; }
+  h1 span { color: var(--primary); }
+  .header-meta { font-size: 12px; color: var(--muted); margin-top: 6px; font-family: 'IBM Plex Mono', monospace; }
+  .stats { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+  .stat {
+    background: var(--surface2); border: 1px solid var(--border); border-radius: 8px;
+    padding: 6px 14px; font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px;
+  }
+  .stat strong { color: var(--text); font-size: 15px; font-family: 'Syne', sans-serif; }
+  .controls-bar { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; padding: 1rem 1.5rem 0; }
+  .filter-bar { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .tab {
+    padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 500;
+    cursor: pointer; border: 1px solid var(--border); background: transparent;
+    color: var(--muted); transition: all .15s ease; font-family: 'IBM Plex Sans', sans-serif;
+  }
+  .tab:hover { border-color: var(--border2); color: var(--text); }
+  .tab.active { background: var(--faint); color: var(--text); border-color: var(--border2); }
+  .search-box { position: relative; width: 100%; }
+  .search-input {
+    width: 100%; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 8px 14px 8px 36px; color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; outline: none; transition: border-color .2s;
+  }
+  .search-input:focus { border-color: var(--primary); }
+  .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 13px; pointer-events: none; }
+  main { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+  .unit { margin-bottom: 2.5rem; }
+  .unit[data-unit="1"] { --uc: var(--u1); --ucd: var(--u1d); }
+  .unit[data-unit="2"] { --uc: var(--u2); --ucd: var(--u2d); }
+  .unit[data-unit="3"] { --uc: var(--u3); --ucd: var(--u3d); }
+  .unit[data-unit="4"] { --uc: var(--u4); --ucd: var(--u4d); }
+  .unit[data-unit="5"] { --uc: var(--u5); --ucd: var(--u5d); }
+  .unit-header {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 1rem; padding: 16px 20px;
+    background: var(--ucd); border: 1px solid color-mix(in srgb, var(--uc) 25%, transparent); border-radius: 12px;
+  }
+  .unit-num {
+    width: 38px; height: 38px; border-radius: 10px; background: var(--uc); color: #000;
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 16px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .unit-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; color: var(--uc); }
+  .unit-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .unit-hrs {
+    margin-left: auto; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--uc);
+    background: color-mix(in srgb, var(--uc) 12%, transparent); padding: 3px 10px; border-radius: 4px; white-space: nowrap;
+  }
+  .topic-group { margin-bottom: 1.2rem; }
+  .topic-label {
+    font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--muted); font-family: 'IBM Plex Mono', monospace; margin-bottom: 6px;
+    padding-left: 8px; border-left: 2px solid var(--uc);
+  }
+  .q-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px 16px; margin-bottom: 6px; display: flex; gap: 14px; align-items: flex-start;
+    transition: border-color .15s, background .15s; cursor: pointer;
+  }
+  .q-card:hover { border-color: var(--border2); background: var(--surface2); }
+  .q-card.done { opacity: .45; background: var(--surface); }
+  .q-card.done .q-text { text-decoration: line-through; text-decoration-color: var(--muted); }
+  .q-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); min-width: 28px; margin-top: 2px; flex-shrink: 0; }
+  .q-body { flex: 1; }
+  .q-text { font-size: 14px; color: var(--text); line-height: 1.55; }
+  .q-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; align-items: center; }
+  .badge { font-size: 10px; font-family: 'IBM Plex Mono', monospace; padding: 2px 8px; border-radius: 4px; border: 1px solid transparent; }
+  .badge-year { background: var(--surface2); border-color: var(--border); color: var(--muted); }
+  .badge-hot { background: color-mix(in srgb, var(--hot) 15%, transparent); border-color: color-mix(in srgb, var(--hot) 30%, transparent); color: var(--hot); font-weight: 500; }
+  .badge-warm { background: color-mix(in srgb, var(--warm) 15%, transparent); border-color: color-mix(in srgb, var(--warm) 30%, transparent); color: var(--warm); font-weight: 500; }
+  .badge-once { background: var(--surface2); border-color: var(--border); color: var(--muted); }
+  .progress-wrap {
+    position: fixed; bottom: 20px; right: 20px; background: var(--surface);
+    border: 1px solid var(--border2); border-radius: 12px; padding: 12px 16px;
+    font-size: 12px; color: var(--muted); box-shadow: 0 8px 32px rgba(0,0,0,.4); min-width: 160px; z-index: 200;
+  }
+  .progress-label { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--text); font-size: 14px; }
+  .progress-bar-track { height: 4px; background: var(--faint); border-radius: 2px; margin-top: 8px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: var(--primary); border-radius: 2px; transition: width .3s ease; width: 0%; }
+  .progress-sub { font-size: 11px; margin-top: 4px; font-family: 'IBM Plex Mono', monospace; }
+  .freq-table { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 2.5rem; }
+  .freq-table-header { padding: 14px 20px; border-bottom: 1px solid var(--border); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+  .freq-table-header span { color: var(--primary); }
+  table { width: 100%; border-collapse: collapse; }
+  th { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 8px 16px; text-align: left; background: var(--surface2); border-bottom: 1px solid var(--border); }
+  td { padding: 10px 16px; font-size: 13px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--surface2); }
+  .freq-bars { display: flex; gap: 3px; }
+  .freq-bar { width: 8px; height: 14px; border-radius: 2px; }
+  .freq-bar.filled { background: var(--primary); }
+  .freq-bar.empty { background: var(--faint); }
+  .check-box {
+    width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid var(--border2);
+    background: transparent; flex-shrink: 0; margin-top: 1px;
+    display: flex; align-items: center; justify-content: center; transition: all .15s; cursor: pointer;
+  }
+  .q-card:hover .check-box { border-color: var(--uc, var(--primary)); }
+  .check-box.checked { background: var(--uc, var(--primary)); border-color: var(--uc, var(--primary)); }
+  .check-box.checked::after {
+    content: ''; width: 4px; height: 7px; border: 1.5px solid #000;
+    border-top: none; border-left: none; transform: rotate(45deg) translateY(-1px); display: block;
+  }
+  .unit.hidden { display: none; }
+  .q-card.hidden { display: none; }
+  .topic-group.hidden { display: none; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--faint); border-radius: 3px; }
+  html.light {
+    --bg: #eceff6; --surface: #ffffff; --surface2: #f4f6fb;
+    --border: rgba(0,0,0,0.07); --border2: rgba(0,0,0,0.13);
+    --text: #0c0e15; --muted: #5c6880; --faint: #e0e4ef;
+  }
+  html.light .nav-bar { background: rgba(255,255,255,0.88); border-bottom-color: rgba(0,0,0,0.07); box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 2px 10px rgba(0,0,0,0.05); }
+  html.light header { background: #ffffff; border-bottom-color: rgba(0,0,0,0.07); box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 2px 14px rgba(0,0,0,0.05); }
+  html.light .q-card { background: #ffffff; border-color: rgba(0,0,0,0.07); box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 1px 5px rgba(0,0,0,0.03); }
+  html.light .q-card:hover { background: #ffffff; border-color: rgba(0,0,0,0.12); box-shadow: 0 4px 16px rgba(0,0,0,0.09), 0 1px 4px rgba(0,0,0,0.06); transform: translateY(-1px); }
+  html.light .q-card.done { background: #f6f7fb; opacity: 0.6; }
+  html.light .freq-table { background: #ffffff; border-color: rgba(0,0,0,0.07); box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 18px rgba(0,0,0,0.05); }
+  html.light .freq-table-header { border-bottom-color: rgba(0,0,0,0.07); }
+  html.light th { background: #f4f6fb; border-bottom-color: rgba(0,0,0,0.07); color: #5c6880; }
+  html.light td { border-bottom-color: rgba(0,0,0,0.05); }
+  html.light tr:hover td { background: #f8f9fc; }
+  html.light .freq-bar.empty { background: #d4d9e8; }
+  html.light .stat { background: #ffffff; border-color: rgba(0,0,0,0.07); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  html.light .tab { background: #ffffff; border-color: rgba(0,0,0,0.09); box-shadow: 0 1px 2px rgba(0,0,0,0.04); color: #5c6880; }
+</style>
+</head>
+<body>
+
+<nav class="nav-bar">
+  <div class="nav-bar-inner">
+    <span class="nav-label">📚 5th Sem PYQ Banks</span>
+    <a class="nav-btn go-home" href="index.html">🏠 Home</a>
+    <a class="nav-btn" href="ml.html">ML</a>
+    <a class="nav-btn active" href="toc.html">TOC</a>
+    <a class="nav-btn" href="os.html">OS</a>
+    <a class="nav-btn" href="wc.html">WC</a>
+    <a class="nav-btn" href="cg.html">CG</a>
+    <a class="nav-btn" href="dbms.html">DBMS</a>
+    <button class="theme-toggle" id="theme-toggle-btn" onclick="toggleTheme()">☀️ Light</button>
+  </div>
+</nav>
+
+<header>
+  <div class="header-inner">
+    <div class="header-top">
+      <div>
+        <span class="course-badge">BTCOC502 · THEORY OF COMPUTATION</span>
+        <h1>Theory of <span>Computation</span> Question Bank</h1>
+        <div class="header-meta">DBATU B.Tech CSE · Semester V · 6 Exam Papers (Winter 2022 – Summer 2025)</div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>77</strong> Unique Questions</div>
+      <div class="stat"><strong>5</strong> Units</div>
+      <div class="stat"><strong>6</strong> Exam Papers</div>
+      <div class="stat"><strong>29</strong> Recurring (🔥)</div>
+      <div class="stat"><strong id="done-count">0</strong> Completed</div>
+    </div>
+  </div>
+</header>
+
+<div class="controls-bar">
+  <div class="filter-bar">
+    <button class="tab active" onclick="filterUnit('all', this)">All (77)</button>
+    <button class="tab" onclick="filterUnit('1', this)">Unit 1 (19)</button>
+    <button class="tab" onclick="filterUnit('2', this)">Unit 2 (11)</button>
+    <button class="tab" onclick="filterUnit('3', this)">Unit 3 (18)</button>
+    <button class="tab" onclick="filterUnit('4', this)">Unit 4 (24)</button>
+    <button class="tab" onclick="filterUnit('5', this)">Unit 5 (5)</button>
+    <button class="tab" onclick="filterUnit('hot', this)">🔥 High Freq Only (29)</button>
+  </div>
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search-input" class="search-input" placeholder="Search questions, topics, years (e.g. DFA, Mealy, PDA, Turing machine, 2024)..." oninput="handleSearch(this.value)">
+  </div>
+</div>
+
+<main>
+  <!-- ─── FREQUENCY ANALYSIS TABLE ─── -->
+  <div class="freq-table">
+    <div class="freq-table-header">
+      ⚡ Most Frequently Asked Topics <span>(High Priority for Exams)</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Topic</th>
+          <th>Unit</th>
+          <th>Appearances</th>
+          <th>Priority</th>
+          <th>Exam Sessions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>DFA</strong></td>
+          <td><span class="badge badge-year">Unit 1</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">9× (6 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">Winter 2022, Summer 2023, Winter 2023, Winter 2024, Summer 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Moore and Mealy Machines</strong></td>
+          <td><span class="badge badge-year">Unit 1</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">7× (3 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">Winter 2022, Summer 2023, Winter 2023, Summer 2024, Winter 2024, Summer 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Introduction to Finite Automata</strong></td>
+          <td><span class="badge badge-year">Unit 1</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">5× (4 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-warm">⚡ Med</span></td>
+          <td style="color:var(--muted); font-size:12px;">Winter 2022, Winter 2024, Summer 2025</td>
+        </tr>
+        <tr>
+          <td><strong>NFA</strong></td>
+          <td><span class="badge badge-year">Unit 1</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">3× (3 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-warm">⚡ Med</span></td>
+          <td style="color:var(--muted); font-size:12px;">Summer 2023, Winter 2023, Summer 2024</td>
+        </tr>
+        <tr>
+          <td><strong>DFA–NFA Equivalence</strong></td>
+          <td><span class="badge badge-year">Unit 1</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">2× (2 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-warm">⚡ Med</span></td>
+          <td style="color:var(--muted); font-size:12px;">Summer 2023, Winter 2023</td>
+        </tr>
+        <tr>
+          <td><strong>Epsilon-NFA</strong></td>
+          <td><span class="badge badge-year">Unit 1</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">1× (1 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-warm">⚡ Med</span></td>
+          <td style="color:var(--muted); font-size:12px;">Winter 2024</td>
+        </tr>
+        <tr>
+          <td><strong>Regular Expressions</strong></td>
+          <td><span class="badge badge-year">Unit 2</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">10× (7 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">Summer 2023, Winter 2023, Summer 2024, Winter 2024, Summer 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Regular Grammars</strong></td>
+          <td><span class="badge badge-year">Unit 2</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">3× (2 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-warm">⚡ Med</span></td>
+          <td style="color:var(--muted); font-size:12px;">Winter 2022, Winter 2024, Summer 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Closure Properties of Regular Languages</strong></td>
+          <td><span class="badge badge-year">Unit 2</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">2× (1 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-warm">⚡ Med</span></td>
+          <td style="color:var(--muted); font-size:12px;">Winter 2024, Summer 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Regular vs Context-Free Languages</strong></td>
+          <td><span class="badge badge-year">Unit 2</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">1× (1 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-warm">⚡ Med</span></td>
+          <td style="color:var(--muted); font-size:12px;">Summer 2024</td>
+        </tr>
+        <tr>
+          <td><strong>Minimization of CFG</strong></td>
+          <td><span class="badge badge-year">Unit 3</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">6× (5 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">Winter 2022, Summer 2023, Winter 2023, Summer 2024, Winter 2024, Summer 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Ambiguity in CFG</strong></td>
+          <td><span class="badge badge-year">Unit 3</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">4× (3 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">Winter 2022, Winter 2023, Winter 2024, Summer 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Chomsky Normal Form</strong></td>
+          <td><span class="badge badge-year">Unit 3</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">4× (3 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">Winter 2022, Summer 2023, Winter 2023, Summer 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Derivations and Parse Trees</strong></td>
+          <td><span class="badge badge-year">Unit 3</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">4× (3 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">Winter 2022, Winter 2023, Winter 2024, Summer 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Context-Free Grammar</strong></td>
+          <td><span class="badge badge-year">Unit 3</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">3× (3 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-warm">⚡ Med</span></td>
+          <td style="color:var(--muted); font-size:12px;">Summer 2023, Summer 2024</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── UNIT SECTIONS ─── -->
+  <section class="unit" data-unit="1" id="u1">
+    <div class="unit-header">
+      <div class="unit-num">1</div>
+      <div>
+        <div class="unit-title">Unit 1: Finite Automata</div>
+        <div class="unit-sub">Introduction · Deterministic Finite Automata (DFA) · Formal definition · State transition diagram and transition table · Language of a DFA · ...</div>
+      </div>
+      <div class="unit-hrs">8 Hours</div>
+    </div>
+
+    <div class="topic-group">
+      <div class="topic-label">Introduction to Finite Automata 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q1</div>
+        <div class="q-body">
+          <div class="q-text">Explain in brief FSM Properties and Limitations? Write Applications of FSM?</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2022</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q12</div>
+        <div class="q-body">
+          <div class="q-text">Which of the following is not a part of 5-tuple finite automata? (a) Input alphabet (b) Transition function (c) Initial State (d) Output Alphabet</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q18</div>
+        <div class="q-body">
+          <div class="q-text">The language accepted by Finite Automata is (a) type 0 (b) type 1 (c) type 2 (d) type 3</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q19</div>
+        <div class="q-body">
+          <div class="q-text">What is FA(Finite Automaton)? Explain with examples. Elaborate on Automaton and complexity</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Moore and Mealy Machines 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q2</div>
+        <div class="q-body">
+          <div class="q-text">Construct Mealy Machine for the given Moore Machine? [Moore machine table: Present state | Next state (a = 0, a = 1) | Output — →q1: q1, q2, 0; q2: q1, q3, 0; q3: q1, q3, 1]</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2022</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q6</div>
+        <div class="q-body">
+          <div class="q-text">Distinguish between Moore machine and Mealy machine.</div>
+          <div class="q-meta">
+            <span class="badge badge-hot">🔥 Asked 4×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-year">Summer 2024</span>
+          <span class="badge badge-year">Winter 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q14</div>
+        <div class="q-body">
+          <div class="q-text">Moore machine produces output over the change of (a) transitions (b) state (c) input symbol (d) None of these</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">DFA 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q3</div>
+        <div class="q-body">
+          <div class="q-text">Design a FSM to check whether a given decimal number is divisible by 5?</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q4</div>
+        <div class="q-body">
+          <div class="q-text">Construct a Deterministic Finite Automaton for the set of string over {a, b} such that length of the string |w|=2.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q8</div>
+        <div class="q-body">
+          <div class="q-text">What are the elements of Deterministic Finite Automaton? How it is represented?</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q13</div>
+        <div class="q-body">
+          <div class="q-text">The number of states required by an automaton to accept string 101 are (a) 3 (b) 4 (c) 5 (d) 2</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q15</div>
+        <div class="q-body">
+          <div class="q-text">Can Deterministic Finite automata determine palindrome number ? (a) yes (b) no (c) yes for some cases (d) yes for Σ*</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q16</div>
+        <div class="q-body">
+          <div class="q-text">Design deterministic finite automaton which consists of strings of 0’s and 1’s but ends with string 00, over alphabet Σ = {0,1}.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">NFA</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q5</div>
+        <div class="q-body">
+          <div class="q-text">Design an NFA with ∑ = {0, 1} accepts all string ending with 01.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q9</div>
+        <div class="q-body">
+          <div class="q-text">Design Non Deterministic Finite Automaton that accepts set of all strings over {0,1} that start with 0 or 1 and end with 01 or 10.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q11</div>
+        <div class="q-body">
+          <div class="q-text">Design Non deterministic Finite Automaton to accept all strings over alphabet {a, b} ending with abab.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">DFA–NFA Equivalence</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q7</div>
+        <div class="q-body">
+          <div class="q-text">Convert the following Non Deterministic Automaton into Deterministic Finite Automaton.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q10</div>
+        <div class="q-body">
+          <div class="q-text">Apply subset construction algorithm to convert following Non Deterministic Finite Automaton to Deterministic Finite Automaton</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Epsilon-NFA</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q17</div>
+        <div class="q-body">
+          <div class="q-text">Construct an epsilon non deterministic finite automata (є- NFA) accept either a or abb or a*b+.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="unit" data-unit="2" id="u2">
+    <div class="unit-header">
+      <div class="unit-num">2</div>
+      <div>
+        <div class="unit-title">Unit 2: Regular Expressions and Regular Grammars</div>
+        <div class="unit-sub">Regular Expressions: Introduction · Identities of Regular Expressions · DFA to Regular Expression conversion · Regular Expression to Automata conversion · Applications of Regular Expressions · ...</div>
+      </div>
+      <div class="unit-hrs">6 Hours</div>
+    </div>
+
+    <div class="topic-group">
+      <div class="topic-label">Regular Grammars 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q20</div>
+        <div class="q-body">
+          <div class="q-text">Consider a left linear grammar as given below − a. S→ Sa|Abc b. A→ Sa|Ab|a Convert left linear grammar to right linear grammar.</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q30</div>
+        <div class="q-body">
+          <div class="q-text">Construct finite automaton for the following grammar. S → aA | є , A → aA | bB | є , B → bB | є</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Regular Expressions 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q21</div>
+        <div class="q-body">
+          <div class="q-text">State and explain applications of Regular Expressions.</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q22</div>
+        <div class="q-body">
+          <div class="q-text">Write a regular expression over alphabet ∑ = {0, 1} for following. (i) begins with 1, ends with 1 (ii) ends with 00 (iii) contains at least three consecutive 1s</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q23</div>
+        <div class="q-body">
+          <div class="q-text">Find the string set for following regular expressions. (i)00* (ii)a*b* (iii) (0+1)*</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q24</div>
+        <div class="q-body">
+          <div class="q-text">Construct Deterministic Finite Automaton for regular expression (a+b)*aba</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q26</div>
+        <div class="q-body">
+          <div class="q-text">RR* can be expressed in which of the forms: (a) R+ (b) R+ ᴗ R (c) R* ᴗ R (d) R*</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q27</div>
+        <div class="q-body">
+          <div class="q-text">Regular expression for string that start with ab and end with ba is (a) aba*b*ba (b) ab(ab)*ba (c) ab(a+b)*ba (d) All of these</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q29</div>
+        <div class="q-body">
+          <div class="q-text">State some applications of regular expressions. Write regular expressions for the following (i) one ‘a’ followed by some number of b’s . (ii) some positive number of a’s followed by exactly one b . (iii) start and end with a and in between only some b’s.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Regular vs Context-Free Languages</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q25</div>
+        <div class="q-body">
+          <div class="q-text">Distinguish between regular language and context free language.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Closure Properties of Regular Languages 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q28</div>
+        <div class="q-body">
+          <div class="q-text">Regular expressions are closed under (a) Union (b) Concatenation (c) Kleene Star (d) All of these</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="unit" data-unit="3" id="u3">
+    <div class="unit-header">
+      <div class="unit-num">3</div>
+      <div>
+        <div class="unit-title">Unit 3: Context-Free Grammar</div>
+        <div class="unit-sub">Context-Free Grammar · Derivation Trees · Sentential Forms · Rightmost and Leftmost Derivations · Ambiguity in CFGs · ...</div>
+      </div>
+      <div class="unit-hrs">6 Hours</div>
+    </div>
+
+    <div class="topic-group">
+      <div class="topic-label">Minimization of CFG 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q31</div>
+        <div class="q-body">
+          <div class="q-text">Eliminate NULL production from the grammar G given below: a. S→ a / Xb / aYa b. X→ Y / ^ c. Y→ b / X Write the productions after elimination.</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q35</div>
+        <div class="q-body">
+          <div class="q-text">Write the steps for grammar reduction. Eliminate Unit Productions from the following grammar. S → Aa|B|c B → A|bb A → a|bc|B</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q40</div>
+        <div class="q-body">
+          <div class="q-text">Find Context Free Grammar without ϵ- productions equivalent to the following grammar. S → ABaC A → BC B → b | ϵ C → D | ϵ D → d</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q44</div>
+        <div class="q-body">
+          <div class="q-text">Find the reduced grammar equivalent to the following grammar where productions are : S → AC | SB A → bASC | a B → aSB | bbc C → BC | ad</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q48</div>
+        <div class="q-body">
+          <div class="q-text">Find the reduced grammar equivalent to following context free grammar where V=(A,B,C,S) T=(a,b) and P = ( S→AB | CA , B→ BC | AB , A→a , C→ aB | b ).</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Ambiguity in CFG 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q32</div>
+        <div class="q-body">
+          <div class="q-text">Check whether the given grammar is ambiguous or not- a. S → a / abSb / aAb b. A → bS / aAAb</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2022</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q39</div>
+        <div class="q-body">
+          <div class="q-text">Show that the given grammar is ambiguous grammar. E → E+E E → E*E E → a</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q46</div>
+        <div class="q-body">
+          <div class="q-text">A grammar that produces more than one parse tree is called (a) regular (b) ambiguous (c) unambiguous (d) linear</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Chomsky Normal Form 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q33</div>
+        <div class="q-body">
+          <div class="q-text">Convert the given to context free grammar to CNF forms a. S → ASB b. A → aAS|a|ε c. B → SbS|A|bb</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q36</div>
+        <div class="q-body">
+          <div class="q-text">When does context free grammar is said to be in Chomsky Normal Form(CNF)? Write steps to convert context free grammar into CNF.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q41</div>
+        <div class="q-body">
+          <div class="q-text">Reduce the following grammar to Chomsky Normal Form(CNF). S → aAD A → aB | bAB B → b D → d</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Derivations and Parse Trees 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q34</div>
+        <div class="q-body">
+          <div class="q-text">Derive a derivation tree for the string aabbabba for the given context free grammar (CFG) − a. S-&gt;aB|bA b. A-&gt;a|aS|bAA c. B-&gt;b|bS|aBB</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q38</div>
+        <div class="q-body">
+          <div class="q-text">Consider the following production rules. S → aAB A → bBb B → A | ϵ Obtain leftmost and rightmost derivation for string “abbbb”.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q47</div>
+        <div class="q-body">
+          <div class="q-text">Let the grammar consists of following productions . S → aAS | a A → SbA | SS | ba Find the leftmost and rightmost derivations for string aabbaa. Also draw the parse trees.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Context-Free Grammar</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q37</div>
+        <div class="q-body">
+          <div class="q-text">Write the productions rule of Context free grammar for following regular expressions. (i) 0* (ii) (a+b)* (iii) (ab)*</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q42</div>
+        <div class="q-body">
+          <div class="q-text">Design context free grammar for following language (ab)^n where n&gt;=1 and a^n b^n where n&gt;=0.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q43</div>
+        <div class="q-body">
+          <div class="q-text">State some applications of Context Free Grammar.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Greibach Normal Form 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q45</div>
+        <div class="q-body">
+          <div class="q-text">Which grammar is in Greibach normal form (GNF) ? (a) S→AA|0, A→SS|1 (b) A→aB, B→b (c) A→aBd, B→b (d) None of these</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="unit" data-unit="4" id="u4">
+    <div class="unit-header">
+      <div class="unit-num">4</div>
+      <div>
+        <div class="unit-title">Unit 4: Pushdown Automata and Turing Machines</div>
+        <div class="unit-sub">PDA: Definition and Model · PDA: Acceptance of CFL · PDA: Acceptance by Final State · PDA: Acceptance by Empty Stack · PDA: Equivalence of Final State and Empty Stack Acceptance · ...</div>
+      </div>
+      <div class="unit-hrs">8 Hours</div>
+    </div>
+
+    <div class="topic-group">
+      <div class="topic-label">PDA: Definition and Model 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q49</div>
+        <div class="q-body">
+          <div class="q-text">Define a PDA &amp; list three important properties of a PDA Machine?</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q54</div>
+        <div class="q-body">
+          <div class="q-text">What are the different components of Pushdown Automaton? Explain with neat diagram.</div>
+          <div class="q-meta">
+            <span class="badge badge-hot">🔥 Asked 3×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          <span class="badge badge-year">Summer 2024</span>
+          <span class="badge badge-year">Winter 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q67</div>
+        <div class="q-body">
+          <div class="q-text">The language accepted by Pushdown automata is (a) type 0 (b) type 1 (c) type 2 (d) type 3</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q68</div>
+        <div class="q-body">
+          <div class="q-text">The Pushdown automata behaves like Turing machine if it has ____ auxiliary memory (a) 0 (b) 2 (c) 2 or more (d) none of these</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q69</div>
+        <div class="q-body">
+          <div class="q-text">Explain with example how Pushdown automata is represented using transition diagram and transition table.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">PDA Construction 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q50</div>
+        <div class="q-body">
+          <div class="q-text">Construct a PDA to check well formedness of parenthesis?</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2022</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q59</div>
+        <div class="q-body">
+          <div class="q-text">Design Push down Automata (PDA) to accept language L=(a,b)* where n_a = n_b.</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Equivalence of CFG and PDA 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q51</div>
+        <div class="q-body">
+          <div class="q-text">Convert the following grammar to a PDA that accepts the same language. a. S → 0S1 | A b. A → 1A0 | S | ε</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q63</div>
+        <div class="q-body">
+          <div class="q-text">Construct PDA for following grammar. S → aAA A → aS | bS | a</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">TM Construction 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q52</div>
+        <div class="q-body">
+          <div class="q-text">Design a TM for an equal number of a’s and b’s must follow a.</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q53</div>
+        <div class="q-body">
+          <div class="q-text">Design a TM which recognizes palindromes over Σ = {a, b}</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q56</div>
+        <div class="q-body">
+          <div class="q-text">Design Turing machine that accepts the language of all strings over alphabet ∑ = {a, b} whose second letter is b.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q62</div>
+        <div class="q-body">
+          <div class="q-text">Design Turing machine that erases all non-blank symbols from its tape.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q66</div>
+        <div class="q-body">
+          <div class="q-text">Design Turing machine that recognizes the language L of all strings over {a, b} with number of a’s equal to number of b’s.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q71</div>
+        <div class="q-body">
+          <div class="q-text">Design Turing machine to accept the language of 0’s and 1’s ending with 00.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Deterministic vs Non-deterministic PDA 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q55</div>
+        <div class="q-body">
+          <div class="q-text">Distinguish between Deterministic and Non Deterministic PDA.</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          <span class="badge badge-year">Winter 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Types of TMs</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q57</div>
+        <div class="q-body">
+          <div class="q-text">Explain the following (i)Multihead Turing machine (ii)Universal Turing machine (iii) Non Deterministic Turing machine</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Church–Turing Thesis</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q58</div>
+        <div class="q-body">
+          <div class="q-text">What is Church Turing Thesis ? Explain.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q61</div>
+        <div class="q-body">
+          <div class="q-text">What is halt state of Turing machine? Explain Church Turing thesis.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">TM: Definition and Behaviour 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q60</div>
+        <div class="q-body">
+          <div class="q-text">What are the different components of Turing machine?</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q64</div>
+        <div class="q-body">
+          <div class="q-text">Explain how Turing machine is represented using transition diagram and transition table.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q65</div>
+        <div class="q-body">
+          <div class="q-text">Explain concept infinite loop in Turing machine with the help of an example.</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          <span class="badge badge-year">Winter 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q70</div>
+        <div class="q-body">
+          <div class="q-text">Distinguish between tape and head of Turing machine and Pushdown automata.</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q72</div>
+        <div class="q-body">
+          <div class="q-text">The language accepted by Turning Machine is (a) type 0 (b) type 1 (c) type 2 (d) type 3</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="unit" data-unit="5" id="u5">
+    <div class="unit-header">
+      <div class="unit-num">5</div>
+      <div>
+        <div class="unit-title">Unit 5: Recursive and Recursively Enumerable Languages</div>
+        <div class="unit-sub">Properties of Recursive Languages · Properties of Recursively Enumerable Languages · Universal Turing Machine · Halting Problem · Undecidable Problems about TMs · ...</div>
+      </div>
+      
+    </div>
+
+    <div class="topic-group">
+      <div class="topic-label">Chomsky Hierarchy 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q73</div>
+        <div class="q-body">
+          <div class="q-text">Explain in brief Chomsky hierarchy with suitable examples?</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q75</div>
+        <div class="q-body">
+          <div class="q-text">Explain Chomsky classification of grammar.</div>
+          <div class="q-meta">
+            <span class="badge badge-hot">🔥 Asked 3×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          <span class="badge badge-year">Winter 2023</span>
+          <span class="badge badge-year">Winter 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q76</div>
+        <div class="q-body">
+          <div class="q-text">Explain the following. (i) Type 0 grammar (ii) Type 1 grammar (iii) Type 2 grammar (iv) Type 3 grammar</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q77</div>
+        <div class="q-body">
+          <div class="q-text">The language is recognized by Turing machine if it is generated by ____ grammar (a) type 0 (b) type 1 (c) type 2 (d) type 3</div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Halting Problem 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q74</div>
+        <div class="q-body">
+          <div class="q-text">Explain ‘Halting Problem of turning machine’ with neat diagrams?</div>
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2022</span>
+          <span class="badge badge-year">Summer 2025</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="progress-wrap">
+  <div class="progress-label" id="pct">0% done</div>
+  <div class="progress-bar-track">
+    <div class="progress-bar-fill" id="pfill"></div>
+  </div>
+  <div class="progress-sub" id="psub">0 / 77 questions</div>
+</div>
+
+<script>
+// ─── THEME ───
+(function() {
+  if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.classList.add('light');
+  }
+})();
+function toggleTheme() {
+  const isLight = document.documentElement.classList.toggle('light');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  const btn = document.getElementById('theme-toggle-btn');
+  if (btn) btn.innerHTML = isLight ? '🌙 Dark' : '☀️ Light';
+}
+function initToggleIcon() {
+  const btn = document.getElementById('theme-toggle-btn');
+  if (btn && document.documentElement.classList.contains('light')) btn.innerHTML = '🌙 Dark';
+}
+initToggleIcon();
+
+const TOTAL = 77;
+let doneSet = new Set(JSON.parse(localStorage.getItem('toc_done') || '[]'));
+
+function save() { localStorage.setItem('toc_done', JSON.stringify([...doneSet])); }
+
+function toggleDone(card) {
+  const allCards = [...document.querySelectorAll('.q-card')];
+  const idx = allCards.indexOf(card);
+  const box = card.querySelector('.check-box');
+  if (doneSet.has(idx)) {
+    doneSet.delete(idx);
+    card.classList.remove('done');
+    box.classList.remove('checked');
+  } else {
+    doneSet.add(idx);
+    card.classList.add('done');
+    box.classList.add('checked');
+  }
+  save(); updateProgress();
+}
+
+function updateProgress() {
+  const n = doneSet.size;
+  const pct = Math.round(n / TOTAL * 100);
+  document.getElementById('pct').textContent = pct + '% done';
+  document.getElementById('pfill').style.width = pct + '%';
+  document.getElementById('psub').textContent = n + ' / ' + TOTAL + ' questions';
+  document.getElementById('done-count').textContent = n;
+}
+
+function restoreState() {
+  const cards = [...document.querySelectorAll('.q-card')];
+  doneSet.forEach(idx => {
+    if (cards[idx]) {
+      cards[idx].classList.add('done');
+      const box = cards[idx].querySelector('.check-box');
+      if (box) box.classList.add('checked');
+    }
+  });
+  updateProgress();
+}
+
+function filterUnit(unit, btn) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) searchInput.value = '';
+
+  document.querySelectorAll('.unit').forEach(u => {
+    if (unit === 'all') {
+      u.classList.remove('hidden');
+      u.querySelectorAll('.topic-group').forEach(tg => tg.classList.remove('hidden'));
+      u.querySelectorAll('.q-card').forEach(qc => qc.classList.remove('hidden'));
+      return;
+    }
+    if (unit === 'hot') {
+      const hotCards = u.querySelectorAll('.badge-hot, .badge-warm');
+      u.classList.toggle('hidden', hotCards.length === 0);
+      u.querySelectorAll('.topic-group').forEach(tg => {
+        const hasHot = tg.querySelectorAll('.badge-hot, .badge-warm').length > 0;
+        tg.classList.toggle('hidden', !hasHot);
+        tg.querySelectorAll('.q-card').forEach(qc => {
+          qc.classList.toggle('hidden', qc.querySelectorAll('.badge-hot, .badge-warm').length === 0);
+        });
+      });
+      return;
+    }
+    const match = u.dataset.unit === unit;
+    u.classList.toggle('hidden', !match);
+    if (match) {
+      u.querySelectorAll('.topic-group').forEach(tg => tg.classList.remove('hidden'));
+      u.querySelectorAll('.q-card').forEach(qc => qc.classList.remove('hidden'));
+    }
+  });
+  document.querySelector('.freq-table').style.display = (unit === 'all' || unit === 'hot') ? '' : 'none';
+}
+
+function handleSearch(query) {
+  const term = query.trim().toLowerCase();
+  const freqTable = document.querySelector('.freq-table');
+
+  if (!term) {
+    const activeTab = document.querySelector('.tab.active');
+    if (activeTab) activeTab.click();
+    return;
+  }
+
+  freqTable.style.display = 'none';
+
+  document.querySelectorAll('.unit').forEach(u => {
+    let unitHasMatch = false;
+    u.querySelectorAll('.topic-group').forEach(tg => {
+      let groupHasMatch = false;
+      tg.querySelectorAll('.q-card').forEach(qc => {
+        const text = qc.textContent.toLowerCase();
+        const matches = text.includes(term);
+        qc.classList.toggle('hidden', !matches);
+        if (matches) groupHasMatch = true;
+      });
+      tg.classList.toggle('hidden', !groupHasMatch);
+      if (groupHasMatch) unitHasMatch = true;
+    });
+    u.classList.toggle('hidden', !unitHasMatch);
+  });
+}
+
+restoreState();
+</script>
+</body>
+</html>

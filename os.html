@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Operating Systems Question Bank – DBATU</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0e0f11;
+    --surface: #16181c;
+    --surface2: #1e2026;
+    --border: #2a2d35;
+    --border2: #363a44;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --faint: #3a3d47;
+    --primary: #f472b6;
+    --primary-glow: color-mix(in srgb, #f472b6 15%, transparent);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 15px; line-height: 1.65; min-height: 100vh;
+  }
+  .nav-bar {
+    background: var(--surface2); border-bottom: 1px solid var(--border);
+    padding: 8px 1.5rem; display: flex; align-items: center; gap: 8px;
+    position: sticky; top: 0; z-index: 101; backdrop-filter: blur(12px);
+  }
+  .nav-bar-inner { max-width: 900px; margin: 0 auto; width: 100%; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .nav-label {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted);
+    letter-spacing: .06em; text-transform: uppercase; margin-right: 4px;
+  }
+  .nav-btn {
+    display: inline-flex; align-items: center; gap: 6px; padding: 5px 14px;
+    border-radius: 20px; font-size: 12px; font-weight: 500;
+    font-family: 'IBM Plex Sans', sans-serif; cursor: pointer;
+    border: 1px solid var(--border2); background: transparent;
+    color: var(--muted); transition: all .15s ease; text-decoration: none;
+  }
+  .nav-btn:hover { background: var(--faint); color: var(--text); border-color: var(--primary); }
+  .nav-btn.active { background: color-mix(in srgb, var(--primary) 20%, transparent); color: var(--primary); border-color: var(--primary); }
+  .nav-btn.go-home {
+    background: color-mix(in srgb, #fbbf24 10%, transparent);
+    color: #fbbf24; border-color: color-mix(in srgb, #fbbf24 40%, transparent);
+  }
+  .nav-btn.go-home:hover {
+    background: color-mix(in srgb, #fbbf24 20%, transparent);
+    color: var(--text); border-color: #fbbf24;
+  }
+  .theme-toggle {
+    margin-left: auto; display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 14px; border-radius: 20px; font-size: 12px; font-weight: 500;
+    font-family: 'IBM Plex Sans', sans-serif; cursor: pointer;
+    border: 1px solid var(--border2); background: var(--surface); color: var(--text);
+    transition: all .15s ease;
+  }
+  .theme-toggle:hover { border-color: var(--primary); }
+  header {
+    background: var(--surface); border-bottom: 1px solid var(--border);
+    padding: 2.5rem 1.5rem 2rem;
+  }
+  .header-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .course-badge {
+    font-family: 'IBM Plex Mono', monospace; font-size: 11px;
+    background: var(--faint); color: var(--muted); padding: 3px 10px;
+    border-radius: 4px; letter-spacing: .05em; display: inline-block; margin-bottom: 8px;
+  }
+  h1 { font-family: 'Syne', sans-serif; font-size: clamp(22px, 4vw, 32px); font-weight: 800; letter-spacing: -.02em; color: var(--text); line-height: 1.2; }
+  h1 span { color: var(--primary); }
+  .header-meta { font-size: 13px; color: var(--muted); margin-top: 8px; font-family: 'IBM Plex Mono', monospace; }
+  main { max-width: 700px; margin: 3rem auto; padding: 0 1.5rem; text-align: center; }
+  .coming-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
+    padding: 3rem 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  }
+  .coming-icon { font-size: 48px; margin-bottom: 1rem; }
+  .coming-title { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
+  .coming-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 1.5rem; }
+  .coming-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
+  .coming-btn {
+    display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px;
+    border-radius: 10px; font-size: 13px; font-weight: 600; text-decoration: none;
+    transition: all .2s; font-family: 'IBM Plex Sans', sans-serif;
+  }
+  .btn-primary { background: var(--primary); color: #000; }
+  .btn-primary:hover { opacity: .9; transform: translateY(-1px); }
+  .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border2); }
+  .btn-secondary:hover { background: var(--faint); }
+  html.light {
+    --bg: #eceff6; --surface: #ffffff; --surface2: #f4f6fb;
+    --border: rgba(0,0,0,0.07); --border2: rgba(0,0,0,0.13);
+    --text: #0c0e15; --muted: #5c6880; --faint: #e0e4ef;
+  }
+  html.light .nav-bar { background: rgba(255,255,255,0.88); border-bottom-color: rgba(0,0,0,0.07); }
+  html.light header { background: #ffffff; border-bottom-color: rgba(0,0,0,0.07); }
+  html.light .coming-card { background: #ffffff; border-color: rgba(0,0,0,0.07); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+</style>
+</head>
+<body>
+
+<nav class="nav-bar">
+  <div class="nav-bar-inner">
+    <span class="nav-label">📚 5th Sem PYQ Banks</span>
+    <a class="nav-btn go-home" href="index.html">🏠 Home</a>
+    <a class="nav-btn" href="ml.html">ML</a>
+    <a class="nav-btn" href="toc.html">TOC</a>
+    <a class="nav-btn active" href="os.html">OS</a>
+    <a class="nav-btn " href="wc.html">WC</a>
+    <a class="nav-btn " href="cg.html">CG</a>
+    <a class="nav-btn" href="dbms.html">DBMS</a>
+    <button class="theme-toggle" id="theme-toggle-btn" onclick="toggleTheme()">☀️ Light</button>
+  </div>
+</nav>
+
+<header>
+  <div class="header-inner">
+    <span class="course-badge">BTCOC503 · OPERATING SYSTEMS</span>
+    <h1>Operating <span>Systems</span> Question Bank</h1>
+    <div class="header-meta">DBATU B.Tech CSE · Semester V</div>
+  </div>
+</header>
+
+<main>
+  <div class="coming-card">
+    <div class="coming-icon">🚧</div>
+    <div class="coming-title">Question Bank In Progress</div>
+    <div class="coming-desc">
+      Process scheduling, deadlocks, memory management, virtual memory, file systems, and I/O management.<br><br>
+      The PYQ dataset for <strong>Operating Systems</strong> will be available once the question bank JSON is uploaded.
+    </div>
+    <div class="coming-actions">
+      <a href="index.html" class="coming-btn btn-secondary">← Back to 5th Sem Hub</a>
+      <a href="toc.html" class="coming-btn btn-primary">Study TOC PYQs →</a>
+      <a href="ml.html" class="coming-btn btn-secondary">Study ML PYQs →</a>
+    </div>
+  </div>
+</main>
+
+<script>
+(function() {
+  if (localStorage.getItem('theme') === 'light') {
+    document.documentElement.classList.add('light');
+  }
+})();
+function toggleTheme() {
+  const isLight = document.documentElement.classList.toggle('light');
+  localStorage.setItem('theme', isLight ? 'light' : 'dark');
+  const btn = document.getElementById('theme-toggle-btn');
+  if (btn) btn.innerHTML = isLight ? '🌙 Dark' : '☀️ Light';
+}
+function initToggleIcon() {
+  const btn = document.getElementById('theme-toggle-btn');
+  if (btn && document.documentElement.classList.contains('light')) btn.innerHTML = '🌙 Dark';
+}
+initToggleIcon();
+</script>
+</body>
+</html>

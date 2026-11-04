@@ -1,0 +1,5491 @@
+{
+  "subject": {
+    "name": "Theory of Computation",
+    "short_name": "TOC",
+    "subject_code": "BTCOC502",
+    "branch": "Computer Science and Engineering",
+    "semester": 5,
+    "university": "DBATU",
+    "total_units": 5
+  },
+  "metadata": {
+    "source_papers_count": 6,
+    "total_pyq_appearances": 110,
+    "unique_question_count": 77,
+    "analysis_scope": "Only supplied question papers"
+  },
+  "units": [
+    {
+      "unit_number": 1,
+      "unit_name": "Finite Automata",
+      "duration_hours": 8,
+      "syllabus_topics": [
+        "Introduction",
+        "Deterministic Finite Automata (DFA)",
+        "Formal definition",
+        "State transition diagram and transition table",
+        "Language of a DFA",
+        "Nondeterministic Finite Automata (NFA)",
+        "Definition and language of an NFA",
+        "Equivalence of DFA and NFA",
+        "Applications of Finite Automata",
+        "Finite Automata with Epsilon Transitions",
+        "Eliminating Epsilon Transitions",
+        "Minimization of DFA",
+        "Finite Automata with Output",
+        "Moore and Mealy Machines",
+        "Interconversion of Moore and Mealy Machines"
+      ],
+      "pyq_count": 27,
+      "questions": [
+        {
+          "pyq_id": "TOC-U1-PYQ001",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "Introduction to Finite Automata",
+          "subtopic": "FSM properties, limitations and applications",
+          "original_question": "Explain in brief FSM Properties and Limitations? Write Applications of FSM?",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2022,
+          "exam_session": "Winter",
+          "paper_name": "DBATU Winter Examination – 2022, BTCOC502 Theory of Computation (B.Tech CSE, Sem V; paper dated 31-01-2023)",
+          "question_number": 1,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2022"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ002",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "Moore and Mealy Machines",
+          "subtopic": "Moore to Mealy conversion",
+          "original_question": "Construct Mealy Machine for the given Moore Machine? [Moore machine table: Present state | Next state (a = 0, a = 1) | Output — →q1: q1, q2, 0; q2: q1, q3, 0; q3: q1, q3, 1]",
+          "question_type": [
+            "conversion",
+            "transition_table"
+          ],
+          "marks": 6,
+          "exam_year": 2022,
+          "exam_session": "Winter",
+          "paper_name": "DBATU Winter Examination – 2022, BTCOC502 Theory of Computation (B.Tech CSE, Sem V; paper dated 31-01-2023)",
+          "question_number": 1,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2022"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ003",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "DFA",
+          "subtopic": "Divisibility by 5 (decimal numbers)",
+          "original_question": "Design a FSM to check whether a given decimal number is divisible by 5?",
+          "question_type": [
+            "automata_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2022,
+          "exam_session": "Winter",
+          "paper_name": "DBATU Winter Examination – 2022, BTCOC502 Theory of Computation (B.Tech CSE, Sem V; paper dated 31-01-2023)",
+          "question_number": 1,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-001",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ004",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "DFA",
+          "subtopic": "DFA for strings of length exactly 2",
+          "original_question": "Construct a Deterministic Finite Automaton for the set of string over {a, b} such that length of the string |w|=2.",
+          "question_type": [
+            "automata_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Summer Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer Engineering, Sem V; paper dated 09/08/2023)",
+          "question_number": 1,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ005",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "NFA",
+          "subtopic": "NFA for strings ending with 01",
+          "original_question": "Design an NFA with ∑ = {0, 1} accepts all string ending with 01.",
+          "question_type": [
+            "automata_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Summer Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer Engineering, Sem V; paper dated 09/08/2023)",
+          "question_number": 1,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ006",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "Moore and Mealy Machines",
+          "subtopic": "Moore vs Mealy difference",
+          "original_question": "Distinguish between Moore machine and Mealy machine.",
+          "question_type": [
+            "difference"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Summer Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer Engineering, Sem V; paper dated 09/08/2023)",
+          "question_number": 2,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 4,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-013",
+          "years_asked": [
+            "Summer 2023",
+            "Winter 2023",
+            "Summer 2024",
+            "Winter 2024"
+          ],
+          "priority": "high"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ007",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "DFA–NFA Equivalence",
+          "subtopic": "NFA to DFA conversion",
+          "original_question": "Convert the following Non Deterministic Automaton into Deterministic Finite Automaton.",
+          "question_type": [
+            "conversion"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Summer Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer Engineering, Sem V; paper dated 09/08/2023)",
+          "question_number": 2,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ008",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "DFA",
+          "subtopic": "Elements and representation of DFA",
+          "original_question": "What are the elements of Deterministic Finite Automaton? How it is represented?",
+          "question_type": [
+            "definition"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer and Allied, Sem V; paper dated 03/01/2024)",
+          "question_number": 1,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ009",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "NFA",
+          "subtopic": "NFA for strings ending with 01 or 10",
+          "original_question": "Design Non Deterministic Finite Automaton that accepts set of all strings over {0,1} that start with 0 or 1 and end with 01 or 10.",
+          "question_type": [
+            "automata_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer and Allied, Sem V; paper dated 03/01/2024)",
+          "question_number": 1,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ010",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "Moore and Mealy Machines",
+          "subtopic": "Moore vs Mealy difference",
+          "original_question": "Distinguish between Mealy machine and Moore machine.",
+          "question_type": [
+            "difference"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer and Allied, Sem V; paper dated 03/01/2024)",
+          "question_number": 2,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 4,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-013",
+          "years_asked": [
+            "Summer 2023",
+            "Winter 2023",
+            "Summer 2024",
+            "Winter 2024"
+          ],
+          "priority": "high"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ011",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "DFA–NFA Equivalence",
+          "subtopic": "Subset construction (NFA to DFA)",
+          "original_question": "Apply subset construction algorithm to convert following Non Deterministic Finite Automaton to Deterministic Finite Automaton",
+          "question_type": [
+            "conversion"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer and Allied, Sem V; paper dated 03/01/2024)",
+          "question_number": 2,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ012",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "NFA",
+          "subtopic": "NFA for strings ending with abab",
+          "original_question": "Design Non deterministic Finite Automaton to accept all strings over alphabet {a, b} ending with abab.",
+          "question_type": [
+            "automata_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Examination Summer 2024, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 03/07/2024)",
+          "question_number": 1,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ013",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "Moore and Mealy Machines",
+          "subtopic": "Moore vs Mealy difference",
+          "original_question": "Distinguish between Moore machine and Mealy machine.",
+          "question_type": [
+            "difference"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Examination Summer 2024, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 03/07/2024)",
+          "question_number": 1,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 4,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-013",
+          "years_asked": [
+            "Summer 2023",
+            "Winter 2023",
+            "Summer 2024",
+            "Winter 2024"
+          ],
+          "priority": "high"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ014",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "Introduction to Finite Automata",
+          "subtopic": "5-tuple definition of finite automata",
+          "original_question": "Which of the following is not a part of 5-tuple finite automata? (a) Input alphabet (b) Transition function (c) Initial State (d) Output Alphabet",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 1,
+          "subquestion_number": "1",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-020",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ015",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "DFA",
+          "subtopic": "Minimum number of states for string 101",
+          "original_question": "The number of states required by an automaton to accept string 101 are (a) 3 (b) 4 (c) 5 (d) 2",
+          "question_type": [
+            "numerical"
+          ],
+          "marks": 1,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 1,
+          "subquestion_number": "3",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-021",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ016",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "Moore and Mealy Machines",
+          "subtopic": "Output behaviour of Moore machine",
+          "original_question": "Moore machine produces output over the change of (a) transitions (b) state (c) input symbol (d) None of these",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 1,
+          "subquestion_number": "7",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-025",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ017",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "DFA",
+          "subtopic": "Language limits of DFA (palindromes)",
+          "original_question": "Can Deterministic Finite automata determine palindrome number ? (a) yes (b) no (c) yes for some cases (d) yes for Σ*",
+          "question_type": [
+            "language_acceptance"
+          ],
+          "marks": 1,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 1,
+          "subquestion_number": "8",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-026",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ018",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "DFA",
+          "subtopic": "DFA for strings ending with 00",
+          "original_question": "Design deterministic finite automaton which consists of strings of 0’s and 1’s but ends with string 00, over alphabet Σ = {0,1}.",
+          "question_type": [
+            "automata_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 2,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ019",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "Epsilon-NFA",
+          "subtopic": "ε-NFA for a, abb and a*b+",
+          "original_question": "Construct an epsilon non deterministic finite automata (є- NFA) accept either a or abb or a*b+.",
+          "question_type": [
+            "automata_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 3,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ020",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "Moore and Mealy Machines",
+          "subtopic": "Moore vs Mealy difference",
+          "original_question": "Distinguish between Moore machine and Mealy machine.",
+          "question_type": [
+            "difference"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 3,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 4,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-013",
+          "years_asked": [
+            "Summer 2023",
+            "Winter 2023",
+            "Summer 2024",
+            "Winter 2024"
+          ],
+          "priority": "high"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ021",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "Introduction to Finite Automata",
+          "subtopic": "5-tuple definition of finite automata",
+          "original_question": "Which of the following is not a part of tuple finite automata? (a) Input alphabet (b) Transition function (c) Initial State (d) Output function",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 1,
+          "subquestion_number": "1",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-020",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ022",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "DFA",
+          "subtopic": "Minimum number of states for string 101",
+          "original_question": "The number of states required by an automaton to accept string 101 are (a) 2 (b) 3 (c) 4 (d) 5",
+          "question_type": [
+            "numerical"
+          ],
+          "marks": 1,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 1,
+          "subquestion_number": "2",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-021",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ023",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "Moore and Mealy Machines",
+          "subtopic": "Output behaviour of Moore machine",
+          "original_question": "Moore machine produces output over the change of (a) transitions (b) state (c) input symbol (d) None of these",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 1,
+          "subquestion_number": "6",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-025",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ024",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "DFA",
+          "subtopic": "Language limits of DFA (palindromes)",
+          "original_question": "Can Deterministic Finite automata determine palindrome number ? (a) Yes (b) NO (c) Yes for some cases (d) yes for Σ*",
+          "question_type": [
+            "language_acceptance"
+          ],
+          "marks": 1,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 1,
+          "subquestion_number": "7",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-026",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ025",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "Introduction to Finite Automata",
+          "subtopic": "Language class accepted by FA",
+          "original_question": "The language accepted by Finite Automata is (a) type 0 (b) type 1 (c) type 2 (d) type 3",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 1,
+          "subquestion_number": "12",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2025"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ026",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "Introduction to Finite Automata",
+          "subtopic": "Definition of FA with examples; automaton and complexity",
+          "original_question": "What is FA(Finite Automaton)? Explain with examples. Elaborate on Automaton and complexity",
+          "question_type": [
+            "definition",
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 2,
+          "subquestion_number": "B",
+          "syllabus_status": "partially_aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2025"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U1-PYQ027",
+          "unit_number": 1,
+          "unit_name": "Finite Automata",
+          "topic": "DFA",
+          "subtopic": "Divisibility by 5 (decimal numbers)",
+          "original_question": "Design a FSM to check whether a given decimal number is divisible by 5?",
+          "question_type": [
+            "automata_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 3,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-001",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_name": "Regular Expressions and Regular Grammars",
+      "duration_hours": 6,
+      "syllabus_topics": [
+        "Regular Expressions: Introduction",
+        "Identities of Regular Expressions",
+        "DFA to Regular Expression conversion",
+        "Regular Expression to Automata conversion",
+        "Applications of Regular Expressions",
+        "Regular Grammars: Definition",
+        "Regular Grammars and Finite Automata",
+        "FA for Regular Grammar",
+        "Regular Grammar for FA",
+        "Proving languages to be non-regular",
+        "Pumping Lemma and its applications",
+        "Closure Properties of Regular Languages"
+      ],
+      "pyq_count": 16,
+      "questions": [
+        {
+          "pyq_id": "TOC-U2-PYQ001",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Regular Grammars",
+          "subtopic": "Left linear to right linear conversion",
+          "original_question": "Consider a left linear grammar as given below − a. S→ Sa|Abc b. A→ Sa|Ab|a Convert left linear grammar to right linear grammar.",
+          "question_type": [
+            "conversion"
+          ],
+          "marks": 6,
+          "exam_year": 2022,
+          "exam_session": "Winter",
+          "paper_name": "DBATU Winter Examination – 2022, BTCOC502 Theory of Computation (B.Tech CSE, Sem V; paper dated 31-01-2023)",
+          "question_number": 3,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-004",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U2-PYQ002",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Regular Expressions",
+          "subtopic": "Applications of regular expressions",
+          "original_question": "State and explain applications of Regular Expressions.",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Summer Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer Engineering, Sem V; paper dated 09/08/2023)",
+          "question_number": 1,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-012",
+          "years_asked": [
+            "Summer 2023",
+            "Summer 2024"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U2-PYQ003",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Regular Expressions",
+          "subtopic": "Writing regular expressions for given languages",
+          "original_question": "Write a regular expression over alphabet ∑ = {0, 1} for following. (i) begins with 1, ends with 1 (ii) ends with 00 (iii) contains at least three consecutive 1s",
+          "question_type": [
+            "regular_expression"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Summer Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer Engineering, Sem V; paper dated 09/08/2023)",
+          "question_number": 2,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U2-PYQ004",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Regular Expressions",
+          "subtopic": "String set of given regular expressions",
+          "original_question": "Find the string set for following regular expressions. (i)00* (ii)a*b* (iii) (0+1)*",
+          "question_type": [
+            "regular_expression"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer and Allied, Sem V; paper dated 03/01/2024)",
+          "question_number": 1,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-017",
+          "years_asked": [
+            "Winter 2023",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U2-PYQ005",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Regular Expressions",
+          "subtopic": "Regular expression to DFA conversion",
+          "original_question": "Construct Deterministic Finite Automaton for regular expression (a+b)*aba",
+          "question_type": [
+            "conversion",
+            "automata_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Examination Summer 2024, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 03/07/2024)",
+          "question_number": 1,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U2-PYQ006",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Regular Expressions",
+          "subtopic": "Applications of regular expressions",
+          "original_question": "State some applications of regular expressions.",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Examination Summer 2024, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 03/07/2024)",
+          "question_number": 2,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-012",
+          "years_asked": [
+            "Summer 2023",
+            "Summer 2024"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U2-PYQ007",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Regular vs Context-Free Languages",
+          "subtopic": "Regular language vs CFL difference",
+          "original_question": "Distinguish between regular language and context free language.",
+          "question_type": [
+            "difference"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Examination Summer 2024, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 03/07/2024)",
+          "question_number": 2,
+          "subquestion_number": "B",
+          "syllabus_status": "partially_aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U2-PYQ008",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Regular Expressions",
+          "subtopic": "Identity RR* = R+",
+          "original_question": "RR* can be expressed in which of the forms: (a) R+ (b) R+ ᴗ R (c) R* ᴗ R (d) R*",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 1,
+          "subquestion_number": "2",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U2-PYQ009",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Regular Expressions",
+          "subtopic": "RE for strings starting with ab and ending with ba",
+          "original_question": "Regular expression for string that start with ab and end with ba is (a) aba*b*ba (b) ab(ab)*ba (c) ab(a+b)*ba (d) All of these",
+          "question_type": [
+            "regular_expression"
+          ],
+          "marks": 1,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 1,
+          "subquestion_number": "4",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-022",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U2-PYQ010",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Closure Properties of Regular Languages",
+          "subtopic": "Closure operations on regular expressions",
+          "original_question": "Regular expressions are closed under (a) Union (b) Concatenation (c) Kleene Star (d) All of these",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 1,
+          "subquestion_number": "5",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-023",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U2-PYQ011",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Regular Expressions",
+          "subtopic": "Applications of RE; writing REs for given languages",
+          "original_question": "State some applications of regular expressions. Write regular expressions for the following (i) one ‘a’ followed by some number of b’s . (ii) some positive number of a’s followed by exactly one b . (iii) start and end with a and in between only some b’s.",
+          "question_type": [
+            "theory",
+            "regular_expression"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 2,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U2-PYQ012",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Regular Grammars",
+          "subtopic": "Finite automaton for a regular grammar",
+          "original_question": "Construct finite automaton for the following grammar. S → aA | є , A → aA | bB | є , B → bB | є",
+          "question_type": [
+            "conversion",
+            "automata_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 4,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U2-PYQ013",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Regular Expressions",
+          "subtopic": "RE for strings starting with ab and ending with ba",
+          "original_question": "Regular expression for string that start with ab and end with ba is (a) aba*b*ba (b) ab(ab)*ba (c) ab(a+b)*ba (d) All of these",
+          "question_type": [
+            "regular_expression"
+          ],
+          "marks": 1,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 1,
+          "subquestion_number": "3",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-022",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U2-PYQ014",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Closure Properties of Regular Languages",
+          "subtopic": "Closure operations on regular expressions",
+          "original_question": "Regular expressions are closed under (a) Union (b) Concatenation (c) Kleene Star (d) All of these",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 1,
+          "subquestion_number": "4",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-023",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U2-PYQ015",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Regular Expressions",
+          "subtopic": "String set of given regular expressions",
+          "original_question": "Find the string set for following regular expressions. (i) 00* (ii) a*b* (iii) (0+1)*",
+          "question_type": [
+            "regular_expression"
+          ],
+          "marks": 6,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 2,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-017",
+          "years_asked": [
+            "Winter 2023",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U2-PYQ016",
+          "unit_number": 2,
+          "unit_name": "Regular Expressions and Regular Grammars",
+          "topic": "Regular Grammars",
+          "subtopic": "Left linear to right linear conversion",
+          "original_question": "Consider a left linear grammar as given below a. S→ Sa|Abc b. A→ Sa|Ab|a Convert left linear grammar to right linear grammar.",
+          "question_type": [
+            "conversion"
+          ],
+          "marks": 6,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 4,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-004",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_name": "Context-Free Grammar",
+      "duration_hours": 6,
+      "syllabus_topics": [
+        "Context-Free Grammar",
+        "Derivation Trees",
+        "Sentential Forms",
+        "Rightmost and Leftmost Derivations",
+        "Ambiguity in CFGs",
+        "Minimization of CFGs",
+        "Chomsky Normal Form (CNF)",
+        "Greibach Normal Form (GNF)",
+        "Pumping Lemma for CFLs",
+        "Properties of CFLs (Proofs omitted)"
+      ],
+      "pyq_count": 23,
+      "questions": [
+        {
+          "pyq_id": "TOC-U3-PYQ001",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Minimization of CFG",
+          "subtopic": "Null production elimination",
+          "original_question": "Eliminate NULL production from the grammar G given below: a. S→ a / Xb / aYa b. X→ Y / ^ c. Y→ b / X Write the productions after elimination.",
+          "question_type": [
+            "conversion"
+          ],
+          "marks": 6,
+          "exam_year": 2022,
+          "exam_session": "Winter",
+          "paper_name": "DBATU Winter Examination – 2022, BTCOC502 Theory of Computation (B.Tech CSE, Sem V; paper dated 31-01-2023)",
+          "question_number": 2,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-003",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ002",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Ambiguity in CFG",
+          "subtopic": "Checking ambiguity of a given grammar",
+          "original_question": "Check whether the given grammar is ambiguous or not- a. S → a / abSb / aAb b. A → bS / aAAb",
+          "question_type": [
+            "proof"
+          ],
+          "marks": 6,
+          "exam_year": 2022,
+          "exam_session": "Winter",
+          "paper_name": "DBATU Winter Examination – 2022, BTCOC502 Theory of Computation (B.Tech CSE, Sem V; paper dated 31-01-2023)",
+          "question_number": 2,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2022"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ003",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Chomsky Normal Form",
+          "subtopic": "CFG to CNF conversion",
+          "original_question": "Convert the given to context free grammar to CNF forms a. S → ASB b. A → aAS|a|ε c. B → SbS|A|bb",
+          "question_type": [
+            "conversion"
+          ],
+          "marks": 6,
+          "exam_year": 2022,
+          "exam_session": "Winter",
+          "paper_name": "DBATU Winter Examination – 2022, BTCOC502 Theory of Computation (B.Tech CSE, Sem V; paper dated 31-01-2023)",
+          "question_number": 3,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-005",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ004",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Derivations and Parse Trees",
+          "subtopic": "Derivation tree for a given string",
+          "original_question": "Derive a derivation tree for the string aabbabba for the given context free grammar (CFG) − a. S->aB|bA b. A->a|aS|bAA c. B->b|bS|aBB",
+          "question_type": [
+            "derivation",
+            "parse_tree"
+          ],
+          "marks": 6,
+          "exam_year": 2022,
+          "exam_session": "Winter",
+          "paper_name": "DBATU Winter Examination – 2022, BTCOC502 Theory of Computation (B.Tech CSE, Sem V; paper dated 31-01-2023)",
+          "question_number": 3,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-006",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ005",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Minimization of CFG",
+          "subtopic": "Grammar reduction steps; unit production elimination",
+          "original_question": "Write the steps for grammar reduction. Eliminate Unit Productions from the following grammar. S → Aa|B|c B → A|bb A → a|bc|B",
+          "question_type": [
+            "algorithm",
+            "conversion"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Summer Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer Engineering, Sem V; paper dated 09/08/2023)",
+          "question_number": 3,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ006",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Chomsky Normal Form",
+          "subtopic": "Definition of CNF and conversion steps",
+          "original_question": "When does context free grammar is said to be in Chomsky Normal Form(CNF)? Write steps to convert context free grammar into CNF.",
+          "question_type": [
+            "definition",
+            "algorithm"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Summer Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer Engineering, Sem V; paper dated 09/08/2023)",
+          "question_number": 3,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ007",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Context-Free Grammar",
+          "subtopic": "CFG productions for regular expressions",
+          "original_question": "Write the productions rule of Context free grammar for following regular expressions. (i) 0* (ii) (a+b)* (iii) (ab)*",
+          "question_type": [
+            "grammar_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Summer Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer Engineering, Sem V; paper dated 09/08/2023)",
+          "question_number": 4,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ008",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Derivations and Parse Trees",
+          "subtopic": "Leftmost and rightmost derivation",
+          "original_question": "Consider the following production rules. S → aAB A → bBb B → A | ϵ Obtain leftmost and rightmost derivation for string “abbbb”.",
+          "question_type": [
+            "derivation"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer and Allied, Sem V; paper dated 03/01/2024)",
+          "question_number": 2,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ009",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Ambiguity in CFG",
+          "subtopic": "Proving ambiguity of a given grammar",
+          "original_question": "Show that the given grammar is ambiguous grammar. E → E+E E → E*E E → a",
+          "question_type": [
+            "proof"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer and Allied, Sem V; paper dated 03/01/2024)",
+          "question_number": 3,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ010",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Minimization of CFG",
+          "subtopic": "Null (ϵ) production elimination",
+          "original_question": "Find Context Free Grammar without ϵ- productions equivalent to the following grammar. S → ABaC A → BC B → b | ϵ C → D | ϵ D → d",
+          "question_type": [
+            "conversion"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer and Allied, Sem V; paper dated 03/01/2024)",
+          "question_number": 3,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ011",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Chomsky Normal Form",
+          "subtopic": "CFG to CNF conversion",
+          "original_question": "Reduce the following grammar to Chomsky Normal Form(CNF). S → aAD A → aB | bAB B → b D → d",
+          "question_type": [
+            "conversion"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer and Allied, Sem V; paper dated 03/01/2024)",
+          "question_number": 4,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ012",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Context-Free Grammar",
+          "subtopic": "CFG for (ab)^n and a^n b^n",
+          "original_question": "Design context free grammar for following language (ab)^n where n>=1 and a^n b^n where n>=0.",
+          "question_type": [
+            "grammar_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Examination Summer 2024, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 03/07/2024)",
+          "question_number": 2,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ013",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Context-Free Grammar",
+          "subtopic": "Applications of CFG",
+          "original_question": "State some applications of Context Free Grammar.",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Examination Summer 2024, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 03/07/2024)",
+          "question_number": 3,
+          "subquestion_number": "A",
+          "syllabus_status": "verification_needed",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ014",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Minimization of CFG",
+          "subtopic": "Grammar reduction (useless symbol elimination)",
+          "original_question": "Find the reduced grammar equivalent to the following grammar where productions are : S → AC | SB A → bASC | a B → aSB | bbc C → BC | ad",
+          "question_type": [
+            "conversion"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Examination Summer 2024, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 03/07/2024)",
+          "question_number": 3,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ015",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Greibach Normal Form",
+          "subtopic": "Identifying a grammar in GNF",
+          "original_question": "Which grammar is in Greibach normal form (GNF) ? (a) S→AA|0, A→SS|1 (b) A→aB, B→b (c) A→aBd, B→b (d) None of these",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 1,
+          "subquestion_number": "6",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-024",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ016",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Ambiguity in CFG",
+          "subtopic": "Definition of ambiguous grammar",
+          "original_question": "A grammar that produces more than one parse tree is called (a) regular (b) ambiguous (c) unambiguous (d) linear",
+          "question_type": [
+            "definition"
+          ],
+          "marks": 1,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 1,
+          "subquestion_number": "9",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-027",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ017",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Derivations and Parse Trees",
+          "subtopic": "Leftmost/rightmost derivations and parse trees",
+          "original_question": "Let the grammar consists of following productions . S → aAS | a A → SbA | SS | ba Find the leftmost and rightmost derivations for string aabbaa. Also draw the parse trees.",
+          "question_type": [
+            "derivation",
+            "parse_tree"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 4,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ018",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Minimization of CFG",
+          "subtopic": "Grammar reduction (useless symbol elimination)",
+          "original_question": "Find the reduced grammar equivalent to following context free grammar where V=(A,B,C,S) T=(a,b) and P = ( S→AB | CA , B→ BC | AB , A→a , C→ aB | b ).",
+          "question_type": [
+            "conversion"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 5,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ019",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Greibach Normal Form",
+          "subtopic": "Identifying a grammar in GNF",
+          "original_question": "Which grammar is in Greibach normal form (GNF) ? (a) S→AA|0, A→SS|1 (b) A→aB, B→b (c) A→aBd, B→b (d) None of these",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 1,
+          "subquestion_number": "5",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-024",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ020",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Ambiguity in CFG",
+          "subtopic": "Definition of ambiguous grammar",
+          "original_question": "A grammar that produces more than one parse tree is called (a) regular (b) ambiguous (c) unambiguous (d) linear",
+          "question_type": [
+            "definition"
+          ],
+          "marks": 1,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 1,
+          "subquestion_number": "8",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-027",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ021",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Minimization of CFG",
+          "subtopic": "Null production elimination",
+          "original_question": "Eliminate NULL production from the grammar G given below: a. S→ a / Xb / aYa b. X→ Y / ^ c. Y→ b / X Write the productions after elimination",
+          "question_type": [
+            "conversion"
+          ],
+          "marks": 6,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 4,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-003",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ022",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Chomsky Normal Form",
+          "subtopic": "CFG to CNF conversion",
+          "original_question": "Convert the given to context free grammar to CNF forms a. S → ASB b. A → aAS|a|ε c. B → SbS|A|bb",
+          "question_type": [
+            "conversion"
+          ],
+          "marks": 6,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 4,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-005",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U3-PYQ023",
+          "unit_number": 3,
+          "unit_name": "Context-Free Grammar",
+          "topic": "Derivations and Parse Trees",
+          "subtopic": "Derivation tree for a given string",
+          "original_question": "Derive a derivation tree for the string aabbabba for the given context free grammar (CFG) a. S->aB|bA b. A->a|aS|bAA c. B->b|bS|aBB",
+          "question_type": [
+            "derivation",
+            "parse_tree"
+          ],
+          "marks": 6,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 5,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-006",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_name": "Pushdown Automata and Turing Machines",
+      "duration_hours": 8,
+      "syllabus_topics": [
+        "PDA: Definition and Model",
+        "PDA: Acceptance of CFL",
+        "PDA: Acceptance by Final State",
+        "PDA: Acceptance by Empty Stack",
+        "PDA: Equivalence of Final State and Empty Stack Acceptance",
+        "PDA: Equivalence of CFG and PDA",
+        "TM: Formal Definition and Behaviour",
+        "TM: Languages of a TM",
+        "TM: TM as Accepters",
+        "TM: TM as a Computer of Integer Functions",
+        "TM: Types of TMs"
+      ],
+      "pyq_count": 35,
+      "questions": [
+        {
+          "pyq_id": "TOC-U4-PYQ001",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "PDA: Definition and Model",
+          "subtopic": "Definition and properties of PDA",
+          "original_question": "Define a PDA & list three important properties of a PDA Machine?",
+          "question_type": [
+            "definition"
+          ],
+          "marks": 6,
+          "exam_year": 2022,
+          "exam_session": "Winter",
+          "paper_name": "DBATU Winter Examination – 2022, BTCOC502 Theory of Computation (B.Tech CSE, Sem V; paper dated 31-01-2023)",
+          "question_number": 4,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-007",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ002",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "PDA Construction",
+          "subtopic": "PDA for well-formed (balanced) parentheses",
+          "original_question": "Construct a PDA to check well formedness of parenthesis?",
+          "question_type": [
+            "PDA_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2022,
+          "exam_session": "Winter",
+          "paper_name": "DBATU Winter Examination – 2022, BTCOC502 Theory of Computation (B.Tech CSE, Sem V; paper dated 31-01-2023)",
+          "question_number": 4,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2022"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ003",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "Equivalence of CFG and PDA",
+          "subtopic": "CFG to PDA conversion",
+          "original_question": "Convert the following grammar to a PDA that accepts the same language. a. S → 0S1 | A b. A → 1A0 | S | ε",
+          "question_type": [
+            "conversion",
+            "PDA_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2022,
+          "exam_session": "Winter",
+          "paper_name": "DBATU Winter Examination – 2022, BTCOC502 Theory of Computation (B.Tech CSE, Sem V; paper dated 31-01-2023)",
+          "question_number": 4,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-008",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ004",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "TM Construction",
+          "subtopic": "TM for equal number of a's and b's",
+          "original_question": "Design a TM for an equal number of a’s and b’s must follow a.",
+          "question_type": [
+            "TM_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2022,
+          "exam_session": "Winter",
+          "paper_name": "DBATU Winter Examination – 2022, BTCOC502 Theory of Computation (B.Tech CSE, Sem V; paper dated 31-01-2023)",
+          "question_number": 5,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-009",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ005",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "TM Construction",
+          "subtopic": "TM for palindromes over {a, b}",
+          "original_question": "Design a TM which recognizes palindromes over Σ = {a, b}",
+          "question_type": [
+            "TM_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2022,
+          "exam_session": "Winter",
+          "paper_name": "DBATU Winter Examination – 2022, BTCOC502 Theory of Computation (B.Tech CSE, Sem V; paper dated 31-01-2023)",
+          "question_number": 5,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-010",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ006",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "PDA: Definition and Model",
+          "subtopic": "Components of PDA",
+          "original_question": "What are the different components of Pushdown Automaton? Explain with neat diagram.",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Summer Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer Engineering, Sem V; paper dated 09/08/2023)",
+          "question_number": 4,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 3,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-015",
+          "years_asked": [
+            "Summer 2023",
+            "Summer 2024",
+            "Winter 2024"
+          ],
+          "priority": "high"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ007",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "Deterministic vs Non-deterministic PDA",
+          "subtopic": "DPDA vs NPDA difference",
+          "original_question": "Distinguish between Deterministic and Non Deterministic PDA.",
+          "question_type": [
+            "difference"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Summer Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer Engineering, Sem V; paper dated 09/08/2023)",
+          "question_number": 4,
+          "subquestion_number": "C",
+          "syllabus_status": "partially_aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-016",
+          "years_asked": [
+            "Summer 2023",
+            "Winter 2023"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ008",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "TM Construction",
+          "subtopic": "TM for strings whose second letter is b",
+          "original_question": "Design Turing machine that accepts the language of all strings over alphabet ∑ = {a, b} whose second letter is b.",
+          "question_type": [
+            "TM_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Summer Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer Engineering, Sem V; paper dated 09/08/2023)",
+          "question_number": 5,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ009",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "Types of TMs",
+          "subtopic": "Multihead TM, Universal TM, Non-deterministic TM",
+          "original_question": "Explain the following (i)Multihead Turing machine (ii)Universal Turing machine (iii) Non Deterministic Turing machine",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Summer Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer Engineering, Sem V; paper dated 09/08/2023)",
+          "question_number": 5,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ010",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "Church–Turing Thesis",
+          "subtopic": "Statement and explanation of Church–Turing thesis",
+          "original_question": "What is Church Turing Thesis ? Explain.",
+          "question_type": [
+            "definition",
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Summer Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer Engineering, Sem V; paper dated 09/08/2023)",
+          "question_number": 5,
+          "subquestion_number": "C",
+          "syllabus_status": "verification_needed",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ011",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "PDA Construction",
+          "subtopic": "PDA for equal number of a's and b's",
+          "original_question": "Design Push down Automata (PDA) to accept language L=(a,b)* where n_a = n_b.",
+          "question_type": [
+            "PDA_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer and Allied, Sem V; paper dated 03/01/2024)",
+          "question_number": 4,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-018",
+          "years_asked": [
+            "Winter 2023",
+            "Summer 2024"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ012",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "Deterministic vs Non-deterministic PDA",
+          "subtopic": "DPDA vs NPDA difference",
+          "original_question": "Distinguish between Deterministic and Non Deterministic PDA.",
+          "question_type": [
+            "difference"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer and Allied, Sem V; paper dated 03/01/2024)",
+          "question_number": 4,
+          "subquestion_number": "C",
+          "syllabus_status": "partially_aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-016",
+          "years_asked": [
+            "Summer 2023",
+            "Winter 2023"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ013",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "TM: Definition and Behaviour",
+          "subtopic": "Components of Turing machine",
+          "original_question": "What are the different components of Turing machine?",
+          "question_type": [
+            "theory",
+            "definition"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer and Allied, Sem V; paper dated 03/01/2024)",
+          "question_number": 5,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ014",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "Church–Turing Thesis",
+          "subtopic": "Halt state of TM; Church–Turing thesis",
+          "original_question": "What is halt state of Turing machine? Explain Church Turing thesis.",
+          "question_type": [
+            "definition",
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer and Allied, Sem V; paper dated 03/01/2024)",
+          "question_number": 5,
+          "subquestion_number": "B",
+          "syllabus_status": "verification_needed",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ015",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "TM Construction",
+          "subtopic": "TM that erases all non-blank symbols",
+          "original_question": "Design Turing machine that erases all non-blank symbols from its tape.",
+          "question_type": [
+            "TM_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer and Allied, Sem V; paper dated 03/01/2024)",
+          "question_number": 5,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2023"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ016",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "PDA: Definition and Model",
+          "subtopic": "Definition and components of PDA",
+          "original_question": "What is Push Down Automaton (PDA)? Explain different components of PDA.",
+          "question_type": [
+            "definition",
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Examination Summer 2024, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 03/07/2024)",
+          "question_number": 4,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 3,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-015",
+          "years_asked": [
+            "Summer 2023",
+            "Summer 2024",
+            "Winter 2024"
+          ],
+          "priority": "high"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ017",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "PDA Construction",
+          "subtopic": "PDA for equal number of a's and b's",
+          "original_question": "Design PDA to accept language L = (ab)* where n_a = n_b.",
+          "question_type": [
+            "PDA_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Examination Summer 2024, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 03/07/2024)",
+          "question_number": 4,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-018",
+          "years_asked": [
+            "Winter 2023",
+            "Summer 2024"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ018",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "Equivalence of CFG and PDA",
+          "subtopic": "CFG to PDA conversion",
+          "original_question": "Construct PDA for following grammar. S → aAA A → aS | bS | a",
+          "question_type": [
+            "conversion",
+            "PDA_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Examination Summer 2024, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 03/07/2024)",
+          "question_number": 4,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ019",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "TM: Definition and Behaviour",
+          "subtopic": "TM representation: transition diagram and table",
+          "original_question": "Explain how Turing machine is represented using transition diagram and transition table.",
+          "question_type": [
+            "theory",
+            "transition_diagram",
+            "transition_table"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Examination Summer 2024, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 03/07/2024)",
+          "question_number": 5,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ020",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "TM: Definition and Behaviour",
+          "subtopic": "Infinite loop in a TM (never halts)",
+          "original_question": "Explain concept infinite loop in Turing machine with the help of an example.",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Examination Summer 2024, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 03/07/2024)",
+          "question_number": 5,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-019",
+          "years_asked": [
+            "Summer 2024",
+            "Winter 2024"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ021",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "TM Construction",
+          "subtopic": "TM for equal number of a's and b's",
+          "original_question": "Design Turing machine that recognizes the language L of all strings over {a, b} with number of a’s equal to number of b’s.",
+          "question_type": [
+            "TM_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Examination Summer 2024, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 03/07/2024)",
+          "question_number": 5,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ022",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "PDA: Definition and Model",
+          "subtopic": "Language class accepted by PDA",
+          "original_question": "The language accepted by Pushdown automata is (a) type 0 (b) type 1 (c) type 2 (d) type 3",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 1,
+          "subquestion_number": "10",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-028",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ023",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "PDA: Definition and Model",
+          "subtopic": "PDA with auxiliary memory behaves like TM",
+          "original_question": "The Pushdown automata behaves like Turing machine if it has ____ auxiliary memory (a) 0 (b) 2 (c) 2 or more (d) none of these",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 1,
+          "subquestion_number": "12",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-029",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ024",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "PDA: Definition and Model",
+          "subtopic": "Components of PDA",
+          "original_question": "Explain the components of Pushdown automata.",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 5,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 3,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-015",
+          "years_asked": [
+            "Summer 2023",
+            "Summer 2024",
+            "Winter 2024"
+          ],
+          "priority": "high"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ025",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "PDA: Definition and Model",
+          "subtopic": "PDA representation: transition diagram and table",
+          "original_question": "Explain with example how Pushdown automata is represented using transition diagram and transition table.",
+          "question_type": [
+            "theory",
+            "transition_diagram",
+            "transition_table"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 5,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ026",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "TM: Definition and Behaviour",
+          "subtopic": "Tape and head: TM vs PDA",
+          "original_question": "Distinguish between tape and head of Turing machine and Pushdown automata.",
+          "question_type": [
+            "difference"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 6,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ027",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "TM Construction",
+          "subtopic": "TM for strings ending with 00",
+          "original_question": "Design Turing machine to accept the language of 0’s and 1’s ending with 00.",
+          "question_type": [
+            "TM_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 6,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ028",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "TM: Definition and Behaviour",
+          "subtopic": "Infinite loop in a TM (never halts)",
+          "original_question": "Give an example of Turing machine which has an infinite loop and never halts .",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 6,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-019",
+          "years_asked": [
+            "Summer 2024",
+            "Winter 2024"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ029",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "PDA: Definition and Model",
+          "subtopic": "Language class accepted by PDA",
+          "original_question": "The language accepted by Pushdown automata is (a) type 0 (b) type 1 (c) type 2 (d) type 3",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 1,
+          "subquestion_number": "9",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-028",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ030",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "TM: Definition and Behaviour",
+          "subtopic": "Language class accepted by TM",
+          "original_question": "The language accepted by Turning Machine is (a) type 0 (b) type 1 (c) type 2 (d) type 3",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 1,
+          "subquestion_number": "10",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2025"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ031",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "PDA: Definition and Model",
+          "subtopic": "PDA with auxiliary memory behaves like TM",
+          "original_question": "The Pushdown automata behaves like Turing machine if it has auxiliary memory (a) 0 (b) 2 (c) 2 or more (d) None",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 1,
+          "subquestion_number": "11",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-029",
+          "years_asked": [
+            "Winter 2024",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ032",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "PDA: Definition and Model",
+          "subtopic": "Definition and properties of PDA",
+          "original_question": "Define a PDA & list three important properties of a PDA Machine?",
+          "question_type": [
+            "definition"
+          ],
+          "marks": 6,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 5,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-007",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ033",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "Equivalence of CFG and PDA",
+          "subtopic": "CFG to PDA conversion",
+          "original_question": "Convert the following grammar to a PDA that accepts the same language. a. S → 0S1 | A b. A → 1A0 | S | ε",
+          "question_type": [
+            "conversion",
+            "PDA_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 5,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-008",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ034",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "TM Construction",
+          "subtopic": "TM for equal number of a's and b's",
+          "original_question": "Design a TM for an equal number of a’s and b’s must follow a.",
+          "question_type": [
+            "TM_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 6,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-009",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U4-PYQ035",
+          "unit_number": 4,
+          "unit_name": "Pushdown Automata and Turing Machines",
+          "topic": "TM Construction",
+          "subtopic": "TM for palindromes over {a, b}",
+          "original_question": "Design a TM which recognizes palindromes over Σ = {a, b}",
+          "question_type": [
+            "TM_construction"
+          ],
+          "marks": 6,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 6,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-010",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_name": "Recursive and Recursively Enumerable Languages",
+      "duration_hours": null,
+      "syllabus_topics": [
+        "Properties of Recursive Languages",
+        "Properties of Recursively Enumerable Languages",
+        "Universal Turing Machine",
+        "Halting Problem",
+        "Undecidable Problems about TMs",
+        "Context Sensitive Languages",
+        "Linear Bounded Automata (LBA)",
+        "Chomsky Hierarchy",
+        "Decidability",
+        "Post's Correspondence Problem (PCP)",
+        "Undecidability of PCP"
+      ],
+      "pyq_count": 9,
+      "questions": [
+        {
+          "pyq_id": "TOC-U5-PYQ001",
+          "unit_number": 5,
+          "unit_name": "Recursive and Recursively Enumerable Languages",
+          "topic": "Chomsky Hierarchy",
+          "subtopic": "Chomsky hierarchy with examples",
+          "original_question": "Explain in brief Chomsky hierarchy with suitable examples?",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2022,
+          "exam_session": "Winter",
+          "paper_name": "DBATU Winter Examination – 2022, BTCOC502 Theory of Computation (B.Tech CSE, Sem V; paper dated 31-01-2023)",
+          "question_number": 2,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-002",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U5-PYQ002",
+          "unit_number": 5,
+          "unit_name": "Recursive and Recursively Enumerable Languages",
+          "topic": "Halting Problem",
+          "subtopic": "Halting problem of Turing machine",
+          "original_question": "Explain ‘Halting Problem of turning machine’ with neat diagrams?",
+          "question_type": [
+            "theory",
+            "undecidability"
+          ],
+          "marks": 6,
+          "exam_year": 2022,
+          "exam_session": "Winter",
+          "paper_name": "DBATU Winter Examination – 2022, BTCOC502 Theory of Computation (B.Tech CSE, Sem V; paper dated 31-01-2023)",
+          "question_number": 5,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-011",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U5-PYQ003",
+          "unit_number": 5,
+          "unit_name": "Recursive and Recursively Enumerable Languages",
+          "topic": "Chomsky Hierarchy",
+          "subtopic": "Chomsky classification of grammars",
+          "original_question": "Explain Chomsky classification of grammar.",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Summer Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer Engineering, Sem V; paper dated 09/08/2023)",
+          "question_number": 3,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 3,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-014",
+          "years_asked": [
+            "Summer 2023",
+            "Winter 2023",
+            "Winter 2024"
+          ],
+          "priority": "high"
+        },
+        {
+          "pyq_id": "TOC-U5-PYQ004",
+          "unit_number": 5,
+          "unit_name": "Recursive and Recursively Enumerable Languages",
+          "topic": "Chomsky Hierarchy",
+          "subtopic": "Chomsky classification of grammars",
+          "original_question": "Explain Chomsky classification of grammar.",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2023,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2023, BTCOC502 Theory of Computation (B.Tech Computer and Allied, Sem V; paper dated 03/01/2024)",
+          "question_number": 3,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 3,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-014",
+          "years_asked": [
+            "Summer 2023",
+            "Winter 2023",
+            "Winter 2024"
+          ],
+          "priority": "high"
+        },
+        {
+          "pyq_id": "TOC-U5-PYQ005",
+          "unit_number": 5,
+          "unit_name": "Recursive and Recursively Enumerable Languages",
+          "topic": "Chomsky Hierarchy",
+          "subtopic": "Type 0, 1, 2 and 3 grammars",
+          "original_question": "Explain the following. (i) Type 0 grammar (ii) Type 1 grammar (iii) Type 2 grammar (iv) Type 3 grammar",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Supplementary Summer",
+          "paper_name": "DBATU Supplementary Examination Summer 2024, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 03/07/2024)",
+          "question_number": 3,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Summer 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U5-PYQ006",
+          "unit_number": 5,
+          "unit_name": "Recursive and Recursively Enumerable Languages",
+          "topic": "Chomsky Hierarchy",
+          "subtopic": "Grammar type equivalent to Turing machine",
+          "original_question": "The language is recognized by Turing machine if it is generated by ____ grammar (a) type 0 (b) type 1 (c) type 2 (d) type 3",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 1,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 1,
+          "subquestion_number": "11",
+          "syllabus_status": "aligned",
+          "exact_frequency": 1,
+          "repeated": false,
+          "repetition_group_id": null,
+          "years_asked": [
+            "Winter 2024"
+          ],
+          "priority": "low"
+        },
+        {
+          "pyq_id": "TOC-U5-PYQ007",
+          "unit_number": 5,
+          "unit_name": "Recursive and Recursively Enumerable Languages",
+          "topic": "Chomsky Hierarchy",
+          "subtopic": "Chomsky classification of grammars",
+          "original_question": "Explain Chomsky classification of grammar.",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2024,
+          "exam_session": "Regular/Supplementary Winter",
+          "paper_name": "DBATU Regular/Supplementary Winter Examination – 2024, BTCOC502 Theory Of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 08/02/2025)",
+          "question_number": 4,
+          "subquestion_number": "B",
+          "syllabus_status": "aligned",
+          "exact_frequency": 3,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-014",
+          "years_asked": [
+            "Summer 2023",
+            "Winter 2023",
+            "Winter 2024"
+          ],
+          "priority": "high"
+        },
+        {
+          "pyq_id": "TOC-U5-PYQ008",
+          "unit_number": 5,
+          "unit_name": "Recursive and Recursively Enumerable Languages",
+          "topic": "Chomsky Hierarchy",
+          "subtopic": "Chomsky hierarchy with examples",
+          "original_question": "Explain in brief Chomsky hierarchy with suitable examples?",
+          "question_type": [
+            "theory"
+          ],
+          "marks": 6,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 3,
+          "subquestion_number": "A",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-002",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        },
+        {
+          "pyq_id": "TOC-U5-PYQ009",
+          "unit_number": 5,
+          "unit_name": "Recursive and Recursively Enumerable Languages",
+          "topic": "Halting Problem",
+          "subtopic": "Halting problem of Turing machine",
+          "original_question": "Explain ‘Halting Problem of turning machine’ with neat diagrams?",
+          "question_type": [
+            "theory",
+            "undecidability"
+          ],
+          "marks": 6,
+          "exam_year": 2025,
+          "exam_session": "Rescheduled Supplementary Summer",
+          "paper_name": "DBATU Rescheduled Supplementary Summer Examination – 2025, BTCOC502 Theory of Computation (B.Tech Computer Engineering/CSE, Sem V; paper dated 25/08/2025)",
+          "question_number": 6,
+          "subquestion_number": "C",
+          "syllabus_status": "aligned",
+          "exact_frequency": 2,
+          "repeated": true,
+          "repetition_group_id": "TOC-RG-011",
+          "years_asked": [
+            "Winter 2022",
+            "Summer 2025"
+          ],
+          "priority": "medium"
+        }
+      ]
+    }
+  ],
+  "most_repeated_questions": [
+    {
+      "repetition_group_id": "TOC-RG-013",
+      "representative_question": "Distinguish between Moore machine and Mealy machine.",
+      "unit_number": 1,
+      "topic": "Moore and Mealy Machines",
+      "exact_frequency": 4,
+      "years_asked": [
+        "Summer 2023",
+        "Winter 2023",
+        "Summer 2024",
+        "Winter 2024"
+      ],
+      "pyq_ids": [
+        "TOC-U1-PYQ006",
+        "TOC-U1-PYQ010",
+        "TOC-U1-PYQ013",
+        "TOC-U1-PYQ020"
+      ],
+      "priority": "high"
+    },
+    {
+      "repetition_group_id": "TOC-RG-015",
+      "representative_question": "What are the different components of Pushdown Automaton? Explain with neat diagram.",
+      "unit_number": 4,
+      "topic": "PDA: Definition and Model",
+      "exact_frequency": 3,
+      "years_asked": [
+        "Summer 2023",
+        "Summer 2024",
+        "Winter 2024"
+      ],
+      "pyq_ids": [
+        "TOC-U4-PYQ006",
+        "TOC-U4-PYQ016",
+        "TOC-U4-PYQ024"
+      ],
+      "priority": "high"
+    },
+    {
+      "repetition_group_id": "TOC-RG-014",
+      "representative_question": "Explain Chomsky classification of grammar.",
+      "unit_number": 5,
+      "topic": "Chomsky Hierarchy",
+      "exact_frequency": 3,
+      "years_asked": [
+        "Summer 2023",
+        "Winter 2023",
+        "Winter 2024"
+      ],
+      "pyq_ids": [
+        "TOC-U5-PYQ003",
+        "TOC-U5-PYQ004",
+        "TOC-U5-PYQ007"
+      ],
+      "priority": "high"
+    },
+    {
+      "repetition_group_id": "TOC-RG-001",
+      "representative_question": "Design a FSM to check whether a given decimal number is divisible by 5?",
+      "unit_number": 1,
+      "topic": "DFA",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U1-PYQ003",
+        "TOC-U1-PYQ027"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-020",
+      "representative_question": "Which of the following is not a part of 5-tuple finite automata? (a) Input alphabet (b) Transition function (c) Initial State (d) Output Alphabet",
+      "unit_number": 1,
+      "topic": "Introduction to Finite Automata",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U1-PYQ014",
+        "TOC-U1-PYQ021"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-021",
+      "representative_question": "The number of states required by an automaton to accept string 101 are (a) 3 (b) 4 (c) 5 (d) 2",
+      "unit_number": 1,
+      "topic": "DFA",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U1-PYQ015",
+        "TOC-U1-PYQ022"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-025",
+      "representative_question": "Moore machine produces output over the change of (a) transitions (b) state (c) input symbol (d) None of these",
+      "unit_number": 1,
+      "topic": "Moore and Mealy Machines",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U1-PYQ016",
+        "TOC-U1-PYQ023"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-026",
+      "representative_question": "Can Deterministic Finite automata determine palindrome number ? (a) yes (b) no (c) yes for some cases (d) yes for Σ*",
+      "unit_number": 1,
+      "topic": "DFA",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U1-PYQ017",
+        "TOC-U1-PYQ024"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-004",
+      "representative_question": "Consider a left linear grammar as given below − a. S→ Sa|Abc b. A→ Sa|Ab|a Convert left linear grammar to right linear grammar.",
+      "unit_number": 2,
+      "topic": "Regular Grammars",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U2-PYQ001",
+        "TOC-U2-PYQ016"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-012",
+      "representative_question": "State and explain applications of Regular Expressions.",
+      "unit_number": 2,
+      "topic": "Regular Expressions",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Summer 2023",
+        "Summer 2024"
+      ],
+      "pyq_ids": [
+        "TOC-U2-PYQ002",
+        "TOC-U2-PYQ006"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-017",
+      "representative_question": "Find the string set for following regular expressions. (i)00* (ii)a*b* (iii) (0+1)*",
+      "unit_number": 2,
+      "topic": "Regular Expressions",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2023",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U2-PYQ004",
+        "TOC-U2-PYQ015"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-022",
+      "representative_question": "Regular expression for string that start with ab and end with ba is (a) aba*b*ba (b) ab(ab)*ba (c) ab(a+b)*ba (d) All of these",
+      "unit_number": 2,
+      "topic": "Regular Expressions",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U2-PYQ009",
+        "TOC-U2-PYQ013"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-023",
+      "representative_question": "Regular expressions are closed under (a) Union (b) Concatenation (c) Kleene Star (d) All of these",
+      "unit_number": 2,
+      "topic": "Closure Properties of Regular Languages",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U2-PYQ010",
+        "TOC-U2-PYQ014"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-003",
+      "representative_question": "Eliminate NULL production from the grammar G given below: a. S→ a / Xb / aYa b. X→ Y / ^ c. Y→ b / X Write the productions after elimination.",
+      "unit_number": 3,
+      "topic": "Minimization of CFG",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U3-PYQ001",
+        "TOC-U3-PYQ021"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-005",
+      "representative_question": "Convert the given to context free grammar to CNF forms a. S → ASB b. A → aAS|a|ε c. B → SbS|A|bb",
+      "unit_number": 3,
+      "topic": "Chomsky Normal Form",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U3-PYQ003",
+        "TOC-U3-PYQ022"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-006",
+      "representative_question": "Derive a derivation tree for the string aabbabba for the given context free grammar (CFG) − a. S->aB|bA b. A->a|aS|bAA c. B->b|bS|aBB",
+      "unit_number": 3,
+      "topic": "Derivations and Parse Trees",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U3-PYQ004",
+        "TOC-U3-PYQ023"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-024",
+      "representative_question": "Which grammar is in Greibach normal form (GNF) ? (a) S→AA|0, A→SS|1 (b) A→aB, B→b (c) A→aBd, B→b (d) None of these",
+      "unit_number": 3,
+      "topic": "Greibach Normal Form",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U3-PYQ015",
+        "TOC-U3-PYQ019"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-027",
+      "representative_question": "A grammar that produces more than one parse tree is called (a) regular (b) ambiguous (c) unambiguous (d) linear",
+      "unit_number": 3,
+      "topic": "Ambiguity in CFG",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U3-PYQ016",
+        "TOC-U3-PYQ020"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-007",
+      "representative_question": "Define a PDA & list three important properties of a PDA Machine?",
+      "unit_number": 4,
+      "topic": "PDA: Definition and Model",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U4-PYQ001",
+        "TOC-U4-PYQ032"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-008",
+      "representative_question": "Convert the following grammar to a PDA that accepts the same language. a. S → 0S1 | A b. A → 1A0 | S | ε",
+      "unit_number": 4,
+      "topic": "Equivalence of CFG and PDA",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U4-PYQ003",
+        "TOC-U4-PYQ033"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-009",
+      "representative_question": "Design a TM for an equal number of a’s and b’s must follow a.",
+      "unit_number": 4,
+      "topic": "TM Construction",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U4-PYQ004",
+        "TOC-U4-PYQ034"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-010",
+      "representative_question": "Design a TM which recognizes palindromes over Σ = {a, b}",
+      "unit_number": 4,
+      "topic": "TM Construction",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U4-PYQ005",
+        "TOC-U4-PYQ035"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-016",
+      "representative_question": "Distinguish between Deterministic and Non Deterministic PDA.",
+      "unit_number": 4,
+      "topic": "Deterministic vs Non-deterministic PDA",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Summer 2023",
+        "Winter 2023"
+      ],
+      "pyq_ids": [
+        "TOC-U4-PYQ007",
+        "TOC-U4-PYQ012"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-018",
+      "representative_question": "Design Push down Automata (PDA) to accept language L=(a,b)* where n_a = n_b.",
+      "unit_number": 4,
+      "topic": "PDA Construction",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2023",
+        "Summer 2024"
+      ],
+      "pyq_ids": [
+        "TOC-U4-PYQ011",
+        "TOC-U4-PYQ017"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-019",
+      "representative_question": "Explain concept infinite loop in Turing machine with the help of an example.",
+      "unit_number": 4,
+      "topic": "TM: Definition and Behaviour",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Summer 2024",
+        "Winter 2024"
+      ],
+      "pyq_ids": [
+        "TOC-U4-PYQ020",
+        "TOC-U4-PYQ028"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-028",
+      "representative_question": "The language accepted by Pushdown automata is (a) type 0 (b) type 1 (c) type 2 (d) type 3",
+      "unit_number": 4,
+      "topic": "PDA: Definition and Model",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U4-PYQ022",
+        "TOC-U4-PYQ029"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-029",
+      "representative_question": "The Pushdown automata behaves like Turing machine if it has ____ auxiliary memory (a) 0 (b) 2 (c) 2 or more (d) none of these",
+      "unit_number": 4,
+      "topic": "PDA: Definition and Model",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U4-PYQ023",
+        "TOC-U4-PYQ031"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-002",
+      "representative_question": "Explain in brief Chomsky hierarchy with suitable examples?",
+      "unit_number": 5,
+      "topic": "Chomsky Hierarchy",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U5-PYQ001",
+        "TOC-U5-PYQ008"
+      ],
+      "priority": "medium"
+    },
+    {
+      "repetition_group_id": "TOC-RG-011",
+      "representative_question": "Explain ‘Halting Problem of turning machine’ with neat diagrams?",
+      "unit_number": 5,
+      "topic": "Halting Problem",
+      "exact_frequency": 2,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2025"
+      ],
+      "pyq_ids": [
+        "TOC-U5-PYQ002",
+        "TOC-U5-PYQ009"
+      ],
+      "priority": "medium"
+    }
+  ],
+  "topic_frequency": [
+    {
+      "topic": "DFA",
+      "unit_number": 1,
+      "total_appearances": 9,
+      "unique_question_count": 6,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2023",
+        "Winter 2023",
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "priority": "high"
+    },
+    {
+      "topic": "Moore and Mealy Machines",
+      "unit_number": 1,
+      "total_appearances": 7,
+      "unique_question_count": 3,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2023",
+        "Winter 2023",
+        "Summer 2024",
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "priority": "high"
+    },
+    {
+      "topic": "Introduction to Finite Automata",
+      "unit_number": 1,
+      "total_appearances": 5,
+      "unique_question_count": 4,
+      "years_asked": [
+        "Winter 2022",
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "priority": "medium"
+    },
+    {
+      "topic": "NFA",
+      "unit_number": 1,
+      "total_appearances": 3,
+      "unique_question_count": 3,
+      "years_asked": [
+        "Summer 2023",
+        "Winter 2023",
+        "Summer 2024"
+      ],
+      "priority": "medium"
+    },
+    {
+      "topic": "DFA–NFA Equivalence",
+      "unit_number": 1,
+      "total_appearances": 2,
+      "unique_question_count": 2,
+      "years_asked": [
+        "Summer 2023",
+        "Winter 2023"
+      ],
+      "priority": "medium"
+    },
+    {
+      "topic": "Epsilon-NFA",
+      "unit_number": 1,
+      "total_appearances": 1,
+      "unique_question_count": 1,
+      "years_asked": [
+        "Winter 2024"
+      ],
+      "priority": "low"
+    },
+    {
+      "topic": "Regular Expressions",
+      "unit_number": 2,
+      "total_appearances": 10,
+      "unique_question_count": 7,
+      "years_asked": [
+        "Summer 2023",
+        "Winter 2023",
+        "Summer 2024",
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "priority": "high"
+    },
+    {
+      "topic": "Regular Grammars",
+      "unit_number": 2,
+      "total_appearances": 3,
+      "unique_question_count": 2,
+      "years_asked": [
+        "Winter 2022",
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "priority": "medium"
+    },
+    {
+      "topic": "Closure Properties of Regular Languages",
+      "unit_number": 2,
+      "total_appearances": 2,
+      "unique_question_count": 1,
+      "years_asked": [
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "priority": "medium"
+    },
+    {
+      "topic": "Regular vs Context-Free Languages",
+      "unit_number": 2,
+      "total_appearances": 1,
+      "unique_question_count": 1,
+      "years_asked": [
+        "Summer 2024"
+      ],
+      "priority": "low"
+    },
+    {
+      "topic": "Minimization of CFG",
+      "unit_number": 3,
+      "total_appearances": 6,
+      "unique_question_count": 5,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2023",
+        "Winter 2023",
+        "Summer 2024",
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "priority": "high"
+    },
+    {
+      "topic": "Ambiguity in CFG",
+      "unit_number": 3,
+      "total_appearances": 4,
+      "unique_question_count": 3,
+      "years_asked": [
+        "Winter 2022",
+        "Winter 2023",
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "priority": "high"
+    },
+    {
+      "topic": "Chomsky Normal Form",
+      "unit_number": 3,
+      "total_appearances": 4,
+      "unique_question_count": 3,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2023",
+        "Winter 2023",
+        "Summer 2025"
+      ],
+      "priority": "high"
+    },
+    {
+      "topic": "Derivations and Parse Trees",
+      "unit_number": 3,
+      "total_appearances": 4,
+      "unique_question_count": 3,
+      "years_asked": [
+        "Winter 2022",
+        "Winter 2023",
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "priority": "high"
+    },
+    {
+      "topic": "Context-Free Grammar",
+      "unit_number": 3,
+      "total_appearances": 3,
+      "unique_question_count": 3,
+      "years_asked": [
+        "Summer 2023",
+        "Summer 2024"
+      ],
+      "priority": "medium"
+    },
+    {
+      "topic": "Greibach Normal Form",
+      "unit_number": 3,
+      "total_appearances": 2,
+      "unique_question_count": 1,
+      "years_asked": [
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "priority": "medium"
+    },
+    {
+      "topic": "PDA: Definition and Model",
+      "unit_number": 4,
+      "total_appearances": 10,
+      "unique_question_count": 5,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2023",
+        "Summer 2024",
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "priority": "high"
+    },
+    {
+      "topic": "TM Construction",
+      "unit_number": 4,
+      "total_appearances": 8,
+      "unique_question_count": 6,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2023",
+        "Winter 2023",
+        "Summer 2024",
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "priority": "high"
+    },
+    {
+      "topic": "TM: Definition and Behaviour",
+      "unit_number": 4,
+      "total_appearances": 6,
+      "unique_question_count": 5,
+      "years_asked": [
+        "Winter 2023",
+        "Summer 2024",
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "priority": "high"
+    },
+    {
+      "topic": "Equivalence of CFG and PDA",
+      "unit_number": 4,
+      "total_appearances": 3,
+      "unique_question_count": 2,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2024",
+        "Summer 2025"
+      ],
+      "priority": "medium"
+    },
+    {
+      "topic": "PDA Construction",
+      "unit_number": 4,
+      "total_appearances": 3,
+      "unique_question_count": 2,
+      "years_asked": [
+        "Winter 2022",
+        "Winter 2023",
+        "Summer 2024"
+      ],
+      "priority": "medium"
+    },
+    {
+      "topic": "Church–Turing Thesis",
+      "unit_number": 4,
+      "total_appearances": 2,
+      "unique_question_count": 2,
+      "years_asked": [
+        "Summer 2023",
+        "Winter 2023"
+      ],
+      "priority": "medium"
+    },
+    {
+      "topic": "Deterministic vs Non-deterministic PDA",
+      "unit_number": 4,
+      "total_appearances": 2,
+      "unique_question_count": 1,
+      "years_asked": [
+        "Summer 2023",
+        "Winter 2023"
+      ],
+      "priority": "medium"
+    },
+    {
+      "topic": "Types of TMs",
+      "unit_number": 4,
+      "total_appearances": 1,
+      "unique_question_count": 1,
+      "years_asked": [
+        "Summer 2023"
+      ],
+      "priority": "low"
+    },
+    {
+      "topic": "Chomsky Hierarchy",
+      "unit_number": 5,
+      "total_appearances": 7,
+      "unique_question_count": 4,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2023",
+        "Winter 2023",
+        "Summer 2024",
+        "Winter 2024",
+        "Summer 2025"
+      ],
+      "priority": "high"
+    },
+    {
+      "topic": "Halting Problem",
+      "unit_number": 5,
+      "total_appearances": 2,
+      "unique_question_count": 1,
+      "years_asked": [
+        "Winter 2022",
+        "Summer 2025"
+      ],
+      "priority": "medium"
+    }
+  ],
+  "unit_summary": [
+    {
+      "unit_number": 1,
+      "unit_name": "Finite Automata",
+      "pyq_count": 27,
+      "unique_question_count": 19,
+      "repeated_question_groups": 6,
+      "total_marks": 117,
+      "papers_with_questions": 6,
+      "priority_counts_unique_questions": {
+        "high": 1,
+        "medium": 5,
+        "low": 13
+      },
+      "top_topics": [
+        {
+          "topic": "DFA",
+          "total_appearances": 9
+        },
+        {
+          "topic": "Moore and Mealy Machines",
+          "total_appearances": 7
+        },
+        {
+          "topic": "Introduction to Finite Automata",
+          "total_appearances": 5
+        }
+      ]
+    },
+    {
+      "unit_number": 2,
+      "unit_name": "Regular Expressions and Regular Grammars",
+      "pyq_count": 16,
+      "unique_question_count": 11,
+      "repeated_question_groups": 5,
+      "total_marks": 71,
+      "papers_with_questions": 6,
+      "priority_counts_unique_questions": {
+        "high": 0,
+        "medium": 5,
+        "low": 6
+      },
+      "top_topics": [
+        {
+          "topic": "Regular Expressions",
+          "total_appearances": 10
+        },
+        {
+          "topic": "Regular Grammars",
+          "total_appearances": 3
+        },
+        {
+          "topic": "Closure Properties of Regular Languages",
+          "total_appearances": 2
+        }
+      ]
+    },
+    {
+      "unit_number": 3,
+      "unit_name": "Context-Free Grammar",
+      "pyq_count": 23,
+      "unique_question_count": 18,
+      "repeated_question_groups": 5,
+      "total_marks": 118,
+      "papers_with_questions": 6,
+      "priority_counts_unique_questions": {
+        "high": 0,
+        "medium": 5,
+        "low": 13
+      },
+      "top_topics": [
+        {
+          "topic": "Minimization of CFG",
+          "total_appearances": 6
+        },
+        {
+          "topic": "Ambiguity in CFG",
+          "total_appearances": 4
+        },
+        {
+          "topic": "Chomsky Normal Form",
+          "total_appearances": 4
+        }
+      ]
+    },
+    {
+      "unit_number": 4,
+      "unit_name": "Pushdown Automata and Turing Machines",
+      "pyq_count": 35,
+      "unique_question_count": 24,
+      "repeated_question_groups": 10,
+      "total_marks": 185,
+      "papers_with_questions": 6,
+      "priority_counts_unique_questions": {
+        "high": 1,
+        "medium": 9,
+        "low": 14
+      },
+      "top_topics": [
+        {
+          "topic": "PDA: Definition and Model",
+          "total_appearances": 10
+        },
+        {
+          "topic": "TM Construction",
+          "total_appearances": 8
+        },
+        {
+          "topic": "TM: Definition and Behaviour",
+          "total_appearances": 6
+        }
+      ]
+    },
+    {
+      "unit_number": 5,
+      "unit_name": "Recursive and Recursively Enumerable Languages",
+      "pyq_count": 9,
+      "unique_question_count": 5,
+      "repeated_question_groups": 3,
+      "total_marks": 49,
+      "papers_with_questions": 6,
+      "priority_counts_unique_questions": {
+        "high": 1,
+        "medium": 2,
+        "low": 2
+      },
+      "top_topics": [
+        {
+          "topic": "Chomsky Hierarchy",
+          "total_appearances": 7
+        },
+        {
+          "topic": "Halting Problem",
+          "total_appearances": 2
+        }
+      ]
+    }
+  ],
+  "syllabus_coverage": {
+    "covered_topics": [
+      {
+        "unit_number": 1,
+        "syllabus_topic": "Introduction",
+        "appearances": 3,
+        "papers_count": 2,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2025"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U1-PYQ001",
+          "TOC-U1-PYQ025",
+          "TOC-U1-PYQ026"
+        ]
+      },
+      {
+        "unit_number": 1,
+        "syllabus_topic": "Deterministic Finite Automata (DFA)",
+        "appearances": 7,
+        "papers_count": 5,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2023",
+          "Winter 2023",
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "frequent",
+        "pyq_ids": [
+          "TOC-U1-PYQ003",
+          "TOC-U1-PYQ004",
+          "TOC-U1-PYQ008",
+          "TOC-U1-PYQ015",
+          "TOC-U1-PYQ018",
+          "TOC-U1-PYQ022",
+          "TOC-U1-PYQ027"
+        ]
+      },
+      {
+        "unit_number": 1,
+        "syllabus_topic": "Formal definition",
+        "appearances": 3,
+        "papers_count": 3,
+        "years_asked": [
+          "Winter 2023",
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U1-PYQ008",
+          "TOC-U1-PYQ014",
+          "TOC-U1-PYQ021"
+        ]
+      },
+      {
+        "unit_number": 1,
+        "syllabus_topic": "Language of a DFA",
+        "appearances": 4,
+        "papers_count": 3,
+        "years_asked": [
+          "Summer 2023",
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U1-PYQ004",
+          "TOC-U1-PYQ017",
+          "TOC-U1-PYQ018",
+          "TOC-U1-PYQ024"
+        ]
+      },
+      {
+        "unit_number": 1,
+        "syllabus_topic": "Nondeterministic Finite Automata (NFA)",
+        "appearances": 3,
+        "papers_count": 3,
+        "years_asked": [
+          "Summer 2023",
+          "Winter 2023",
+          "Summer 2024"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U1-PYQ005",
+          "TOC-U1-PYQ009",
+          "TOC-U1-PYQ012"
+        ]
+      },
+      {
+        "unit_number": 1,
+        "syllabus_topic": "Definition and language of an NFA",
+        "appearances": 3,
+        "papers_count": 3,
+        "years_asked": [
+          "Summer 2023",
+          "Winter 2023",
+          "Summer 2024"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U1-PYQ005",
+          "TOC-U1-PYQ009",
+          "TOC-U1-PYQ012"
+        ]
+      },
+      {
+        "unit_number": 1,
+        "syllabus_topic": "Equivalence of DFA and NFA",
+        "appearances": 2,
+        "papers_count": 2,
+        "years_asked": [
+          "Summer 2023",
+          "Winter 2023"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U1-PYQ007",
+          "TOC-U1-PYQ011"
+        ]
+      },
+      {
+        "unit_number": 1,
+        "syllabus_topic": "Applications of Finite Automata",
+        "appearances": 1,
+        "papers_count": 1,
+        "years_asked": [
+          "Winter 2022"
+        ],
+        "frequency_band": "once",
+        "pyq_ids": [
+          "TOC-U1-PYQ001"
+        ]
+      },
+      {
+        "unit_number": 1,
+        "syllabus_topic": "Finite Automata with Epsilon Transitions",
+        "appearances": 1,
+        "papers_count": 1,
+        "years_asked": [
+          "Winter 2024"
+        ],
+        "frequency_band": "once",
+        "pyq_ids": [
+          "TOC-U1-PYQ019"
+        ]
+      },
+      {
+        "unit_number": 1,
+        "syllabus_topic": "Finite Automata with Output",
+        "appearances": 7,
+        "papers_count": 6,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2023",
+          "Winter 2023",
+          "Summer 2024",
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "frequent",
+        "pyq_ids": [
+          "TOC-U1-PYQ002",
+          "TOC-U1-PYQ006",
+          "TOC-U1-PYQ010",
+          "TOC-U1-PYQ013",
+          "TOC-U1-PYQ016",
+          "TOC-U1-PYQ020",
+          "TOC-U1-PYQ023"
+        ]
+      },
+      {
+        "unit_number": 1,
+        "syllabus_topic": "Moore and Mealy Machines",
+        "appearances": 7,
+        "papers_count": 6,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2023",
+          "Winter 2023",
+          "Summer 2024",
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "frequent",
+        "pyq_ids": [
+          "TOC-U1-PYQ002",
+          "TOC-U1-PYQ006",
+          "TOC-U1-PYQ010",
+          "TOC-U1-PYQ013",
+          "TOC-U1-PYQ016",
+          "TOC-U1-PYQ020",
+          "TOC-U1-PYQ023"
+        ]
+      },
+      {
+        "unit_number": 1,
+        "syllabus_topic": "Interconversion of Moore and Mealy Machines",
+        "appearances": 1,
+        "papers_count": 1,
+        "years_asked": [
+          "Winter 2022"
+        ],
+        "frequency_band": "once",
+        "pyq_ids": [
+          "TOC-U1-PYQ002"
+        ]
+      },
+      {
+        "unit_number": 2,
+        "syllabus_topic": "Regular Expressions: Introduction",
+        "appearances": 6,
+        "papers_count": 4,
+        "years_asked": [
+          "Summer 2023",
+          "Winter 2023",
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "frequent",
+        "pyq_ids": [
+          "TOC-U2-PYQ003",
+          "TOC-U2-PYQ004",
+          "TOC-U2-PYQ009",
+          "TOC-U2-PYQ011",
+          "TOC-U2-PYQ013",
+          "TOC-U2-PYQ015"
+        ]
+      },
+      {
+        "unit_number": 2,
+        "syllabus_topic": "Regular Expression to Automata conversion",
+        "appearances": 1,
+        "papers_count": 1,
+        "years_asked": [
+          "Summer 2024"
+        ],
+        "frequency_band": "once",
+        "pyq_ids": [
+          "TOC-U2-PYQ005"
+        ]
+      },
+      {
+        "unit_number": 2,
+        "syllabus_topic": "Applications of Regular Expressions",
+        "appearances": 3,
+        "papers_count": 3,
+        "years_asked": [
+          "Summer 2023",
+          "Summer 2024",
+          "Winter 2024"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U2-PYQ002",
+          "TOC-U2-PYQ006",
+          "TOC-U2-PYQ011"
+        ]
+      },
+      {
+        "unit_number": 2,
+        "syllabus_topic": "Regular Grammars: Definition",
+        "appearances": 2,
+        "papers_count": 2,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2025"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U2-PYQ001",
+          "TOC-U2-PYQ016"
+        ]
+      },
+      {
+        "unit_number": 2,
+        "syllabus_topic": "Regular Grammars and Finite Automata",
+        "appearances": 1,
+        "papers_count": 1,
+        "years_asked": [
+          "Winter 2024"
+        ],
+        "frequency_band": "once",
+        "pyq_ids": [
+          "TOC-U2-PYQ012"
+        ]
+      },
+      {
+        "unit_number": 2,
+        "syllabus_topic": "FA for Regular Grammar",
+        "appearances": 1,
+        "papers_count": 1,
+        "years_asked": [
+          "Winter 2024"
+        ],
+        "frequency_band": "once",
+        "pyq_ids": [
+          "TOC-U2-PYQ012"
+        ]
+      },
+      {
+        "unit_number": 3,
+        "syllabus_topic": "Context-Free Grammar",
+        "appearances": 3,
+        "papers_count": 2,
+        "years_asked": [
+          "Summer 2023",
+          "Summer 2024"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U3-PYQ007",
+          "TOC-U3-PYQ012",
+          "TOC-U3-PYQ013"
+        ]
+      },
+      {
+        "unit_number": 3,
+        "syllabus_topic": "Derivation Trees",
+        "appearances": 3,
+        "papers_count": 3,
+        "years_asked": [
+          "Winter 2022",
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U3-PYQ004",
+          "TOC-U3-PYQ017",
+          "TOC-U3-PYQ023"
+        ]
+      },
+      {
+        "unit_number": 3,
+        "syllabus_topic": "Rightmost and Leftmost Derivations",
+        "appearances": 2,
+        "papers_count": 2,
+        "years_asked": [
+          "Winter 2023",
+          "Winter 2024"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U3-PYQ008",
+          "TOC-U3-PYQ017"
+        ]
+      },
+      {
+        "unit_number": 3,
+        "syllabus_topic": "Ambiguity in CFGs",
+        "appearances": 4,
+        "papers_count": 4,
+        "years_asked": [
+          "Winter 2022",
+          "Winter 2023",
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "frequent",
+        "pyq_ids": [
+          "TOC-U3-PYQ002",
+          "TOC-U3-PYQ009",
+          "TOC-U3-PYQ016",
+          "TOC-U3-PYQ020"
+        ]
+      },
+      {
+        "unit_number": 3,
+        "syllabus_topic": "Minimization of CFGs",
+        "appearances": 6,
+        "papers_count": 6,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2023",
+          "Winter 2023",
+          "Summer 2024",
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "frequent",
+        "pyq_ids": [
+          "TOC-U3-PYQ001",
+          "TOC-U3-PYQ005",
+          "TOC-U3-PYQ010",
+          "TOC-U3-PYQ014",
+          "TOC-U3-PYQ018",
+          "TOC-U3-PYQ021"
+        ]
+      },
+      {
+        "unit_number": 3,
+        "syllabus_topic": "Chomsky Normal Form (CNF)",
+        "appearances": 4,
+        "papers_count": 4,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2023",
+          "Winter 2023",
+          "Summer 2025"
+        ],
+        "frequency_band": "frequent",
+        "pyq_ids": [
+          "TOC-U3-PYQ003",
+          "TOC-U3-PYQ006",
+          "TOC-U3-PYQ011",
+          "TOC-U3-PYQ022"
+        ]
+      },
+      {
+        "unit_number": 4,
+        "syllabus_topic": "PDA: Definition and Model",
+        "appearances": 11,
+        "papers_count": 6,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2023",
+          "Winter 2023",
+          "Summer 2024",
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "frequent",
+        "pyq_ids": [
+          "TOC-U4-PYQ001",
+          "TOC-U4-PYQ006",
+          "TOC-U4-PYQ007",
+          "TOC-U4-PYQ012",
+          "TOC-U4-PYQ016",
+          "TOC-U4-PYQ023",
+          "TOC-U4-PYQ024",
+          "TOC-U4-PYQ025",
+          "TOC-U4-PYQ026",
+          "TOC-U4-PYQ031",
+          "TOC-U4-PYQ032"
+        ]
+      },
+      {
+        "unit_number": 4,
+        "syllabus_topic": "PDA: Acceptance of CFL",
+        "appearances": 5,
+        "papers_count": 5,
+        "years_asked": [
+          "Winter 2022",
+          "Winter 2023",
+          "Summer 2024",
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "frequent",
+        "pyq_ids": [
+          "TOC-U4-PYQ002",
+          "TOC-U4-PYQ011",
+          "TOC-U4-PYQ017",
+          "TOC-U4-PYQ022",
+          "TOC-U4-PYQ029"
+        ]
+      },
+      {
+        "unit_number": 4,
+        "syllabus_topic": "PDA: Equivalence of CFG and PDA",
+        "appearances": 3,
+        "papers_count": 3,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U4-PYQ003",
+          "TOC-U4-PYQ018",
+          "TOC-U4-PYQ033"
+        ]
+      },
+      {
+        "unit_number": 4,
+        "syllabus_topic": "TM: Formal Definition and Behaviour",
+        "appearances": 7,
+        "papers_count": 3,
+        "years_asked": [
+          "Winter 2023",
+          "Summer 2024",
+          "Winter 2024"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U4-PYQ013",
+          "TOC-U4-PYQ014",
+          "TOC-U4-PYQ015",
+          "TOC-U4-PYQ019",
+          "TOC-U4-PYQ020",
+          "TOC-U4-PYQ026",
+          "TOC-U4-PYQ028"
+        ]
+      },
+      {
+        "unit_number": 4,
+        "syllabus_topic": "TM: Languages of a TM",
+        "appearances": 1,
+        "papers_count": 1,
+        "years_asked": [
+          "Summer 2025"
+        ],
+        "frequency_band": "once",
+        "pyq_ids": [
+          "TOC-U4-PYQ030"
+        ]
+      },
+      {
+        "unit_number": 4,
+        "syllabus_topic": "TM: TM as Accepters",
+        "appearances": 7,
+        "papers_count": 5,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2023",
+          "Summer 2024",
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "frequent",
+        "pyq_ids": [
+          "TOC-U4-PYQ004",
+          "TOC-U4-PYQ005",
+          "TOC-U4-PYQ008",
+          "TOC-U4-PYQ021",
+          "TOC-U4-PYQ027",
+          "TOC-U4-PYQ034",
+          "TOC-U4-PYQ035"
+        ]
+      },
+      {
+        "unit_number": 5,
+        "syllabus_topic": "Halting Problem",
+        "appearances": 2,
+        "papers_count": 2,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2025"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U5-PYQ002",
+          "TOC-U5-PYQ009"
+        ]
+      },
+      {
+        "unit_number": 5,
+        "syllabus_topic": "Chomsky Hierarchy",
+        "appearances": 7,
+        "papers_count": 6,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2023",
+          "Winter 2023",
+          "Summer 2024",
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "frequent",
+        "pyq_ids": [
+          "TOC-U5-PYQ001",
+          "TOC-U5-PYQ003",
+          "TOC-U5-PYQ004",
+          "TOC-U5-PYQ005",
+          "TOC-U5-PYQ006",
+          "TOC-U5-PYQ007",
+          "TOC-U5-PYQ008"
+        ]
+      }
+    ],
+    "partially_covered_topics": [
+      {
+        "unit_number": 2,
+        "syllabus_topic": "Identities of Regular Expressions",
+        "appearances": 1,
+        "papers_count": 1,
+        "years_asked": [
+          "Winter 2024"
+        ],
+        "frequency_band": "once",
+        "pyq_ids": [
+          "TOC-U2-PYQ008"
+        ],
+        "coverage_note": "Only one objective (1-mark) question (RR*) touches this topic."
+      },
+      {
+        "unit_number": 2,
+        "syllabus_topic": "Closure Properties of Regular Languages",
+        "appearances": 2,
+        "papers_count": 2,
+        "years_asked": [
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U2-PYQ010",
+          "TOC-U2-PYQ014"
+        ],
+        "coverage_note": "Only objective (MCQ) questions touch this topic; no descriptive or proof question."
+      },
+      {
+        "unit_number": 3,
+        "syllabus_topic": "Greibach Normal Form (GNF)",
+        "appearances": 2,
+        "papers_count": 2,
+        "years_asked": [
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "frequency_band": "occasional",
+        "pyq_ids": [
+          "TOC-U3-PYQ015",
+          "TOC-U3-PYQ019"
+        ],
+        "coverage_note": "Only objective (MCQ) questions touch this topic; no conversion or descriptive question."
+      },
+      {
+        "unit_number": 4,
+        "syllabus_topic": "TM: Types of TMs",
+        "appearances": 1,
+        "papers_count": 1,
+        "years_asked": [
+          "Summer 2023"
+        ],
+        "frequency_band": "once",
+        "pyq_ids": [
+          "TOC-U4-PYQ009"
+        ],
+        "coverage_note": "Appears only as sub-parts (Multihead TM, Non-deterministic TM) of one three-part question (Summer 2023 Q5B)."
+      },
+      {
+        "unit_number": 5,
+        "syllabus_topic": "Universal Turing Machine",
+        "appearances": 1,
+        "papers_count": 1,
+        "years_asked": [
+          "Summer 2023"
+        ],
+        "frequency_band": "once",
+        "pyq_ids": [
+          "TOC-U4-PYQ009"
+        ],
+        "coverage_note": "Appears only as one sub-part of a three-part question (Summer 2023 Q5B)."
+      }
+    ],
+    "topics_not_found_in_pyqs": [
+      {
+        "unit_number": 1,
+        "syllabus_topic": "State transition diagram and transition table"
+      },
+      {
+        "unit_number": 1,
+        "syllabus_topic": "Eliminating Epsilon Transitions"
+      },
+      {
+        "unit_number": 1,
+        "syllabus_topic": "Minimization of DFA"
+      },
+      {
+        "unit_number": 2,
+        "syllabus_topic": "DFA to Regular Expression conversion"
+      },
+      {
+        "unit_number": 2,
+        "syllabus_topic": "Regular Grammar for FA"
+      },
+      {
+        "unit_number": 2,
+        "syllabus_topic": "Proving languages to be non-regular"
+      },
+      {
+        "unit_number": 2,
+        "syllabus_topic": "Pumping Lemma and its applications"
+      },
+      {
+        "unit_number": 3,
+        "syllabus_topic": "Sentential Forms"
+      },
+      {
+        "unit_number": 3,
+        "syllabus_topic": "Pumping Lemma for CFLs"
+      },
+      {
+        "unit_number": 3,
+        "syllabus_topic": "Properties of CFLs (Proofs omitted)"
+      },
+      {
+        "unit_number": 4,
+        "syllabus_topic": "PDA: Acceptance by Final State"
+      },
+      {
+        "unit_number": 4,
+        "syllabus_topic": "PDA: Acceptance by Empty Stack"
+      },
+      {
+        "unit_number": 4,
+        "syllabus_topic": "PDA: Equivalence of Final State and Empty Stack Acceptance"
+      },
+      {
+        "unit_number": 4,
+        "syllabus_topic": "TM: TM as a Computer of Integer Functions"
+      },
+      {
+        "unit_number": 5,
+        "syllabus_topic": "Properties of Recursive Languages"
+      },
+      {
+        "unit_number": 5,
+        "syllabus_topic": "Properties of Recursively Enumerable Languages"
+      },
+      {
+        "unit_number": 5,
+        "syllabus_topic": "Undecidable Problems about TMs"
+      },
+      {
+        "unit_number": 5,
+        "syllabus_topic": "Context Sensitive Languages"
+      },
+      {
+        "unit_number": 5,
+        "syllabus_topic": "Linear Bounded Automata (LBA)"
+      },
+      {
+        "unit_number": 5,
+        "syllabus_topic": "Decidability"
+      },
+      {
+        "unit_number": 5,
+        "syllabus_topic": "Post's Correspondence Problem (PCP)"
+      },
+      {
+        "unit_number": 5,
+        "syllabus_topic": "Undecidability of PCP"
+      }
+    ],
+    "out_of_syllabus_questions": []
+  },
+  "exam_trends": {
+    "high_priority_questions": [
+      {
+        "repetition_group_id": "TOC-RG-013",
+        "representative_question": "Distinguish between Moore machine and Mealy machine.",
+        "unit_number": 1,
+        "exact_frequency": 4,
+        "years_asked": [
+          "Summer 2023",
+          "Winter 2023",
+          "Summer 2024",
+          "Winter 2024"
+        ],
+        "pyq_ids": [
+          "TOC-U1-PYQ006",
+          "TOC-U1-PYQ010",
+          "TOC-U1-PYQ013",
+          "TOC-U1-PYQ020"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-014",
+        "representative_question": "Explain Chomsky classification of grammar.",
+        "unit_number": 5,
+        "exact_frequency": 3,
+        "years_asked": [
+          "Summer 2023",
+          "Winter 2023",
+          "Winter 2024"
+        ],
+        "pyq_ids": [
+          "TOC-U5-PYQ003",
+          "TOC-U5-PYQ004",
+          "TOC-U5-PYQ007"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-015",
+        "representative_question": "What are the different components of Pushdown Automaton? Explain with neat diagram.",
+        "unit_number": 4,
+        "exact_frequency": 3,
+        "years_asked": [
+          "Summer 2023",
+          "Summer 2024",
+          "Winter 2024"
+        ],
+        "pyq_ids": [
+          "TOC-U4-PYQ006",
+          "TOC-U4-PYQ016",
+          "TOC-U4-PYQ024"
+        ]
+      }
+    ],
+    "medium_priority_questions": [
+      {
+        "repetition_group_id": "TOC-RG-001",
+        "representative_question": "Design a FSM to check whether a given decimal number is divisible by 5?",
+        "unit_number": 1,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U1-PYQ003",
+          "TOC-U1-PYQ027"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-002",
+        "representative_question": "Explain in brief Chomsky hierarchy with suitable examples?",
+        "unit_number": 5,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U5-PYQ001",
+          "TOC-U5-PYQ008"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-003",
+        "representative_question": "Eliminate NULL production from the grammar G given below: a. S→ a / Xb / aYa b. X→ Y / ^ c. Y→ b / X Write the productions after elimination.",
+        "unit_number": 3,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U3-PYQ001",
+          "TOC-U3-PYQ021"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-004",
+        "representative_question": "Consider a left linear grammar as given below − a. S→ Sa|Abc b. A→ Sa|Ab|a Convert left linear grammar to right linear grammar.",
+        "unit_number": 2,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U2-PYQ001",
+          "TOC-U2-PYQ016"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-005",
+        "representative_question": "Convert the given to context free grammar to CNF forms a. S → ASB b. A → aAS|a|ε c. B → SbS|A|bb",
+        "unit_number": 3,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U3-PYQ003",
+          "TOC-U3-PYQ022"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-006",
+        "representative_question": "Derive a derivation tree for the string aabbabba for the given context free grammar (CFG) − a. S->aB|bA b. A->a|aS|bAA c. B->b|bS|aBB",
+        "unit_number": 3,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U3-PYQ004",
+          "TOC-U3-PYQ023"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-007",
+        "representative_question": "Define a PDA & list three important properties of a PDA Machine?",
+        "unit_number": 4,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U4-PYQ001",
+          "TOC-U4-PYQ032"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-008",
+        "representative_question": "Convert the following grammar to a PDA that accepts the same language. a. S → 0S1 | A b. A → 1A0 | S | ε",
+        "unit_number": 4,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U4-PYQ003",
+          "TOC-U4-PYQ033"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-009",
+        "representative_question": "Design a TM for an equal number of a’s and b’s must follow a.",
+        "unit_number": 4,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U4-PYQ004",
+          "TOC-U4-PYQ034"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-010",
+        "representative_question": "Design a TM which recognizes palindromes over Σ = {a, b}",
+        "unit_number": 4,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U4-PYQ005",
+          "TOC-U4-PYQ035"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-011",
+        "representative_question": "Explain ‘Halting Problem of turning machine’ with neat diagrams?",
+        "unit_number": 5,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2022",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U5-PYQ002",
+          "TOC-U5-PYQ009"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-012",
+        "representative_question": "State and explain applications of Regular Expressions.",
+        "unit_number": 2,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Summer 2023",
+          "Summer 2024"
+        ],
+        "pyq_ids": [
+          "TOC-U2-PYQ002",
+          "TOC-U2-PYQ006"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-016",
+        "representative_question": "Distinguish between Deterministic and Non Deterministic PDA.",
+        "unit_number": 4,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Summer 2023",
+          "Winter 2023"
+        ],
+        "pyq_ids": [
+          "TOC-U4-PYQ007",
+          "TOC-U4-PYQ012"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-017",
+        "representative_question": "Find the string set for following regular expressions. (i)00* (ii)a*b* (iii) (0+1)*",
+        "unit_number": 2,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2023",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U2-PYQ004",
+          "TOC-U2-PYQ015"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-018",
+        "representative_question": "Design Push down Automata (PDA) to accept language L=(a,b)* where n_a = n_b.",
+        "unit_number": 4,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2023",
+          "Summer 2024"
+        ],
+        "pyq_ids": [
+          "TOC-U4-PYQ011",
+          "TOC-U4-PYQ017"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-019",
+        "representative_question": "Explain concept infinite loop in Turing machine with the help of an example.",
+        "unit_number": 4,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Summer 2024",
+          "Winter 2024"
+        ],
+        "pyq_ids": [
+          "TOC-U4-PYQ020",
+          "TOC-U4-PYQ028"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-020",
+        "representative_question": "Which of the following is not a part of 5-tuple finite automata? (a) Input alphabet (b) Transition function (c) Initial State (d) Output Alphabet",
+        "unit_number": 1,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U1-PYQ014",
+          "TOC-U1-PYQ021"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-021",
+        "representative_question": "The number of states required by an automaton to accept string 101 are (a) 3 (b) 4 (c) 5 (d) 2",
+        "unit_number": 1,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U1-PYQ015",
+          "TOC-U1-PYQ022"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-022",
+        "representative_question": "Regular expression for string that start with ab and end with ba is (a) aba*b*ba (b) ab(ab)*ba (c) ab(a+b)*ba (d) All of these",
+        "unit_number": 2,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U2-PYQ009",
+          "TOC-U2-PYQ013"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-023",
+        "representative_question": "Regular expressions are closed under (a) Union (b) Concatenation (c) Kleene Star (d) All of these",
+        "unit_number": 2,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U2-PYQ010",
+          "TOC-U2-PYQ014"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-024",
+        "representative_question": "Which grammar is in Greibach normal form (GNF) ? (a) S→AA|0, A→SS|1 (b) A→aB, B→b (c) A→aBd, B→b (d) None of these",
+        "unit_number": 3,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U3-PYQ015",
+          "TOC-U3-PYQ019"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-025",
+        "representative_question": "Moore machine produces output over the change of (a) transitions (b) state (c) input symbol (d) None of these",
+        "unit_number": 1,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U1-PYQ016",
+          "TOC-U1-PYQ023"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-026",
+        "representative_question": "Can Deterministic Finite automata determine palindrome number ? (a) yes (b) no (c) yes for some cases (d) yes for Σ*",
+        "unit_number": 1,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U1-PYQ017",
+          "TOC-U1-PYQ024"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-027",
+        "representative_question": "A grammar that produces more than one parse tree is called (a) regular (b) ambiguous (c) unambiguous (d) linear",
+        "unit_number": 3,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U3-PYQ016",
+          "TOC-U3-PYQ020"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-028",
+        "representative_question": "The language accepted by Pushdown automata is (a) type 0 (b) type 1 (c) type 2 (d) type 3",
+        "unit_number": 4,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U4-PYQ022",
+          "TOC-U4-PYQ029"
+        ]
+      },
+      {
+        "repetition_group_id": "TOC-RG-029",
+        "representative_question": "The Pushdown automata behaves like Turing machine if it has ____ auxiliary memory (a) 0 (b) 2 (c) 2 or more (d) none of these",
+        "unit_number": 4,
+        "exact_frequency": 2,
+        "years_asked": [
+          "Winter 2024",
+          "Summer 2025"
+        ],
+        "pyq_ids": [
+          "TOC-U4-PYQ023",
+          "TOC-U4-PYQ031"
+        ]
+      }
+    ],
+    "low_priority_questions": [
+      {
+        "pyq_id": "TOC-U1-PYQ001",
+        "unit_number": 1,
+        "topic": "Introduction to Finite Automata",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ002",
+        "unit_number": 1,
+        "topic": "Moore and Mealy Machines",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U3-PYQ002",
+        "unit_number": 3,
+        "topic": "Ambiguity in CFG",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ002",
+        "unit_number": 4,
+        "topic": "PDA Construction",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ004",
+        "unit_number": 1,
+        "topic": "DFA",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ005",
+        "unit_number": 1,
+        "topic": "NFA",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U2-PYQ003",
+        "unit_number": 2,
+        "topic": "Regular Expressions",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ007",
+        "unit_number": 1,
+        "topic": "DFA–NFA Equivalence",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U3-PYQ005",
+        "unit_number": 3,
+        "topic": "Minimization of CFG",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U3-PYQ006",
+        "unit_number": 3,
+        "topic": "Chomsky Normal Form",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U3-PYQ007",
+        "unit_number": 3,
+        "topic": "Context-Free Grammar",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ008",
+        "unit_number": 4,
+        "topic": "TM Construction",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ009",
+        "unit_number": 4,
+        "topic": "Types of TMs",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ010",
+        "unit_number": 4,
+        "topic": "Church–Turing Thesis",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ008",
+        "unit_number": 1,
+        "topic": "DFA",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ009",
+        "unit_number": 1,
+        "topic": "NFA",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ011",
+        "unit_number": 1,
+        "topic": "DFA–NFA Equivalence",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U3-PYQ008",
+        "unit_number": 3,
+        "topic": "Derivations and Parse Trees",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U3-PYQ009",
+        "unit_number": 3,
+        "topic": "Ambiguity in CFG",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U3-PYQ010",
+        "unit_number": 3,
+        "topic": "Minimization of CFG",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U3-PYQ011",
+        "unit_number": 3,
+        "topic": "Chomsky Normal Form",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ013",
+        "unit_number": 4,
+        "topic": "TM: Definition and Behaviour",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ014",
+        "unit_number": 4,
+        "topic": "Church–Turing Thesis",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ015",
+        "unit_number": 4,
+        "topic": "TM Construction",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ012",
+        "unit_number": 1,
+        "topic": "NFA",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U2-PYQ005",
+        "unit_number": 2,
+        "topic": "Regular Expressions",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U2-PYQ007",
+        "unit_number": 2,
+        "topic": "Regular vs Context-Free Languages",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U3-PYQ012",
+        "unit_number": 3,
+        "topic": "Context-Free Grammar",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U3-PYQ013",
+        "unit_number": 3,
+        "topic": "Context-Free Grammar",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U5-PYQ005",
+        "unit_number": 5,
+        "topic": "Chomsky Hierarchy",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U3-PYQ014",
+        "unit_number": 3,
+        "topic": "Minimization of CFG",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ018",
+        "unit_number": 4,
+        "topic": "Equivalence of CFG and PDA",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ019",
+        "unit_number": 4,
+        "topic": "TM: Definition and Behaviour",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ021",
+        "unit_number": 4,
+        "topic": "TM Construction",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U2-PYQ008",
+        "unit_number": 2,
+        "topic": "Regular Expressions",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U5-PYQ006",
+        "unit_number": 5,
+        "topic": "Chomsky Hierarchy",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U2-PYQ011",
+        "unit_number": 2,
+        "topic": "Regular Expressions",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ018",
+        "unit_number": 1,
+        "topic": "DFA",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ019",
+        "unit_number": 1,
+        "topic": "Epsilon-NFA",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U3-PYQ017",
+        "unit_number": 3,
+        "topic": "Derivations and Parse Trees",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U2-PYQ012",
+        "unit_number": 2,
+        "topic": "Regular Grammars",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U3-PYQ018",
+        "unit_number": 3,
+        "topic": "Minimization of CFG",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ025",
+        "unit_number": 4,
+        "topic": "PDA: Definition and Model",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ026",
+        "unit_number": 4,
+        "topic": "TM: Definition and Behaviour",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ027",
+        "unit_number": 4,
+        "topic": "TM Construction",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ030",
+        "unit_number": 4,
+        "topic": "TM: Definition and Behaviour",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ025",
+        "unit_number": 1,
+        "topic": "Introduction to Finite Automata",
+        "exact_frequency": 1
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ026",
+        "unit_number": 1,
+        "topic": "Introduction to Finite Automata",
+        "exact_frequency": 1
+      }
+    ],
+    "observations": [
+      "Moore vs Mealy: the 6-mark 'Distinguish between Moore machine and Mealy machine' question appears in 4 of 6 papers (Summer 2023, Winter 2023, Summer 2024, Winter 2024); Winter 2022 asked a Moore-to-Mealy conversion and Moore machine MCQs appear in Winter 2024 and Summer 2025, so every paper carries Moore/Mealy content.",
+      "Chomsky classification/hierarchy: a descriptive question appears in all 6 papers but under different wordings. 'Explain Chomsky classification of grammar' repeats 3 times (Summer 2023, Winter 2023, Winter 2024); 'Explain in brief Chomsky hierarchy with suitable examples' repeats twice (Winter 2022, Summer 2025); Summer 2024 asked it as 'Type 0 / 1 / 2 / 3 grammar' and is kept as a separate question.",
+      "Grammar simplification (null, unit or useless-symbol elimination) appears in all 6 papers, but only the Winter 2022 and Summer 2025 null-production question is an exact repeat; the other papers use different grammars.",
+      "Summer 2025 overlaps heavily with earlier papers: 12 of its 13 descriptive questions repeat an earlier question verbatim (11 from Winter 2022 and 1 from Winter 2023); only 'What is FA? Explain with examples...' (Q2B) is new.",
+      "Objective questions (1 mark each) appear only in Winter 2024 and Summer 2025; 10 of the 12 MCQs in each paper are the same question, with only options reordered or slightly reworded.",
+      "Turing-machine design questions (palindromes, equal a's and b's, strings ending with 00, second letter b, erasing symbols) appear in every paper; the palindrome TM, the equal a's/b's TM (Winter 2022 wording) and the Halting Problem each repeat in Winter 2022 and Summer 2025.",
+      "PDA components appears in 3 papers (Summer 2023, Summer 2024, Winter 2024) and Deterministic vs Non-deterministic PDA in 2 (Summer 2023, Winter 2023); CFG-to-PDA conversion appears in 3 papers (Winter 2022, Summer 2024, Summer 2025) with two different grammars.",
+      "Derivation trees / leftmost-rightmost derivations appear in 4 papers (Winter 2022, Winter 2023, Winter 2024, Summer 2025); CNF conversion in 4 papers (Winter 2022, Summer 2023, Winter 2023, Summer 2025).",
+      "Applications of regular expressions appear in 3 papers (Summer 2023, Summer 2024, Winter 2024); only the Summer 2023 and Summer 2024 wordings are identical, the Winter 2024 version adds three regular-expression-writing tasks.",
+      "Unit 5 in the supplied papers is limited to Chomsky hierarchy and the Halting Problem (plus one Universal Turing Machine sub-part); most Unit 5 syllabus topics (decidability, PCP, LBA, context-sensitive languages, properties of recursive/RE languages) were not found, and absence from these papers does not mean they are unimportant.",
+      "Several Unit 1 and Unit 2 syllabus topics (DFA minimization, epsilon elimination, DFA-to-RE conversion, pumping lemma) and Unit 3 topics (pumping lemma for CFLs, properties of CFLs) were not found in the supplied papers."
+    ]
+  },
+  "data_quality": {
+    "missing_years": [],
+    "missing_marks": [],
+    "ambiguous_questions": [
+      {
+        "pyq_id": "TOC-U1-PYQ007",
+        "issue": "The NFA diagram/table to be converted is not present in the supplied text."
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ011",
+        "issue": "The NFA diagram/table to be converted is not present in the supplied text."
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ019",
+        "issue": "Extraction shows 'a*b' with a stray '+' on a separate line; read as a*b+."
+      },
+      {
+        "pyq_id": "TOC-U2-PYQ008",
+        "issue": "Options were garbled in extraction; read as R+, R+ ᴗ R, R* ᴗ R, R*."
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ004",
+        "issue": "Wording 'equal number of a’s and b’s must follow a' is unclear; kept as printed."
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ034",
+        "issue": "Wording 'equal number of a’s and b’s must follow a' is unclear; kept as printed."
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ017",
+        "issue": "Language printed as '(ab)* where n_a = n_b' whereas Winter 2023 prints '(a,b)* where n_a = n_b'; treated as the same question."
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ021",
+        "issue": "Extracted text reads 'tuple finite automata' (the '5-' appears lost); other papers say '5-tuple'."
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ024",
+        "issue": "Last option extracted as 'Z*'; normalised to 'Σ*' as in Winter 2024."
+      }
+    ],
+    "mapping_needs_verification": [
+      {
+        "pyq_id": "TOC-U2-PYQ007",
+        "reason": "Compares regular and context-free languages; spans Unit 2 and Unit 3."
+      },
+      {
+        "pyq_id": "TOC-U3-PYQ013",
+        "reason": "Applications of CFG are not named in the supplied syllabus."
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ010",
+        "reason": "Church–Turing thesis is not named in the supplied syllabus."
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ014",
+        "reason": "Combines halt state (Unit 4) with Church–Turing thesis, which is not named in the supplied syllabus."
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ009",
+        "reason": "Multihead and non-deterministic TM belong to Unit 4 (types of TMs); Universal Turing Machine belongs to Unit 5."
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ007",
+        "reason": "Deterministic vs non-deterministic PDA is not named explicitly in the supplied syllabus."
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ012",
+        "reason": "Deterministic vs non-deterministic PDA is not named explicitly in the supplied syllabus."
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ017",
+        "reason": "DFA and palindromes could also map to Unit 2 (non-regular languages)."
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ024",
+        "reason": "DFA and palindromes could also map to Unit 2 (non-regular languages)."
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ022",
+        "reason": "Language-type question could also map to Unit 5 (Chomsky hierarchy)."
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ029",
+        "reason": "Language-type question could also map to Unit 5 (Chomsky hierarchy)."
+      },
+      {
+        "pyq_id": "TOC-U4-PYQ030",
+        "reason": "Language-type question could also map to Unit 5 (Chomsky hierarchy)."
+      },
+      {
+        "pyq_id": "TOC-U1-PYQ025",
+        "reason": "Language-type question could also map to Unit 5 (Chomsky hierarchy)."
+      },
+      {
+        "pyq_id": "TOC-U5-PYQ006",
+        "reason": "Mapped to Unit 5 (Chomsky hierarchy); the equivalent Summer 2025 MCQ on the TM language is mapped to Unit 4."
+      }
+    ],
+    "notes": [
+      "Six papers were supplied, all for BTCOC502 Theory of Computation: Winter 2022 (paper dated 31-01-2023), Summer 2023 (supplementary), Winter 2023 (dated 03/01/2024), Summer 2024 (supplementary), Winter 2024 (dated 08/02/2025) and Summer 2025 (rescheduled supplementary). subject_code is taken from these papers.",
+      "exam_year is the year printed in each paper's title, not the actual date of the sitting. years_asked uses session-plus-year labels (for example 'Winter 2024') because two papers fall in 2024 and two in 2023.",
+      "Every objective question, every A/B/C part and every 'solve any two' choice is stored as its own record (110 appearances). MCQs have question_number 1 and the item number as subquestion_number; marks are as printed (1 for MCQs, 6 for descriptive parts).",
+      "Original wording is preserved. Where text extraction dropped symbols, only the symbol was restored: arrows (→) in grammar productions, ^ and _ for superscripts and subscripts, and Σ. Typos in the printed paper (for example 'turning machine') are kept.",
+      "Level/CO annotations printed beside each question are not stored because the required schema has no field for them.",
+      "Repetition groups require substantially identical wording and requirements. Not grouped: Summer 2024 Q3B (Type 0–3 grammars) with the Chomsky classification group; Summer 2024 Q5C (TM for equal a's and b's) with the Winter 2022/Summer 2025 TM question, because that wording is unclear; Winter 2024 Q2A (applications plus three RE-writing tasks) with the applications-only questions; Winter 2023 Q5B (halt state plus Church–Turing thesis) with Summer 2023 Q5C; Winter 2024 MCQ 11 with Summer 2025 MCQ 10; questions that use different grammars or automata (NFA to DFA, CNF, null and grammar reduction, CFG to PDA).",
+      "The PDA components group tolerates small wording additions ('What is PDA?' in Summer 2024, 'with neat diagram' in Summer 2023); the PDA n_a = n_b group tolerates the '(ab)*' vs '(a,b)*' printing difference.",
+      "Topic priority is based on the number of distinct papers a topic appears in: high for 4 or more, medium for 2 or 3, low for 1. total_appearances counts every record, so MCQs count as appearances.",
+      "No question was classified as out_of_syllabus; questions whose topic is not named in the supplied syllabus are marked verification_needed or partially_aligned and listed in mapping_needs_verification.",
+      "Analysis covers only the six supplied papers. Syllabus topics not found are listed in syllabus_coverage and are not marked unimportant."
+    ]
+  }
+}
