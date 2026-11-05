@@ -1,20 +1,23 @@
 /**
- * CSE-Sem5-PrepHub — Center-Focused Character Assistant & Branding System
+ * CSE-Sem5-PrepHub — Dual Avatar Interaction & Branding System
  * 
- * Features:
- * 1. Prominent center-focused personal study assistant with backdrop overlay.
- * 2. Five contextual states & dialogues (Home, Explore, Thinking/Strategy, Motivation, About).
- * 3. Minimized bottom-left floating launcher for instant reopening.
- * 4. Interactive in-modal state pills allowing the student to switch character poses.
- * 5. Gentle auto-dismissal (5.5s) if user does not interact, cancellable on hover/click.
- * 6. SessionStorage awareness so students are not interrupted repeatedly.
- * 7. Dynamic copyright year in footers.
+ * 1. Homepage (index.html):
+ *    - Prominent, center-focused personal study assistant with backdrop overlay.
+ *    - Large character image (avatar-home.png).
+ *    - Interactive state pills (Welcome, Strategy, Explore, Motivation, Creator).
+ *    - Minimized launcher in bottom-left for instant reopening.
+ * 
+ * 2. All Other Pages (ml.html, toc.html, os.html, dbms.html, wc.html, cg.html, sem4index.html):
+ *    - Compact corner speech bubble & circular avatar in bottom-left.
+ *    - Exam strategy / subject-focused dialogues (avatar-thinking.png, avatar-explore.png, etc.).
+ *    - Smooth appearance, auto-dismiss, and click-to-cycle interactivity.
+ *    - Zero collision with the bottom-right progress widget.
  */
 
 (function () {
   'use strict';
 
-  // ─── CHARACTER STATES & DIALOGUES ───
+  // ─── DIALOGUE & ASSET DEFINITIONS ───
   var STATES = {
     home: {
       id: 'home',
@@ -24,14 +27,6 @@
       dialogue: "Hey, future engineer! 👋 Welcome to PrepHub. Your next exam preparation starts here. Let's make every question count!",
       ctaText: "Let's Prepare 🚀"
     },
-    explore: {
-      id: 'explore',
-      name: 'Explore',
-      tag: 'SUBJECT EXPLORATION',
-      image: 'assets/avatars/avatar-explore.png',
-      dialogue: "Not sure where to start? Explore your subjects, check important PYQs, and discover the topics that matter most!",
-      ctaText: "Explore PYQs 📚"
-    },
     thinking: {
       id: 'thinking',
       name: 'Strategy',
@@ -39,6 +34,14 @@
       image: 'assets/avatars/avatar-thinking.png',
       dialogue: "Not every question is equally important. Let's focus on frequently repeated topics and prepare smarter, not harder!",
       ctaText: "Got it! 🎯"
+    },
+    explore: {
+      id: 'explore',
+      name: 'Explore',
+      tag: 'SUBJECT EXPLORATION',
+      image: 'assets/avatars/avatar-explore.png',
+      dialogue: "Not sure where to start? Explore your subjects, check important PYQs, and discover the topics that matter most!",
+      ctaText: "Explore PYQs 📚"
     },
     motivation: {
       id: 'motivation',
@@ -58,32 +61,37 @@
     }
   };
 
-  // ─── PAGE CONTEXT DETECTION ───
-  function getInitialState() {
+  // ─── PAGE DETECTION ───
+  function isHomePage() {
+    var path = window.location.pathname.toLowerCase();
+    var file = path.substring(path.lastIndexOf('/') + 1);
+    return file === '' || file === 'index.html';
+  }
+
+  function getSubjectInitialState() {
     var path = window.location.pathname.toLowerCase();
     if (path.indexOf('sem4index') !== -1) {
       return 'explore';
-    } else if (path.indexOf('ml.html') !== -1 || path.indexOf('toc.html') !== -1 || path.indexOf('os.html') !== -1 || path.indexOf('dbms') !== -1) {
-      return 'thinking';
     } else if (path.indexOf('wc.html') !== -1 || path.indexOf('cg.html') !== -1) {
       return 'motivation';
     } else {
-      // index.html or root
-      return 'home';
+      // Default for subject question banks (ml, toc, os, dbms)
+      return 'thinking';
     }
   }
 
-  var currentStateKey = getInitialState();
-  var autoDismissTimer = null;
-  var userInteracted = false;
-
-  // ─── DOM INJECTION & MOUNT ───
-  function initAssistantSystem() {
+  // ═══════════════════════════════════════════════════════════════════
+  // 1. HOMEPAGE SYSTEM — PROMINENT CENTER-FOCUSED ASSISTANT
+  // ═══════════════════════════════════════════════════════════════════
+  function initHomeCenterModal() {
     if (document.getElementById('prephub-modal-backdrop')) return;
 
-    var initial = STATES[currentStateKey] || STATES.home;
+    var currentStateKey = 'home';
+    var initial = STATES.home;
+    var autoDismissTimer = null;
+    var userInteracted = false;
 
-    // 1. Center Modal Backdrop & Card
+    // Create Center Modal Backdrop & Stage
     var backdrop = document.createElement('div');
     backdrop.id = 'prephub-modal-backdrop';
     backdrop.className = 'prephub-modal-backdrop';
@@ -99,11 +107,11 @@
       '    <p class="prephub-dialogue-text" id="prephub-dialogue-text">' + initial.dialogue + '</p>',
       '    <div class="prephub-modal-actions">',
       '      <div class="prephub-state-pills" id="prephub-state-pills">',
-      '        <button class="state-pill' + (initial.id === 'home' ? ' active' : '') + '" data-state="home">👋 Welcome</button>',
-      '        <button class="state-pill' + (initial.id === 'thinking' ? ' active' : '') + '" data-state="thinking">💡 Strategy</button>',
-      '        <button class="state-pill' + (initial.id === 'explore' ? ' active' : '') + '" data-state="explore">🔍 Explore</button>',
-      '        <button class="state-pill' + (initial.id === 'motivation' ? ' active' : '') + '" data-state="motivation">🚀 Motivation</button>',
-      '        <button class="state-pill' + (initial.id === 'about' ? ' active' : '') + '" data-state="about">👤 Creator</button>',
+      '        <button class="state-pill active" data-state="home">👋 Welcome</button>',
+      '        <button class="state-pill" data-state="thinking">💡 Strategy</button>',
+      '        <button class="state-pill" data-state="explore">🔍 Explore</button>',
+      '        <button class="state-pill" data-state="motivation">🚀 Motivation</button>',
+      '        <button class="state-pill" data-state="about">👤 Creator</button>',
       '      </div>',
       '      <button class="prephub-cta-btn" id="prephub-cta-btn">' + initial.ctaText + '</button>',
       '    </div>',
@@ -113,7 +121,7 @@
 
     document.body.appendChild(backdrop);
 
-    // 2. Minimized Floating Launcher (Bottom-Left)
+    // Create Minimized Floating Launcher (Bottom-Left)
     var launcher = document.createElement('button');
     launcher.id = 'prephub-minimized-launcher';
     launcher.className = 'prephub-minimized-launcher';
@@ -128,7 +136,6 @@
 
     document.body.appendChild(launcher);
 
-    // ─── CONTROLLER FUNCTIONS ───
     var charImg = document.getElementById('prephub-character-img');
     var tagEl = document.getElementById('prephub-dialogue-tag');
     var textEl = document.getElementById('prephub-dialogue-text');
@@ -159,7 +166,6 @@
       if (textEl) textEl.textContent = state.dialogue;
       if (ctaBtn) ctaBtn.textContent = state.ctaText;
 
-      // Update pills
       var pills = document.querySelectorAll('.state-pill');
       pills.forEach(function (p) {
         if (p.getAttribute('data-state') === stateKey) {
@@ -174,7 +180,6 @@
       if (stateKey) applyState(stateKey);
       backdrop.classList.add('active');
 
-      // Clear any previous auto-dismiss timer
       if (autoDismissTimer) clearTimeout(autoDismissTimer);
 
       // Auto dismiss after 5.5s ONLY if user has not interacted
@@ -190,7 +195,6 @@
       if (autoDismissTimer) clearTimeout(autoDismissTimer);
     }
 
-    // Cancel auto-dismiss if user moves mouse inside modal or interacts
     modalBox.addEventListener('mouseenter', function () {
       userInteracted = true;
       if (autoDismissTimer) clearTimeout(autoDismissTimer);
@@ -200,14 +204,12 @@
       if (autoDismissTimer) clearTimeout(autoDismissTimer);
     }, { passive: true });
 
-    // Close button
     closeBtn.addEventListener('click', function (e) {
       e.stopPropagation();
       userInteracted = true;
       closeModal();
     });
 
-    // Backdrop click outside card
     backdrop.addEventListener('click', function (e) {
       if (e.target === backdrop) {
         userInteracted = true;
@@ -215,29 +217,21 @@
       }
     });
 
-    // Escape key
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && backdrop.classList.contains('active')) {
         closeModal();
       }
     });
 
-    // CTA button click
     ctaBtn.addEventListener('click', function () {
       userInteracted = true;
       closeModal();
-      // If on creator state, smoothly scroll to #about if available
       if (currentStateKey === 'about') {
         var aboutEl = document.getElementById('about');
-        if (aboutEl) {
-          aboutEl.scrollIntoView({ behavior: 'smooth' });
-        } else if (window.location.pathname.indexOf('index.html') === -1) {
-          window.location.href = 'index.html#about';
-        }
+        if (aboutEl) aboutEl.scrollIntoView({ behavior: 'smooth' });
       }
     });
 
-    // State pills click
     var pillContainer = document.getElementById('prephub-state-pills');
     if (pillContainer) {
       pillContainer.addEventListener('click', function (e) {
@@ -251,22 +245,113 @@
       });
     }
 
-    // Launcher click re-opens the center-focused assistant!
     launcher.addEventListener('click', function () {
       userInteracted = true;
       openModal(currentStateKey);
     });
 
-    // ─── INITIAL TRIGGER PER SESSION ───
-    var sessionKey = 'prephub_modal_shown_' + currentStateKey;
-    var hasBeenShown = sessionStorage.getItem(sessionKey);
-
-    if (!hasBeenShown) {
-      sessionStorage.setItem(sessionKey, 'true');
-      // Entrance delay for smooth page render
+    // Session-based entrance on first visit
+    var hasShown = sessionStorage.getItem('prephub_modal_shown_home');
+    if (!hasShown) {
+      sessionStorage.setItem('prephub_modal_shown_home', 'true');
       setTimeout(function () {
-        openModal(currentStateKey);
-      }, 700);
+        openModal('home');
+      }, 650);
+    }
+  }
+
+  // ═══════════════════════════════════════════════════════════════════
+  // 2. ALL OTHER PAGES — COMPACT CORNER SPEECH BUBBLE ASSISTANT
+  // ═══════════════════════════════════════════════════════════════════
+  function initCornerAssistant() {
+    if (document.getElementById('prephub-corner-widget')) return;
+
+    var initialKey = getSubjectInitialState();
+    var cycleKeys = ['thinking', 'motivation', 'explore', 'about'];
+    var currentCycleIdx = cycleKeys.indexOf(initialKey);
+    if (currentCycleIdx === -1) currentCycleIdx = 0;
+
+    var state = STATES[initialKey] || STATES.thinking;
+    var autoDismissTimer = null;
+
+    var widget = document.createElement('div');
+    widget.id = 'prephub-corner-widget';
+    widget.className = 'prephub-corner-widget';
+    widget.setAttribute('role', 'region');
+    widget.setAttribute('aria-label', 'Study Assistant Guide');
+
+    widget.innerHTML = [
+      '<div class="corner-speech-bubble" id="corner-speech-bubble" role="dialog" aria-live="polite">',
+      '  <div class="corner-bubble-header">',
+      '    <span class="corner-bubble-tag" id="corner-bubble-tag">' + state.tag + '</span>',
+      '    <button class="corner-bubble-close" id="corner-bubble-close" title="Dismiss" aria-label="Close dialogue">&times;</button>',
+      '  </div>',
+      '  <div class="corner-bubble-message" id="corner-bubble-message">' + state.dialogue + '</div>',
+      '  <div class="corner-bubble-footer">',
+      '    <span>Tap avatar for tips 💡</span>',
+      '  </div>',
+      '</div>',
+      '<button class="corner-avatar-btn" id="corner-avatar-btn" title="Click for study tips" aria-label="Open study assistant">',
+      '  <img src="' + state.image + '" alt="Study Assistant" class="corner-avatar-img" id="corner-avatar-img">',
+      '  <span class="corner-status-dot"></span>',
+      '</button>'
+    ].join('\n');
+
+    document.body.appendChild(widget);
+
+    var bubble = document.getElementById('corner-speech-bubble');
+    var avatarBtn = document.getElementById('corner-avatar-btn');
+    var closeBtn = document.getElementById('corner-bubble-close');
+    var tagEl = document.getElementById('corner-bubble-tag');
+    var msgEl = document.getElementById('corner-bubble-message');
+    var imgEl = document.getElementById('corner-avatar-img');
+
+    function showBubble(st, duration) {
+      if (autoDismissTimer) clearTimeout(autoDismissTimer);
+
+      if (tagEl) tagEl.textContent = st.tag;
+      if (msgEl) msgEl.textContent = st.dialogue;
+      if (imgEl && imgEl.src.indexOf(st.image) === -1) {
+        imgEl.src = st.image;
+      }
+
+      bubble.classList.add('active');
+
+      var d = duration || 4800;
+      autoDismissTimer = setTimeout(function () {
+        hideBubble();
+      }, d);
+    }
+
+    function hideBubble() {
+      bubble.classList.remove('active');
+      if (autoDismissTimer) clearTimeout(autoDismissTimer);
+    }
+
+    closeBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      hideBubble();
+      sessionStorage.setItem('prephub_corner_dismissed_' + initialKey, 'true');
+    });
+
+    avatarBtn.addEventListener('click', function () {
+      if (!bubble.classList.contains('active')) {
+        var currentSt = STATES[cycleKeys[currentCycleIdx]];
+        showBubble(currentSt, 5500);
+      } else {
+        // Cycle to next tip
+        currentCycleIdx = (currentCycleIdx + 1) % cycleKeys.length;
+        var nextSt = STATES[cycleKeys[currentCycleIdx]];
+        showBubble(nextSt, 5500);
+      }
+    });
+
+    // Session-based entrance
+    var isDismissed = sessionStorage.getItem('prephub_corner_dismissed_' + initialKey);
+    if (!isDismissed) {
+      setTimeout(function () {
+        showBubble(state, 4800);
+      }, 750);
     }
   }
 
@@ -279,14 +364,19 @@
     });
   }
 
-  // ─── INITIALIZE ───
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function () {
-      initAssistantSystem();
-      initDynamicYear();
-    });
-  } else {
-    initAssistantSystem();
+  // ─── INITIALIZE BASED ON PAGE ───
+  function init() {
+    if (isHomePage()) {
+      initHomeCenterModal();
+    } else {
+      initCornerAssistant();
+    }
     initDynamicYear();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
