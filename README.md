@@ -4,10 +4,10 @@ A comprehensive exam preparation hub and question bank portal designed for DBATU
 
 ## 📚 Features
 
-- **5th Sem Subject Portal (`index.html`)**: Interactive dashboard with subject cards, quick links, study guides, and progress tracking.
+- **Semester 5 Subject Portal (`index.html`)**: Interactive dashboard with subject cards, study guides, and progress tracking.
 - **Animated Student Avatar Guide**: Interactive, lightweight student guide (`assets/js/branding.js`, `assets/css/branding.css`) with contextual speech dialogues across home, subject exploration, PYQ analysis, and motivation poses.
 - **Behind Preparation Hub (`#about`)**: Professional about section on the homepage highlighting the platform's vision and creator Roshan Bhadane (SVKM's COE Shirpur).
-- **Unified 4-Column Footer**: Consistent footer across all 9 pages with branding, quick navigation, subject shortcuts, project info, and dynamic copyright year.
+- **Unified Premium Footer**: Consistent 3-column footer across all Semester 5 pages with branding, quick navigation, social connection links, and dynamic copyright year.
 - **Operating Systems Question Bank (`os.html`)**: Unit-wise breakdown of 93 unique questions compiled from 6 university papers (2023 to 2025), priority frequency table, unit filtering, dedicated numericals filter (20 numericals), search, and local-storage progress tracking.
 - **Theory of Computation Question Bank (`toc.html`)**: Unit-wise breakdown of 77 unique questions compiled from 6 university papers (Winter 2022 to Summer 2025), priority frequency table, unit filtering, search, and local-storage progress tracking.
 - **Machine Learning Question Bank (`ml.html`)**: Unit-wise breakdown of 51 long-answer questions compiled from university question papers (Winter 2022 to Summer 2024), priority frequency table, unit filtering, search, and local-storage progress tracking.

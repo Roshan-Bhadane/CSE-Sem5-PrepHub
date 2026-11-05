@@ -9,7 +9,6 @@
  * - DBMS (dbms.html / DBMS_QuestionBank_DBATU.html): avatar-about.png (Bottom-left corner assistant)
  * - Wireless Communication (wc.html): avatar-explore.png (Bottom-left corner assistant)
  * - Computer Graphics (cg.html): avatar-thinking.png (Bottom-left corner assistant)
- * - Semester 4 Archive (sem4index.html): avatar-explore.png (Bottom-left corner assistant)
  * - About Section / Creator (#about): avatar-about.png (Bottom-left corner assistant)
  */
 
@@ -198,25 +197,6 @@
         }
       ]
     },
-    sem4: {
-      id: 'sem4',
-      style: 'corner',
-      defaultAvatar: 'assets/avatars/avatar-explore.png',
-      tag: 'SEM 4 ARCHIVE',
-      dialogue: "Exploring previous semester papers? Review Semester 4 PYQs to brush up core foundational concepts!",
-      tips: [
-        {
-          tag: 'SEM 4 ARCHIVE',
-          image: 'assets/avatars/avatar-explore.png',
-          dialogue: "Exploring previous semester papers? Review Semester 4 PYQs to brush up core foundational concepts!"
-        },
-        {
-          tag: 'STUDY MOTIVATION',
-          image: 'assets/avatars/avatar-motivation.png',
-          dialogue: "Strong fundamentals build exceptional engineers. Keep exploring and master each concept! 🚀"
-        }
-      ]
-    },
     about: {
       id: 'about',
       style: 'corner',
@@ -265,9 +245,6 @@
     }
     if (file === 'cg.html' || path.indexOf('cg.html') !== -1 || title.indexOf('computer graphics') !== -1) {
       return 'cg';
-    }
-    if (file === 'sem4index.html' || path.indexOf('sem4') !== -1 || title.indexOf('semester 4') !== -1) {
-      return 'sem4';
     }
     if (file === '' || file === 'index.html' || path.endsWith('/')) {
       return 'index';
@@ -494,7 +471,7 @@
   }
 
   // ═══════════════════════════════════════════════════════════════════
-  // 2. CORNER SYSTEM — SUBJECT & ARCHIVE PAGES (Bottom-Left)
+  // 2. CORNER SYSTEM — SUBJECT PAGES (Bottom-Left)
   // ═══════════════════════════════════════════════════════════════════
   function setupCornerAssistant(container, config) {
     container.innerHTML = '';
