@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ML Question Bank – DBATU</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/branding.css">
 <style>
   :root {
     --bg: #0e0f11;
@@ -226,6 +227,7 @@
     <a class="nav-btn" href="wc.html">WC</a>
     <a class="nav-btn" href="cg.html">CG</a>
     <a class="nav-btn" href="dbms.html">DBMS</a>
+    <a class="nav-btn" href="index.html#about" title="About Preparation Hub &amp; Creator">👤 About</a>
     <button class="theme-toggle" id="theme-toggle-btn" onclick="toggleTheme()">☀️ Light</button>
   </div>
 </nav>
@@ -1035,6 +1037,65 @@
 
 </main>
 
+<!-- ─── UNIFIED WEBSITE FOOTER ─── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <!-- Column 1: Branding -->
+      <div class="footer-col">
+        <div class="footer-brand-title">CSE-Sem5-<span>PrepHub</span></div>
+        <span class="footer-tagline">Prepare Smarter. Study Better.</span>
+        <p class="footer-desc">
+          A dedicated academic preparation portal for DBATU Computer Science & Engineering students, organizing past-year questions, frequency trends, and unit-wise preparation tracking.
+        </p>
+      </div>
+
+      <!-- Column 2: Quick Navigation -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">🏠 Home</a></li>
+          <li><a href="sem4index.html">📚 Semester 4</a></li>
+          <li><a href="index.html">🎓 Semester 5</a></li>
+          <li><a href="index.html#about">👤 About Preparation Hub</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Subjects -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">5th Sem Subjects</h4>
+        <ul class="footer-links">
+          <li><a href="ml.html">Machine Learning</a></li>
+          <li><a href="toc.html">Theory of Computation</a></li>
+          <li><a href="os.html">Operating Systems</a></li>
+          <li><a href="dbms.html">Database Management Systems</a></li>
+          <li><a href="wc.html">Wireless Communication</a></li>
+          <li><a href="cg.html">Computer Graphics</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Project Information -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Project Info</h4>
+        <ul class="footer-info-list">
+          <li>🏛️ Built for DBATU CSE students</li>
+          <li>🎯 Student-developed academic resource</li>
+          <li>
+            💻 GitHub Repository:<br>
+            <a href="https://github.com/Roshan-Bhadane/CSE-Sem5-PrepHub" target="_blank" rel="noopener noreferrer">Roshan-Bhadane/CSE-Sem5-PrepHub</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div>Made with <span class="footer-heart">❤️</span> for DBATU students</div>
+      <div>&copy; <span class="copyright-year">2026</span> Roshan Bhadane &middot; All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
 <!-- Floating Progress Widget -->
 <div class="progress-wrap" id="progress-widget">
   <div class="progress-label" id="pct">0% done</div>
@@ -1170,5 +1231,6 @@ function handleSearch(query) {
 
 restoreState();
 </script>
+<script src="assets/js/branding.js" defer></script>
 </body>
 </html>

@@ -6,6 +6,7 @@
 <meta name="description" content="DBATU Question Banks Study Portal — Interactive PYQ banks for DAA, ADC and CAO with frequency analysis and progress tracking.">
 <title>DBATU – Study Portal</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/branding.css">
 <style>
   :root {
     --bg: #0e0f11;
@@ -498,6 +499,7 @@
   <!-- ─── HEADER ─── -->
   <header>
     <a href="index.html" style="display:inline-flex; align-items:center; gap:6px; font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--primary); text-decoration:none; margin-bottom:12px; background:color-mix(in srgb, var(--primary) 10%, transparent); border:1px solid color-mix(in srgb, var(--primary) 25%, transparent); padding:4px 12px; border-radius:16px;">🚀 Looking for 5th Semester? Go to Sem 5 Portal →</a>
+    <a href="index.html#about" style="display:inline-flex; align-items:center; gap:6px; font-family:'IBM Plex Mono', monospace; font-size:12px; color:var(--primary); text-decoration:none; margin-bottom:12px; margin-left:8px; background:color-mix(in srgb, var(--primary) 10%, transparent); border:1px solid color-mix(in srgb, var(--primary) 25%, transparent); padding:4px 12px; border-radius:16px;">👤 About Creator</a>
     <div class="uni-badge">📚 DBATU · B.Tech · Study Portal</div>
     <h1>PYQ <span>Question Banks</span></h1>
     <p>Interactive study portals for DBATU theory subjects. Track your preparation progress, analyze repeat frequency, and focus on what matters most.</p>
@@ -628,10 +630,64 @@
     </div>
   </div>
 
-  <!-- ─── FOOTER ─── -->
-  <footer>
-    <p>Built with precision for DBATU B.Tech Students · Progress is automatically saved locally in your browser</p>
-  </footer>
+  <!-- ─── UNIFIED WEBSITE FOOTER ─── -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <!-- Column 1: Branding -->
+      <div class="footer-col">
+        <div class="footer-brand-title">CSE-Sem5-<span>PrepHub</span></div>
+        <span class="footer-tagline">Prepare Smarter. Study Better.</span>
+        <p class="footer-desc">
+          A dedicated academic preparation portal for DBATU Computer Science & Engineering students, organizing past-year questions, frequency trends, and unit-wise preparation tracking.
+        </p>
+      </div>
+
+      <!-- Column 2: Quick Navigation -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Navigation</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">🏠 Home</a></li>
+          <li><a href="sem4index.html">📚 Semester 4</a></li>
+          <li><a href="index.html">🎓 Semester 5</a></li>
+          <li><a href="index.html#about">👤 About Preparation Hub</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 3: Subjects -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">5th Sem Subjects</h4>
+        <ul class="footer-links">
+          <li><a href="ml.html">Machine Learning</a></li>
+          <li><a href="toc.html">Theory of Computation</a></li>
+          <li><a href="os.html">Operating Systems</a></li>
+          <li><a href="dbms.html">Database Management Systems</a></li>
+          <li><a href="wc.html">Wireless Communication</a></li>
+          <li><a href="cg.html">Computer Graphics</a></li>
+        </ul>
+      </div>
+
+      <!-- Column 4: Project Information -->
+      <div class="footer-col">
+        <h4 class="footer-col-title">Project Info</h4>
+        <ul class="footer-info-list">
+          <li>🏛️ Built for DBATU CSE students</li>
+          <li>🎯 Student-developed academic resource</li>
+          <li>
+            💻 GitHub Repository:<br>
+            <a href="https://github.com/Roshan-Bhadane/CSE-Sem5-PrepHub" target="_blank" rel="noopener noreferrer">Roshan-Bhadane/CSE-Sem5-PrepHub</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div>Made with <span class="footer-heart">❤️</span> for DBATU students</div>
+      <div>&copy; <span class="copyright-year">2026</span> Roshan Bhadane &middot; All rights reserved.</div>
+    </div>
+  </div>
+</footer>
 </div>
 
 <script>
@@ -666,5 +722,6 @@ initToggleIcon();
   });
 </script>
 
+<script src="assets/js/branding.js" defer></script>
 </body>
 </html>
