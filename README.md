@@ -12,7 +12,6 @@ A comprehensive exam preparation hub and question bank portal designed for DBATU
 - **Theory of Computation Question Bank (`toc.html`)**: Unit-wise breakdown of 77 unique questions compiled from 6 university papers (Winter 2022 to Summer 2025), priority frequency table, unit filtering, search, and local-storage progress tracking.
 - **Machine Learning Question Bank (`ml.html`)**: Unit-wise breakdown of 51 long-answer questions compiled from university question papers (Winter 2022 to Summer 2024), priority frequency table, unit filtering, search, and local-storage progress tracking.
 - **Database Management Systems (`DBMS_QuestionBank_DBATU.html` / `dbms.html`)**: Complete unit-wise PYQ analysis and question bank.
-- **Semester 4 Archive (`sem4index.html`)**: Quick access to 4th semester resources.
 - **Seamless Cross-Page Navigation**: Sticky navbar on every page allowing instant jumps between any subject, the home portal, and the about section.
 - **Dark/Light Mode**: Full theme customization with persistent storage across sessions.
 - **Responsive Design**: Optimized for desktop, tablet, and mobile devices.

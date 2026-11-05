@@ -46,9 +46,7 @@
   // Determine current page context
   function getPageContext() {
     var path = window.location.pathname.toLowerCase();
-    if (path.indexOf('sem4index') !== -1) {
-      return 'explore';
-    } else if (path.indexOf('ml.html') !== -1 || path.indexOf('toc.html') !== -1 || path.indexOf('os.html') !== -1 || path.indexOf('dbms') !== -1) {
+    if (path.indexOf('ml.html') !== -1 || path.indexOf('toc.html') !== -1 || path.indexOf('os.html') !== -1 || path.indexOf('dbms') !== -1) {
       return 'thinking';
     } else if (path.indexOf('wc.html') !== -1 || path.indexOf('cg.html') !== -1) {
       return 'motivation';
