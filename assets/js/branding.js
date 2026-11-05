@@ -610,6 +610,29 @@
     }
   }
 
+  // ─── CENTRALIZED SOCIAL PROFILE LINKS ───
+  // Maintain social profile destinations centrally for the entire application
+  var PREPHUB_SOCIAL_CONFIG = {
+    email: 'mailto:bhadaneroshan27@gmail.com',
+    instagram: 'https://www.instagram.com/roshan_bhadane_27/',
+    github: 'https://github.com/Roshan-Bhadane',
+    /* Clearly marked LinkedIn profile URL placeholder - configure as needed */
+    linkedin: 'https://www.linkedin.com/in/roshan-bhadane/'
+  };
+  window.PREPHUB_SOCIAL_CONFIG = PREPHUB_SOCIAL_CONFIG;
+
+  function initSocialLinks() {
+    var emailLinks = document.querySelectorAll('a[aria-label*="Email"]');
+    var igLinks = document.querySelectorAll('a[aria-label*="Instagram"]');
+    var ghLinks = document.querySelectorAll('a[aria-label*="GitHub"]');
+    var liLinks = document.querySelectorAll('a[aria-label*="LinkedIn"]');
+
+    emailLinks.forEach(function (el) { el.href = PREPHUB_SOCIAL_CONFIG.email; });
+    igLinks.forEach(function (el) { el.href = PREPHUB_SOCIAL_CONFIG.instagram; });
+    ghLinks.forEach(function (el) { el.href = PREPHUB_SOCIAL_CONFIG.github; });
+    liLinks.forEach(function (el) { el.href = PREPHUB_SOCIAL_CONFIG.linkedin; });
+  }
+
   // ─── DYNAMIC COPYRIGHT YEAR ───
   function initDynamicYear() {
     var year = new Date().getFullYear();
@@ -631,6 +654,7 @@
       setupCornerAssistant(container, config);
     }
 
+    initSocialLinks();
     initDynamicYear();
   }
 
