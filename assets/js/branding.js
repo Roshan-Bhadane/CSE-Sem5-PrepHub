@@ -1,52 +1,69 @@
 /**
- * CSE-Sem5-PrepHub — Reusable Avatar Guide & Branding System
+ * CSE-Sem5-PrepHub — Center-Focused Character Assistant & Branding System
  * 
- * Provides:
- * 1. Interactive animated avatar student guide with speech bubble.
- * 2. Automatic contextual dialogue per page.
- * 3. Dynamic copyright year in footers.
- * 4. SessionStorage awareness to avoid repetitive intrusive popups.
+ * Features:
+ * 1. Prominent center-focused personal study assistant with backdrop overlay.
+ * 2. Five contextual states & dialogues (Home, Explore, Thinking/Strategy, Motivation, About).
+ * 3. Minimized bottom-left floating launcher for instant reopening.
+ * 4. Interactive in-modal state pills allowing the student to switch character poses.
+ * 5. Gentle auto-dismissal (5.5s) if user does not interact, cancellable on hover/click.
+ * 6. SessionStorage awareness so students are not interrupted repeatedly.
+ * 7. Dynamic copyright year in footers.
  */
 
 (function () {
   'use strict';
 
-  // ─── AVATAR DIALOGUES & ASSETS ───
-  var AVATARS = {
+  // ─── CHARACTER STATES & DIALOGUES ───
+  var STATES = {
     home: {
-      src: 'assets/avatars/avatar-home.png',
-      tag: 'WELCOME',
-      text: 'Hey! Welcome to Preparation Hub. Ready to prepare smarter?'
+      id: 'home',
+      name: 'Welcome',
+      tag: 'PREPHUB STUDY ASSISTANT',
+      image: 'assets/avatars/avatar-home.png',
+      dialogue: "Hey, future engineer! 👋 Welcome to PrepHub. Your next exam preparation starts here. Let's make every question count!",
+      ctaText: "Let's Prepare 🚀"
     },
     explore: {
-      src: 'assets/avatars/avatar-explore.png',
-      tag: 'PYQ EXPLORATION',
-      text: "Looking for important questions? I've got your PYQs covered!"
+      id: 'explore',
+      name: 'Explore',
+      tag: 'SUBJECT EXPLORATION',
+      image: 'assets/avatars/avatar-explore.png',
+      dialogue: "Not sure where to start? Explore your subjects, check important PYQs, and discover the topics that matter most!",
+      ctaText: "Explore PYQs 📚"
     },
     thinking: {
-      src: 'assets/avatars/avatar-thinking.png',
+      id: 'thinking',
+      name: 'Strategy',
       tag: 'EXAM STRATEGY',
-      text: 'Not every question is equally important. Let\'s focus on what matters!'
+      image: 'assets/avatars/avatar-thinking.png',
+      dialogue: "Not every question is equally important. Let's focus on frequently repeated topics and prepare smarter, not harder!",
+      ctaText: "Got it! 🎯"
     },
     motivation: {
-      src: 'assets/avatars/avatar-motivation.png',
+      id: 'motivation',
+      name: 'Motivation',
       tag: 'STUDY MOTIVATION',
-      text: 'Less guessing, more smart preparation. Your exam game starts here!'
+      image: 'assets/avatars/avatar-motivation.png',
+      dialogue: "One question at a time, one concept at a time. Stay consistent, track your progress, and trust your preparation! 🚀",
+      ctaText: "Stay Consistent 💪"
     },
     about: {
-      src: 'assets/avatars/avatar-about.png',
-      tag: 'THE CREATOR',
-      text: 'I analysed the papers. I mapped the syllabus. Now it\'s your turn to prepare!'
+      id: 'about',
+      name: 'Creator',
+      tag: 'MEET THE CREATOR',
+      image: 'assets/avatars/avatar-about.png',
+      dialogue: "Hey! I'm Roshan, the creator of PrepHub. I built this platform to help DBATU CSE students prepare smarter using previous-year question papers and exam insights.",
+      ctaText: "Behind PrepHub 👤"
     }
   };
 
-  // Cycling sequence for interactive clicks
-  var CYCLE_KEYS = ['home', 'explore', 'thinking', 'motivation'];
-
-  // Determine current page context
-  function getPageContext() {
+  // ─── PAGE CONTEXT DETECTION ───
+  function getInitialState() {
     var path = window.location.pathname.toLowerCase();
-    if (path.indexOf('ml.html') !== -1 || path.indexOf('toc.html') !== -1 || path.indexOf('os.html') !== -1 || path.indexOf('dbms') !== -1) {
+    if (path.indexOf('sem4index') !== -1) {
+      return 'explore';
+    } else if (path.indexOf('ml.html') !== -1 || path.indexOf('toc.html') !== -1 || path.indexOf('os.html') !== -1 || path.indexOf('dbms') !== -1) {
       return 'thinking';
     } else if (path.indexOf('wc.html') !== -1 || path.indexOf('cg.html') !== -1) {
       return 'motivation';
@@ -56,97 +73,199 @@
     }
   }
 
-  var currentContext = getPageContext();
-  var currentCycleIndex = CYCLE_KEYS.indexOf(currentContext);
-  if (currentCycleIndex === -1) currentCycleIndex = 0;
-
+  var currentStateKey = getInitialState();
   var autoDismissTimer = null;
+  var userInteracted = false;
 
-  // ─── MOUNT AVATAR GUIDE WIDGET ───
-  function initAvatarWidget() {
-    // Avoid duplicate creation
-    if (document.getElementById('prephub-avatar-guide')) return;
+  // ─── DOM INJECTION & MOUNT ───
+  function initAssistantSystem() {
+    if (document.getElementById('prephub-modal-backdrop')) return;
 
-    var initialData = AVATARS[currentContext] || AVATARS.home;
+    var initial = STATES[currentStateKey] || STATES.home;
 
-    var widget = document.createElement('div');
-    widget.id = 'prephub-avatar-guide';
-    widget.className = 'prephub-avatar-widget';
-    widget.setAttribute('role', 'region');
-    widget.setAttribute('aria-label', 'Preparation Hub Student Guide');
+    // 1. Center Modal Backdrop & Card
+    var backdrop = document.createElement('div');
+    backdrop.id = 'prephub-modal-backdrop';
+    backdrop.className = 'prephub-modal-backdrop';
 
-    widget.innerHTML = [
-      '<div class="avatar-speech-bubble" id="avatar-speech-bubble" role="dialog" aria-live="polite">',
-      '  <div class="bubble-header">',
-      '    <span class="bubble-tag" id="bubble-tag">' + initialData.tag + '</span>',
-      '    <button class="bubble-close-btn" id="bubble-close-btn" title="Dismiss guide" aria-label="Close dialogue">&times;</button>',
+    backdrop.innerHTML = [
+      '<div class="prephub-center-modal" id="prephub-center-modal" role="dialog" aria-modal="true" aria-labelledby="prephub-dialogue-tag">',
+      '  <button class="prephub-modal-close" id="prephub-modal-close" title="Close Assistant" aria-label="Close dialog">&times;</button>',
+      '  <div class="prephub-character-stage">',
+      '    <img src="' + initial.image + '" alt="PrepHub Student Assistant" class="prephub-character-img" id="prephub-character-img">',
       '  </div>',
-      '  <div class="bubble-message" id="bubble-message">' + initialData.text + '</div>',
-      '  <div class="bubble-footer">',
-      '    <span class="bubble-action-hint">Tap avatar for tips 💡</span>',
+      '  <div class="prephub-dialogue-card">',
+      '    <div class="prephub-dialogue-tag" id="prephub-dialogue-tag">' + initial.tag + '</div>',
+      '    <p class="prephub-dialogue-text" id="prephub-dialogue-text">' + initial.dialogue + '</p>',
+      '    <div class="prephub-modal-actions">',
+      '      <div class="prephub-state-pills" id="prephub-state-pills">',
+      '        <button class="state-pill' + (initial.id === 'home' ? ' active' : '') + '" data-state="home">👋 Welcome</button>',
+      '        <button class="state-pill' + (initial.id === 'thinking' ? ' active' : '') + '" data-state="thinking">💡 Strategy</button>',
+      '        <button class="state-pill' + (initial.id === 'explore' ? ' active' : '') + '" data-state="explore">🔍 Explore</button>',
+      '        <button class="state-pill' + (initial.id === 'motivation' ? ' active' : '') + '" data-state="motivation">🚀 Motivation</button>',
+      '        <button class="state-pill' + (initial.id === 'about' ? ' active' : '') + '" data-state="about">👤 Creator</button>',
+      '      </div>',
+      '      <button class="prephub-cta-btn" id="prephub-cta-btn">' + initial.ctaText + '</button>',
+      '    </div>',
       '  </div>',
-      '</div>',
-      '<button class="avatar-trigger-btn" id="avatar-trigger-btn" title="Click for study guide tip" aria-label="Open study guide avatar">',
-      '  <img src="' + initialData.src + '" alt="Preparation Hub Avatar Guide" class="avatar-img-circle" id="avatar-img-circle">',
-      '  <span class="avatar-status-dot"></span>',
-      '</button>'
+      '</div>'
     ].join('\n');
 
-    document.body.appendChild(widget);
+    document.body.appendChild(backdrop);
 
-    var bubble = document.getElementById('avatar-speech-bubble');
-    var triggerBtn = document.getElementById('avatar-trigger-btn');
-    var closeBtn = document.getElementById('bubble-close-btn');
+    // 2. Minimized Floating Launcher (Bottom-Left)
+    var launcher = document.createElement('button');
+    launcher.id = 'prephub-minimized-launcher';
+    launcher.className = 'prephub-minimized-launcher';
+    launcher.setAttribute('aria-label', 'Open PrepHub Study Assistant');
+    launcher.title = 'Open Study Assistant 💡';
 
-    // Show speech bubble
-    function showBubble(data, duration) {
-      if (autoDismissTimer) clearTimeout(autoDismissTimer);
+    launcher.innerHTML = [
+      '<img src="' + initial.image + '" alt="Study Assistant" class="launcher-avatar-thumb" id="launcher-avatar-thumb">',
+      '<span class="launcher-pulse-dot"></span>',
+      '<span class="launcher-hover-label">Study Assistant 💡</span>'
+    ].join('\n');
 
-      var tagEl = document.getElementById('bubble-tag');
-      var msgEl = document.getElementById('bubble-message');
-      var imgEl = document.getElementById('avatar-img-circle');
+    document.body.appendChild(launcher);
 
-      if (tagEl) tagEl.textContent = data.tag;
-      if (msgEl) msgEl.textContent = data.text;
-      if (imgEl && imgEl.src.indexOf(data.src) === -1) {
-        imgEl.src = data.src;
+    // ─── CONTROLLER FUNCTIONS ───
+    var charImg = document.getElementById('prephub-character-img');
+    var tagEl = document.getElementById('prephub-dialogue-tag');
+    var textEl = document.getElementById('prephub-dialogue-text');
+    var ctaBtn = document.getElementById('prephub-cta-btn');
+    var closeBtn = document.getElementById('prephub-modal-close');
+    var launcherThumb = document.getElementById('launcher-avatar-thumb');
+    var modalBox = document.getElementById('prephub-center-modal');
+
+    function applyState(stateKey) {
+      var state = STATES[stateKey] || STATES.home;
+      currentStateKey = stateKey;
+
+      if (charImg) {
+        charImg.style.opacity = '0';
+        charImg.style.transform = 'scale(0.96)';
+        setTimeout(function () {
+          charImg.src = state.image;
+          charImg.style.opacity = '1';
+          charImg.style.transform = 'scale(1)';
+        }, 150);
       }
 
-      bubble.classList.add('visible');
+      if (launcherThumb) {
+        launcherThumb.src = state.image;
+      }
 
-      // Auto dismiss after specified time (default 3.8s)
-      var d = duration || 3800;
-      autoDismissTimer = setTimeout(function () {
-        hideBubble();
-      }, d);
+      if (tagEl) tagEl.textContent = state.tag;
+      if (textEl) textEl.textContent = state.dialogue;
+      if (ctaBtn) ctaBtn.textContent = state.ctaText;
+
+      // Update pills
+      var pills = document.querySelectorAll('.state-pill');
+      pills.forEach(function (p) {
+        if (p.getAttribute('data-state') === stateKey) {
+          p.classList.add('active');
+        } else {
+          p.classList.remove('active');
+        }
+      });
     }
 
-    // Hide speech bubble
-    function hideBubble() {
-      bubble.classList.remove('visible');
+    function openModal(stateKey) {
+      if (stateKey) applyState(stateKey);
+      backdrop.classList.add('active');
+
+      // Clear any previous auto-dismiss timer
+      if (autoDismissTimer) clearTimeout(autoDismissTimer);
+
+      // Auto dismiss after 5.5s ONLY if user has not interacted
+      autoDismissTimer = setTimeout(function () {
+        if (!userInteracted && backdrop.classList.contains('active')) {
+          closeModal();
+        }
+      }, 5500);
+    }
+
+    function closeModal() {
+      backdrop.classList.remove('active');
       if (autoDismissTimer) clearTimeout(autoDismissTimer);
     }
 
-    // Manual click on close button
+    // Cancel auto-dismiss if user moves mouse inside modal or interacts
+    modalBox.addEventListener('mouseenter', function () {
+      userInteracted = true;
+      if (autoDismissTimer) clearTimeout(autoDismissTimer);
+    });
+    modalBox.addEventListener('touchstart', function () {
+      userInteracted = true;
+      if (autoDismissTimer) clearTimeout(autoDismissTimer);
+    }, { passive: true });
+
+    // Close button
     closeBtn.addEventListener('click', function (e) {
       e.stopPropagation();
-      hideBubble();
-      sessionStorage.setItem('prephub_avatar_dismissed', 'true');
+      userInteracted = true;
+      closeModal();
     });
 
-    // Clicking avatar button cycles through helpful dialogues
-    triggerBtn.addEventListener('click', function () {
-      currentCycleIndex = (currentCycleIndex + 1) % CYCLE_KEYS.length;
-      var nextKey = CYCLE_KEYS[currentCycleIndex];
-      showBubble(AVATARS[nextKey], 4500);
+    // Backdrop click outside card
+    backdrop.addEventListener('click', function (e) {
+      if (e.target === backdrop) {
+        userInteracted = true;
+        closeModal();
+      }
     });
 
-    // Initial load presentation (respect sessionStorage)
-    var isDismissed = sessionStorage.getItem('prephub_avatar_dismissed');
-    if (!isDismissed) {
-      // Gentle delayed entrance so page finishes initial rendering
+    // Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && backdrop.classList.contains('active')) {
+        closeModal();
+      }
+    });
+
+    // CTA button click
+    ctaBtn.addEventListener('click', function () {
+      userInteracted = true;
+      closeModal();
+      // If on creator state, smoothly scroll to #about if available
+      if (currentStateKey === 'about') {
+        var aboutEl = document.getElementById('about');
+        if (aboutEl) {
+          aboutEl.scrollIntoView({ behavior: 'smooth' });
+        } else if (window.location.pathname.indexOf('index.html') === -1) {
+          window.location.href = 'index.html#about';
+        }
+      }
+    });
+
+    // State pills click
+    var pillContainer = document.getElementById('prephub-state-pills');
+    if (pillContainer) {
+      pillContainer.addEventListener('click', function (e) {
+        var btn = e.target.closest('.state-pill');
+        if (!btn) return;
+        userInteracted = true;
+        var st = btn.getAttribute('data-state');
+        if (st && STATES[st]) {
+          applyState(st);
+        }
+      });
+    }
+
+    // Launcher click re-opens the center-focused assistant!
+    launcher.addEventListener('click', function () {
+      userInteracted = true;
+      openModal(currentStateKey);
+    });
+
+    // ─── INITIAL TRIGGER PER SESSION ───
+    var sessionKey = 'prephub_modal_shown_' + currentStateKey;
+    var hasBeenShown = sessionStorage.getItem(sessionKey);
+
+    if (!hasBeenShown) {
+      sessionStorage.setItem(sessionKey, 'true');
+      // Entrance delay for smooth page render
       setTimeout(function () {
-        showBubble(initialData, 3500);
+        openModal(currentStateKey);
       }, 700);
     }
   }
@@ -160,14 +279,14 @@
     });
   }
 
-  // ─── INITIALIZE ON DOM READY ───
+  // ─── INITIALIZE ───
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', function () {
-      initAvatarWidget();
+      initAssistantSystem();
       initDynamicYear();
     });
   } else {
-    initAvatarWidget();
+    initAssistantSystem();
     initDynamicYear();
   }
 })();
