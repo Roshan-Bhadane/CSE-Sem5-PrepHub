@@ -16,7 +16,16 @@
     --muted: #6b7280;
     --faint: #3a3d47;
     --primary: #f472b6;
-    --primary-glow: color-mix(in srgb, #f472b6 15%, transparent);
+    --primary-glow: rgba(244, 114, 182, 0.15);
+    --u1: #38bdf8; --u1d: #082f49;
+    --u2: #a78bfa; --u2d: #1e1530;
+    --u3: #34d399; --u3d: #0d2520;
+    --u4: #fbbf24; --u4d: #231d0a;
+    --u5: #f472b6; --u5d: #280f1e;
+    --hot: #ef4444;
+    --warm: #f97316;
+    --cool: #6b7280;
+    --num: #38bdf8;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -43,7 +52,7 @@
     color: var(--muted); transition: all .15s ease; text-decoration: none;
   }
   .nav-btn:hover { background: var(--faint); color: var(--text); border-color: var(--primary); }
-  .nav-btn.active { background: color-mix(in srgb, var(--primary) 20%, transparent); color: var(--primary); border-color: var(--primary); }
+  .nav-btn.active { background: var(--u5d); color: var(--primary); border-color: var(--primary); }
   .nav-btn.go-home {
     background: color-mix(in srgb, #fbbf24 10%, transparent);
     color: #fbbf24; border-color: color-mix(in srgb, #fbbf24 40%, transparent);
@@ -62,43 +71,151 @@
   .theme-toggle:hover { border-color: var(--primary); }
   header {
     background: var(--surface); border-bottom: 1px solid var(--border);
-    padding: 2.5rem 1.5rem 2rem;
+    padding: 2rem 1.5rem 1.5rem; z-index: 100; backdrop-filter: blur(12px);
   }
-  .header-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .header-inner { max-width: 900px; margin: 0 auto; }
+  .header-top { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
   .course-badge {
     font-family: 'IBM Plex Mono', monospace; font-size: 11px;
     background: var(--faint); color: var(--muted); padding: 3px 10px;
     border-radius: 4px; letter-spacing: .05em; display: inline-block; margin-bottom: 8px;
   }
-  h1 { font-family: 'Syne', sans-serif; font-size: clamp(22px, 4vw, 32px); font-weight: 800; letter-spacing: -.02em; color: var(--text); line-height: 1.2; }
+  h1 { font-family: 'Syne', sans-serif; font-size: clamp(20px, 4vw, 28px); font-weight: 800; letter-spacing: -.02em; color: var(--text); line-height: 1.1; }
   h1 span { color: var(--primary); }
-  .header-meta { font-size: 13px; color: var(--muted); margin-top: 8px; font-family: 'IBM Plex Mono', monospace; }
-  main { max-width: 700px; margin: 3rem auto; padding: 0 1.5rem; text-align: center; }
-  .coming-card {
-    background: var(--surface); border: 1px solid var(--border); border-radius: 16px;
-    padding: 3rem 2rem; box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  .header-meta { font-size: 12px; color: var(--muted); margin-top: 6px; font-family: 'IBM Plex Mono', monospace; }
+  .stats { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+  .stat {
+    background: var(--surface2); border: 1px solid var(--border); border-radius: 8px;
+    padding: 6px 14px; font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 6px;
   }
-  .coming-icon { font-size: 48px; margin-bottom: 1rem; }
-  .coming-title { font-family: 'Syne', sans-serif; font-size: 20px; font-weight: 700; margin-bottom: 8px; color: var(--text); }
-  .coming-desc { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 1.5rem; }
-  .coming-actions { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; }
-  .coming-btn {
-    display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px;
-    border-radius: 10px; font-size: 13px; font-weight: 600; text-decoration: none;
-    transition: all .2s; font-family: 'IBM Plex Sans', sans-serif;
+  .stat strong { color: var(--text); font-size: 15px; font-family: 'Syne', sans-serif; }
+  .controls-bar { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 10px; padding: 1rem 1.5rem 0; }
+  .filter-bar { display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
+  .tab {
+    padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 500;
+    cursor: pointer; border: 1px solid var(--border); background: transparent;
+    color: var(--muted); transition: all .15s ease; font-family: 'IBM Plex Sans', sans-serif;
   }
-  .btn-primary { background: var(--primary); color: #000; }
-  .btn-primary:hover { opacity: .9; transform: translateY(-1px); }
-  .btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border2); }
-  .btn-secondary:hover { background: var(--faint); }
+  .tab:hover { border-color: var(--border2); color: var(--text); }
+  .tab.active { background: var(--faint); color: var(--text); border-color: var(--border2); }
+  .search-box { position: relative; width: 100%; }
+  .search-input {
+    width: 100%; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 10px; padding: 8px 14px 8px 36px; color: var(--text);
+    font-family: 'IBM Plex Sans', sans-serif; font-size: 13px; outline: none; transition: border-color .2s;
+  }
+  .search-input:focus { border-color: var(--primary); }
+  .search-icon { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); font-size: 13px; pointer-events: none; }
+  main { max-width: 900px; margin: 0 auto; padding: 1.5rem; }
+  .unit { margin-bottom: 2.5rem; }
+  .unit[data-unit="1"] { --uc: var(--u1); --ucd: var(--u1d); }
+  .unit[data-unit="2"] { --uc: var(--u2); --ucd: var(--u2d); }
+  .unit[data-unit="3"] { --uc: var(--u3); --ucd: var(--u3d); }
+  .unit[data-unit="4"] { --uc: var(--u4); --ucd: var(--u4d); }
+  .unit[data-unit="5"] { --uc: var(--u5); --ucd: var(--u5d); }
+  .unit-header {
+    display: flex; align-items: center; gap: 14px; margin-bottom: 1rem; padding: 16px 20px;
+    background: var(--ucd); border: 1px solid color-mix(in srgb, var(--uc) 25%, transparent); border-radius: 12px;
+  }
+  .unit-num {
+    width: 38px; height: 38px; border-radius: 10px; background: var(--uc); color: #000;
+    font-family: 'Syne', sans-serif; font-weight: 800; font-size: 16px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  }
+  .unit-title { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 16px; color: var(--uc); }
+  .unit-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .unit-hrs {
+    margin-left: auto; font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--uc);
+    background: color-mix(in srgb, var(--uc) 12%, transparent); padding: 3px 10px; border-radius: 4px; white-space: nowrap;
+  }
+  .topic-group { margin-bottom: 1.2rem; }
+  .topic-label {
+    font-size: 11px; font-weight: 500; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--muted); font-family: 'IBM Plex Mono', monospace; margin-bottom: 6px;
+    padding-left: 8px; border-left: 2px solid var(--uc);
+  }
+  .q-card {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px 16px; margin-bottom: 6px; display: flex; gap: 14px; align-items: flex-start;
+    transition: border-color .15s, background .15s; cursor: pointer;
+  }
+  .q-card:hover { border-color: var(--border2); background: var(--surface2); }
+  .q-card.done { opacity: .45; background: var(--surface); }
+  .q-card.done .q-text { text-decoration: line-through; text-decoration-color: var(--muted); }
+  .q-num { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--muted); min-width: 28px; margin-top: 2px; flex-shrink: 0; }
+  .q-body { flex: 1; }
+  .q-text { font-size: 14px; color: var(--text); line-height: 1.55; }
+  .q-options {
+    margin-top: 8px; display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 5px; font-size: 12px; color: var(--muted); font-family: 'IBM Plex Mono', monospace;
+  }
+  .q-opt {
+    background: var(--surface2); padding: 4px 8px; border-radius: 4px; border: 1px solid var(--border);
+  }
+  .q-meta { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 8px; align-items: center; }
+  .badge { font-size: 10px; font-family: 'IBM Plex Mono', monospace; padding: 2px 8px; border-radius: 4px; border: 1px solid transparent; }
+  .badge-year { background: var(--surface2); border-color: var(--border); color: var(--muted); }
+  .badge-hot { background: color-mix(in srgb, var(--hot) 15%, transparent); border-color: color-mix(in srgb, var(--hot) 30%, transparent); color: var(--hot); font-weight: 500; }
+  .badge-warm { background: color-mix(in srgb, var(--warm) 15%, transparent); border-color: color-mix(in srgb, var(--warm) 30%, transparent); color: var(--warm); font-weight: 500; }
+  .badge-once { background: var(--surface2); border-color: var(--border); color: var(--muted); }
+  .badge-num { background: color-mix(in srgb, var(--num) 15%, transparent); border-color: color-mix(in srgb, var(--num) 30%, transparent); color: var(--num); font-weight: 500; }
+  .progress-wrap {
+    position: fixed; bottom: 20px; right: 20px; background: var(--surface);
+    border: 1px solid var(--border2); border-radius: 12px; padding: 12px 16px;
+    font-size: 12px; color: var(--muted); box-shadow: 0 8px 32px rgba(0,0,0,.4); min-width: 160px; z-index: 200;
+  }
+  .progress-label { font-family: 'Syne', sans-serif; font-weight: 700; color: var(--text); font-size: 14px; }
+  .progress-bar-track { height: 4px; background: var(--faint); border-radius: 2px; margin-top: 8px; overflow: hidden; }
+  .progress-bar-fill { height: 100%; background: var(--primary); border-radius: 2px; transition: width .3s ease; width: 0%; }
+  .progress-sub { font-size: 11px; margin-top: 4px; font-family: 'IBM Plex Mono', monospace; }
+  .freq-table { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 2.5rem; }
+  .freq-table-header { padding: 14px 20px; border-bottom: 1px solid var(--border); font-family: 'Syne', sans-serif; font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 8px; }
+  .freq-table-header span { color: var(--primary); }
+  table { width: 100%; border-collapse: collapse; }
+  th { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 8px 16px; text-align: left; background: var(--surface2); border-bottom: 1px solid var(--border); }
+  td { padding: 10px 16px; font-size: 13px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: var(--surface2); }
+  .freq-bars { display: flex; gap: 3px; }
+  .freq-bar { width: 8px; height: 14px; border-radius: 2px; }
+  .freq-bar.filled { background: var(--primary); }
+  .freq-bar.empty { background: var(--faint); }
+  .check-box {
+    width: 18px; height: 18px; border-radius: 5px; border: 1.5px solid var(--border2);
+    background: transparent; flex-shrink: 0; margin-top: 1px;
+    display: flex; align-items: center; justify-content: center; transition: all .15s; cursor: pointer;
+  }
+  .q-card:hover .check-box { border-color: var(--uc, var(--primary)); }
+  .check-box.checked { background: var(--uc, var(--primary)); border-color: var(--uc, var(--primary)); }
+  .check-box.checked::after {
+    content: ''; width: 4px; height: 7px; border: 1.5px solid #000;
+    border-top: none; border-left: none; transform: rotate(45deg) translateY(-1px); display: block;
+  }
+  .unit.hidden { display: none; }
+  .q-card.hidden { display: none; }
+  .topic-group.hidden { display: none; }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--faint); border-radius: 3px; }
   html.light {
     --bg: #eceff6; --surface: #ffffff; --surface2: #f4f6fb;
     --border: rgba(0,0,0,0.07); --border2: rgba(0,0,0,0.13);
     --text: #0c0e15; --muted: #5c6880; --faint: #e0e4ef;
   }
-  html.light .nav-bar { background: rgba(255,255,255,0.88); border-bottom-color: rgba(0,0,0,0.07); }
-  html.light header { background: #ffffff; border-bottom-color: rgba(0,0,0,0.07); }
-  html.light .coming-card { background: #ffffff; border-color: rgba(0,0,0,0.07); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+  html.light .nav-bar { background: rgba(255,255,255,0.88); border-bottom-color: rgba(0,0,0,0.07); box-shadow: 0 1px 0 rgba(0,0,0,0.05), 0 2px 10px rgba(0,0,0,0.05); }
+  html.light header { background: #ffffff; border-bottom-color: rgba(0,0,0,0.07); box-shadow: 0 1px 0 rgba(0,0,0,0.04), 0 2px 14px rgba(0,0,0,0.05); }
+  html.light .q-card { background: #ffffff; border-color: rgba(0,0,0,0.07); box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 1px 5px rgba(0,0,0,0.03); }
+  html.light .q-card:hover { background: #ffffff; border-color: rgba(0,0,0,0.12); box-shadow: 0 4px 16px rgba(0,0,0,0.09), 0 1px 4px rgba(0,0,0,0.06); transform: translateY(-1px); }
+  html.light .q-card.done { background: #f6f7fb; opacity: 0.6; }
+  html.light .freq-table { background: #ffffff; border-color: rgba(0,0,0,0.07); box-shadow: 0 1px 4px rgba(0,0,0,0.05), 0 4px 18px rgba(0,0,0,0.05); }
+  html.light .freq-table-header { border-bottom-color: rgba(0,0,0,0.07); }
+  html.light th { background: #f4f6fb; border-bottom-color: rgba(0,0,0,0.07); color: #5c6880; }
+  html.light td { border-bottom-color: rgba(0,0,0,0.05); }
+  html.light tr:hover td { background: #f8f9fc; }
+  html.light .freq-bar.empty { background: #d4d9e8; }
+  html.light .stat { background: #ffffff; border-color: rgba(0,0,0,0.07); box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+  html.light .tab { background: #ffffff; border-color: rgba(0,0,0,0.09); box-shadow: 0 1px 2px rgba(0,0,0,0.04); color: #5c6880; }
+  html.light .q-opt { background: #f4f6fb; border-color: rgba(0,0,0,0.07); }
 </style>
 </head>
 <body>
@@ -110,8 +227,8 @@
     <a class="nav-btn" href="ml.html">ML</a>
     <a class="nav-btn" href="toc.html">TOC</a>
     <a class="nav-btn active" href="os.html">OS</a>
-    <a class="nav-btn " href="wc.html">WC</a>
-    <a class="nav-btn " href="cg.html">CG</a>
+    <a class="nav-btn" href="wc.html">WC</a>
+    <a class="nav-btn" href="cg.html">CG</a>
     <a class="nav-btn" href="dbms.html">DBMS</a>
     <button class="theme-toggle" id="theme-toggle-btn" onclick="toggleTheme()">☀️ Light</button>
   </div>
@@ -119,29 +236,1876 @@
 
 <header>
   <div class="header-inner">
-    <span class="course-badge">BTCOC503 · OPERATING SYSTEMS</span>
-    <h1>Operating <span>Systems</span> Question Bank</h1>
-    <div class="header-meta">DBATU B.Tech CSE · Semester V</div>
+    <div class="header-top">
+      <div>
+        <span class="course-badge">BTCOC503 · OPERATING SYSTEMS</span>
+        <h1>Operating <span>Systems</span> Question Bank</h1>
+        <div class="header-meta">DBATU B.Tech CSE · Semester V · 6 Exam Papers (2023–2025)</div>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>93</strong> Unique Questions</div>
+      <div class="stat"><strong>5</strong> Units</div>
+      <div class="stat"><strong>6</strong> Exam Papers</div>
+      <div class="stat"><strong>14</strong> Recurring (🔥)</div>
+      <div class="stat"><strong>20</strong> Numericals (🧮)</div>
+      <div class="stat"><strong id="done-count">0</strong> Completed</div>
+    </div>
   </div>
 </header>
 
-<main>
-  <div class="coming-card">
-    <div class="coming-icon">🚧</div>
-    <div class="coming-title">Question Bank In Progress</div>
-    <div class="coming-desc">
-      Process scheduling, deadlocks, memory management, virtual memory, file systems, and I/O management.<br><br>
-      The PYQ dataset for <strong>Operating Systems</strong> will be available once the question bank JSON is uploaded.
-    </div>
-    <div class="coming-actions">
-      <a href="index.html" class="coming-btn btn-secondary">← Back to 5th Sem Hub</a>
-      <a href="toc.html" class="coming-btn btn-primary">Study TOC PYQs →</a>
-      <a href="ml.html" class="coming-btn btn-secondary">Study ML PYQs →</a>
-    </div>
+<div class="controls-bar">
+  <div class="filter-bar">
+    <button class="tab active" onclick="filterUnit('all', this)">All (93)</button>
+    <button class="tab" onclick="filterUnit('1', this)">Unit 1 (19)</button>
+    <button class="tab" onclick="filterUnit('2', this)">Unit 2 (19)</button>
+    <button class="tab" onclick="filterUnit('3', this)">Unit 3 (17)</button>
+    <button class="tab" onclick="filterUnit('4', this)">Unit 4 (18)</button>
+    <button class="tab" onclick="filterUnit('5', this)">Unit 5 (20)</button>
+    <button class="tab" onclick="filterUnit('hot', this)">🔥 High Freq (14)</button>
+    <button class="tab" onclick="filterUnit('num', this)">🧮 Numericals (20)</button>
   </div>
+  <div class="search-box">
+    <span class="search-icon">🔍</span>
+    <input type="text" id="search-input" class="search-input" placeholder="Search questions, topics, algorithms (e.g. Peterson, Banker, LRU, SJF, Semaphore, Paging)..." oninput="handleSearch(this.value)">
+  </div>
+</div>
+
+<main>
+  <!-- ─── FREQUENCY ANALYSIS TABLE ─── -->
+  <div class="freq-table">
+    <div class="freq-table-header">
+      ⚡ Most Frequently Asked Topics <span>(High Priority for Exams)</span>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Topic</th>
+          <th>Unit</th>
+          <th>Appearances</th>
+          <th>Priority</th>
+          <th>Exam Sessions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Page Replacement Algorithms</strong></td>
+          <td><span class="badge badge-year">Unit 4</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">7× (6 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">2023, 2024, 2025</td>
+        </tr>
+        <tr>
+          <td><strong>File Allocation Methods</strong></td>
+          <td><span class="badge badge-year">Unit 5</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">7× (6 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">2023, 2024, 2025</td>
+        </tr>
+        <tr>
+          <td><strong>CPU Scheduling Algorithms</strong></td>
+          <td><span class="badge badge-year">Unit 2</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">6× (6 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">2023, 2024</td>
+        </tr>
+        <tr>
+          <td><strong>Process Concept</strong></td>
+          <td><span class="badge badge-year">Unit 2</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">5× (4 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">2023, 2024</td>
+        </tr>
+        <tr>
+          <td><strong>Process Scheduling</strong></td>
+          <td><span class="badge badge-year">Unit 2</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">5× (5 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">2023, 2024, 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Deadlock Avoidance</strong></td>
+          <td><span class="badge badge-year">Unit 3</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">5× (5 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">2023, 2024</td>
+        </tr>
+        <tr>
+          <td><strong>Peterson&#039;s Solution</strong></td>
+          <td><span class="badge badge-year">Unit 3</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">5× (2 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">2023, 2024, 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Types of Operating System</strong></td>
+          <td><span class="badge badge-year">Unit 1</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">4× (4 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">2023, 2024</td>
+        </tr>
+        <tr>
+          <td><strong>Working Set Model</strong></td>
+          <td><span class="badge badge-year">Unit 4</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">4× (3 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">2024, 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Free-space Management</strong></td>
+          <td><span class="badge badge-year">Unit 5</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">4× (2 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-hot">🔥 High</span></td>
+          <td style="color:var(--muted); font-size:12px;">2023, 2024, 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Real-Time Operating System</strong></td>
+          <td><span class="badge badge-year">Unit 1</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">3× (3 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-warm">⚡ Med</span></td>
+          <td style="color:var(--muted); font-size:12px;">2023, 2024, 2025</td>
+        </tr>
+        <tr>
+          <td><strong>System Calls</strong></td>
+          <td><span class="badge badge-year">Unit 1</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">3× (3 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-warm">⚡ Med</span></td>
+          <td style="color:var(--muted); font-size:12px;">2023, 2024, 2025</td>
+        </tr>
+        <tr>
+          <td><strong>System Services</strong></td>
+          <td><span class="badge badge-year">Unit 1</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">3× (2 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-warm">⚡ Med</span></td>
+          <td style="color:var(--muted); font-size:12px;">2023, 2024, 2025</td>
+        </tr>
+        <tr>
+          <td><strong>System Structure</strong></td>
+          <td><span class="badge badge-year">Unit 1</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">3× (1 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-warm">⚡ Med</span></td>
+          <td style="color:var(--muted); font-size:12px;">2024, 2025</td>
+        </tr>
+        <tr>
+          <td><strong>Threads</strong></td>
+          <td><span class="badge badge-year">Unit 2</span></td>
+          <td>
+            <div style="display:flex; align-items:center; gap:8px;">
+              <div class="freq-bars"><span class="freq-bar filled"></span><span class="freq-bar filled"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span><span class="freq-bar empty"></span></div>
+              <span style="font-size:12px; font-family:'IBM Plex Mono', monospace;">3× (2 unique)</span>
+            </div>
+          </td>
+          <td><span class="badge badge-warm">⚡ Med</span></td>
+          <td style="color:var(--muted); font-size:12px;">2023, 2024, 2025</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- ─── UNIT SECTIONS ─── -->
+  <section class="unit" data-unit="1" id="u1">
+    <div class="unit-header">
+      <div class="unit-num">1</div>
+      <div>
+        <div class="unit-title">Unit 1: Introduction and Operating System Structures</div>
+        <div class="unit-sub">Definition · Types of Operating System · Real-Time Operating System · System Components: System Services · System Components: System Calls · ...</div>
+      </div>
+      <div class="unit-hrs">6 Hours</div>
+    </div>
+
+    <div class="topic-group">
+      <div class="topic-label">Storage System Hierarchy</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q1</div>
+        <div class="q-body">
+          <div class="q-text">Explain the storage system hierarchy of operating system with neat diagram.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Jan 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Real-Time Operating System</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q2</div>
+        <div class="q-body">
+          <div class="q-text">Write a Short Note on the following: a) Real-time Embedded System</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Jan 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q11</div>
+        <div class="q-body">
+          <div class="q-text">Explain Real time operating system with its types, advantages and examples.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q17</div>
+        <div class="q-body">
+          <div class="q-text">Hard real time operating system has ______________ jitter than a soft real time operating system.</div>
+          <div class="q-options">
+        <div class="q-opt">a. less</div>
+        <div class="q-opt">b. more</div>
+        <div class="q-opt">c. equal</div>
+        <div class="q-opt">d. large</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Types of Operating System</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q3</div>
+        <div class="q-body">
+          <div class="q-text">Write a Short Note on the following: b) Advantages of Multiprocessor System</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Jan 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q4</div>
+        <div class="q-body">
+          <div class="q-text">Describe memory layout of multiprogramming operating system. State its advantages.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q13</div>
+        <div class="q-body">
+          <div class="q-text">___________ refers to the allocation of computer resources in time slots to several programs simultaneously.</div>
+          <div class="q-options">
+        <div class="q-opt">a. Time sharing</div>
+        <div class="q-opt">b. Batch processing</div>
+        <div class="q-opt">c. Spooling</div>
+        <div class="q-opt">d. Multiprogramming</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q15</div>
+        <div class="q-body">
+          <div class="q-text">What is distributed operating system? What are the advantages of distributed operating system?</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">System Design and Implementation</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q5</div>
+        <div class="q-body">
+          <div class="q-text">Discuss design goals, polies and implementation of a typical operating system.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Virtual Machines</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q6</div>
+        <div class="q-body">
+          <div class="q-text">Explain Virtual Machine (VM) based structure of operating system.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">System Services 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q7</div>
+        <div class="q-body">
+          <div class="q-text">List out different services of Operating Systems and Describe each service.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q10</div>
+        <div class="q-body">
+          <div class="q-text">Explain operating services with respect to programs and users.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">System Calls</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q8</div>
+        <div class="q-body">
+          <div class="q-text">What are system calls? Explain different categories of system calls with example?</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q14</div>
+        <div class="q-body">
+          <div class="q-text">System call provides the services of the operating system to the user programs via________________.</div>
+          <div class="q-options">
+        <div class="q-opt">a. API</div>
+        <div class="q-opt">b. jump</div>
+        <div class="q-opt">c. procedure</div>
+        <div class="q-opt">d. interface</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q18</div>
+        <div class="q-body">
+          <div class="q-text">A system call is a routine built into the kernel and performs a basic function.</div>
+          <div class="q-options">
+        <div class="q-opt">a. True</div>
+        <div class="q-opt">b. False</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">System Components</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q9</div>
+        <div class="q-body">
+          <div class="q-text">Describe different sub-components of an operating system.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">System Structure 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q12</div>
+        <div class="q-body">
+          <div class="q-text">Explain microkernel type operating system structure.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-hot">🔥 Asked 3×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          <span class="badge badge-year">Winter 2024 (Supp)</span>
+          <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Operating System Basics</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q16</div>
+        <div class="q-body">
+          <div class="q-text">Which of the following is system software?</div>
+          <div class="q-options">
+        <div class="q-opt">a. Operating system</div>
+        <div class="q-opt">b. Machine Language</div>
+        <div class="q-opt">c. Code</div>
+        <div class="q-opt">d. None of these</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Interrupts</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q19</div>
+        <div class="q-body">
+          <div class="q-text">The __________ interrupt is used by device controllers to request service.</div>
+          <div class="q-options">
+        <div class="q-opt">a. nonmaskable</div>
+        <div class="q-opt">b. blocked</div>
+        <div class="q-opt">c. maskable</div>
+        <div class="q-opt">d. vocal</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="unit" data-unit="2" id="u2">
+    <div class="unit-header">
+      <div class="unit-num">2</div>
+      <div>
+        <div class="unit-title">Unit 2: Processes and CPU Scheduling</div>
+        <div class="unit-sub">Process Concept · Process Scheduling · Operation on Process · Inter-process Communication · Cooperating Processes · ...</div>
+      </div>
+      <div class="unit-hrs">6 Hours</div>
+    </div>
+
+    <div class="topic-group">
+      <div class="topic-label">Process Scheduling</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q20</div>
+        <div class="q-body">
+          <div class="q-text">Describe the actions taken by a kernel to context-switch between processes.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Jan 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q24</div>
+        <div class="q-body">
+          <div class="q-text">Explain the role of long term, short term and middle term scheduler in process scheduling.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q34</div>
+        <div class="q-body">
+          <div class="q-text">_____scheduler is also called a job scheduler.</div>
+          <div class="q-options">
+        <div class="q-opt">a. Long term</div>
+        <div class="q-opt">b. medium term</div>
+        <div class="q-opt">c. short tem</div>
+        <div class="q-opt">d. Multilevel</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q36</div>
+        <div class="q-body">
+          <div class="q-text">Time duration required for scheduling dispatcher to stop one process and start another is known as ____________ latency.</div>
+          <div class="q-options">
+        <div class="q-opt">a. process</div>
+        <div class="q-opt">b. dispatch</div>
+        <div class="q-opt">c. execution</div>
+        <div class="q-opt">d. interrupt</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q37</div>
+        <div class="q-body">
+          <div class="q-text">What are the two steps of a process execution?</div>
+          <div class="q-options">
+        <div class="q-opt">a. I/O &amp; OS Burst</div>
+        <div class="q-opt">b. CPU &amp; I/O Burst</div>
+        <div class="q-opt">c. Memory &amp; I/O Burst</div>
+        <div class="q-opt">d. OS &amp; Memory Burst</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Process Concept 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q21</div>
+        <div class="q-body">
+          <div class="q-text">Describe Process Control Block with suitable Example.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Jan 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q23</div>
+        <div class="q-body">
+          <div class="q-text">What do you mean by PCB? Where is it used? What are its contents?</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q32</div>
+        <div class="q-body">
+          <div class="q-text">In process Management OS Perform___.</div>
+          <div class="q-options">
+        <div class="q-opt">a. process creation</div>
+        <div class="q-opt">b. Process execution</div>
+        <div class="q-opt">c. Process termination</div>
+        <div class="q-opt">d. all of these</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q33</div>
+        <div class="q-body">
+          <div class="q-text">Which state of process defined &quot;instructions are being executed&quot;.</div>
+          <div class="q-options">
+        <div class="q-opt">a. Ready</div>
+        <div class="q-opt">b. Waiting</div>
+        <div class="q-opt">c. Running</div>
+        <div class="q-opt">d. Terminate</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">CPU Scheduling Algorithms</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q22</div>
+        <div class="q-body">
+          <div class="q-text">Determine the average waiting time and draw a Gantt Chart for following process with burst time using Shortest-Job-First scheduling algorithm.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Jan 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q25</div>
+        <div class="q-body">
+          <div class="q-text">Consider the following set of processes to be executing on uniprocessor system. Processes AT BT: A 0 3; B 2 6; C 4 4; D 7 2. Draw the Gantt Chart and calculate average turnaround time and average waiting time for i) SJF Non-preemptive ii) SJF Preemptive</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q26</div>
+        <div class="q-body">
+          <div class="q-text">Consider the following data with burst time given in milliseconds: (table of Process, Burst Time, Priority, Arrival time) i) Draw Gantt charts for the execution of these processes using FCFS, non-preemptive and preemptive SJF, and non-preemptive Priority scheduling. ii) What is the Average waiting time of each process for each of the scheduling algorithm.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q28</div>
+        <div class="q-body">
+          <div class="q-text">Suppose the following jobs arrive for processing at the times indicated, each job will run the listed amount of time. (table of Job, arrival time, burst time) i) Give a Gantt chart illustrating the execution of these jobs using the non-preemptive FCFS and SJF scheduling algorithms. ii) what is turnaround time and wait time of each job for the above algorithms?</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q31</div>
+        <div class="q-body">
+          <div class="q-text">Consider the set of 5 processes whose arrival time and burst time are given below (table of Process, Arrival Time, Brust Time, Priority) If the CPU scheduling policy is priority preemptive, calculate the average waiting time and average turnaround time. (Higher priority number represents higher priority).</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q35</div>
+        <div class="q-body">
+          <div class="q-text">Explain Non preemptive priority scheduling round robin scheduling.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Threads 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q27</div>
+        <div class="q-body">
+          <div class="q-text">Describe the actions taken by a kernel to context switch between kernel level threads</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q29</div>
+        <div class="q-body">
+          <div class="q-text">What is thread? Differentiates between user level thread and kernel level thread.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Inter-process Communication 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q30</div>
+        <div class="q-body">
+          <div class="q-text">What is inter- process communication in operating System? Explain its types.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Scheduling Criteria</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q38</div>
+        <div class="q-body">
+          <div class="q-text">Scheduling is done so as to ____________</div>
+          <div class="q-options">
+        <div class="q-opt">a. increase the waiting time</div>
+        <div class="q-opt">b. keep the waiting time the same</div>
+        <div class="q-opt">c. decrease the waiting time</div>
+        <div class="q-opt">d. none of the mentioned</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="unit" data-unit="3" id="u3">
+    <div class="unit-header">
+      <div class="unit-num">3</div>
+      <div>
+        <div class="unit-title">Unit 3: Process Synchronization and Deadlocks</div>
+        <div class="unit-sub">The Critical-section Problem · Critical Regions · Peterson&#039;s Solution · Synchronization Hardware · Semaphores · ...</div>
+      </div>
+      <div class="unit-hrs">8 Hours</div>
+    </div>
+
+    <div class="topic-group">
+      <div class="topic-label">Peterson&#039;s Solution 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q39</div>
+        <div class="q-body">
+          <div class="q-text">Illustrate Peterson‘s Solution for critical section problem.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-hot">🔥 Asked 4×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Jan 2023 (Supp)</span>
+          <span class="badge badge-year">Summer 2024</span>
+          <span class="badge badge-year">Winter 2024 (Supp)</span>
+          <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q50</div>
+        <div class="q-body">
+          <div class="q-text">Which section in Peterson&#039;s Solution is responsible for ensuring that only one process can enter the critical section at a time?</div>
+          <div class="q-options">
+        <div class="q-opt">a. Entry section</div>
+        <div class="q-opt">b. Exit section</div>
+        <div class="q-opt">c. Reminder section</div>
+        <div class="q-opt">d. Critical section</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Classical Problems of Synchronization 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q40</div>
+        <div class="q-body">
+          <div class="q-text">Explain the Dining Philosopher’s problem with the structure of philosophers.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Jan 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q48</div>
+        <div class="q-body">
+          <div class="q-text">How the readers and writers problem can be solved using semaphore?</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Critical-section Problem</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q41</div>
+        <div class="q-body">
+          <div class="q-text">Describe the three requirements to satisfy as a solution to critical-section problem.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Jan 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q47</div>
+        <div class="q-body">
+          <div class="q-text">What is critical section problem and what are the requirements that need to be satisfied by any solution to critical section problem? Give a solution to a 2 process critical section problem.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Deadlock Detection 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q42</div>
+        <div class="q-body">
+          <div class="q-text">Explain deadlock detection using resource allocation graph.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q52</div>
+        <div class="q-body">
+          <div class="q-text">The Wait for graph describes _________ precisely.</div>
+          <div class="q-options">
+        <div class="q-opt">a. Wound wait</div>
+        <div class="q-opt">b. deadlocks</div>
+        <div class="q-opt">c. map</div>
+        <div class="q-opt">d. Spin</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Synchronization Hardware</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q43</div>
+        <div class="q-body">
+          <div class="q-text">Write a pseudocode of Swap instruction used for process synchronization.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Deadlock Avoidance</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q44</div>
+        <div class="q-body">
+          <div class="q-text">Examine banker’s algorithm for following snapshot of the system, there are 3 processes, P1, P2 and P3. And 3 resource types, R1, R2 and R3. There are 12 instances of resource type R1, 11 instances of resource type R2 and 20 instances of resource type R3. At time T0, the situation is as follows- (table of Allocated and Maximum resources) State- i) Contents of matrix Need. ii) Is the system in a safe state at T0?</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q45</div>
+        <div class="q-body">
+          <div class="q-text">Examine banker’s algorithm after applying to the example given below A system has 5 processes, P1, P2, P3, P4 and P5. There are 2 types of resources A, and B. there are 10 instances of A, and 5 instances of B. At time T0, the situation is as follows; (table of Allocation and Maximum) Is the system in a safe state at time T0? Suppose now a time T1, process P2 requests one additional instance of resource type A.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q49</div>
+        <div class="q-body">
+          <div class="q-text">Considering a system with five processes P0 through P4 and three resources of type A, B, C. Resource type A has 10 instances, B has 5 instances and type C has 7 instances. Suppose at time t following snapshot of the system has been taken: Find… (table of Allocation, Max, Available) i. What will be the content of the Need matrix? ii. Is the system in a safe state? If Yes, then what is the safe sequence?</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q51</div>
+        <div class="q-body">
+          <div class="q-text">A deadlock avoidance algorithm dynamically examines the __________ to ensure that a circular wait condition can never exist.</div>
+          <div class="q-options">
+        <div class="q-opt">a. operating system</div>
+        <div class="q-opt">b. resources</div>
+        <div class="q-opt">c. system storage state</div>
+        <div class="q-opt">d. resource allocation state</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q54</div>
+        <div class="q-body">
+          <div class="q-text">In this example, we have a process table with a number of processes that has an allocation column (to show how many resources of type A, B, and C are allocated to each process in the table), a max field (to show how many resources of type A, B, and C can be allotted to each process), and an available field (for showing the currently available resources of each type in the table). (table) We need to compute the following two things using the above processing table Q.1 Construct the need matrix? Q.2 Is the system in safe state?</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Deadlock Characterization</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q46</div>
+        <div class="q-body">
+          <div class="q-text">Describe necessary conditions for a deadlock situation to arise.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q55</div>
+        <div class="q-body">
+          <div class="q-text">For a deadlock to arise, which of the following conditions must hold simultaneously?</div>
+          <div class="q-options">
+        <div class="q-opt">a. Mutual exclusion</div>
+        <div class="q-opt">b. No preemption</div>
+        <div class="q-opt">c. Hold and wait</div>
+        <div class="q-opt">d. All of the mentioned</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Semaphores</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q53</div>
+        <div class="q-body">
+          <div class="q-text">What is semaphore? Explain binary semaphore and counting semaphore?</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="unit" data-unit="4" id="u4">
+    <div class="unit-header">
+      <div class="unit-num">4</div>
+      <div>
+        <div class="unit-title">Unit 4: Memory Management and Virtual Memory</div>
+        <div class="unit-sub">Basic Concept · Logical and Physical Address Map · Memory Allocation · Contiguous Memory Allocation · Fixed and Variable Partition · ...</div>
+      </div>
+      <div class="unit-hrs">8 Hours</div>
+    </div>
+
+    <div class="topic-group">
+      <div class="topic-label">Logical and Physical Address Map</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q56</div>
+        <div class="q-body">
+          <div class="q-text">Consider a logical address space of 64 pages of 1,024 words each, mapped onto a physical memory of 32 frames. a) How many bits are there in the logical address? b) How many bits are there in the physical address?</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Jan 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q62</div>
+        <div class="q-body">
+          <div class="q-text">Consider a logical address space of 8 pages of 1024 words each, mapped on to a physical memory of 32 frames. How many bits are there in the logical address? How many bits are there in the physical address?</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q69</div>
+        <div class="q-body">
+          <div class="q-text">The base register is also known as the ____________.</div>
+          <div class="q-options">
+        <div class="q-opt">a. regular register</div>
+        <div class="q-opt">b. relocation register</div>
+        <div class="q-opt">c. basic register</div>
+        <div class="q-opt">d. movement register</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Memory Allocation</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q57</div>
+        <div class="q-body">
+          <div class="q-text">Given five memory partitions of 100KB, 500KB, 200KB, 300KB, and 600KB (in order), how would the first-fit, best-fit, and worst-fit algorithms place processes of 212KB, 417KB, 112KB, and 426KB (in order)? Which algorithm makes the most efficient use of memory?</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Jan 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Page Replacement Algorithms 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q58</div>
+        <div class="q-body">
+          <div class="q-text">Consider the following page reference string: 1, 2, 3, 4, 2, 1, 5, 6, 2, 1, 2, 3, 7, 6, 3, 2, 1, 2, 3, 6. How many page faults would occur for the following replacement algorithms, assuming five frames? Remember that all frames are initially empty. a) LRU replacement b) FIFO replacement c) Optimal replacement</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Jan 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q59</div>
+        <div class="q-body">
+          <div class="q-text">Consider the page reference string- 4, 7, 6, 1, 7, 6, 1, 2, 7, 2. If there is there is three-page frames, calculate page faults for following algorithms- i) FIFO page replacement ii) LRU page replacement iii) Optimal page replacement</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q61</div>
+        <div class="q-body">
+          <div class="q-text">Discuss the need of page replacement. Differentiate between local and global page replacement.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q63</div>
+        <div class="q-body">
+          <div class="q-text">A process references 6 pages 1, 2, 3, 4, 5, 6 in the following order 1,2,3,4,2,1,5,6,2,1,2,3,7,6,3,2,1,2,3,6 Assuming that the replacement algorithm is LRU, Optimal and FIFO, find out the number of page faults during the sequence of references, starting with an empty main memory with 3 frames.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q68</div>
+        <div class="q-body">
+          <div class="q-text">Assume three frames and consider the reference page string below. Reference page string: 5, 7, 6, 0, 7, 1, 7, 2, 0, 1, 7, 1, 0 Determine the number of page faults using optimal and least recently used page replacement algorithm. State which algorithm is most efficient?</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q72</div>
+        <div class="q-body">
+          <div class="q-text">Consider a reference string: 4, 7, 6, 1, 7, 6, 1, 2, 7, 2. the number of frames in the memory is 3. Find out the number of page faults respective to: 1. Optimal Page Replacement Algorithm 2. LRU Page Replacement Algorithm</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Paging</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q60</div>
+        <div class="q-body">
+          <div class="q-text">Explain paging mechanism with neat diagram. State the importance of offset in it.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q64</div>
+        <div class="q-body">
+          <div class="q-text">Explain with the help of supporting diagram how TLB improves the performance of a demand paging system.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q73</div>
+        <div class="q-body">
+          <div class="q-text">The operating system maintains a ______ table that keeps track of how many frames have been allocated, how many are there, and how many are available.</div>
+          <div class="q-options">
+        <div class="q-opt">a. memory</div>
+        <div class="q-opt">b. mapping</div>
+        <div class="q-opt">c. page</div>
+        <div class="q-opt">d. frame</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Demand Paging and Page Fault 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q65</div>
+        <div class="q-body">
+          <div class="q-text">What is demand paging? Explain the steps in handling page fault using appropriate diagram.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-hot">🔥 Asked 3×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          <span class="badge badge-year">Winter 2024 (Supp)</span>
+          <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Working Set Model 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q66</div>
+        <div class="q-body">
+          <div class="q-text">Write short on: i. Working set model.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q70</div>
+        <div class="q-body">
+          <div class="q-text">Working set model for page replacement is based on the assumption of ____________.</div>
+          <div class="q-options">
+        <div class="q-opt">a. modularity</div>
+        <div class="q-opt">b. locality</div>
+        <div class="q-opt">c. reference</div>
+        <div class="q-opt">d. none of these</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q71</div>
+        <div class="q-body">
+          <div class="q-text">What is the purpose of the working set model? What happens when the sum of the working set sizes of all processes exceeds the total no. of frames in main memory?</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Fragmentation 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q67</div>
+        <div class="q-body">
+          <div class="q-text">Write short on: ii. Fragmentation</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="unit" data-unit="5" id="u5">
+    <div class="unit-header">
+      <div class="unit-num">5</div>
+      <div>
+        <div class="unit-title">Unit 5: File Management and Mass-Storage Structure</div>
+        <div class="unit-sub">File Concept · Access Methods · File Types · File Operations · Directory and Disk Structure · ...</div>
+      </div>
+      <div class="unit-hrs">6 Hours</div>
+    </div>
+
+    <div class="topic-group">
+      <div class="topic-label">File Concept and Operations</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q74</div>
+        <div class="q-body">
+          <div class="q-text">Enlist and Explain in details the various operations performed on the file.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Jan 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q77</div>
+        <div class="q-body">
+          <div class="q-text">Explain the concept of file. State various file operations.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">File Types</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q75</div>
+        <div class="q-body">
+          <div class="q-text">Describe the following file types with respect to extension used for the file and functioning of the respective file type. a) Executable b) object c) batch d) library e) archive f) source code</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Jan 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q87</div>
+        <div class="q-body">
+          <div class="q-text">File type can be represented by ____________.</div>
+          <div class="q-options">
+        <div class="q-opt">a. file extension</div>
+        <div class="q-opt">b. file name</div>
+        <div class="q-opt">c. file identifier</div>
+        <div class="q-opt">d. file line</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">File System Implementation</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q76</div>
+        <div class="q-body">
+          <div class="q-text">Write the name of the terminology used for the boot-control block and volume-control block in Unix and NT File System. Consider a file system that uses inodes to represent files. Disk blocks are 8 KB in size, and a pointer to a disk block requires 4 bytes. This file system has 12 direct disk blocks, as well as single, double, and triple indirect disk blocks. What is the maximum size of a file that can be stored in this file system?</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Jan 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">File Allocation Methods 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q78</div>
+        <div class="q-body">
+          <div class="q-text">Discuss linked and index disk space allocation methods with neat sketch.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q80</div>
+        <div class="q-body">
+          <div class="q-text">Consider two files systems A and B, that use contiguous allocation and linked allocation, respectively. A file of size 100 blocks is already stored in A and also in B. Now, consider inserting a new block in the middle of the file (between 50th and 51st block), whose data is already available in the memory. Assume that there are enough free blocks at the end of the file and that the file control blocks are already in memory. Let the number of disk accesses required to insert a block in the middle of the file in A and B are nA and nB respectively, then the calculate value of nA + nB.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q82</div>
+        <div class="q-body">
+          <div class="q-text">What are the three methods for allocating disk space? Explain with help each method suitable diagram, merits and demerits.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q84</div>
+        <div class="q-body">
+          <div class="q-text">Explain the contiguous and indexed file allocation methods.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-warm">⚡ 2×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q88</div>
+        <div class="q-body">
+          <div class="q-text">Explain the contiguous allocation of file Implementation with merits and demerits.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q92</div>
+        <div class="q-body">
+          <div class="q-text">There is no __________ with linked allocation.</div>
+          <div class="q-options">
+        <div class="q-opt">a. internal fragmentation</div>
+        <div class="q-opt">b. external fragmentation</div>
+        <div class="q-opt">c. starvation</div>
+        <div class="q-opt">d. all of these</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Free-space Management 🔥</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q79</div>
+        <div class="q-body">
+          <div class="q-text">Write a note on free space management.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2023</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q83</div>
+        <div class="q-body">
+          <div class="q-text">Explain the linked allocation type disk free space management.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-hot">🔥 Asked 3×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          <span class="badge badge-year">Winter 2024 (Supp)</span>
+          <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Disk Scheduling</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q81</div>
+        <div class="q-body">
+          <div class="q-text">Suppose that a disk drive has 200 cylinders, numbered 0 to 199. the drive currently services a request at cylinder 50, and the previous request was at cylinder 25. the queue of pending request in FIFO order is 82,170,43,140,24,16,190 Starting from the current position, what is the total distance (in cylinders) that the disk arm moves to satisfy all pending requests, for each of the following algorithms i)FCFS ii) SSFT iii) SCAN iv)LOOK v) C-SCAN vi) C-LOOK.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            <span class="badge badge-num">🧮 Numerical</span>
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2023 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q85</div>
+        <div class="q-body">
+          <div class="q-text">Explain following disk scheduling techniques with its advantages … i. Shortest Seek Time First ii. SCAN</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2024</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q91</div>
+        <div class="q-body">
+          <div class="q-text">In the _______ algorithm, the disk head moves from one end to the other, servicing requests along the way. When the head reaches the other end, it immediately returns to the beginning of the disk without servicing any requests on the return trip.</div>
+          <div class="q-options">
+        <div class="q-opt">a. LOOK</div>
+        <div class="q-opt">b. SCAN</div>
+        <div class="q-opt">c. C-SCAN</div>
+        <div class="q-opt">d. C-LOOK</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Directory Structure</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q86</div>
+        <div class="q-body">
+          <div class="q-text">When two users keep a subdirectory in their own directories, the structure being referred to is ______ directory.</div>
+          <div class="q-options">
+        <div class="q-opt">a. tree structure</div>
+        <div class="q-opt">b. cyclic graph</div>
+        <div class="q-opt">c. acyclic graph</div>
+        <div class="q-opt">d. linear graph</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q93</div>
+        <div class="q-body">
+          <div class="q-text">Explain the acyclic graph directory structure.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Swap Space Management</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q89</div>
+        <div class="q-body">
+          <div class="q-text">What is swap space management? State its advantages and disadvantages.</div>
+          
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year">6 Marks</span>
+            <span class="badge badge-year">Winter 2024 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="topic-group">
+      <div class="topic-label">Disk Management</div>
+      <div class="q-card" onclick="toggleDone(this)">
+        <div class="check-box"></div>
+        <div class="q-num">Q90</div>
+        <div class="q-body">
+          <div class="q-text">The operating system is responsible for?</div>
+          <div class="q-options">
+        <div class="q-opt">a. bad-block recovery</div>
+        <div class="q-opt">b. booting from disk</div>
+        <div class="q-opt">c. disk initialization</div>
+        <div class="q-opt">d. all of the mentioned</div>
+      </div>
+          <div class="q-meta">
+            <span class="badge badge-once">1×</span>
+            
+            <span class="badge badge-year" style="border-color: rgba(251, 191, 36, 0.4); color: #fbbf24;">1 Mark (MCQ)</span>
+            <span class="badge badge-year">Summer 2025 (Supp)</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
+<div class="progress-wrap">
+  <div class="progress-label" id="pct">0% done</div>
+  <div class="progress-bar-track">
+    <div class="progress-bar-fill" id="pfill"></div>
+  </div>
+  <div class="progress-sub" id="psub">0 / 93 questions</div>
+</div>
+
 <script>
+// ─── THEME ───
 (function() {
   if (localStorage.getItem('theme') === 'light') {
     document.documentElement.classList.add('light');
@@ -158,6 +2122,127 @@ function initToggleIcon() {
   if (btn && document.documentElement.classList.contains('light')) btn.innerHTML = '🌙 Dark';
 }
 initToggleIcon();
+
+const TOTAL = 93;
+let doneSet = new Set(JSON.parse(localStorage.getItem('os_done') || '[]'));
+
+function save() { localStorage.setItem('os_done', JSON.stringify([...doneSet])); }
+
+function toggleDone(card) {
+  const allCards = [...document.querySelectorAll('.q-card')];
+  const idx = allCards.indexOf(card);
+  const box = card.querySelector('.check-box');
+  if (doneSet.has(idx)) {
+    doneSet.delete(idx);
+    card.classList.remove('done');
+    box.classList.remove('checked');
+  } else {
+    doneSet.add(idx);
+    card.classList.add('done');
+    box.classList.add('checked');
+  }
+  save(); updateProgress();
+}
+
+function updateProgress() {
+  const n = doneSet.size;
+  const pct = Math.round(n / TOTAL * 100);
+  document.getElementById('pct').textContent = pct + '% done';
+  document.getElementById('pfill').style.width = pct + '%';
+  document.getElementById('psub').textContent = n + ' / ' + TOTAL + ' questions';
+  document.getElementById('done-count').textContent = n;
+}
+
+function restoreState() {
+  const cards = [...document.querySelectorAll('.q-card')];
+  doneSet.forEach(idx => {
+    if (cards[idx]) {
+      cards[idx].classList.add('done');
+      const box = cards[idx].querySelector('.check-box');
+      if (box) box.classList.add('checked');
+    }
+  });
+  updateProgress();
+}
+
+function filterUnit(unit, btn) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+
+  const searchInput = document.getElementById('search-input');
+  if (searchInput) searchInput.value = '';
+
+  document.querySelectorAll('.unit').forEach(u => {
+    if (unit === 'all') {
+      u.classList.remove('hidden');
+      u.querySelectorAll('.topic-group').forEach(tg => tg.classList.remove('hidden'));
+      u.querySelectorAll('.q-card').forEach(qc => qc.classList.remove('hidden'));
+      return;
+    }
+    if (unit === 'hot') {
+      const hotCards = u.querySelectorAll('.badge-hot, .badge-warm');
+      u.classList.toggle('hidden', hotCards.length === 0);
+      u.querySelectorAll('.topic-group').forEach(tg => {
+        const hasHot = tg.querySelectorAll('.badge-hot, .badge-warm').length > 0;
+        tg.classList.toggle('hidden', !hasHot);
+        tg.querySelectorAll('.q-card').forEach(qc => {
+          qc.classList.toggle('hidden', qc.querySelectorAll('.badge-hot, .badge-warm').length === 0);
+        });
+      });
+      return;
+    }
+    if (unit === 'num') {
+      const numCards = u.querySelectorAll('.badge-num');
+      u.classList.toggle('hidden', numCards.length === 0);
+      u.querySelectorAll('.topic-group').forEach(tg => {
+        const hasNum = tg.querySelectorAll('.badge-num').length > 0;
+        tg.classList.toggle('hidden', !hasNum);
+        tg.querySelectorAll('.q-card').forEach(qc => {
+          qc.classList.toggle('hidden', qc.querySelectorAll('.badge-num').length === 0);
+        });
+      });
+      return;
+    }
+    const match = u.dataset.unit === unit;
+    u.classList.toggle('hidden', !match);
+    if (match) {
+      u.querySelectorAll('.topic-group').forEach(tg => tg.classList.remove('hidden'));
+      u.querySelectorAll('.q-card').forEach(qc => qc.classList.remove('hidden'));
+    }
+  });
+  document.querySelector('.freq-table').style.display = (unit === 'all' || unit === 'hot' || unit === 'num') ? '' : 'none';
+}
+
+function handleSearch(query) {
+  const term = query.trim().toLowerCase();
+  const freqTable = document.querySelector('.freq-table');
+
+  if (!term) {
+    const activeTab = document.querySelector('.tab.active');
+    if (activeTab) activeTab.click();
+    return;
+  }
+
+  freqTable.style.display = 'none';
+
+  document.querySelectorAll('.unit').forEach(u => {
+    let unitHasMatch = false;
+    u.querySelectorAll('.topic-group').forEach(tg => {
+      let groupHasMatch = false;
+      tg.querySelectorAll('.q-card').forEach(qc => {
+        const text = qc.textContent.toLowerCase();
+        const matches = text.includes(term);
+        qc.classList.toggle('hidden', !matches);
+        if (matches) groupHasMatch = true;
+      });
+      tg.classList.toggle('hidden', !groupHasMatch);
+      if (groupHasMatch) unitHasMatch = true;
+    });
+    u.classList.toggle('hidden', !unitHasMatch);
+  });
+}
+
+restoreState();
 </script>
 </body>
 </html>
