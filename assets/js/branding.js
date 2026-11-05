@@ -1,22 +1,16 @@
 /**
  * CSE-Sem5-PrepHub — Unified Avatar & Branding System
  * 
- * Strict Configuration & Bug Fixes:
- * 1. Single Assistant Container (#prephub-assistant) prevents duplicate rendering.
- * 2. Homepage (index.html): Centered modal with avatar-home.png, auto-dismisses after exactly 3s.
- *    Manual close, CTA click, or user interaction cancels auto-dismissal. Minimized launcher allows reopening.
- * 3. Subject / Archive Pages: Compact bottom-left corner assistant (58-62px avatar + speech bubble).
- *    Configured per page:
- *      - index.html: avatar-home.png (Centered)
- *      - sem4index.html: avatar-explore.png (Bottom-left)
- *      - ml.html: avatar-thinking.png (Bottom-left)
- *      - toc.html: avatar-thinking.png (Bottom-left)
- *      - os.html: avatar-thinking.png (Bottom-left)
- *      - dbms.html / DBMS_QuestionBank_DBATU.html: avatar-thinking.png (Bottom-left)
- *      - wc.html: avatar-explore.png (Bottom-left)
- *      - cg.html: avatar-explore.png (Bottom-left)
- *      - About section: avatar-about.png (Bottom-left)
- *      - Motivation interaction: avatar-motivation.png (only when explicitly opened)
+ * Distinct Avatar Assignments per Subject/Page:
+ * - Homepage (index.html): avatar-home.png (Centered modal with 3s auto-dismiss & bottom-left launcher)
+ * - Machine Learning (ml.html): avatar-thinking.png (Bottom-left corner assistant)
+ * - Theory of Computation (toc.html): avatar-explore.png (Bottom-left corner assistant)
+ * - Operating Systems (os.html): avatar-motivation.png (Bottom-left corner assistant)
+ * - DBMS (dbms.html / DBMS_QuestionBank_DBATU.html): avatar-about.png (Bottom-left corner assistant)
+ * - Wireless Communication (wc.html): avatar-explore.png (Bottom-left corner assistant)
+ * - Computer Graphics (cg.html): avatar-thinking.png (Bottom-left corner assistant)
+ * - Semester 4 Archive (sem4index.html): avatar-explore.png (Bottom-left corner assistant)
+ * - About Section / Creator (#about): avatar-about.png (Bottom-left corner assistant)
  */
 
 (function () {
@@ -28,7 +22,7 @@
   }
   window.__prephub_assistant_initialized = true;
 
-  // ─── CENTRALIZED PAGE CONFIGURATIONS ───
+  // ─── CENTRALIZED PAGE CONFIGURATIONS (DISTINCT PER SUBJECT) ───
   var PAGE_CONFIGS = {
     index: {
       id: 'index',
@@ -70,30 +64,6 @@
         }
       }
     },
-    sem4: {
-      id: 'sem4',
-      style: 'corner',
-      defaultAvatar: 'assets/avatars/avatar-explore.png',
-      tag: 'SEM 4 ARCHIVE',
-      dialogue: "Exploring previous semester papers? Review Semester 4 PYQs to brush up core foundational concepts!",
-      tips: [
-        {
-          tag: 'SEM 4 ARCHIVE',
-          image: 'assets/avatars/avatar-explore.png',
-          dialogue: "Exploring previous semester papers? Review Semester 4 PYQs to brush up core foundational concepts!"
-        },
-        {
-          tag: 'EXAM STRATEGY',
-          image: 'assets/avatars/avatar-explore.png',
-          dialogue: "Compare previous semester patterns with your current syllabus to master repeated core topics."
-        },
-        {
-          tag: 'STUDY MOTIVATION',
-          image: 'assets/avatars/avatar-motivation.png',
-          dialogue: "Strong fundamentals build exceptional engineers. Keep exploring and master each concept! 🚀"
-        }
-      ]
-    },
     ml: {
       id: 'ml',
       style: 'corner',
@@ -108,7 +78,7 @@
         },
         {
           tag: 'EXAM STRATEGY',
-          image: 'assets/avatars/avatar-thinking.png',
+          image: 'assets/avatars/avatar-explore.png',
           dialogue: "Review mathematical formulations for Linear Regression, SVM margins, and Neural Network backpropagation."
         },
         {
@@ -121,13 +91,13 @@
     toc: {
       id: 'toc',
       style: 'corner',
-      defaultAvatar: 'assets/avatars/avatar-thinking.png',
+      defaultAvatar: 'assets/avatars/avatar-explore.png',
       tag: 'THEORY OF COMPUTATION PYQ',
       dialogue: "DFA/NFA conversions, pumping lemma proofs, and Turing Machine designs carry major marks. Practice these first!",
       tips: [
         {
           tag: 'THEORY OF COMPUTATION PYQ',
-          image: 'assets/avatars/avatar-thinking.png',
+          image: 'assets/avatars/avatar-explore.png',
           dialogue: "DFA/NFA conversions, pumping lemma proofs, and Turing Machine designs carry major marks. Practice these first!"
         },
         {
@@ -145,15 +115,14 @@
     os: {
       id: 'os',
       style: 'corner',
-      defaultAvatar: 'assets/avatars/avatar-thinking.png',
+      defaultAvatar: 'assets/avatars/avatar-motivation.png',
       tag: 'OPERATING SYSTEMS PYQ',
       dialogue: "Deadlock avoidance (Banker's Algorithm), CPU scheduling, and page replacement algorithms appear in almost every exam paper!",
       tips: [
         {
           tag: 'OPERATING SYSTEMS PYQ',
-          image: 'assets/avatars/avatar-thinking.png',
-          dialogue: "Deadlock avoidance (Banker's Algorithm), CPU scheduling, and page replacement algorithms appear in almost every exam paper!",
-          image: 'assets/avatars/avatar-thinking.png'
+          image: 'assets/avatars/avatar-motivation.png',
+          dialogue: "Deadlock avoidance (Banker's Algorithm), CPU scheduling, and page replacement algorithms appear in almost every exam paper!"
         },
         {
           tag: 'EXAM STRATEGY',
@@ -162,7 +131,7 @@
         },
         {
           tag: 'STUDY MOTIVATION',
-          image: 'assets/avatars/avatar-motivation.png',
+          image: 'assets/avatars/avatar-explore.png',
           dialogue: "Consistent daily revision turns challenging concepts into easy exam wins. You've got this! 🚀"
         }
       ]
@@ -170,13 +139,13 @@
     dbms: {
       id: 'dbms',
       style: 'corner',
-      defaultAvatar: 'assets/avatars/avatar-thinking.png',
+      defaultAvatar: 'assets/avatars/avatar-about.png',
       tag: 'DBMS EXAM STRATEGY',
       dialogue: "Master Normalization (1NF to BCNF), ER modeling, and ACID transactions—they are guaranteed high-weightage questions!",
       tips: [
         {
           tag: 'DBMS EXAM STRATEGY',
-          image: 'assets/avatars/avatar-thinking.png',
+          image: 'assets/avatars/avatar-about.png',
           dialogue: "Master Normalization (1NF to BCNF), ER modeling, and ACID transactions—they are guaranteed high-weightage questions!"
         },
         {
@@ -213,19 +182,38 @@
     cg: {
       id: 'cg',
       style: 'corner',
-      defaultAvatar: 'assets/avatars/avatar-explore.png',
+      defaultAvatar: 'assets/avatars/avatar-thinking.png',
       tag: 'COMPUTER GRAPHICS',
       dialogue: "Explore Bresenham's algorithms, 2D/3D transformations, and polygon clipping. Complete question bank coming soon!",
       tips: [
         {
           tag: 'COMPUTER GRAPHICS',
-          image: 'assets/avatars/avatar-explore.png',
+          image: 'assets/avatars/avatar-thinking.png',
           dialogue: "Explore Bresenham's algorithms, 2D/3D transformations, and polygon clipping. Complete question bank coming soon!"
         },
         {
           tag: 'STUDY MOTIVATION',
           image: 'assets/avatars/avatar-motivation.png',
           dialogue: "Visualize each algorithm step by step. Great preparation leads to great performance! 🚀"
+        }
+      ]
+    },
+    sem4: {
+      id: 'sem4',
+      style: 'corner',
+      defaultAvatar: 'assets/avatars/avatar-explore.png',
+      tag: 'SEM 4 ARCHIVE',
+      dialogue: "Exploring previous semester papers? Review Semester 4 PYQs to brush up core foundational concepts!",
+      tips: [
+        {
+          tag: 'SEM 4 ARCHIVE',
+          image: 'assets/avatars/avatar-explore.png',
+          dialogue: "Exploring previous semester papers? Review Semester 4 PYQs to brush up core foundational concepts!"
+        },
+        {
+          tag: 'STUDY MOTIVATION',
+          image: 'assets/avatars/avatar-motivation.png',
+          dialogue: "Strong fundamentals build exceptional engineers. Keep exploring and master each concept! 🚀"
         }
       ]
     },
@@ -254,31 +242,32 @@
   function detectPageKey() {
     var path = (window.location.pathname || '').toLowerCase();
     var hash = (window.location.hash || '').toLowerCase();
+    var title = (document.title || '').toLowerCase();
     var file = path.substring(path.lastIndexOf('/') + 1);
 
     if (hash === '#about') {
       return 'about';
     }
-    if (file === 'sem4index.html' || path.indexOf('sem4index') !== -1) {
-      return 'sem4';
-    }
-    if (file === 'ml.html' || path.indexOf('ml.html') !== -1) {
+    if (file === 'ml.html' || path.indexOf('/ml') !== -1 || title.indexOf('machine learning') !== -1) {
       return 'ml';
     }
-    if (file === 'toc.html' || path.indexOf('toc.html') !== -1) {
+    if (file === 'toc.html' || path.indexOf('/toc') !== -1 || title.indexOf('theory of computation') !== -1) {
       return 'toc';
     }
-    if (file === 'os.html' || path.indexOf('os.html') !== -1) {
+    if (file === 'os.html' || path.indexOf('/os') !== -1 || title.indexOf('operating systems') !== -1) {
       return 'os';
     }
-    if (file === 'dbms.html' || file === 'dbms_questionbank_dbatu.html' || path.indexOf('dbms') !== -1) {
+    if (file === 'dbms.html' || file === 'dbms_questionbank_dbatu.html' || path.indexOf('dbms') !== -1 || title.indexOf('database management') !== -1) {
       return 'dbms';
     }
-    if (file === 'wc.html' || path.indexOf('wc.html') !== -1) {
+    if (file === 'wc.html' || path.indexOf('wc.html') !== -1 || title.indexOf('wireless communication') !== -1) {
       return 'wc';
     }
-    if (file === 'cg.html' || path.indexOf('cg.html') !== -1) {
+    if (file === 'cg.html' || path.indexOf('cg.html') !== -1 || title.indexOf('computer graphics') !== -1) {
       return 'cg';
+    }
+    if (file === 'sem4index.html' || path.indexOf('sem4') !== -1 || title.indexOf('semester 4') !== -1) {
+      return 'sem4';
     }
     if (file === '' || file === 'index.html' || path.endsWith('/')) {
       return 'index';
@@ -302,7 +291,6 @@
   // 1. HOMEPAGE SYSTEM — CENTER MODAL (index.html)
   // ═══════════════════════════════════════════════════════════════════
   function setupHomepageAssistant(container, config) {
-    // Avoid duplicate markup inside the root
     container.innerHTML = '';
 
     var currentStateKey = 'home';
@@ -482,7 +470,6 @@
     // Auto-display on first visit of current session, exactly 3s timeout
     var hasShown = sessionStorage.getItem('prephub_modal_shown_home');
     if (!hasShown) {
-      // Small graceful entrance delay before starting 3s timer
       setTimeout(function () {
         openModal('home', true);
       }, 400);
@@ -494,7 +481,6 @@
       var observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            // When user scrolls down to About section, adapt launcher
             if (launcherThumb) launcherThumb.src = states.about.image;
             launcher.title = 'About Roshan Bhadane 👤';
           } else {
@@ -558,6 +544,11 @@
     var msgEl = document.getElementById('corner-bubble-message');
     var imgEl = document.getElementById('corner-avatar-img');
 
+    // Ensure the circular avatar image is explicitly set to page's default avatar
+    if (imgEl && config.defaultAvatar) {
+      imgEl.src = config.defaultAvatar;
+    }
+
     function renderTip(idx) {
       var item = tips[idx] || tips[0];
       if (tagEl) tagEl.textContent = item.tag;
@@ -600,7 +591,7 @@
         currentTipIdx = 0;
         showBubble(5000);
       } else {
-        // Cycle to next tip (which includes motivation with avatar-motivation.png)
+        // Cycle to next tip
         currentTipIdx = (currentTipIdx + 1) % tips.length;
         renderTip(currentTipIdx);
         // Extend visibility when cycling
