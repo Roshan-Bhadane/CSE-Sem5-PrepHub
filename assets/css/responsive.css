@@ -1,0 +1,518 @@
+/* ═══════════════════════════════════════════════════════════════════
+   CSE-Sem5-PrepHub — Master Responsive Optimization Stylesheet
+   Covers breakpoints:
+     - Extra Small Mobile : 320px – 374px (iPhone SE, small devices)
+     - Standard Mobile    : 375px – 480px (iPhone 12/13/14, Pixel, Galaxy)
+     - Large Mobile       : 481px – 767px (Large phones, mini tablets)
+     - Tablet             : 768px – 1024px (iPad, Android tablets, iPad Air)
+     - Laptop             : 1025px – 1440px (13" & 15" laptops, 1366px displays)
+     - Large Desktop      : 1441px+ (1080p Full HD 1920px, 2K/4K monitors)
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── 1. GLOBAL VIEWPORT & OVERFLOW CONSTRAINTS ─── */
+html,
+body {
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+svg,
+video,
+canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ─── 2. REUSABLE CONTAINER WIDTH CONSTRAINTS ─── */
+.nav-bar-inner,
+.header-inner,
+.controls-bar,
+.freq-table,
+.unit,
+.wrap,
+.footer-container {
+  width: 100% !important;
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Homepage wider container for 3-card grid */
+.container {
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* ─── 3. NAVIGATION BAR RESPONSIVENESS ─── */
+.nav-bar {
+  width: 100% !important;
+  max-width: 100vw !important;
+  box-sizing: border-box;
+  padding: 8px clamp(12px, 3vw, 24px) !important;
+}
+
+.nav-bar-inner {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  width: 100% !important;
+}
+
+.nav-label {
+  flex-shrink: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted, #6b7280);
+  white-space: nowrap;
+}
+
+.nav-btn {
+  flex-shrink: 0;
+  white-space: nowrap;
+  font-size: 12px !important;
+  padding: 5px 12px !important;
+}
+
+.theme-toggle {
+  flex-shrink: 0;
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+/* ─── 4. HERO SECTION & HEADER ─── */
+header {
+  width: 100% !important;
+  box-sizing: border-box;
+  padding: clamp(1.25rem, 3.5vw, 2rem) clamp(1rem, 3.5vw, 1.5rem) !important;
+}
+
+.header-top h1,
+h1 {
+  font-size: clamp(1.35rem, 4.5vw, 1.85rem) !important;
+  line-height: 1.25 !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.course-badge {
+  font-size: clamp(10px, 2.5vw, 11px) !important;
+  white-space: normal !important;
+  word-break: break-word;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.header-meta {
+  font-size: clamp(11px, 2.6vw, 12.5px) !important;
+  line-height: 1.45 !important;
+  word-break: break-word;
+}
+
+/* Stats Pill Badges */
+.stats {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin-top: 14px !important;
+  width: 100% !important;
+}
+
+.stat {
+  box-sizing: border-box;
+  font-size: clamp(11px, 2.5vw, 12px) !important;
+  padding: 6px 12px !important;
+  white-space: nowrap;
+}
+
+/* ─── 5. CONTROLS BAR & UNIT FILTER TABS ─── */
+.controls-bar {
+  width: 100% !important;
+  box-sizing: border-box;
+  padding: 1rem clamp(1rem, 3.5vw, 1.5rem) 0 !important;
+}
+
+.filter-bar {
+  display: flex !important;
+  gap: 6px !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.tab {
+  flex-shrink: 0;
+  font-size: 12px !important;
+  padding: 6px 13px !important;
+  white-space: nowrap;
+  touch-action: manipulation;
+}
+
+.search-box {
+  width: 100% !important;
+}
+
+.search-box input,
+.search-input {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  font-size: 13.5px !important;
+}
+
+/* ─── 6. FREQUENCY TABLES (NO HORIZONTAL SPILLOVER) ─── */
+main {
+  width: 100% !important;
+  box-sizing: border-box;
+  padding-left: clamp(1rem, 3.5vw, 1.5rem) !important;
+  padding-right: clamp(1rem, 3.5vw, 1.5rem) !important;
+  padding-bottom: 95px !important; /* Safety cushion for floating progress & avatar widgets */
+}
+
+.freq-table {
+  width: 100% !important;
+  box-sizing: border-box;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  border-radius: 12px !important;
+  margin-bottom: 2rem !important;
+}
+
+.freq-table table {
+  width: 100% !important;
+  min-width: 540px !important; /* Table scrolls gracefully inside its own card container */
+  border-collapse: collapse !important;
+}
+
+.freq-table th,
+.freq-table td {
+  padding: 10px 12px !important;
+  font-size: 12.5px !important;
+}
+
+/* ─── 7. QUESTION CARDS & TOPIC GROUPS ─── */
+.unit {
+  width: 100% !important;
+  box-sizing: border-box;
+  margin-bottom: 2.25rem !important;
+}
+
+.unit-header {
+  box-sizing: border-box;
+  padding: clamp(10px, 3vw, 14px) clamp(12px, 3vw, 16px) !important;
+}
+
+.unit-title {
+  font-size: clamp(14px, 3.8vw, 17px) !important;
+  line-height: 1.3 !important;
+}
+
+.unit-sub {
+  font-size: clamp(11px, 2.8vw, 12px) !important;
+}
+
+.q-card {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  gap: clamp(8px, 2.5vw, 14px) !important;
+  padding: clamp(10px, 2.5vw, 14px) clamp(10px, 2.5vw, 16px) !important;
+}
+
+.q-body {
+  min-width: 0 !important;
+  flex: 1 !important;
+}
+
+.q-text {
+  font-size: clamp(13px, 2.9vw, 14.5px) !important;
+  line-height: 1.55 !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+.q-meta {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 5px !important;
+  align-items: center !important;
+}
+
+.badge {
+  font-size: clamp(10px, 2.3vw, 11px) !important;
+  padding: 2px 7px !important;
+  white-space: normal !important;
+  word-break: break-word !important;
+}
+
+/* ─── 8. FLOATING PROGRESS WIDGET ─── */
+.progress-wrap {
+  box-sizing: border-box;
+  z-index: 990 !important;
+}
+
+/* ─── 9. HOMEPAGE PORTALS & ABOUT SECTION ─── */
+.portals-grid {
+  display: grid;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+.portal-card {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.about-section {
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.about-grid {
+  display: grid;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─── TABLET & MOBILE (< 1024px) ─── */
+@media (max-width: 1024px) {
+  .portals-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.25rem !important;
+  }
+}
+
+/* ─── MOBILE PHONES & TABLETS (< 768px) ─── */
+@media (max-width: 767px) {
+  /* Navbar: Smooth touch-scrollable pill track */
+  .nav-bar-inner {
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    padding-bottom: 2px !important;
+  }
+
+  .nav-bar-inner::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .nav-label {
+    font-size: 11px !important;
+    padding-right: 4px;
+  }
+
+  .nav-btn {
+    padding: 5px 10px !important;
+    font-size: 11.5px !important;
+  }
+
+  .theme-toggle {
+    padding: 5px 10px !important;
+    font-size: 11.5px !important;
+  }
+
+  /* Unit Filter Bar: Smooth touch-scrollable track */
+  .filter-bar {
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+    padding-bottom: 6px !important;
+  }
+
+  .filter-bar::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .tab {
+    padding: 5px 11px !important;
+    font-size: 11.5px !important;
+  }
+
+  /* Unit Header: Wrap gracefully */
+  .unit-header {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+
+  .unit-hrs {
+    margin-left: auto;
+    font-size: 11px !important;
+  }
+
+  /* Homepage single column cards */
+  .portals-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* About section stacked */
+  .about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 2rem !important;
+  }
+
+  .about-visual-column {
+    margin: 0 auto;
+    max-width: 260px;
+  }
+
+  /* Compact progress widget */
+  .progress-wrap {
+    bottom: 14px !important;
+    right: 14px !important;
+    padding: 8px 12px !important;
+    min-width: 125px !important;
+    font-size: 11px !important;
+  }
+
+  .progress-wrap #pct {
+    font-size: 11.5px !important;
+  }
+
+  .progress-wrap #psub {
+    font-size: 9.5px !important;
+  }
+
+  /* Corner Assistant */
+  .prephub-corner-widget {
+    bottom: 14px !important;
+    left: 14px !important;
+  }
+
+  .corner-avatar-btn {
+    width: 52px !important;
+    height: 52px !important;
+  }
+
+  .corner-speech-bubble {
+    width: calc(100vw - 28px) !important;
+    max-width: 320px !important;
+    bottom: 66px !important;
+    left: 0 !important;
+    padding: 12px 14px !important;
+  }
+
+  /* Stats cards in hero */
+  .stats .stat {
+    flex: 1 1 calc(50% - 6px) !important;
+    min-width: 125px !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+
+  /* Footer on mobile */
+  .footer-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.75rem !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 8px !important;
+    text-align: center !important;
+  }
+}
+
+/* ─── EXTRA SMALL MOBILE (< 375px: iPhone SE, 320px) ─── */
+@media (max-width: 374px) {
+  header,
+  .controls-bar,
+  main {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  .stats .stat {
+    flex: 1 1 100% !important;
+    min-width: 100% !important;
+  }
+
+  .q-card {
+    padding: 8px 10px !important;
+    gap: 8px !important;
+  }
+
+  .q-num {
+    min-width: 24px !important;
+    font-size: 11px !important;
+  }
+
+  .check-box {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .progress-wrap {
+    bottom: 10px !important;
+    right: 10px !important;
+    padding: 6px 10px !important;
+    min-width: 110px !important;
+  }
+
+  .prephub-corner-widget {
+    bottom: 10px !important;
+    left: 10px !important;
+  }
+
+  .corner-avatar-btn {
+    width: 46px !important;
+    height: 46px !important;
+  }
+
+  .corner-speech-bubble {
+    width: calc(100vw - 20px) !important;
+    max-width: 295px !important;
+    bottom: 58px !important;
+    font-size: 11.5px !important;
+    padding: 10px 12px !important;
+  }
+
+  .prephub-center-modal {
+    max-width: 95vw !important;
+  }
+
+  .prephub-character-stage {
+    height: 170px !important;
+  }
+
+  .prephub-dialogue-text {
+    font-size: 12.5px !important;
+  }
+}
+
+/* ─── LARGE DESKTOP (1441px+) ─── */
+@media (min-width: 1441px) {
+  .nav-bar-inner,
+  .header-inner,
+  .controls-bar,
+  .freq-table,
+  .unit,
+  .wrap,
+  .footer-container {
+    max-width: 960px !important;
+  }
+
+  .container {
+    max-width: 1200px !important;
+  }
+}

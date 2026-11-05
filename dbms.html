@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DBMS Question Bank – DBATU</title>
+<title>Database Management Systems (DBMS) — DBATU PYQ ExamHub</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/branding.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
 <style>
   :root {
     --bg: #0e0f11;
@@ -17,8 +18,8 @@
     --muted: #6b7280;
     --faint: #3a3d47;
 
-    --primary: #38bdf8;
-    --primary-glow: rgba(56, 189, 248, 0.15);
+    --primary: #f472b6;
+    --primary-glow: rgba(244, 114, 182, 0.15);
 
     --u1: #38bdf8; --u1d: #082f49;
     --u2: #a78bfa; --u2d: #1e1530;
@@ -81,7 +82,7 @@
   }
   .nav-btn:hover { background: var(--faint); color: var(--text); border-color: var(--primary); }
   .nav-btn.active {
-    background: var(--u1d);
+    background: var(--u5d);
     color: var(--primary);
     border-color: var(--primary);
   }
@@ -94,36 +95,6 @@
     background: color-mix(in srgb, #fbbf24 20%, transparent);
     color: var(--text);
     border-color: #fbbf24;
-  }
-  .nav-btn.go-daa {
-    background: color-mix(in srgb, #a78bfa 10%, transparent);
-    color: #a78bfa;
-    border-color: color-mix(in srgb, #a78bfa 40%, transparent);
-  }
-  .nav-btn.go-daa:hover {
-    background: color-mix(in srgb, #a78bfa 20%, transparent);
-    color: var(--text);
-    border-color: #a78bfa;
-  }
-  .nav-btn.go-adc {
-    background: color-mix(in srgb, #34d399 10%, transparent);
-    color: #34d399;
-    border-color: color-mix(in srgb, #34d399 40%, transparent);
-  }
-  .nav-btn.go-adc:hover {
-    background: color-mix(in srgb, #34d399 20%, transparent);
-    color: var(--text);
-    border-color: #34d399;
-  }
-  .nav-btn.go-cao {
-    background: color-mix(in srgb, #f472b6 10%, transparent);
-    color: #f472b6;
-    border-color: color-mix(in srgb, #f472b6 40%, transparent);
-  }
-  .nav-btn.go-cao:hover {
-    background: color-mix(in srgb, #f472b6 20%, transparent);
-    color: var(--text);
-    border-color: #f472b6;
   }
 
   /* ─── HEADER ─── */
@@ -541,16 +512,17 @@
   <div class="header-inner">
     <div class="header-top">
       <div>
-        <div class="course-badge">BTCOC501 · BTAIC402 · BTECPC402 · DBATU</div>
-        <h1>Database Management <span>Systems</span></h1>
-        <div class="header-meta">PYQ Bank · 11 Exam Papers Analyzed · Summer 2023, Winter 2023, Summer 2022, Winter 2022, Winter 2019 &amp; Prelims</div>
+        <span class="course-badge">BTCOC501 · DATABASE MANAGEMENT SYSTEMS</span>
+        <h1>Database Management <span>Systems</span> Question Bank</h1>
+        <div class="header-meta">DBATU B.Tech CSE · Semester V · 11 Exam Papers Analyzed (2019–2024)</div>
       </div>
     </div>
     <div class="stats">
-      <div class="stat"><strong id="total-q">92</strong> long-answer Qs</div>
-      <div class="stat"><strong>5</strong> units</div>
-      <div class="stat"><strong>11</strong> exam papers</div>
-      <div class="stat"><strong id="done-count">0</strong> done</div>
+      <div class="stat"><strong id="total-q">92</strong> Unique Questions</div>
+      <div class="stat"><strong>5</strong> Units</div>
+      <div class="stat"><strong>11</strong> Exam Papers</div>
+      <div class="stat"><strong>32</strong> Recurring (🔥)</div>
+      <div class="stat"><strong id="done-count">0</strong> Completed</div>
     </div>
   </div>
 </header>
@@ -558,13 +530,13 @@
 <!-- ─── CONTROLS BAR ─── -->
 <div class="controls-bar">
   <div class="filter-bar">
-    <button class="tab active" onclick="filterUnit('all', this)">All Units</button>
-    <button class="tab" onclick="filterUnit('1', this)" style="--uc:var(--u1)">Unit 1</button>
-    <button class="tab" onclick="filterUnit('2', this)" style="--uc:var(--u2)">Unit 2</button>
-    <button class="tab" onclick="filterUnit('3', this)" style="--uc:var(--u3)">Unit 3</button>
-    <button class="tab" onclick="filterUnit('4', this)" style="--uc:var(--u4)">Unit 4</button>
-    <button class="tab" onclick="filterUnit('5', this)" style="--uc:var(--u5)">Unit 5</button>
-    <button class="tab" onclick="filterUnit('hot', this)">🔥 High Freq Only</button>
+    <button class="tab active" onclick="filterUnit('all', this)">All (92)</button>
+    <button class="tab" onclick="filterUnit('1', this)">Unit 1 (26)</button>
+    <button class="tab" onclick="filterUnit('2', this)">Unit 2 (12)</button>
+    <button class="tab" onclick="filterUnit('3', this)">Unit 3 (24)</button>
+    <button class="tab" onclick="filterUnit('4', this)">Unit 4 (11)</button>
+    <button class="tab" onclick="filterUnit('5', this)">Unit 5 (19)</button>
+    <button class="tab" onclick="filterUnit('hot', this)">🔥 High Freq (32)</button>
   </div>
   <div class="search-box">
     <span class="search-icon">🔍</span>
@@ -1956,13 +1928,13 @@ function filterUnit(unit, btn) {
       return; 
     }
     if (unit === 'hot') {
-      const hotCards = u.querySelectorAll('.badge-hot');
+      const hotCards = u.querySelectorAll('.badge-hot, .badge-warm');
       u.classList.toggle('hidden', hotCards.length === 0);
       u.querySelectorAll('.topic-group').forEach(tg => {
-        const hasHot = tg.querySelectorAll('.badge-hot').length > 0;
+        const hasHot = tg.querySelectorAll('.badge-hot, .badge-warm').length > 0;
         tg.classList.toggle('hidden', !hasHot);
         tg.querySelectorAll('.q-card').forEach(qc => {
-          qc.classList.toggle('hidden', qc.querySelectorAll('.badge-hot').length === 0);
+          qc.classList.toggle('hidden', qc.querySelectorAll('.badge-hot, .badge-warm').length === 0);
         });
       });
       return;
