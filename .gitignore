@@ -1,4 +1,21 @@
-# Temporary wrapper for agent environment
-powershell.cmd
+# OS generated files
 .DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
+
+# Editor & IDE directories
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files & testing logs
+*.log
+powershell.cmd
+scratch/
+node_modules/
