@@ -13,7 +13,15 @@
 }
 
 /* ═══════════════════════════════════════════════════════════════════
-   1. HOMEPAGE ONLY — CENTER-FOCUSED CHARACTER MODAL
+   1. SINGLE ASSISTANT ROOT CONTAINER
+   ═══════════════════════════════════════════════════════════════════ */
+
+#prephub-assistant {
+  display: contents;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   HOMEPAGE ONLY — CENTER-FOCUSED CHARACTER MODAL
    ═══════════════════════════════════════════════════════════════════ */
 
 .prephub-modal-backdrop {

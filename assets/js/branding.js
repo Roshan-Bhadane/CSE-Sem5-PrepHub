@@ -1,97 +1,323 @@
 /**
- * CSE-Sem5-PrepHub — Dual Avatar Interaction & Branding System
+ * CSE-Sem5-PrepHub — Unified Avatar & Branding System
  * 
- * 1. Homepage (index.html):
- *    - Prominent, center-focused personal study assistant with backdrop overlay.
- *    - Large character image (avatar-home.png).
- *    - Interactive state pills (Welcome, Strategy, Explore, Motivation, Creator).
- *    - Minimized launcher in bottom-left for instant reopening.
- * 
- * 2. All Other Pages (ml.html, toc.html, os.html, dbms.html, wc.html, cg.html, sem4index.html):
- *    - Compact corner speech bubble & circular avatar in bottom-left.
- *    - Exam strategy / subject-focused dialogues (avatar-thinking.png, avatar-explore.png, etc.).
- *    - Smooth appearance, auto-dismiss, and click-to-cycle interactivity.
- *    - Zero collision with the bottom-right progress widget.
+ * Strict Configuration & Bug Fixes:
+ * 1. Single Assistant Container (#prephub-assistant) prevents duplicate rendering.
+ * 2. Homepage (index.html): Centered modal with avatar-home.png, auto-dismisses after exactly 3s.
+ *    Manual close, CTA click, or user interaction cancels auto-dismissal. Minimized launcher allows reopening.
+ * 3. Subject / Archive Pages: Compact bottom-left corner assistant (58-62px avatar + speech bubble).
+ *    Configured per page:
+ *      - index.html: avatar-home.png (Centered)
+ *      - sem4index.html: avatar-explore.png (Bottom-left)
+ *      - ml.html: avatar-thinking.png (Bottom-left)
+ *      - toc.html: avatar-thinking.png (Bottom-left)
+ *      - os.html: avatar-thinking.png (Bottom-left)
+ *      - dbms.html / DBMS_QuestionBank_DBATU.html: avatar-thinking.png (Bottom-left)
+ *      - wc.html: avatar-explore.png (Bottom-left)
+ *      - cg.html: avatar-explore.png (Bottom-left)
+ *      - About section: avatar-about.png (Bottom-left)
+ *      - Motivation interaction: avatar-motivation.png (only when explicitly opened)
  */
 
 (function () {
   'use strict';
 
-  // ─── DIALOGUE & ASSET DEFINITIONS ───
-  var STATES = {
-    home: {
-      id: 'home',
-      name: 'Welcome',
+  // Prevent multiple executions / duplicate initializations across script loads
+  if (window.__prephub_assistant_initialized) {
+    return;
+  }
+  window.__prephub_assistant_initialized = true;
+
+  // ─── CENTRALIZED PAGE CONFIGURATIONS ───
+  var PAGE_CONFIGS = {
+    index: {
+      id: 'index',
+      style: 'centered',
+      defaultAvatar: 'assets/avatars/avatar-home.png',
       tag: 'PREPHUB STUDY ASSISTANT',
-      image: 'assets/avatars/avatar-home.png',
       dialogue: "Hey, future engineer! 👋 Welcome to PrepHub. Your next exam preparation starts here. Let's make every question count!",
-      ctaText: "Let's Prepare 🚀"
+      ctaText: "Let's Prepare 🚀",
+      states: {
+        home: {
+          tag: 'PREPHUB STUDY ASSISTANT',
+          image: 'assets/avatars/avatar-home.png',
+          dialogue: "Hey, future engineer! 👋 Welcome to PrepHub. Your next exam preparation starts here. Let's make every question count!",
+          ctaText: "Let's Prepare 🚀"
+        },
+        thinking: {
+          tag: 'EXAM STRATEGY',
+          image: 'assets/avatars/avatar-thinking.png',
+          dialogue: "Not every question is equally important. Let's focus on frequently repeated topics and prepare smarter, not harder!",
+          ctaText: "Got it! 🎯"
+        },
+        explore: {
+          tag: 'SUBJECT EXPLORATION',
+          image: 'assets/avatars/avatar-explore.png',
+          dialogue: "Not sure where to start? Explore your subjects, check important PYQs, and discover the topics that matter most!",
+          ctaText: "Explore PYQs 📚"
+        },
+        motivation: {
+          tag: 'STUDY MOTIVATION',
+          image: 'assets/avatars/avatar-motivation.png',
+          dialogue: "One question at a time, one concept at a time. Stay consistent, track your progress, and trust your preparation! 🚀",
+          ctaText: "Stay Consistent 💪"
+        },
+        about: {
+          tag: 'MEET THE CREATOR',
+          image: 'assets/avatars/avatar-about.png',
+          dialogue: "Hey! I'm Roshan, the creator of PrepHub. I built this platform to help DBATU CSE students prepare smarter using previous-year question papers and exam insights.",
+          ctaText: "Behind PrepHub 👤"
+        }
+      }
     },
-    thinking: {
-      id: 'thinking',
-      name: 'Strategy',
-      tag: 'EXAM STRATEGY',
-      image: 'assets/avatars/avatar-thinking.png',
-      dialogue: "Not every question is equally important. Let's focus on frequently repeated topics and prepare smarter, not harder!",
-      ctaText: "Got it! 🎯"
+    sem4: {
+      id: 'sem4',
+      style: 'corner',
+      defaultAvatar: 'assets/avatars/avatar-explore.png',
+      tag: 'SEM 4 ARCHIVE',
+      dialogue: "Exploring previous semester papers? Review Semester 4 PYQs to brush up core foundational concepts!",
+      tips: [
+        {
+          tag: 'SEM 4 ARCHIVE',
+          image: 'assets/avatars/avatar-explore.png',
+          dialogue: "Exploring previous semester papers? Review Semester 4 PYQs to brush up core foundational concepts!"
+        },
+        {
+          tag: 'EXAM STRATEGY',
+          image: 'assets/avatars/avatar-explore.png',
+          dialogue: "Compare previous semester patterns with your current syllabus to master repeated core topics."
+        },
+        {
+          tag: 'STUDY MOTIVATION',
+          image: 'assets/avatars/avatar-motivation.png',
+          dialogue: "Strong fundamentals build exceptional engineers. Keep exploring and master each concept! 🚀"
+        }
+      ]
     },
-    explore: {
-      id: 'explore',
-      name: 'Explore',
-      tag: 'SUBJECT EXPLORATION',
-      image: 'assets/avatars/avatar-explore.png',
-      dialogue: "Not sure where to start? Explore your subjects, check important PYQs, and discover the topics that matter most!",
-      ctaText: "Explore PYQs 📚"
+    ml: {
+      id: 'ml',
+      style: 'corner',
+      defaultAvatar: 'assets/avatars/avatar-thinking.png',
+      tag: 'MACHINE LEARNING PYQ',
+      dialogue: "Focus heavily on Supervised Learning algorithms, loss functions, and evaluation metrics. These recur every year!",
+      tips: [
+        {
+          tag: 'MACHINE LEARNING PYQ',
+          image: 'assets/avatars/avatar-thinking.png',
+          dialogue: "Focus heavily on Supervised Learning algorithms, loss functions, and evaluation metrics. These recur every year!"
+        },
+        {
+          tag: 'EXAM STRATEGY',
+          image: 'assets/avatars/avatar-thinking.png',
+          dialogue: "Review mathematical formulations for Linear Regression, SVM margins, and Neural Network backpropagation."
+        },
+        {
+          tag: 'STUDY MOTIVATION',
+          image: 'assets/avatars/avatar-motivation.png',
+          dialogue: "One question at a time, one concept at a time. Stay consistent, track your progress, and trust your preparation! 🚀"
+        }
+      ]
     },
-    motivation: {
-      id: 'motivation',
-      name: 'Motivation',
-      tag: 'STUDY MOTIVATION',
-      image: 'assets/avatars/avatar-motivation.png',
-      dialogue: "One question at a time, one concept at a time. Stay consistent, track your progress, and trust your preparation! 🚀",
-      ctaText: "Stay Consistent 💪"
+    toc: {
+      id: 'toc',
+      style: 'corner',
+      defaultAvatar: 'assets/avatars/avatar-thinking.png',
+      tag: 'THEORY OF COMPUTATION PYQ',
+      dialogue: "DFA/NFA conversions, pumping lemma proofs, and Turing Machine designs carry major marks. Practice these first!",
+      tips: [
+        {
+          tag: 'THEORY OF COMPUTATION PYQ',
+          image: 'assets/avatars/avatar-thinking.png',
+          dialogue: "DFA/NFA conversions, pumping lemma proofs, and Turing Machine designs carry major marks. Practice these first!"
+        },
+        {
+          tag: 'EXAM STRATEGY',
+          image: 'assets/avatars/avatar-thinking.png',
+          dialogue: "Draw neat state transition diagrams and define 5-tuples and 7-tuples precisely for full marks."
+        },
+        {
+          tag: 'STUDY MOTIVATION',
+          image: 'assets/avatars/avatar-motivation.png',
+          dialogue: "TOC looks abstract until you solve it step by step. Stay patient and conquer every automata! 🚀"
+        }
+      ]
+    },
+    os: {
+      id: 'os',
+      style: 'corner',
+      defaultAvatar: 'assets/avatars/avatar-thinking.png',
+      tag: 'OPERATING SYSTEMS PYQ',
+      dialogue: "Deadlock avoidance (Banker's Algorithm), CPU scheduling, and page replacement algorithms appear in almost every exam paper!",
+      tips: [
+        {
+          tag: 'OPERATING SYSTEMS PYQ',
+          image: 'assets/avatars/avatar-thinking.png',
+          dialogue: "Deadlock avoidance (Banker's Algorithm), CPU scheduling, and page replacement algorithms appear in almost every exam paper!",
+          image: 'assets/avatars/avatar-thinking.png'
+        },
+        {
+          tag: 'EXAM STRATEGY',
+          image: 'assets/avatars/avatar-thinking.png',
+          dialogue: "Practice Gantt charts and numerical calculations for turnaround/waiting time—they are guaranteed points."
+        },
+        {
+          tag: 'STUDY MOTIVATION',
+          image: 'assets/avatars/avatar-motivation.png',
+          dialogue: "Consistent daily revision turns challenging concepts into easy exam wins. You've got this! 🚀"
+        }
+      ]
+    },
+    dbms: {
+      id: 'dbms',
+      style: 'corner',
+      defaultAvatar: 'assets/avatars/avatar-thinking.png',
+      tag: 'DBMS EXAM STRATEGY',
+      dialogue: "Master Normalization (1NF to BCNF), ER modeling, and ACID transactions—they are guaranteed high-weightage questions!",
+      tips: [
+        {
+          tag: 'DBMS EXAM STRATEGY',
+          image: 'assets/avatars/avatar-thinking.png',
+          dialogue: "Master Normalization (1NF to BCNF), ER modeling, and ACID transactions—they are guaranteed high-weightage questions!"
+        },
+        {
+          tag: 'EXAM STRATEGY',
+          image: 'assets/avatars/avatar-thinking.png',
+          dialogue: "Practice relational algebra expressions, SQL joins, and conflict serializability testing."
+        },
+        {
+          tag: 'STUDY MOTIVATION',
+          image: 'assets/avatars/avatar-motivation.png',
+          dialogue: "Focus on understanding core concepts rather than memorizing. Excellence will follow! 🚀"
+        }
+      ]
+    },
+    wc: {
+      id: 'wc',
+      style: 'corner',
+      defaultAvatar: 'assets/avatars/avatar-explore.png',
+      tag: 'WIRELESS COMMUNICATION',
+      dialogue: "Explore frequency reuse, cellular system capacity, and handoff strategies. PYQ analysis coming soon!",
+      tips: [
+        {
+          tag: 'WIRELESS COMMUNICATION',
+          image: 'assets/avatars/avatar-explore.png',
+          dialogue: "Explore frequency reuse, cellular system capacity, and handoff strategies. PYQ analysis coming soon!"
+        },
+        {
+          tag: 'STUDY MOTIVATION',
+          image: 'assets/avatars/avatar-motivation.png',
+          dialogue: "Broaden your engineering horizons. Stay curious, stay motivated! 🚀"
+        }
+      ]
+    },
+    cg: {
+      id: 'cg',
+      style: 'corner',
+      defaultAvatar: 'assets/avatars/avatar-explore.png',
+      tag: 'COMPUTER GRAPHICS',
+      dialogue: "Explore Bresenham's algorithms, 2D/3D transformations, and polygon clipping. Complete question bank coming soon!",
+      tips: [
+        {
+          tag: 'COMPUTER GRAPHICS',
+          image: 'assets/avatars/avatar-explore.png',
+          dialogue: "Explore Bresenham's algorithms, 2D/3D transformations, and polygon clipping. Complete question bank coming soon!"
+        },
+        {
+          tag: 'STUDY MOTIVATION',
+          image: 'assets/avatars/avatar-motivation.png',
+          dialogue: "Visualize each algorithm step by step. Great preparation leads to great performance! 🚀"
+        }
+      ]
     },
     about: {
       id: 'about',
-      name: 'Creator',
+      style: 'corner',
+      defaultAvatar: 'assets/avatars/avatar-about.png',
       tag: 'MEET THE CREATOR',
-      image: 'assets/avatars/avatar-about.png',
-      dialogue: "Hey! I'm Roshan, the creator of PrepHub. I built this platform to help DBATU CSE students prepare smarter using previous-year question papers and exam insights.",
-      ctaText: "Behind PrepHub 👤"
+      dialogue: "Hey! I'm Roshan, the creator of PrepHub. Built this to make DBATU engineering exam prep simple, organized, and effective.",
+      tips: [
+        {
+          tag: 'MEET THE CREATOR',
+          image: 'assets/avatars/avatar-about.png',
+          dialogue: "Hey! I'm Roshan, the creator of PrepHub. Built this to make DBATU engineering exam prep simple, organized, and effective."
+        },
+        {
+          tag: 'STUDY MOTIVATION',
+          image: 'assets/avatars/avatar-motivation.png',
+          dialogue: "PrepHub is built for students, by a student. Make every question count and ace your semester exams! 🚀"
+        }
+      ]
     }
   };
 
-  // ─── PAGE DETECTION ───
-  function isHomePage() {
-    var path = window.location.pathname.toLowerCase();
+  // ─── ROBUST PAGE IDENTIFICATION ───
+  function detectPageKey() {
+    var path = (window.location.pathname || '').toLowerCase();
+    var hash = (window.location.hash || '').toLowerCase();
     var file = path.substring(path.lastIndexOf('/') + 1);
-    return file === '' || file === 'index.html';
-  }
 
-  function getSubjectInitialState() {
-    var path = window.location.pathname.toLowerCase();
-    if (path.indexOf('sem4index') !== -1) {
-      return 'explore';
-    } else if (path.indexOf('wc.html') !== -1 || path.indexOf('cg.html') !== -1) {
-      return 'motivation';
-    } else {
-      // Default for subject question banks (ml, toc, os, dbms)
-      return 'thinking';
+    if (hash === '#about') {
+      return 'about';
     }
+    if (file === 'sem4index.html' || path.indexOf('sem4index') !== -1) {
+      return 'sem4';
+    }
+    if (file === 'ml.html' || path.indexOf('ml.html') !== -1) {
+      return 'ml';
+    }
+    if (file === 'toc.html' || path.indexOf('toc.html') !== -1) {
+      return 'toc';
+    }
+    if (file === 'os.html' || path.indexOf('os.html') !== -1) {
+      return 'os';
+    }
+    if (file === 'dbms.html' || file === 'dbms_questionbank_dbatu.html' || path.indexOf('dbms') !== -1) {
+      return 'dbms';
+    }
+    if (file === 'wc.html' || path.indexOf('wc.html') !== -1) {
+      return 'wc';
+    }
+    if (file === 'cg.html' || path.indexOf('cg.html') !== -1) {
+      return 'cg';
+    }
+    if (file === '' || file === 'index.html' || path.endsWith('/')) {
+      return 'index';
+    }
+    return 'index';
+  }
+
+  // ─── ENSURE SINGLE ROOT CONTAINER ───
+  function getRootContainer() {
+    var root = document.getElementById('prephub-assistant');
+    if (!root) {
+      root = document.createElement('div');
+      root.id = 'prephub-assistant';
+      root.className = 'prephub-assistant-root';
+      document.body.appendChild(root);
+    }
+    return root;
   }
 
   // ═══════════════════════════════════════════════════════════════════
-  // 1. HOMEPAGE SYSTEM — PROMINENT CENTER-FOCUSED ASSISTANT
+  // 1. HOMEPAGE SYSTEM — CENTER MODAL (index.html)
   // ═══════════════════════════════════════════════════════════════════
-  function initHomeCenterModal() {
-    if (document.getElementById('prephub-modal-backdrop')) return;
+  function setupHomepageAssistant(container, config) {
+    // Avoid duplicate markup inside the root
+    container.innerHTML = '';
 
     var currentStateKey = 'home';
-    var initial = STATES.home;
+    var states = config.states;
+    var initialState = states.home;
     var autoDismissTimer = null;
-    var userInteracted = false;
 
-    // Create Center Modal Backdrop & Stage
+    function clearTimer() {
+      if (autoDismissTimer !== null) {
+        clearTimeout(autoDismissTimer);
+        autoDismissTimer = null;
+      }
+    }
+
+    // Modal Backdrop & Card
     var backdrop = document.createElement('div');
     backdrop.id = 'prephub-modal-backdrop';
     backdrop.className = 'prephub-modal-backdrop';
@@ -100,11 +326,11 @@
       '<div class="prephub-center-modal" id="prephub-center-modal" role="dialog" aria-modal="true" aria-labelledby="prephub-dialogue-tag">',
       '  <button class="prephub-modal-close" id="prephub-modal-close" title="Close Assistant" aria-label="Close dialog">&times;</button>',
       '  <div class="prephub-character-stage">',
-      '    <img src="' + initial.image + '" alt="PrepHub Student Assistant" class="prephub-character-img" id="prephub-character-img">',
+      '    <img src="' + initialState.image + '" alt="PrepHub Student Assistant" class="prephub-character-img" id="prephub-character-img">',
       '  </div>',
-      '  <div class="prephub-dialogue-card">',
-      '    <div class="prephub-dialogue-tag" id="prephub-dialogue-tag">' + initial.tag + '</div>',
-      '    <p class="prephub-dialogue-text" id="prephub-dialogue-text">' + initial.dialogue + '</p>',
+      '  <div class="prephub-dialogue-card" id="prephub-dialogue-card">',
+      '    <div class="prephub-dialogue-tag" id="prephub-dialogue-tag">' + initialState.tag + '</div>',
+      '    <p class="prephub-dialogue-text" id="prephub-dialogue-text">' + initialState.dialogue + '</p>',
       '    <div class="prephub-modal-actions">',
       '      <div class="prephub-state-pills" id="prephub-state-pills">',
       '        <button class="state-pill active" data-state="home">👋 Welcome</button>',
@@ -113,15 +339,15 @@
       '        <button class="state-pill" data-state="motivation">🚀 Motivation</button>',
       '        <button class="state-pill" data-state="about">👤 Creator</button>',
       '      </div>',
-      '      <button class="prephub-cta-btn" id="prephub-cta-btn">' + initial.ctaText + '</button>',
+      '      <button class="prephub-cta-btn" id="prephub-cta-btn">' + initialState.ctaText + '</button>',
       '    </div>',
       '  </div>',
       '</div>'
     ].join('\n');
 
-    document.body.appendChild(backdrop);
+    container.appendChild(backdrop);
 
-    // Create Minimized Floating Launcher (Bottom-Left)
+    // Minimized Floating Launcher (Bottom-Left)
     var launcher = document.createElement('button');
     launcher.id = 'prephub-minimized-launcher';
     launcher.className = 'prephub-minimized-launcher';
@@ -129,12 +355,12 @@
     launcher.title = 'Open Study Assistant 💡';
 
     launcher.innerHTML = [
-      '<img src="' + initial.image + '" alt="Study Assistant" class="launcher-avatar-thumb" id="launcher-avatar-thumb">',
+      '<img src="' + initialState.image + '" alt="Study Assistant" class="launcher-avatar-thumb" id="launcher-avatar-thumb">',
       '<span class="launcher-pulse-dot"></span>',
       '<span class="launcher-hover-label">Study Assistant 💡</span>'
     ].join('\n');
 
-    document.body.appendChild(launcher);
+    container.appendChild(launcher);
 
     var charImg = document.getElementById('prephub-character-img');
     var tagEl = document.getElementById('prephub-dialogue-tag');
@@ -142,31 +368,34 @@
     var ctaBtn = document.getElementById('prephub-cta-btn');
     var closeBtn = document.getElementById('prephub-modal-close');
     var launcherThumb = document.getElementById('launcher-avatar-thumb');
-    var modalBox = document.getElementById('prephub-center-modal');
+    var dialogueCard = document.getElementById('prephub-dialogue-card');
+    var pillContainer = document.getElementById('prephub-state-pills');
 
     function applyState(stateKey) {
-      var state = STATES[stateKey] || STATES.home;
+      var st = states[stateKey] || states.home;
       currentStateKey = stateKey;
 
-      if (charImg) {
+      if (charImg && charImg.style) {
         charImg.style.opacity = '0';
         charImg.style.transform = 'scale(0.96)';
         setTimeout(function () {
-          charImg.src = state.image;
+          charImg.src = st.image;
           charImg.style.opacity = '1';
           charImg.style.transform = 'scale(1)';
-        }, 150);
+        }, 120);
+      } else if (charImg) {
+        charImg.src = st.image;
       }
 
       if (launcherThumb) {
-        launcherThumb.src = state.image;
+        launcherThumb.src = st.image;
       }
 
-      if (tagEl) tagEl.textContent = state.tag;
-      if (textEl) textEl.textContent = state.dialogue;
-      if (ctaBtn) ctaBtn.textContent = state.ctaText;
+      if (tagEl) tagEl.textContent = st.tag;
+      if (textEl) textEl.textContent = st.dialogue;
+      if (ctaBtn) ctaBtn.textContent = st.ctaText;
 
-      var pills = document.querySelectorAll('.state-pill');
+      var pills = container.querySelectorAll('.state-pill');
       pills.forEach(function (p) {
         if (p.getAttribute('data-state') === stateKey) {
           p.classList.add('active');
@@ -176,43 +405,34 @@
       });
     }
 
-    function openModal(stateKey) {
+    function openModal(stateKey, isAutoTriggered) {
       if (stateKey) applyState(stateKey);
       backdrop.classList.add('active');
 
-      if (autoDismissTimer) clearTimeout(autoDismissTimer);
+      clearTimer();
 
-      // Auto dismiss after 5.5s ONLY if user has not interacted
-      autoDismissTimer = setTimeout(function () {
-        if (!userInteracted && backdrop.classList.contains('active')) {
+      // Exactly 3 seconds auto-dismiss if auto-triggered on load
+      if (isAutoTriggered) {
+        autoDismissTimer = setTimeout(function () {
           closeModal();
-        }
-      }, 5500);
+        }, 3000);
+      }
     }
 
     function closeModal() {
+      clearTimer();
       backdrop.classList.remove('active');
-      if (autoDismissTimer) clearTimeout(autoDismissTimer);
+      sessionStorage.setItem('prephub_modal_shown_home', 'true');
     }
 
-    modalBox.addEventListener('mouseenter', function () {
-      userInteracted = true;
-      if (autoDismissTimer) clearTimeout(autoDismissTimer);
-    });
-    modalBox.addEventListener('touchstart', function () {
-      userInteracted = true;
-      if (autoDismissTimer) clearTimeout(autoDismissTimer);
-    }, { passive: true });
-
+    // Manual close: cancel timer and close immediately
     closeBtn.addEventListener('click', function (e) {
       e.stopPropagation();
-      userInteracted = true;
       closeModal();
     });
 
     backdrop.addEventListener('click', function (e) {
       if (e.target === backdrop) {
-        userInteracted = true;
         closeModal();
       }
     });
@@ -223,56 +443,88 @@
       }
     });
 
+    // CTA interaction: cancel timer, close and execute action
     ctaBtn.addEventListener('click', function () {
-      userInteracted = true;
       closeModal();
       if (currentStateKey === 'about') {
         var aboutEl = document.getElementById('about');
         if (aboutEl) aboutEl.scrollIntoView({ behavior: 'smooth' });
+      } else if (currentStateKey === 'explore') {
+        var portalEl = document.querySelector('.portals-grid, .portal-card');
+        if (portalEl) portalEl.scrollIntoView({ behavior: 'smooth' });
       }
     });
 
-    var pillContainer = document.getElementById('prephub-state-pills');
+    // Interaction with state pills or dialogue card cancels auto-dismissal
     if (pillContainer) {
       pillContainer.addEventListener('click', function (e) {
         var btn = e.target.closest('.state-pill');
         if (!btn) return;
-        userInteracted = true;
+        clearTimer(); // Cancel pending auto dismissal on interaction
         var st = btn.getAttribute('data-state');
-        if (st && STATES[st]) {
+        if (st && states[st]) {
           applyState(st);
         }
       });
     }
 
+    if (dialogueCard) {
+      dialogueCard.addEventListener('click', function () {
+        clearTimer();
+      });
+    }
+
+    // Floating launcher reopens modal manually (no auto-dismiss when user clicked launcher)
     launcher.addEventListener('click', function () {
-      userInteracted = true;
-      openModal(currentStateKey);
+      openModal(currentStateKey, false);
     });
 
-    // Session-based entrance on first visit
+    // Auto-display on first visit of current session, exactly 3s timeout
     var hasShown = sessionStorage.getItem('prephub_modal_shown_home');
     if (!hasShown) {
-      sessionStorage.setItem('prephub_modal_shown_home', 'true');
+      // Small graceful entrance delay before starting 3s timer
       setTimeout(function () {
-        openModal('home');
-      }, 650);
+        openModal('home', true);
+      }, 400);
+    }
+
+    // Scroll tracking for About section on homepage
+    var aboutSection = document.getElementById('about');
+    if (aboutSection && 'IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            // When user scrolls down to About section, adapt launcher
+            if (launcherThumb) launcherThumb.src = states.about.image;
+            launcher.title = 'About Roshan Bhadane 👤';
+          } else {
+            if (launcherThumb) launcherThumb.src = states[currentStateKey].image;
+            launcher.title = 'Open Study Assistant 💡';
+          }
+        });
+      }, { threshold: 0.3 });
+      observer.observe(aboutSection);
     }
   }
 
   // ═══════════════════════════════════════════════════════════════════
-  // 2. ALL OTHER PAGES — COMPACT CORNER SPEECH BUBBLE ASSISTANT
+  // 2. CORNER SYSTEM — SUBJECT & ARCHIVE PAGES (Bottom-Left)
   // ═══════════════════════════════════════════════════════════════════
-  function initCornerAssistant() {
-    if (document.getElementById('prephub-corner-widget')) return;
+  function setupCornerAssistant(container, config) {
+    container.innerHTML = '';
 
-    var initialKey = getSubjectInitialState();
-    var cycleKeys = ['thinking', 'motivation', 'explore', 'about'];
-    var currentCycleIdx = cycleKeys.indexOf(initialKey);
-    if (currentCycleIdx === -1) currentCycleIdx = 0;
-
-    var state = STATES[initialKey] || STATES.thinking;
+    var tips = config.tips || [
+      { tag: config.tag, image: config.defaultAvatar, dialogue: config.dialogue }
+    ];
+    var currentTipIdx = 0;
     var autoDismissTimer = null;
+
+    function clearTimer() {
+      if (autoDismissTimer !== null) {
+        clearTimeout(autoDismissTimer);
+        autoDismissTimer = null;
+      }
+    }
 
     var widget = document.createElement('div');
     widget.id = 'prephub-corner-widget';
@@ -283,21 +535,21 @@
     widget.innerHTML = [
       '<div class="corner-speech-bubble" id="corner-speech-bubble" role="dialog" aria-live="polite">',
       '  <div class="corner-bubble-header">',
-      '    <span class="corner-bubble-tag" id="corner-bubble-tag">' + state.tag + '</span>',
+      '    <span class="corner-bubble-tag" id="corner-bubble-tag">' + tips[0].tag + '</span>',
       '    <button class="corner-bubble-close" id="corner-bubble-close" title="Dismiss" aria-label="Close dialogue">&times;</button>',
       '  </div>',
-      '  <div class="corner-bubble-message" id="corner-bubble-message">' + state.dialogue + '</div>',
+      '  <div class="corner-bubble-message" id="corner-bubble-message">' + tips[0].dialogue + '</div>',
       '  <div class="corner-bubble-footer">',
       '    <span>Tap avatar for tips 💡</span>',
       '  </div>',
       '</div>',
       '<button class="corner-avatar-btn" id="corner-avatar-btn" title="Click for study tips" aria-label="Open study assistant">',
-      '  <img src="' + state.image + '" alt="Study Assistant" class="corner-avatar-img" id="corner-avatar-img">',
+      '  <img src="' + config.defaultAvatar + '" alt="Study Assistant" class="corner-avatar-img" id="corner-avatar-img">',
       '  <span class="corner-status-dot"></span>',
       '</button>'
     ].join('\n');
 
-    document.body.appendChild(widget);
+    container.appendChild(widget);
 
     var bubble = document.getElementById('corner-speech-bubble');
     var avatarBtn = document.getElementById('corner-avatar-btn');
@@ -306,52 +558,64 @@
     var msgEl = document.getElementById('corner-bubble-message');
     var imgEl = document.getElementById('corner-avatar-img');
 
-    function showBubble(st, duration) {
-      if (autoDismissTimer) clearTimeout(autoDismissTimer);
-
-      if (tagEl) tagEl.textContent = st.tag;
-      if (msgEl) msgEl.textContent = st.dialogue;
-      if (imgEl && imgEl.src.indexOf(st.image) === -1) {
-        imgEl.src = st.image;
+    function renderTip(idx) {
+      var item = tips[idx] || tips[0];
+      if (tagEl) tagEl.textContent = item.tag;
+      if (msgEl) msgEl.textContent = item.dialogue;
+      if (imgEl && item.image) {
+        imgEl.src = item.image;
       }
+    }
 
+    function showBubble(duration) {
+      clearTimer();
+      renderTip(currentTipIdx);
       bubble.classList.add('active');
 
-      var d = duration || 4800;
-      autoDismissTimer = setTimeout(function () {
-        hideBubble();
-      }, d);
+      if (duration && duration > 0) {
+        autoDismissTimer = setTimeout(function () {
+          hideBubble();
+        }, duration);
+      }
     }
 
     function hideBubble() {
+      clearTimer();
       bubble.classList.remove('active');
-      if (autoDismissTimer) clearTimeout(autoDismissTimer);
+      // Reset avatar back to the page's default avatar when bubble is closed
+      if (imgEl && config.defaultAvatar) {
+        imgEl.src = config.defaultAvatar;
+      }
     }
 
     closeBtn.addEventListener('click', function (e) {
       e.stopPropagation();
       hideBubble();
-      sessionStorage.setItem('prephub_corner_dismissed_' + initialKey, 'true');
+      sessionStorage.setItem('prephub_corner_dismissed_' + config.id, 'true');
     });
 
     avatarBtn.addEventListener('click', function () {
+      clearTimer();
       if (!bubble.classList.contains('active')) {
-        var currentSt = STATES[cycleKeys[currentCycleIdx]];
-        showBubble(currentSt, 5500);
+        currentTipIdx = 0;
+        showBubble(5000);
       } else {
-        // Cycle to next tip
-        currentCycleIdx = (currentCycleIdx + 1) % cycleKeys.length;
-        var nextSt = STATES[cycleKeys[currentCycleIdx]];
-        showBubble(nextSt, 5500);
+        // Cycle to next tip (which includes motivation with avatar-motivation.png)
+        currentTipIdx = (currentTipIdx + 1) % tips.length;
+        renderTip(currentTipIdx);
+        // Extend visibility when cycling
+        autoDismissTimer = setTimeout(function () {
+          hideBubble();
+        }, 5500);
       }
     });
 
-    // Session-based entrance
-    var isDismissed = sessionStorage.getItem('prephub_corner_dismissed_' + initialKey);
+    // Auto-pop once on first page visit if not previously dismissed
+    var isDismissed = sessionStorage.getItem('prephub_corner_dismissed_' + config.id);
     if (!isDismissed) {
       setTimeout(function () {
-        showBubble(state, 4800);
-      }, 750);
+        showBubble(4500);
+      }, 600);
     }
   }
 
@@ -364,13 +628,18 @@
     });
   }
 
-  // ─── INITIALIZE BASED ON PAGE ───
+  // ─── MASTER INITIALIZATION ───
   function init() {
-    if (isHomePage()) {
-      initHomeCenterModal();
+    var pageKey = detectPageKey();
+    var config = PAGE_CONFIGS[pageKey] || PAGE_CONFIGS.index;
+    var container = getRootContainer();
+
+    if (config.style === 'centered') {
+      setupHomepageAssistant(container, config);
     } else {
-      initCornerAssistant();
+      setupCornerAssistant(container, config);
     }
+
     initDynamicYear();
   }
 
